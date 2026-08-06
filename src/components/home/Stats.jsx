@@ -28,7 +28,7 @@ const stats = [
 
 const Stats = () => {
   return (
-    <section className="mt-20">
+    <section className="mt-16">
 
       {/* Top Wave */}
       <div className="max-w-[13500px] mx-auto overflow-hidden rounded-t-[3px]">
@@ -49,15 +49,15 @@ const Stats = () => {
 
         <div className="max-w-[1200px] mx-auto px-4">
               {/* Grid */}
-                <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
+                <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
                 {stats.map((item, index) => (
                   <div
                     key={index}
-                    className={`text-center px-3 ${
-                      index !== stats.length - 1
-                        ? "lg:border-r lg:border-white/20"
-                        : ""
-                    }`}
+                    className={`text-center py-6 px-3 ${
+                    index !== stats.length - 1
+                      ? "border-b border-white/20 lg:border-b-0 lg:border-r"
+                      : ""
+                  }`}
                   >
                     <h2 className="text-4xl lg:text-4xl font-semibold text-[#4ae2c1]">
                       {item.number}

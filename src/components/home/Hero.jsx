@@ -1,11 +1,10 @@
-import heroImg from "../../assets/images/HeroS.png";
+import heroImg from "../../assets/images/hero.png";
 
 const Hero = () => {
   return (
     <section className="w-full bg-white pt-2 pb-8 lg:pt-2 lg:pb-12">
-    <div className="max-w-[1350px] mx-full px-6">
-        <div
-          className="relative rounded-[32px] overflow-hidden shadow-2xl min-h-[620px]"
+        <div className="max-w-[1350px] mx-full px-6">
+        <div className="relative rounded-[32px] overflow-hidden shadow-2xl min-h-[620px]"
           style={{
             background: `linear-gradient(
               90deg,
@@ -79,8 +78,8 @@ const Hero = () => {
             <img
               src={heroImg}
               alt="Hero"
-              className="absolute inset-0 w-full h-full object-contain scale-125"
-            />
+              className="absolute bottom-0 right-[-10px] h-full w-auto max-w-none object-contain"
+              />
             </div>
 
           </div>

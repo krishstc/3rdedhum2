@@ -5,7 +5,7 @@ import {
   FaTimes,
 } from "react-icons/fa";
 
-import { servicesData } from "../../data/serviceData";
+import { servicesData } from "../../../data/serviceData";
 import MobileSubMenu from "./MobileSubMenu";
 
 function MobileServiceMenu({ onBack, onClose }) {

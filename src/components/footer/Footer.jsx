@@ -1,8 +1,9 @@
-import logo from "../../assets/images/logo.webp";
+import logo from "../../assets/images/logo.png";
 import {
   FaInstagram,
   FaLinkedinIn,
   FaFacebookF,
+  FaWhatsapp,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -19,7 +20,7 @@ const Footer = () => {
               <img
                 src={logo}
                 alt="3rd Edge"
-                className="w-20 object-contain"
+                className="w-24 object-contain"
               />
             </div>
 
@@ -47,6 +48,13 @@ const Footer = () => {
 
   <a href="#">
     <FaFacebookF
+      size={20}
+      className="hover:text-[#59D58E] transition-all"
+    />
+  </a>
+
+  <a href="#">
+    <FaWhatsapp
       size={20}
       className="hover:text-[#59D58E] transition-all"
     />

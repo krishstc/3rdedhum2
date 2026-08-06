@@ -1,4 +1,5 @@
-import Navbar from "./components/home/Navbar";
+import PdfAssistant from "./components/PdfAssistant/PdfAssistant";
+import Navbar from "./components/navbar/desktop/Navbar";
 import Hero from "./components/home/Hero";
 import TrustedCompanies from "./components/home/TrustedCompanies";
 import Solutions from "./components/home/Solutions";
@@ -9,8 +10,8 @@ import SuccessStories from "./components/home/SuccessStories";
 import Insights from "./components/home/Insights";
 import Testimonials from "./components/home/Testimonials";
 import Contact from "./components/home/Contact";
-import CTA from "./components/home/CTA";
-import Footer from "./components/home/Footer";
+import CTA from "./components/footer/CTA";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <Contact />
       <CTA />
       <Footer />
+      <PdfAssistant />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import { FaArrowRight } from "react-icons/fa";
-import { servicesData } from "../../data/serviceData";
+import { servicesData } from "../../../data/serviceData";
 
 const MenuColumns = ({ setActiveMenu }) => {
   const handleMenuClick = (item) => {
@@ -9,7 +9,7 @@ const MenuColumns = ({ setActiveMenu }) => {
   };
 
   return (
-    <div className="grid grid-cols-3 gap-x-12">
+    <div className="grid grid-cols-3 gap-x-3">
       {Object.values(servicesData).map((column, columnIndex) => (
         <div key={columnIndex}>
           {column.map((item) => {
@@ -19,7 +19,7 @@ const MenuColumns = ({ setActiveMenu }) => {
               <div
                 key={item.title}
                 onClick={() => handleMenuClick(item)}
-                className={`group px-2 py-4 border-b border-gray-100 transition-all duration-300 ${
+                className={`group px-2 py-2 rounded-lg border-b border-gray-100 hover:bg-[#F8FAF9] transition-all duration-300 ${
                   item.children?.length
                     ? "cursor-pointer hover:bg-gray-50"
                     : "cursor-default"
@@ -28,16 +28,16 @@ const MenuColumns = ({ setActiveMenu }) => {
                 <div className="flex items-center justify-between">
 
                   {/* Left Side */}
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2">
 
                     {Icon && (
                       <div className="flex-shrink-0">
-                        <Icon className="text-[17px] text-gray-400 transition-colors duration-300 group-hover:text-gray-600" />
+                        <Icon className="text-[15px] text-gray-400 transition-colors duration-300 group-hover:text-gray-600" />
                       </div>
                     )}
 
                     <h3
-                      className={`text-[15px] font-medium text-gray-700 leading-6 transition-colors duration-300 ${
+                      className={`text-[14px] font-medium text-gray-700 leading-6 transition-colors duration-300 ${
                         item.children?.length
                           ? "group-hover:text-gray-900"
                           : ""
@@ -50,7 +50,7 @@ const MenuColumns = ({ setActiveMenu }) => {
 
                   {/* Right Arrow */}
                   {item.children?.length && (
-                    <FaArrowRight className="text-[11px] text-gray-300 transition-all duration-300 group-hover:text-gray-500 group-hover:translate-x-1" />
+                    <FaArrowRight className="text-[10px] text-gray-300 transition-all duration-300 group-hover:text-gray-500 group-hover:translate-x-1" />
                   )}
 
                 </div>
