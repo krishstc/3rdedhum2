@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  font-family: 'Poppins', sans-serif;
+}
+html{
+  scroll-behavior:smooth;
+}
+@layer components {
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-gray-900;
+  }
+
+  .primary-btn {
+    @apply bg-[#2BA56F] text-white px-6 py-3 rounded-xl transition-all duration-300 hover:bg-[#228a5b] hover:scale-105;
+  }
+
+  .card {
+    @apply bg-white rounded-3xl shadow-sm transition-all duration-300 hover:shadow-2xl hover:-translate-y-2;
+  }
+
+  .section-padding {
+    @apply py-24;
+  }
+
+  .image-hover {
+    @apply overflow-hidden rounded-3xl;
+  }
+
+  .image-hover img {
+    @apply transition-transform duration-500 hover:scale-110;
+  }
+}
+
+.ticker {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: ticker 25s linear infinite;
+  color: #D6A318; /* Mustard color */
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.ticker span {
+  padding-right: 80px;
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.company-slider {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  width: max-content;
+  animation: companyScroll 30s linear infinite;
+}
+
+@keyframes companyScroll {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.company-slider:hover {
+  animation-play-state: paused;
+}
