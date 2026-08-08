@@ -20,7 +20,7 @@ const MegaMenu = ({ isOpen }) => {
           : "opacity-0 invisible -translate-y-2"
       }`}
     >
-      <div className="max-w-[1200px] mx-auto bg-white rounded-2xl shadow-2xl border overflow-hidden">
+      <div className="max-w-[1300px] mx-auto bg-white rounded-2xl shadow-2xl border overflow-hidden">
         <div className="grid grid-cols-4 gap-2 p-6">
 
           {/* Left Side */}

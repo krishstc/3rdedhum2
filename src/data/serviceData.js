@@ -15,32 +15,34 @@ export const servicesData = {
   column1: [
     {
       title: "Soft Skills Workshop",
+      folder: "SoftSkills",
       icon: FaComments,
       children: [
         "Business Communication",
         "Workplace Communication",
         "Virtual Communication",
-        "Cross-cultural Communication",
+        "Cross-culture Communication",
         "Communication for Global Teams",
-        "Professional email writing",
-        "Active listening",
+        "Personal Email Writing",
+        "Active Listening",
         "Presentation Skills",
-        "Public speaking",
-        "Storytelling for business",
+        "Public Speaking",
+        "Storytelling for Business",
         "Assertive Communication",
         "Executive Presence",
         "Grooming and Etiquette",
         "Virtual and Telephonic Etiquette",
         "Body Language and Personal Branding",
         "Time Management",
-        "Planning and Prioritisation",
+        "Planning and Prioritization",
       ],
     },
     {
       title: "Behavioural Skills Workshop",
+      folder: "BehaviouralSkills",
       icon: FaUsers,
       children: [
-        "Interpersonal Skills",,
+        "Interpersonal Skills",
         "Emotional Intelligence",
         "Building Trust and Rapport",
         "Growth Mindset and Attitude",
@@ -58,6 +60,7 @@ export const servicesData = {
     },
     {
       title: "Managerial & Leadership Programs",
+      folder: "ManagerialSkills",
       icon: FaUserTie,
       children: [
         "First-time Managers",
@@ -69,10 +72,10 @@ export const servicesData = {
         "Mentoring Skills",
         "Change Management",
         "Delegation",
-        "performance Management",
+        "Performance Management",
         "Appraisal Skills",
-        "Manager/Leadership Communication",
-        "Executive Presence of Leaders",
+        "Manager-Leadership Communication",
+        "Executive Presence of Leader",
         "Leading Hybrid Teams",
         "Leadership Development Track",
         "Servant Leadership",
@@ -81,6 +84,7 @@ export const servicesData = {
     },
     {
       title: "Sales",
+      folder: "Sales",
       icon: FaChartLine,
       children: [
         "Customer Service Excellence",
@@ -90,8 +94,8 @@ export const servicesData = {
         "Consultative Selling Skills",
         "Relationship Selling Skills",
         "Retail Sales",
-        "Client Enganement",
-        "Negotiation and Influencing",
+        "Client Engagement",
+        "Negotiation and Influence",
         "Objection Handling",
         "Customer Etiquette",
         "Stakeholder Management",
@@ -103,10 +107,11 @@ export const servicesData = {
     },
     {
       title: "Future Workplace Skills",
+      folder: "FutureWorkplaceSkills",
       icon: FaBullseye,
       children: [
         "AI for Professionals",
-        "AI prompting for Productivity",
+        "AI Prompting for Productivity",
         "Digital Collaboration",
         "Remote Work Effectiveness",
         "Design Thinking",
@@ -117,22 +122,23 @@ export const servicesData = {
     },
     {
       title: "IT Skills",
+      folder: "ITSkills",
       icon: FaLaptopCode,
       children: [
         "Digital Literacy",
         "MS Office Suite",
         "Word",
-        "Excel(basic, intermediate, advance)",
+        "Excel (basic, intermediate, advance)",
         "Excel Dashboard",
         "Tables and Charts",
         "Query Power",
         "Advance Formulas",
         "Marco & VBA",
         "PowerPoint",
-        "Outloop",
+        "Outlook",
         "Copilot",
         "MS 365 Productivity",
-        "Google Workplace",
+        "Google Workspace",
         "Power BI",
         "Data Visualisation and Interpretation",
         "ISO Standards",
@@ -146,6 +152,7 @@ export const servicesData = {
   column2: [
     {
       title: "Workplace Wellness",
+      folder: "WorkplaceWellness",
       icon: FaHeartbeat,
       children: [
         "Stress and Burnout Prevention",
@@ -153,27 +160,29 @@ export const servicesData = {
         "Mindfulness at Work",
         "Managing Workplace Anxiety",
         "Work Life Balance",
-        "Work Fitness and Yoga",
+        "Work, Fitness and Yoga",
         "Sound Healing",
-        "Art Therapy Circles",
+        "Art Therapy Circle",
       ],
     },
     {
-      title: "Specialise Programmes",
+      title: "Specialized Programmes",
+      folder: "SpecializedProgrammes",
       icon: FaBookOpen,
       children: [
         "POSH",
         "Code of Conduct",
         "Campus to Corporate",
         "Women Leadership",
-        "Hipo",
-        "Train and Trainer",
+        "HIPO",
+        "Train the Trainer",
         "Facilitator Development",
         "Cultural Transformation Workshop",
       ],
     },
     {
       title: "Residential Programmes",
+      folder: "ResidentialProgrammes",
       icon: FaBuilding,
       children: [
         "MDP",
@@ -183,6 +192,7 @@ export const servicesData = {
     },
     {
       title: "Organisational Development",
+      folder: "OrganisationalDevelopment",
       icon: FaUsers,
       children: [
         "Organisational Design",
@@ -195,6 +205,7 @@ export const servicesData = {
     },
     {
       title: "L&D Consulting",
+      folder: "L&DConsulting",
       icon: FaGraduationCap,
       children: [
         "TNA",
@@ -204,6 +215,7 @@ export const servicesData = {
     },
     {
       title: "HR Consulting",
+      folder: "HRConsulting",
       icon: FaUserTie,
       children: [
         "Goal Setting Framework",
@@ -222,18 +234,22 @@ export const servicesData = {
   column3: [
     {
       title: "CLIP",
+      folder: "CLIP",
       icon: FaClipboardCheck,
     },
     {
       title: "YPD",
+      folder: "YPD",
       icon: FaGraduationCap,
     },
     {
       title: "Executive Coaching",
+      folder: "ExecutiveCoaching",
       icon: FaUsers,
     },
     {
       title: "Assessment Center",
+      folder: "AssessmentCenter",
       icon: FaClipboardCheck,
     },
   ],

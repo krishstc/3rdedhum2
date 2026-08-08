@@ -2,6 +2,10 @@ import { FaArrowLeft, FaChevronRight } from "react-icons/fa";
 
 const ServiceContent = ({ menu, goBack }) => {
   if (!menu) return null;
+  const handlePdfOpen = (title) => {
+    const pdfPath = `/pdf/${menu.folder}/${title}.pdf`;
+    window.open(pdfPath, "_blank");
+  };
 
   const columns = 4;
   const itemsPerColumn = Math.ceil(menu.children.length / columns);
@@ -39,6 +43,7 @@ const ServiceContent = ({ menu, goBack }) => {
             {column.map((item, index) => (
               <div
                 key={index}
+                onClick={() => handlePdfOpen(item)}
                 className="group flex items-center justify-between rounded-md px-2 py-2 cursor-pointer transition-all duration-200 hover:bg-gray-50"
               >
                 <span className="text-[14px] font-normal text-gray-600 group-hover:text-gray-900 transition-colors">

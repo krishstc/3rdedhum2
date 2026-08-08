@@ -101,7 +101,7 @@ const Programs = () => {
             </div>
 
             {/* Quote Card */}
-            <div className="absolute bottom-0 right-0 translate-y-10 w-[390px] bg-[#043329] rounded-[24px] px-10 py-4 shadow-[0_20px_45px_rgba(0,0,0,0.25)]">
+            <div className="absolute bottom-0 right-0 translate-y-10 w-[320px] bg-[#043329] rounded-[24px] px-10 py-4 m-4 shadow-[0_20px_45px_rgba(0,0,0,0.25)]">
 
               <div className="text-[#63E2B2] text-7xl leading-none">
                 ❝

@@ -1,6 +1,10 @@
 import { FaArrowLeft, FaTimes } from "react-icons/fa";
 
 function MobileSubMenu({ menu, onBack, onClose }) {
+  const handlePdfOpen = (title) => {
+  const pdfPath = `/pdf/${menu.folder}/${title}.pdf`;
+  window.open(pdfPath, "_blank");
+};
   return (
     <>
       {/* Header */}
@@ -31,6 +35,7 @@ function MobileSubMenu({ menu, onBack, onClose }) {
           menu.children.map((child, index) => (
             <button
               key={index}
+              onClick={() => handlePdfOpen(child)}
               className="w-full text-left px-6 py-3 border-b hover:bg-gray-50 transition text-[15px] text-gray-700"
             >
               {child}

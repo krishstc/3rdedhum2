@@ -11,68 +11,111 @@ const Footer = () => {
     <footer className="bg-[#032B22] text-white pt-14 pb-6">
       <div className="max-w-7xl mx-auto px-8">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
-
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Logo */}
-          <div>
+          <div className="col-span-2 lg:col-span-1">
 
-            <div className="bg-white rounded-2xl w-32 h-24 flex items-center justify-center">
-              <img
-                src={logo}
-                alt="3rd Edge"
-                className="w-24 object-contain"
-              />
+            {/* Mobile Layout */}
+            <div className="flex items-center gap-4 lg:hidden">
+
+              <div className="bg-white rounded-2xl w-24 h-20 flex items-center justify-center flex-shrink-0">
+                <img
+                  src={logo}
+                  alt="3rd Edge"
+                  className="w-20 object-contain"
+                />
+              </div>
+
+              <div>
+
+                <p className="text-sm text-gray-300 px-10 leading-4">
+                  Helping Others
+                  Through Learning
+                </p>
+
+                <div className="flex items-center gap-3 mt-4 px-16">
+                  <a href="#" className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#2f8c72] transition">
+                    <FaInstagram size={16} />
+                  </a>
+
+                  <a href="#" className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#2f8c72] transition">
+                    <FaLinkedinIn size={16} />
+                  </a>
+
+                  <a href="#" className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#2f8c72] transition">
+                    <FaFacebookF size={16} />
+                  </a>
+
+                  <a href="#" className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#2f8c72] transition">
+                    <FaWhatsapp size={16} />
+                  </a>
+                </div>
+
+              </div>
+
             </div>
 
-            <p className="mt-6 text-sm text-gray-300 leading-6">
-              Helping Others
-              <br />
-              Through Learning
-            </p>
+            {/* Desktop Layout */}
+            <div className="hidden lg:block">
 
-            <div className="flex items-center gap-4 mt-6">
+              <div className="bg-white rounded-2xl w-32 h-24 flex items-center justify-center">
+                <img
+                  src={logo}
+                  alt="3rd Edge"
+                  className="w-24 object-contain"
+                />
+              </div>
 
-  <a href="#">
-    <FaInstagram
-      size={20}
-      className="hover:text-[#59D58E] transition-all"
-    />
-  </a>
+              <p className="mt-6 text-sm text-gray-300 leading-6">
+                Helping Others
+                <br />
+                Through Learning
+              </p>
 
-  <a href="#">
-    <FaLinkedinIn
-      size={20}
-      className="hover:text-[#59D58E] transition-all"
-    />
-  </a>
+              <div className="flex items-center gap-4 mt-6">
 
-  <a href="#">
-    <FaFacebookF
-      size={20}
-      className="hover:text-[#59D58E] transition-all"
-    />
-  </a>
+                <a
+                  href="#"
+                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#2f8c72] transition"
+                >
+                  <FaInstagram />
+                </a>
 
-  <a href="#">
-    <FaWhatsapp
-      size={20}
-      className="hover:text-[#59D58E] transition-all"
-    />
-  </a>
+                <a
+                  href="#"
+                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#2f8c72] transition"
+                >
+                  <FaLinkedinIn />
+                </a>
 
-</div>
+                <a
+                  href="#"
+                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#2f8c72] transition"
+                >
+                  <FaFacebookF />
+                </a>
+
+                <a
+                  href="#"
+                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#2f8c72] transition"
+                >
+                  <FaWhatsapp />
+                </a>
+
+              </div>
+
+            </div>
 
           </div>
-
           {/* Solutions */}
 
           <div>
 
-            <h3 className="text-lg font-semibold mb-5">
+            <h3 className="text-base lg:text-lg font-semibold mb-3 lg:mb-5">
               Solutions
             </h3>
 
-            <ul className="space-y-3 text-gray-300 text-sm">
+            <ul className="space-y-2 text-gray-300 text-sm">
 
               <li className="hover:text-white cursor-pointer">
                 Leadership Development
@@ -98,11 +141,11 @@ const Footer = () => {
 
           <div>
 
-            <h3 className="text-lg font-semibold mb-5">
+            <h3 className="text-base lg:text-lg font-semibold mb-3 lg:mb-5">
               Programs
             </h3>
 
-            <ul className="space-y-3 text-gray-300 text-sm">
+            <ul className="space-y-2 text-gray-300 text-sm">
 
               <li className="hover:text-white cursor-pointer">
                 Emerging Leaders
@@ -128,11 +171,11 @@ const Footer = () => {
 
           <div>
 
-            <h3 className="text-lg font-semibold mb-5">
+            <h3 className="text-base lg:text-lg font-semibold mb-3 lg:mb-5">
               Resources
             </h3>
 
-            <ul className="space-y-3 text-gray-300 text-sm">
+            <ul className="space-y-2 text-gray-300 text-sm">
 
               <li className="hover:text-white cursor-pointer">
                 Insights
@@ -158,11 +201,11 @@ const Footer = () => {
 
           <div>
 
-            <h3 className="text-lg font-semibold mb-5">
+            <h3 className="text-base lg:text-lg font-semibold mb-3 lg:mb-5">
               Company
             </h3>
 
-            <ul className="space-y-3 text-gray-300 text-sm">
+            <ul className="space-y-2 text-gray-300 text-sm">
 
               <li className="hover:text-white cursor-pointer">
                 About Us
