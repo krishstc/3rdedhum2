@@ -35,6 +35,12 @@ export const servicesData = {
         "Body Language and Personal Branding",
         "Time Management",
         "Planning and Prioritization",
+        "Professionalism at Work",
+        "Problem-solving and Decision-making",
+        "Critical Thinking",
+        "Strategic Thinking",
+        "Creative Thinking",
+        "Continuous Improvement Mindset (Kaisen)"
       ],
     },
     {

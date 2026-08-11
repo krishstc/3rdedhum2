@@ -10,10 +10,10 @@ function Navbar() {
 
   return (
     <>
-      {/* ================= NAVBAR ================= */}
+      {/* ================= FIXED NAVBAR ================= */}
 
       <nav
-        className="relative z-50"
+        className="fixed top-0 left-0 w-full z-[9999] bg-white shadow-sm"
         onMouseLeave={() => setActiveMenu(null)}
       >
 
@@ -36,7 +36,7 @@ function Navbar() {
 
           <ul className="hidden lg:flex items-center gap-12 text-[18px] font-medium text-gray-700">
 
-            {/* ================= HOME ================= */}
+            {/* HOME */}
 
             <li
               onMouseEnter={() => setActiveMenu(null)}
@@ -46,7 +46,7 @@ function Navbar() {
             </li>
 
 
-            {/* ================= SERVICES ================= */}
+            {/* SERVICES */}
 
             <li
               className="relative"
@@ -71,7 +71,7 @@ function Navbar() {
             </li>
 
 
-            {/* ================= WHY 3RD EDHUM ================= */}
+            {/* WHY 3RD EDHUM */}
 
             <li
               className="relative"
@@ -96,7 +96,7 @@ function Navbar() {
             </li>
 
 
-            {/* ================= INSIGHTS ================= */}
+            {/* INSIGHTS */}
 
             <li
               className="relative"
@@ -127,7 +127,7 @@ function Navbar() {
 
           <div className="flex items-center gap-4">
 
-            {/* Custom Program */}
+            {/* CUSTOM PROGRAM */}
 
             <button
               className="hidden lg:block border border-[#3F9975] text-[#3F9975] hover:bg-[#3F9975] hover:text-white px-6 py-2.5 rounded-lg text-[14px] font-medium transition-all duration-300"
@@ -136,7 +136,7 @@ function Navbar() {
             </button>
 
 
-            {/* Let's Connect */}
+            {/* LET'S CONNECT */}
 
             <a
               href="#contact"
@@ -146,7 +146,7 @@ function Navbar() {
             </a>
 
 
-            {/* Mobile Hamburger */}
+            {/* MOBILE HAMBURGER */}
 
             <button
               className="lg:hidden text-2xl text-gray-700"
@@ -161,37 +161,31 @@ function Navbar() {
         </div>
 
 
-        {/* =====================================================
-            MEGA MENUS
-        ====================================================== */}
-
-        {/* ================= SERVICES ================= */}
+        {/* ================= MEGA MENUS ================= */}
 
         <div className="relative z-[100]">
+
+          {/* SERVICES */}
+
           <MegaMenu
             isOpen={activeMenu === "services"}
             menuType="services"
           />
-        </div>
 
+          {/* WHY 3RD EDHUM */}
 
-        {/* ================= WHY 3RD EDHUM ================= */}
-
-        <div className="relative z-[100]">
           <MegaMenu
             isOpen={activeMenu === "whyus"}
             menuType="whyus"
           />
-        </div>
 
+          {/* INSIGHTS */}
 
-        {/* ================= INSIGHTS ================= */}
-
-        <div className="relative z-[100]">
           <MegaMenu
             isOpen={activeMenu === "insights"}
             menuType="insights"
           />
+
         </div>
 
       </nav>
@@ -203,7 +197,6 @@ function Navbar() {
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
       />
-
     </>
   );
 }
