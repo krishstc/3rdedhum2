@@ -4,10 +4,39 @@ import {
   Mail,
   ArrowRight,
 } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import { useState } from "react";
 
 const Contact = () => {
+  const [isSending, setIsSending] = useState(false);
+  const [status, setStatus] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setIsSending(true);
+    setStatus("");
+
+    try {
+      await emailjs.sendForm(
+        "service_jsb7o8g",
+        "template_jbur8i6",
+        e.target,
+        "r2Xpg5uIKutQCQxw_"
+      );
+
+      setStatus("Your enquiry has been sent successfully!");
+      e.target.reset();
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      setStatus("Something went wrong. Please try again.");
+    } finally {
+      setIsSending(false);
+    }
+  };
+
   return (
-    <section className="py-24 bg-white">
+    <section id="contact">
 
       <div className="max-w-[1240px] mx-auto px-8">
 
@@ -34,6 +63,7 @@ const Contact = () => {
 
           </div>
 
+
           {/* CENTER DETAILS */}
 
           <div className="pt-1">
@@ -59,6 +89,7 @@ const Contact = () => {
 
               </div>
 
+
               {/* Email */}
 
               <div className="flex items-center gap-4">
@@ -73,6 +104,7 @@ const Contact = () => {
                 </span>
 
               </div>
+
 
               {/* Address */}
 
@@ -93,55 +125,93 @@ const Contact = () => {
 
           </div>
 
+
           {/* RIGHT FORM */}
 
           <div>
 
-            <form>
+            <form onSubmit={handleSubmit}>
 
-              <div className="grid grid-cols-2 gap-5 mb-5">
+              {/* Name + Email */}
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
 
                 <input
                   type="text"
+                  name="name"
                   placeholder="Name"
+                  required
                   className="h-12 rounded-xl border border-[#E5E7EB] px-5 text-[15px] outline-none placeholder:text-gray-400 focus:border-[#4BA77A]"
                 />
 
                 <input
                   type="email"
+                  name="email"
                   placeholder="Email"
+                  required
                   className="h-12 rounded-xl border border-[#E5E7EB] px-5 text-[15px] outline-none placeholder:text-gray-400 focus:border-[#4BA77A]"
                 />
 
               </div>
 
-              <div className="grid grid-cols-2 gap-5 mb-5">
+
+              {/* Phone + Organization */}
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
 
                 <input
-                  type="text"
+                  type="tel"
+                  name="phone"
                   placeholder="Phone"
                   className="h-12 rounded-xl border border-[#E5E7EB] px-5 text-[15px] outline-none placeholder:text-gray-400 focus:border-[#4BA77A]"
                 />
 
                 <input
                   type="text"
+                  name="organization"
                   placeholder="Organization"
                   className="h-12 rounded-xl border border-[#E5E7EB] px-5 text-[15px] outline-none placeholder:text-gray-400 focus:border-[#4BA77A]"
                 />
 
               </div>
 
+
+              {/* Message */}
+
               <textarea
+                name="message"
                 rows={5}
                 placeholder="Your message"
+                required
                 className="w-full h-[112px] rounded-xl border border-[#E5E7EB] p-5 text-[15px] outline-none resize-none placeholder:text-gray-400 focus:border-[#4BA77A]"
               />
-                            <button
+
+
+              {/* Status Message */}
+
+              {status && (
+                <p
+                  className={`mt-4 text-sm ${
+                    status.includes("successfully")
+                      ? "text-green-600"
+                      : "text-red-600"
+                  }`}
+                >
+                  {status}
+                </p>
+              )}
+
+
+              {/* Submit Button */}
+
+              <button
                 type="submit"
-                className="mt-6 bg-[#062C24] hover:bg-[#0A4538] transition-all duration-300 text-white px-7 py-3 rounded-lg font-medium flex items-center gap-2"
+                disabled={isSending}
+                className="mt-6 bg-[#062C24] hover:bg-[#0A4538] disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300 text-white px-7 py-3 rounded-lg font-medium flex items-center gap-2"
               >
-                Send Message
-                <ArrowRight size={16} />
+                {isSending ? "Sending..." : "Send Message"}
+
+                {!isSending && <ArrowRight size={16} />}
               </button>
 
             </form>

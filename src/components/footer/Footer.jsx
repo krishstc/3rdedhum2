@@ -122,7 +122,7 @@ const Footer = () => {
               </li>
 
               <li className="hover:text-white cursor-pointer">
-                Talent Strategy
+                Team Strategy
               </li>
 
               <li className="hover:text-white cursor-pointer">
@@ -131,6 +131,10 @@ const Footer = () => {
 
               <li className="hover:text-white cursor-pointer">
                 Sales Effectiveness
+              </li>
+
+              <li className="hover:text-white cursor-pointer">
+                Executive Coaching
               </li>
 
             </ul>
@@ -148,19 +152,23 @@ const Footer = () => {
             <ul className="space-y-2 text-gray-300 text-sm">
 
               <li className="hover:text-white cursor-pointer">
-                Emerging Leaders
+                For Leaders
               </li>
 
               <li className="hover:text-white cursor-pointer">
-                Mid-Level Managers
+                For Teams
               </li>
 
               <li className="hover:text-white cursor-pointer">
-                Senior Leaders
+                For Managers
               </li>
 
               <li className="hover:text-white cursor-pointer">
-                Executive Coaching
+                For Individual
+              </li>
+
+              <li className="hover:text-white cursor-pointer">
+                Industries
               </li>
 
             </ul>
@@ -186,7 +194,11 @@ const Footer = () => {
               </li>
 
               <li className="hover:text-white cursor-pointer">
-                Whitepapers
+                White Papers
+              </li>
+
+              <li className="hover:text-white cursor-pointer">
+                Webinars
               </li>
 
               <li className="hover:text-white cursor-pointer">
@@ -212,7 +224,7 @@ const Footer = () => {
               </li>
 
               <li className="hover:text-white cursor-pointer">
-                Our Team
+                Our Approach
               </li>
 
               <li className="hover:text-white cursor-pointer">

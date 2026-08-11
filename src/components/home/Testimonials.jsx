@@ -32,18 +32,18 @@ const testimonials = [
       "The custom frameworks aligned perfectly with our business goals. Highly recommended!",
   },
   {
-    name: "Amit Patel",
-    role: "HR Manager",
+    name: "Vikram Desai",
+    role: "Operations Head",
     image: "https://randomuser.me/api/portraits/men/75.jpg",
     review:
-      "Excellent learning experience with practical examples that our employees could immediately apply.",
+      "The transformation in our workforce capability was immediately apparent after the workshops.",
   },
   {
-    name: "Priya Mehta",
-    role: "Learning Partner",
-    image: "https://randomuser.me/api/portraits/women/25.jpg",
+    name: "Arjun Mehta",
+    role: "Senior Manager",
+    image: "https://randomuser.me/api/portraits/men/26.jpg",
     review:
-      "One of the best corporate learning sessions we've conducted. Highly interactive and impactful.",
+      "The leadership program gave me tools I use every day to lead with confidence.",
   },
 ];
 

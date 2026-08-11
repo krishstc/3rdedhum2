@@ -23,6 +23,20 @@ function MobileMenu({ isOpen, onClose }) {
     setOpenMenu(openMenu === menu ? null : menu);
   };
 
+  const handleContactClick = () => {
+    // Close mobile menu
+    setCurrentPage("main");
+    setOpenMenu(null);
+    onClose();
+
+    // Scroll to Contact section
+    setTimeout(() => {
+      document.getElementById("contact")?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 300);
+  };
+
   return (
     <>
       {/* Overlay */}
@@ -45,12 +59,17 @@ function MobileMenu({ isOpen, onClose }) {
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
+
         {/* ================= MAIN MENU ================= */}
+
         {currentPage === "main" && (
           <>
             {/* Header */}
             <div className="flex items-center justify-between p-5 border-b">
-              <h2 className="text-lg font-semibold">Menu</h2>
+
+              <h2 className="text-lg font-semibold">
+                Menu
+              </h2>
 
               <button
                 onClick={() => {
@@ -62,6 +81,7 @@ function MobileMenu({ isOpen, onClose }) {
               >
                 <FaTimes />
               </button>
+
             </div>
 
             {/* Menu */}
@@ -72,6 +92,7 @@ function MobileMenu({ isOpen, onClose }) {
                 Home
               </button>
 
+
               {/* Services */}
               <button
                 onClick={openServices}
@@ -81,8 +102,10 @@ function MobileMenu({ isOpen, onClose }) {
                 <FaChevronRight />
               </button>
 
+
               {/* Why Us */}
               <div className="border-b">
+
                 <button
                   onClick={() => toggleMenu("why")}
                   className="w-full flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition"
@@ -113,10 +136,13 @@ function MobileMenu({ isOpen, onClose }) {
 
                   </div>
                 )}
+
               </div>
+
 
               {/* Insights */}
               <div className="border-b">
+
                 <button
                   onClick={() => toggleMenu("insights")}
                   className="w-full flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition"
@@ -128,6 +154,7 @@ function MobileMenu({ isOpen, onClose }) {
                   ) : (
                     <FaChevronRight />
                   )}
+
                 </button>
 
                 {openMenu === "insights" && (
@@ -151,20 +178,29 @@ function MobileMenu({ isOpen, onClose }) {
 
                   </div>
                 )}
+
               </div>
+
 
               {/* Contact */}
               <div className="p-5">
-                <button className="w-full bg-[#3F9975] hover:bg-[#348364] text-white py-3 rounded-lg font-medium transition">
+
+                <button
+                  onClick={handleContactClick}
+                  className="w-full bg-[#3F9975] hover:bg-[#348364] text-white py-3 rounded-lg font-medium transition"
+                >
                   Let's Connect
                 </button>
+
               </div>
 
             </div>
           </>
         )}
 
+
         {/* ================= SERVICES ================= */}
+
         {currentPage === "services" && (
           <MobileServiceMenu
             onBack={goBack}
@@ -175,6 +211,7 @@ function MobileMenu({ isOpen, onClose }) {
             }}
           />
         )}
+
       </div>
     </>
   );
