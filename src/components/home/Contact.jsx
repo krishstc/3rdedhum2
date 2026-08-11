@@ -38,7 +38,7 @@ const Contact = () => {
   return (
     <section id="contact">
 
-      <div className="max-w-[1240px] mx-auto px-8">
+      <div className="max-w-[1240px] mx-auto px-8 mt-6">
 
         <div className="grid lg:grid-cols-[360px_260px_1fr] gap-16 items-start">
 
@@ -54,7 +54,7 @@ const Contact = () => {
 
               <iframe
                 title="Google Map"
-                src="https://www.google.com/maps?q=Thane,Maharashtra&output=embed"
+                src="https://www.google.com/maps?q=Powai,Maharashtra&output=embed"
                 loading="lazy"
                 className="w-full h-[295px]"
               />
@@ -84,7 +84,7 @@ const Contact = () => {
                 />
 
                 <span className="text-[16px] font-medium text-[#052C23]">
-                  +91 91234 56789
+                  +91 9967399069
                 </span>
 
               </div>
@@ -116,7 +116,20 @@ const Contact = () => {
                 />
 
                 <span className="text-[16px] font-medium text-[#052C23] leading-7">
-                  Thane, Maharashtra, India
+                  Powai, Maharashtra, India
+                </span>
+
+              </div>
+
+              <div className="flex items-start gap-4">
+
+                <MapPin
+                  size={20}
+                  className="text-[#49A978] mt-1"
+                />
+
+                <span className="text-[16px] font-medium text-[#052C23] leading-7">
+                  Sanpada, Maharashtra, India
                 </span>
 
               </div>

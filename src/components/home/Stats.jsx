@@ -69,7 +69,7 @@ const Stats = () => {
     <section ref={sectionRef}>
 
       {/* Top Wave */}
-      <div className="max-w-[13500px] mx-auto overflow-hidden rounded-t-[3px]">
+      <div className="max-w-[1350px] mx-auto overflow-hidden rounded-t-[3px]">
         <svg
           viewBox="0 0 1440 160"
           className="w-full h-20"

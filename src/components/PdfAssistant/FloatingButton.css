@@ -1,47 +1,47 @@
 .floating-button {
-  animation: shakeAttention 4s infinite;
-  transform-origin: center;
+  animation: attentionBounce 2.2s ease-in-out infinite;
+  transform-origin: center bottom;
+  will-change: transform;
+  cursor: pointer;
 }
 
+/* Hover effect */
 .floating-button:hover {
   animation-play-state: paused;
-  transform: scale(1.08);
+  transform: scale(1.12);
 }
 
-@keyframes shakeAttention {
-  /* Pause */
-  0%,
-  80%,
+/* Eye-catching bounce */
+@keyframes attentionBounce {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  8% {
+    transform: translateY(-12px) scale(1.04);
+  }
+
+  16% {
+    transform: translateY(0) scale(0.98);
+  }
+
+  24% {
+    transform: translateY(-20px) scale(1.06);
+  }
+
+  34% {
+    transform: translateY(0) scale(0.98);
+  }
+
+  42% {
+    transform: translateY(-10px) scale(1.03);
+  }
+
+  50% {
+    transform: translateY(0) scale(1);
+  }
+
   100% {
-    transform: translateX(0) rotate(0deg);
-  }
-
-  /* Quick shake */
-  82% {
-    transform: translateX(-3px) rotate(-8deg);
-  }
-
-  84% {
-    transform: translateX(3px) rotate(8deg);
-  }
-
-  86% {
-    transform: translateX(-3px) rotate(-8deg);
-  }
-
-  88% {
-    transform: translateX(3px) rotate(8deg);
-  }
-
-  90% {
-    transform: translateX(-2px) rotate(-5deg);
-  }
-
-  92% {
-    transform: translateX(2px) rotate(5deg);
-  }
-
-  94% {
-    transform: translateX(0) rotate(0deg);
+    transform: translateY(0) scale(1);
   }
 }

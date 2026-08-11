@@ -3,8 +3,9 @@ import heroImg from "../../assets/images/hero.png";
 const Hero = () => {
   return (
     <section className="w-full bg-white pt-2 pb-8 lg:pt-2 lg:pb-12">
-        <div className="max-w-[1350px] mx-full px-6">
-        <div className="relative rounded-[32px] overflow-hidden shadow-2xl min-h-[620px]"
+      <div className="w-full max-w-[1350px] mx-auto px-4 sm:px-6">
+        <div
+          className="relative rounded-[32px] overflow-hidden shadow-2xl min-h-[620px]"
           style={{
             background: `linear-gradient(
               90deg,
@@ -17,10 +18,9 @@ const Hero = () => {
             )`,
           }}
         >
-
           <div className="relative z-20 flex flex-col lg:flex-row items-center min-h-[620px]">
 
-            {/* LEFT */}
+            {/* ================= LEFT ================= */}
             <div className="w-full lg:w-2/3 px-8 md:px-14 lg:px-20 py-14 lg:py-20">
 
               <p className="uppercase tracking-wider text-xs sm:text-sm font-semibold text-white/80 mb-5">
@@ -38,25 +38,26 @@ const Hero = () => {
 
               <p className="text-white/80 text-lg leading-7 tracking-tight max-w-[500px]">
                 End-to-end learning solutions that help
-                <br />
+                <br className="hidden sm:block" />
                 organizations build leadership bench strength, drive
-                <br />
+                <br className="hidden sm:block" />
                 performance, and achieve lasting impact.
               </p>
 
+              {/* BUTTONS */}
               <div className="flex flex-wrap gap-5 mt-10">
 
-              <button className="bg-[#1a8d61] hover:bg-[#47b977] transition-all duration-300 text-white text-sm font-medium px-6 py-3 rounded-lg">
-                Explore Solutions
-              </button>
+                <button className="bg-[#1a8d61] hover:bg-[#47b977] transition-all duration-300 text-white text-sm font-medium px-6 py-3 rounded-lg">
+                  Explore Solutions
+                </button>
 
-              <button className="border border-white text-white hover:bg-white hover:text-[#0D4D42] transition-all duration-300 text-sm font-medium px-6 py-3 rounded-lg">
-                Talk To Expert
-              </button>
+                <button className="border border-white text-white hover:bg-white hover:text-[#0D4D42] transition-all duration-300 text-sm font-medium px-6 py-3 rounded-lg">
+                  Talk To Expert
+                </button>
 
               </div>
 
-              {/* Scrolling Update */}
+              {/* ================= SCROLLING UPDATE ================= */}
               <div className="mt-10 border-l-4 border-white pl-4 overflow-hidden">
 
                 <div className="ticker">
@@ -71,21 +72,32 @@ const Hero = () => {
 
             </div>
 
-            {/* RIGHT */}
+            {/* ================= RIGHT ================= */}
+            <div className="relative z-10 w-full lg:w-1/3 flex justify-center items-end self-stretch">
 
-            <div className="relative z-10 w-full lg:w-1/2 flex justify-center items-end self-stretch">
-
-            <img
-              src={heroImg}
-              alt="Hero"
-              className="absolute bottom-0 right-[-10px] h-full w-auto max-w-none object-contain"
+              <img
+                src={heroImg}
+                alt="Hero"
+                className="
+                  relative
+                  lg:absolute
+                  bottom-0
+                  right-0
+                  lg:right-[-10px]
+                  w-full
+                  lg:w-auto
+                  h-auto
+                  lg:h-full
+                  max-w-full
+                  lg:max-w-none
+                  object-contain
+                "
               />
+
             </div>
 
           </div>
-
         </div>
-
       </div>
     </section>
   );

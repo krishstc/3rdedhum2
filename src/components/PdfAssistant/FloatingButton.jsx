@@ -1,17 +1,40 @@
-import popupLogo from "../../assets/images/popup.jpeg";
+import popupLogo from "../../assets/images/popup.png";
 import "./FloatingButton.css";
 
 function FloatingButton({ onClick }) {
   return (
     <button
       onClick={onClick}
-      className="floating-button fixed bottom-6 right-10 z-50 w-20 h-20 rounded-full overflow-hidden border-2 border-[#28725c]
-      shadow-2xl transition-all duration-300"
+      aria-label="Open learning resources"
+      className="
+        floating-button
+        fixed
+        z-[9999]
+        bottom-4
+        right-3
+        w-24
+        h-24
+        sm:bottom-5
+        sm:right-5
+        sm:w-28
+        sm:h-28
+        md:bottom-6
+        md:right-6
+        md:w-32
+        md:h-32
+        overflow-hidden
+        border-0
+        outline-none
+        shadow-none
+        bg-transparent
+        p-0
+        box-border
+      "
     >
       <img
         src={popupLogo}
         alt="Learning Resources"
-        className="w-full h-full object-cover rounded-full"
+        className="block w-full h-full object-contain"
       />
     </button>
   );
