@@ -16,20 +16,29 @@ import Footer from "./components/footer/Footer";
 function App() {
   return (
     <div className="bg-[#F3F4F6] min-h-screen">
+
+      {/* ================= FIXED NAVBAR ================= */}
       <Navbar />
-      <Hero />
-      <TrustedCompanies />
-      <Solutions />
-      <Stats />
-      <Programs />
-      <Results />
-      <SuccessStories />
-      <Insights />
-      <Testimonials />
-      <Contact />
-      <CTA />
-      <Footer />
+
+      {/* ================= PAGE CONTENT ================= */}
+      <main className="pt-[88px]">
+        <Hero />
+        <TrustedCompanies />
+        <Solutions />
+        <Stats />
+        <Programs />
+        <Results />
+        <SuccessStories />
+        <Insights />
+        <Testimonials />
+        <Contact />
+        <CTA />
+        <Footer />
+      </main>
+
+      {/* ================= PDF ASSISTANT ================= */}
       <PdfAssistant />
+
     </div>
   );
 }
