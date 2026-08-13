@@ -1,35 +1,24 @@
 import { useState } from "react";
-import {
-  FaTimes,
-  FaChevronRight,
-  FaChevronDown,
-} from "react-icons/fa";
+import { FaTimes, FaChevronRight } from "react-icons/fa";
 
 import MobileServiceMenu from "./MobileServiceMenu";
+import MobileContentMenu from "./MobileContentMenu";
 
 function MobileMenu({ isOpen, onClose }) {
   const [currentPage, setCurrentPage] = useState("main");
-  const [openMenu, setOpenMenu] = useState(null);
-
-  const openServices = () => {
-    setCurrentPage("services");
-  };
 
   const goBack = () => {
     setCurrentPage("main");
   };
 
-  const toggleMenu = (menu) => {
-    setOpenMenu(openMenu === menu ? null : menu);
+  const closeMenu = () => {
+    setCurrentPage("main");
+    onClose();
   };
 
   const handleContactClick = () => {
-    // Close mobile menu
-    setCurrentPage("main");
-    setOpenMenu(null);
-    onClose();
+    closeMenu();
 
-    // Scroll to Contact section
     setTimeout(() => {
       document.getElementById("contact")?.scrollIntoView({
         behavior: "smooth",
@@ -39,150 +28,106 @@ function MobileMenu({ isOpen, onClose }) {
 
   return (
     <>
-      {/* Overlay */}
+      {/* ================= OVERLAY ================= */}
+
       <div
-        onClick={() => {
-          setCurrentPage("main");
-          setOpenMenu(null);
-          onClose();
-        }}
-        className={`fixed inset-0 bg-black/40 z-40 transition-opacity duration-300 ${
+        onClick={closeMenu}
+        className={`fixed top-[88px] left-0 right-0 bottom-0 bg-black/40 z-[9997] transition-opacity duration-300 ${
           isOpen
             ? "opacity-100 visible"
-            : "opacity-0 invisible"
+            : "opacity-0 invisible pointer-events-none"
         }`}
       />
 
-      {/* Drawer */}
+      {/* ================= MOBILE DRAWER ================= */}
+
       <div
-        className={`fixed top-0 right-0 h-full w-[340px] max-w-full bg-white shadow-2xl z-50 transition-transform duration-300 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed top-[88px] right-0 bottom-0 w-[340px] max-w-[90%] bg-white shadow-2xl z-[9998] transition-transform duration-300 ${
+          isOpen
+            ? "translate-x-0"
+            : "translate-x-full"
         }`}
       >
 
         {/* ================= MAIN MENU ================= */}
 
         {currentPage === "main" && (
-          <>
-            {/* Header */}
-            <div className="flex items-center justify-between p-5 border-b">
+          <div className="h-full flex flex-col">
 
-              <h2 className="text-lg font-semibold">
+            {/* Header */}
+
+            <div className="flex items-center justify-between px-5 py-4 border-b flex-shrink-0">
+
+              <h2 className="text-lg font-semibold text-gray-800">
                 Menu
               </h2>
 
+              {/* Close Button */}
+
               <button
-                onClick={() => {
-                  setCurrentPage("main");
-                  setOpenMenu(null);
-                  onClose();
-                }}
-                className="text-xl text-gray-600 hover:text-black"
+                onClick={closeMenu}
+                aria-label="Close menu"
+                className="w-9 h-9 flex items-center justify-center rounded-full text-gray-600 hover:bg-gray-100 hover:text-black transition"
               >
                 <FaTimes />
               </button>
 
             </div>
 
-            {/* Menu */}
-            <div className="overflow-y-auto h-[calc(100%-80px)]">
+
+            {/* Menu Items */}
+
+            <div className="overflow-y-auto flex-1">
 
               {/* Home */}
-              <button className="w-full text-left px-5 py-4 border-b hover:bg-gray-50 transition">
-                Home
+
+              <button
+                onClick={closeMenu}
+                className="w-full flex items-center justify-between px-5 py-4 border-b hover:bg-gray-50 transition text-left"
+              >
+                <span>Home</span>
+                <FaChevronRight className="text-gray-400 text-sm" />
               </button>
 
 
               {/* Services */}
+
               <button
-                onClick={openServices}
-                className="w-full flex justify-between items-center px-5 py-4 border-b hover:bg-gray-50 transition"
+                onClick={() => setCurrentPage("services")}
+                className="w-full flex items-center justify-between px-5 py-4 border-b hover:bg-gray-50 transition text-left"
               >
                 <span>Services</span>
-                <FaChevronRight />
+
+                <FaChevronRight className="text-gray-400 text-sm" />
               </button>
 
 
-              {/* Why Us */}
-              <div className="border-b">
+              {/* Why 3rd EdHum */}
 
-                <button
-                  onClick={() => toggleMenu("why")}
-                  className="w-full flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition"
-                >
-                  <span>Why Us</span>
+              <button
+                onClick={() => setCurrentPage("whyus")}
+                className="w-full flex items-center justify-between px-5 py-4 border-b hover:bg-gray-50 transition text-left"
+              >
+                <span>Why 3rd EdHum</span>
 
-                  {openMenu === "why" ? (
-                    <FaChevronDown />
-                  ) : (
-                    <FaChevronRight />
-                  )}
-                </button>
-
-                {openMenu === "why" && (
-                  <div className="bg-gray-50">
-
-                    <button className="w-full text-left px-10 py-3 hover:bg-gray-100 transition">
-                      About Us
-                    </button>
-
-                    <button className="w-full text-left px-10 py-3 hover:bg-gray-100 transition">
-                      Our Approach
-                    </button>
-
-                    <button className="w-full text-left px-10 py-3 hover:bg-gray-100 transition">
-                      Careers
-                    </button>
-
-                  </div>
-                )}
-
-              </div>
+                <FaChevronRight className="text-gray-400 text-sm" />
+              </button>
 
 
               {/* Insights */}
-              <div className="border-b">
 
-                <button
-                  onClick={() => toggleMenu("insights")}
-                  className="w-full flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition"
-                >
-                  <span>Insights</span>
+              <button
+                onClick={() => setCurrentPage("insights")}
+                className="w-full flex items-center justify-between px-5 py-4 border-b hover:bg-gray-50 transition text-left"
+              >
+                <span>Insights</span>
 
-                  {openMenu === "insights" ? (
-                    <FaChevronDown />
-                  ) : (
-                    <FaChevronRight />
-                  )}
-
-                </button>
-
-                {openMenu === "insights" && (
-                  <div className="bg-gray-50">
-
-                    <button className="w-full text-left px-10 py-3 hover:bg-gray-100 transition">
-                      Blogs & Articles
-                    </button>
-
-                    <button className="w-full text-left px-10 py-3 hover:bg-gray-100 transition">
-                      Case Studies
-                    </button>
-
-                    <button className="w-full text-left px-10 py-3 hover:bg-gray-100 transition">
-                      White Papers
-                    </button>
-
-                    <button className="w-full text-left px-10 py-3 hover:bg-gray-100 transition">
-                      Webinars
-                    </button>
-
-                  </div>
-                )}
-
-              </div>
+                <FaChevronRight className="text-gray-400 text-sm" />
+              </button>
 
 
-              {/* Contact */}
+              {/* Let's Connect */}
+
               <div className="p-5">
 
                 <button
@@ -195,7 +140,8 @@ function MobileMenu({ isOpen, onClose }) {
               </div>
 
             </div>
-          </>
+
+          </div>
         )}
 
 
@@ -204,11 +150,29 @@ function MobileMenu({ isOpen, onClose }) {
         {currentPage === "services" && (
           <MobileServiceMenu
             onBack={goBack}
-            onClose={() => {
-              setCurrentPage("main");
-              setOpenMenu(null);
-              onClose();
-            }}
+            onClose={closeMenu}
+          />
+        )}
+
+
+        {/* ================= WHY US ================= */}
+
+        {currentPage === "whyus" && (
+          <MobileContentMenu
+            type="whyus"
+            onBack={goBack}
+            onClose={closeMenu}
+          />
+        )}
+
+
+        {/* ================= INSIGHTS ================= */}
+
+        {currentPage === "insights" && (
+          <MobileContentMenu
+            type="insights"
+            onBack={goBack}
+            onClose={closeMenu}
           />
         )}
 

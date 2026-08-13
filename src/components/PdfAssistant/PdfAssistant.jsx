@@ -3,19 +3,20 @@ import FloatingButton from "./FloatingButton";
 import PdfPopup from "./PdfPopup";
 
 function PdfAssistant() {
-
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
       <FloatingButton
-        onClick={() => setOpen(true)}
+        onClick={() => setIsOpen(true)}
       />
 
-      <PdfPopup
-        isOpen={open}
-        onClose={() => setOpen(false)}
-      />
+      {isOpen && (
+        <PdfPopup
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+        />
+      )}
     </>
   );
 }

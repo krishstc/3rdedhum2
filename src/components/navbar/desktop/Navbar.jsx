@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { FaBars, FaChevronDown } from "react-icons/fa";
+import {
+  FaBars,
+  FaChevronDown,
+  FaTimes,
+} from "react-icons/fa";
+
 import logo from "../../../assets/images/logo.webp";
 import MegaMenu from "./MegaMenu";
 import MobileMenu from "../mobile/MobileMenu";
@@ -8,16 +13,29 @@ function Navbar() {
   const [activeMenu, setActiveMenu] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen((prev) => !prev);
+    setActiveMenu(null);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <>
-      {/* ================= FIXED NAVBAR ================= */}
+      {/* =====================================================
+          FIXED NAVBAR
+      ====================================================== */}
 
       <nav
         className="fixed top-0 left-0 w-full z-[9999] bg-white shadow-sm"
         onMouseLeave={() => setActiveMenu(null)}
       >
 
-        {/* ================= MAIN NAVBAR ================= */}
+        {/* =====================================================
+            MAIN NAVBAR
+        ====================================================== */}
 
         <div className="relative max-w-[1400px] mx-auto px-8 py-4 flex items-center justify-between">
 
@@ -32,11 +50,13 @@ function Navbar() {
           </div>
 
 
-          {/* ================= DESKTOP MENU ================= */}
+          {/* =================================================
+              DESKTOP MENU
+          ================================================= */}
 
           <ul className="hidden lg:flex items-center gap-12 text-[18px] font-medium text-gray-700">
 
-            {/* HOME */}
+            {/* ================= HOME ================= */}
 
             <li
               onMouseEnter={() => setActiveMenu(null)}
@@ -46,13 +66,15 @@ function Navbar() {
             </li>
 
 
-            {/* SERVICES */}
+            {/* ================= SERVICES ================= */}
 
             <li
               className="relative"
               onMouseEnter={() => setActiveMenu("services")}
             >
+
               <button className="flex items-center gap-1 hover:text-[#3F9975] transition-colors">
+
                 Services
 
                 <FaChevronDown
@@ -63,21 +85,25 @@ function Navbar() {
                       : ""
                   }`}
                 />
+
               </button>
 
               {activeMenu === "services" && (
-                <div className="absolute left-0 right-0 -bottom-4 h-[3px] bg-[#F59E0B] rounded-full"></div>
+                <div className="absolute left-0 right-0 -bottom-4 h-[3px] bg-[#F59E0B] rounded-full" />
               )}
+
             </li>
 
 
-            {/* WHY 3RD EDHUM */}
+            {/* ================= WHY 3RD EDHUM ================= */}
 
             <li
               className="relative"
               onMouseEnter={() => setActiveMenu("whyus")}
             >
+
               <button className="flex items-center gap-1 hover:text-[#3F9975] transition-colors whitespace-nowrap">
+
                 Why 3rd EdHum
 
                 <FaChevronDown
@@ -88,21 +114,25 @@ function Navbar() {
                       : ""
                   }`}
                 />
+
               </button>
 
               {activeMenu === "whyus" && (
-                <div className="absolute left-0 right-0 -bottom-4 h-[3px] bg-[#F59E0B] rounded-full"></div>
+                <div className="absolute left-0 right-0 -bottom-4 h-[3px] bg-[#F59E0B] rounded-full" />
               )}
+
             </li>
 
 
-            {/* INSIGHTS */}
+            {/* ================= INSIGHTS ================= */}
 
             <li
               className="relative"
               onMouseEnter={() => setActiveMenu("insights")}
             >
+
               <button className="flex items-center gap-1 hover:text-[#3F9975] transition-colors">
+
                 Insights
 
                 <FaChevronDown
@@ -113,21 +143,25 @@ function Navbar() {
                       : ""
                   }`}
                 />
+
               </button>
 
               {activeMenu === "insights" && (
-                <div className="absolute left-0 right-0 -bottom-4 h-[3px] bg-[#F59E0B] rounded-full"></div>
+                <div className="absolute left-0 right-0 -bottom-4 h-[3px] bg-[#F59E0B] rounded-full" />
               )}
+
             </li>
 
           </ul>
 
 
-          {/* ================= RIGHT SIDE ================= */}
+          {/* =================================================
+              RIGHT SIDE
+          ================================================= */}
 
           <div className="flex items-center gap-4">
 
-            {/* CUSTOM PROGRAM */}
+            {/* ================= CUSTOM PROGRAM ================= */}
 
             <button
               className="hidden lg:block border border-[#3F9975] text-[#3F9975] hover:bg-[#3F9975] hover:text-white px-6 py-2.5 rounded-lg text-[14px] font-medium transition-all duration-300"
@@ -136,7 +170,7 @@ function Navbar() {
             </button>
 
 
-            {/* LET'S CONNECT */}
+            {/* ================= LET'S CONNECT ================= */}
 
             <a
               href="#contact"
@@ -146,14 +180,26 @@ function Navbar() {
             </a>
 
 
-            {/* MOBILE HAMBURGER */}
+            {/* =================================================
+                MOBILE MENU BUTTON
+            ================================================= */}
 
             <button
-              className="lg:hidden text-2xl text-gray-700"
-              onClick={() => setIsMobileMenuOpen(true)}
-              aria-label="Open menu"
+              className="lg:hidden w-10 h-10 flex items-center justify-center text-2xl text-gray-700 hover:text-[#3F9975] transition"
+              onClick={toggleMobileMenu}
+              aria-label={
+                isMobileMenuOpen
+                  ? "Close menu"
+                  : "Open menu"
+              }
             >
-              <FaBars />
+
+              {isMobileMenuOpen ? (
+                <FaTimes />
+              ) : (
+                <FaBars />
+              )}
+
             </button>
 
           </div>
@@ -161,25 +207,29 @@ function Navbar() {
         </div>
 
 
-        {/* ================= MEGA MENUS ================= */}
+        {/* =====================================================
+            DESKTOP MEGA MENUS
+        ====================================================== */}
 
         <div className="relative z-[100]">
 
-          {/* SERVICES */}
+          {/* ================= SERVICES ================= */}
 
           <MegaMenu
             isOpen={activeMenu === "services"}
             menuType="services"
           />
 
-          {/* WHY 3RD EDHUM */}
+
+          {/* ================= WHY 3RD EDHUM ================= */}
 
           <MegaMenu
             isOpen={activeMenu === "whyus"}
             menuType="whyus"
           />
 
-          {/* INSIGHTS */}
+
+          {/* ================= INSIGHTS ================= */}
 
           <MegaMenu
             isOpen={activeMenu === "insights"}
@@ -191,12 +241,15 @@ function Navbar() {
       </nav>
 
 
-      {/* ================= MOBILE MENU ================= */}
+      {/* =====================================================
+          MOBILE MENU
+      ====================================================== */}
 
       <MobileMenu
         isOpen={isMobileMenuOpen}
-        onClose={() => setIsMobileMenuOpen(false)}
+        onClose={closeMobileMenu}
       />
+
     </>
   );
 }

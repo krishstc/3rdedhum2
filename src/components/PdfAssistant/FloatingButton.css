@@ -3,15 +3,28 @@
   transform-origin: center bottom;
   will-change: transform;
   cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+  box-shadow: none;
 }
 
-/* Hover effect */
 .floating-button:hover {
   animation-play-state: paused;
   transform: scale(1.12);
 }
 
-/* Eye-catching bounce */
+.floating-button:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.floating-button img {
+  border: none;
+  outline: none;
+}
+
 @keyframes attentionBounce {
   0% {
     transform: translateY(0) scale(1);
