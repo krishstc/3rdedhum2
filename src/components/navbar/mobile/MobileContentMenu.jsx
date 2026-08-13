@@ -36,7 +36,7 @@ function MobileContentMenu({ type, onBack, onClose }) {
         <button
           onClick={onClose}
           aria-label="Close menu"
-          className="w-9 h-9 flex items-center justify-center rounded-full text-gray-600 hover:bg-gray-100 hover:text-black transition"
+          className="w-9 h-9 flex items-center justify-center rounded-full text-gray-600 hover:bg-[#EAF7F0] hover:text-[#28725c] transition"
         >
           <FaTimes />
         </button>
@@ -48,14 +48,6 @@ function MobileContentMenu({ type, onBack, onClose }) {
 
         {/* INTRO */}
         <div className="mb-6">
-
-          {data.intro?.image && (
-            <img
-              src={data.intro.image}
-              alt={data.intro.title}
-              className="w-full h-36 object-cover rounded-xl mb-4"
-            />
-          )}
 
           <p className="text-xs tracking-[2px] font-semibold text-[#3F9975] mb-2">
             {data.intro.title}
@@ -121,21 +113,13 @@ function MobileContentMenu({ type, onBack, onClose }) {
 
         </div>
 
-        {/* OWN PROMO CARD */}
+        {/* PROMO CARD */}
         {data.promo && (
-          <div className="mt-7 rounded-2xl overflow-hidden bg-[#1E293B] text-white">
-
-            {data.promo.image && (
-              <img
-                src={data.promo.image}
-                alt={data.promo.title}
-                className="w-full h-36 object-cover"
-              />
-            )}
+          <div className="mt-7 rounded-2xl overflow-hidden bg-gradient-to-br from-[#043329] to-[#28725c] text-white shadow-lg">
 
             <div className="p-5">
 
-              <div className="text-2xl mb-3">
+              <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-xl mb-3">
                 {data.promo.icon}
               </div>
 
@@ -143,13 +127,13 @@ function MobileContentMenu({ type, onBack, onClose }) {
                 {data.promo.title}
               </h3>
 
-              <p className="text-gray-300 text-xs leading-5 mt-3">
+              <p className="text-white/70 text-xs leading-5 mt-3">
                 {data.promo.description}
               </p>
 
               <button
                 onClick={handleItemClick}
-                className="mt-4 text-sm text-yellow-400 font-semibold hover:text-yellow-300 transition"
+                className="mt-4 text-sm text-[#7BE3C4] font-semibold hover:text-white transition"
               >
                 {data.promo.button} →
               </button>

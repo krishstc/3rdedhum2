@@ -5,23 +5,38 @@ import AboutUs from "./pages/AboutUs";
 
 import Navbar from "./components/navbar/desktop/Navbar";
 import PdfAssistant from "./components/PdfAssistant/PdfAssistant";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <BrowserRouter>
+
+      <ScrollToTop />
+
       <div className="bg-[#F3F4F6] min-h-screen">
+
         <Navbar />
 
         <main className="pt-[88px]">
           <Routes>
-            <Route path="/" element={<Home />} />
 
-            <Route path="/why-us/about-us" element={<AboutUs />} />
+            <Route
+              path="/"
+              element={<Home />}
+            />
+
+            <Route
+              path="/why-us/about-us"
+              element={<AboutUs />}
+            />
+
           </Routes>
         </main>
 
         <PdfAssistant />
+
       </div>
+
     </BrowserRouter>
   );
 }

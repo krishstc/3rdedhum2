@@ -1,4 +1,5 @@
 import logo from "../../assets/images/logo.png";
+
 import {
   FaInstagram,
   FaLinkedinIn,
@@ -6,20 +7,74 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 
+import { Link, useNavigate } from "react-router-dom";
+
 const Footer = () => {
+  const navigate = useNavigate();
+
+  /* ================= CONTACT US ================= */
+
+  const handleContactClick = () => {
+    // If already on home page, scroll directly
+    if (window.location.pathname === "/") {
+      const contactSection = document.getElementById("contact");
+
+      if (contactSection) {
+        const navbarHeight = 88;
+
+        const sectionPosition =
+          contactSection.getBoundingClientRect().top +
+          window.scrollY -
+          navbarHeight;
+
+        window.scrollTo({
+          top: sectionPosition,
+          behavior: "smooth",
+        });
+      }
+
+      return;
+    }
+
+    // If on another page, go to Home first
+    navigate("/");
+
+    // Wait for Home page to render
+    setTimeout(() => {
+      const contactSection = document.getElementById("contact");
+
+      if (contactSection) {
+        const navbarHeight = 88;
+
+        const sectionPosition =
+          contactSection.getBoundingClientRect().top +
+          window.scrollY -
+          navbarHeight;
+
+        window.scrollTo({
+          top: sectionPosition,
+          behavior: "smooth",
+        });
+      }
+    }, 300);
+  };
+
   return (
     <footer className="bg-[#032B22] text-white pt-14 pb-6">
       <div className="max-w-7xl mx-auto px-8">
 
+        {/* ================= FOOTER GRID ================= */}
+
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-8">
 
-          {/* Logo */}
+          {/* ================= LOGO ================= */}
+
           <div className="col-span-2 lg:col-span-1">
 
-            {/* Mobile Layout */}
+            {/* MOBILE */}
+
             <div className="flex items-center gap-4 lg:hidden">
 
-              {/* Logo - Left */}
               <div className="bg-white rounded-2xl w-24 h-20 flex items-center justify-center flex-shrink-0">
                 <img
                   src={logo}
@@ -28,7 +83,6 @@ const Footer = () => {
                 />
               </div>
 
-              {/* Text + Social - Right */}
               <div className="flex-1 flex flex-col items-center text-center">
 
                 <p className="text-sm text-gray-300 leading-4">
@@ -73,15 +127,18 @@ const Footer = () => {
 
             </div>
 
-            {/* Desktop Layout */}
+            {/* DESKTOP */}
+
             <div className="hidden lg:block">
 
               <div className="bg-white rounded-2xl w-32 h-24 flex items-center justify-center">
+
                 <img
                   src={logo}
                   alt="3rd Edge"
                   className="w-24 object-contain"
                 />
+
               </div>
 
               <p className="mt-6 text-sm text-gray-300 leading-6">
@@ -126,68 +183,165 @@ const Footer = () => {
 
           </div>
 
-          {/* Solutions */}
+          {/* ================= SOLUTIONS ================= */}
+
           <div>
+
             <h3 className="text-base lg:text-lg font-semibold mb-3 lg:mb-5">
               Solutions
             </h3>
 
             <ul className="space-y-2 text-gray-300 text-sm">
-              <li className="hover:text-white cursor-pointer">Leadership Development</li>
-              <li className="hover:text-white cursor-pointer">Team Strategy</li>
-              <li className="hover:text-white cursor-pointer">Team Effectiveness</li>
-              <li className="hover:text-white cursor-pointer">Sales Effectiveness</li>
-              <li className="hover:text-white cursor-pointer">Executive Coaching</li>
+
+              <li className="hover:text-white cursor-pointer">
+                Leadership Development
+              </li>
+
+              <li className="hover:text-white cursor-pointer">
+                Team Strategy
+              </li>
+
+              <li className="hover:text-white cursor-pointer">
+                Team Effectiveness
+              </li>
+
+              <li className="hover:text-white cursor-pointer">
+                Sales Effectiveness
+              </li>
+
+              <li className="hover:text-white cursor-pointer">
+                Executive Coaching
+              </li>
+
             </ul>
+
           </div>
 
-          {/* Programs */}
+          {/* ================= PROGRAMS ================= */}
+
           <div>
+
             <h3 className="text-base lg:text-lg font-semibold mb-3 lg:mb-5">
               Programs
             </h3>
 
             <ul className="space-y-2 text-gray-300 text-sm">
-              <li className="hover:text-white cursor-pointer">For Leaders</li>
-              <li className="hover:text-white cursor-pointer">For Teams</li>
-              <li className="hover:text-white cursor-pointer">For Managers</li>
-              <li className="hover:text-white cursor-pointer">For Individual</li>
-              <li className="hover:text-white cursor-pointer">Industries</li>
+
+              <li className="hover:text-white cursor-pointer">
+                For Leaders
+              </li>
+
+              <li className="hover:text-white cursor-pointer">
+                For Teams
+              </li>
+
+              <li className="hover:text-white cursor-pointer">
+                For Managers
+              </li>
+
+              <li className="hover:text-white cursor-pointer">
+                For Individual
+              </li>
+
+              <li className="hover:text-white cursor-pointer">
+                Industries
+              </li>
+
             </ul>
+
           </div>
 
-          {/* Resources */}
+          {/* ================= RESOURCES ================= */}
+
           <div>
+
             <h3 className="text-base lg:text-lg font-semibold mb-3 lg:mb-5">
               Resources
             </h3>
 
             <ul className="space-y-2 text-gray-300 text-sm">
-              <li className="hover:text-white cursor-pointer">Insights</li>
-              <li className="hover:text-white cursor-pointer">Case Studies</li>
-              <li className="hover:text-white cursor-pointer">White Papers</li>
-              <li className="hover:text-white cursor-pointer">Webinars</li>
-              <li className="hover:text-white cursor-pointer">Blogs</li>
+
+              <li className="hover:text-white cursor-pointer">
+                Insights
+              </li>
+
+              <li className="hover:text-white cursor-pointer">
+                Case Studies
+              </li>
+
+              <li className="hover:text-white cursor-pointer">
+                White Papers
+              </li>
+
+              <li className="hover:text-white cursor-pointer">
+                Webinars
+              </li>
+
+              <li className="hover:text-white cursor-pointer">
+                Blogs
+              </li>
+
             </ul>
+
           </div>
 
-          {/* Company */}
+          {/* ================= COMPANY ================= */}
+
           <div>
+
             <h3 className="text-base lg:text-lg font-semibold mb-3 lg:mb-5">
               Company
             </h3>
 
             <ul className="space-y-2 text-gray-300 text-sm">
-              <li className="hover:text-white cursor-pointer">About Us</li>
-              <li className="hover:text-white cursor-pointer">Our Approach</li>
-              <li className="hover:text-white cursor-pointer">Careers</li>
-              <li className="hover:text-white cursor-pointer">Contact Us</li>
+
+              {/* ABOUT US */}
+
+              <li>
+
+                <Link
+                  to="/why-us/about-us"
+                  className="hover:text-white transition-colors"
+                >
+                  About Us
+                </Link>
+
+              </li>
+
+              {/* OUR APPROACH */}
+
+              <li className="hover:text-white cursor-pointer">
+                Our Approach
+              </li>
+
+              {/* CAREERS */}
+
+              <li className="hover:text-white cursor-pointer">
+                Careers
+              </li>
+
+              {/* CONTACT US */}
+
+              <li>
+
+                <button
+                  type="button"
+                  onClick={handleContactClick}
+                  className="hover:text-white transition-colors text-left"
+                >
+                  Contact Us
+                </button>
+
+              </li>
+
             </ul>
+
           </div>
 
         </div>
 
-        {/* Bottom */}
+        {/* ================= BOTTOM ================= */}
+
         <div className="border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
 
           <p>
@@ -195,13 +349,21 @@ const Footer = () => {
           </p>
 
           <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white">
+
+            <a
+              href="#"
+              className="hover:text-white"
+            >
               Privacy Policy
             </a>
 
-            <a href="#" className="hover:text-white">
+            <a
+              href="#"
+              className="hover:text-white"
+            >
               Terms of Use
             </a>
+
           </div>
 
         </div>

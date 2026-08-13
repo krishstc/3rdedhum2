@@ -14,7 +14,13 @@ function AboutUs() {
         <div className="flex items-center gap-2 flex-wrap text-[12px] sm:text-[13px] text-gray-500">
           {aboutUsData.breadcrumb.map((item, index) => (
             <div key={item} className="flex items-center gap-2">
-              <span className={index === aboutUsData.breadcrumb.length - 1 ? "font-semibold text-[#0B2C25]" : ""}>
+              <span
+                className={
+                  index === aboutUsData.breadcrumb.length - 1
+                    ? "font-semibold text-[#0B2C25]"
+                    : ""
+                }
+              >
                 {item}
               </span>
 
@@ -85,11 +91,16 @@ function AboutUs() {
             <div className="absolute -top-10 -left-10 w-[300px] h-[300px] rounded-full bg-[#F1F7F4] -z-0"></div>
 
             <div className="relative z-10 rounded-[24px] overflow-hidden">
+
               <img
                 src={aboutUsData.hero.image}
                 alt="3rd EdHum team"
+                fetchPriority="high"
+                loading="eager"
+                decoding="async"
                 className="w-full h-[300px] sm:h-[380px] lg:h-[430px] object-cover rounded-[24px]"
               />
+
             </div>
 
             <div className="absolute -right-4 bottom-[-20px] w-[90px] h-[90px] opacity-40 hidden xl:block">
