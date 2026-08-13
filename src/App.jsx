@@ -1,45 +1,28 @@
-import PdfAssistant from "./components/PdfAssistant/PdfAssistant";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import AboutUs from "./pages/AboutUs";
+
 import Navbar from "./components/navbar/desktop/Navbar";
-import Hero from "./components/home/Hero";
-import TrustedCompanies from "./components/home/TrustedCompanies";
-import Solutions from "./components/home/Solutions";
-import Stats from "./components/home/Stats";
-import Programs from "./components/home/Programs";
-import Results from "./components/home/Results";
-import SuccessStories from "./components/home/SuccessStories";
-import Insights from "./components/home/Insights";
-import Testimonials from "./components/home/Testimonials";
-import Contact from "./components/home/Contact";
-import CTA from "./components/footer/CTA";
-import Footer from "./components/footer/Footer";
+import PdfAssistant from "./components/PdfAssistant/PdfAssistant";
 
 function App() {
   return (
-    <div className="bg-[#F3F4F6] min-h-screen">
+    <BrowserRouter>
+      <div className="bg-[#F3F4F6] min-h-screen">
+        <Navbar />
 
-      {/* ================= FIXED NAVBAR ================= */}
-      <Navbar />
+        <main className="pt-[88px]">
+          <Routes>
+            <Route path="/" element={<Home />} />
 
-      {/* ================= PAGE CONTENT ================= */}
-      <main className="pt-[88px]">
-        <Hero />
-        <TrustedCompanies />
-        <Solutions />
-        <Stats />
-        <Programs />
-        <Results />
-        <SuccessStories />
-        <Insights />
-        <Testimonials />
-        <Contact />
-        <CTA />
-        <Footer />
-      </main>
+            <Route path="/why-us/about-us" element={<AboutUs />} />
+          </Routes>
+        </main>
 
-      {/* ================= PDF ASSISTANT ================= */}
-      <PdfAssistant />
-
-    </div>
+        <PdfAssistant />
+      </div>
+    </BrowserRouter>
   );
 }
 

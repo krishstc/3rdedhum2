@@ -1,94 +1,141 @@
-import { useMemo, useState } from "react";
-import {
-  FaArrowLeft,
-  FaChevronRight,
-  FaTimes,
-} from "react-icons/fa";
-
+import { useState } from "react";
+import { FaArrowLeft, FaChevronRight } from "react-icons/fa";
 import { servicesData } from "../../../data/serviceData";
-import MobileSubMenu from "./MobileSubMenu";
+import FeatureCard from "../desktop/FeatureCard";
 
 function MobileServiceMenu({ onBack, onClose }) {
-  const [selectedMenu, setSelectedMenu] = useState(null);
+  const [activeService, setActiveService] = useState(null);
 
-  // Merge all three columns into one array
-  const allMenus = useMemo(() => {
-    return [
-      ...servicesData.column1,
-      ...servicesData.column2,
-      ...servicesData.column3,
-    ];
-  }, []);
+  const services = Object.values(servicesData).flat();
 
-  // Open submenu
-  if (selectedMenu) {
-    return (
-      <MobileSubMenu
-        menu={selectedMenu}
-        onBack={() => setSelectedMenu(null)}
-        onClose={onClose}
-      />
-    );
-  }
+  const handlePdfOpen = (title) => {
+    if (!activeService) return;
+
+    const pdfPath = `/pdf/${activeService.folder}/${title}.pdf`;
+    window.open(pdfPath, "_blank");
+  };
+
+  const goBack = () => {
+    setActiveService(null);
+  };
 
   return (
-    <>
-      {/* Header */}
-      <div className="flex items-center justify-between p-5 border-b">
+    <div className="h-full flex flex-col bg-white">
+
+      {/* HEADER */}
+      <div className="flex items-center justify-between px-5 py-4 border-b flex-shrink-0">
 
         <button
-          onClick={onBack}
-          className="text-lg text-gray-700 hover:text-black"
+          onClick={activeService ? goBack : onBack}
+          className="flex items-center gap-2 text-gray-600 hover:text-[#3F9975] transition"
         >
-          <FaArrowLeft />
+          <FaArrowLeft className="text-sm" />
+          <span className="text-sm font-medium">
+            {activeService ? "Back to Services" : "Back"}
+          </span>
         </button>
-
-        <h2 className="text-lg font-semibold">
-          Services
-        </h2>
 
         <button
           onClick={onClose}
-          className="text-lg text-gray-700 hover:text-black"
+          className="text-gray-600 hover:text-black transition"
+          aria-label="Close menu"
         >
-          <FaTimes />
+          ✕
         </button>
-      </div>
-
-      {/* Services List */}
-      <div className="overflow-y-auto h-[calc(100%-80px)]">
-
-        {allMenus.map((item, index) => {
-
-          const Icon = item.icon;
-
-          return (
-            <button
-              key={index}
-              onClick={() => setSelectedMenu(item)}
-              className="w-full flex items-center justify-between px-5 py-4 border-b hover:bg-gray-50 transition"
-            >
-              <div className="flex items-center gap-4">
-
-                {Icon && (
-                  <Icon className="text-[#3F9975] text-lg" />
-                )}
-
-                <span className="text-left text-[15px] font-medium">
-                  {item.title}
-                </span>
-
-              </div>
-
-              {item.children && (
-                <FaChevronRight className="text-gray-400 text-sm" />
-              )}
-            </button>
-          );
-        })}
 
       </div>
-    </>
+
+      {/* CONTENT */}
+      <div className="overflow-y-auto flex-1 p-5">
+
+        {!activeService ? (
+          <>
+            {/* SERVICES LIST */}
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">
+              Our Services
+            </h2>
+
+            <div className="space-y-1">
+
+              {services.map((service) => {
+                const Icon = service.icon;
+
+                return (
+                  <button
+                    key={service.title}
+                    onClick={() => {
+                      if (service.children?.length) {
+                        setActiveService(service);
+                      }
+                    }}
+                    className="group w-full flex items-center justify-between text-left px-3 py-3 rounded-lg border-b border-gray-100 hover:bg-[#F6FCF9] transition"
+                  >
+
+                    <div className="flex items-center gap-3">
+
+                      {Icon && (
+                        <div className="w-8 h-8 rounded-md bg-[#EAF7F0] flex items-center justify-center shrink-0">
+                          <Icon className="text-[#4BA77A] text-sm" />
+                        </div>
+                      )}
+
+                      <span className="text-sm text-gray-700 group-hover:text-[#3F9975] transition">
+                        {service.title}
+                      </span>
+
+                    </div>
+
+                    {service.children?.length && (
+                      <FaChevronRight className="text-[10px] text-gray-300 group-hover:text-[#3F9975] transition" />
+                    )}
+
+                  </button>
+                );
+              })}
+
+            </div>
+
+            {/* SERVICES FEATURE CARD */}
+            <div className="mt-7">
+              <FeatureCard />
+            </div>
+          </>
+        ) : (
+          <>
+            {/* ACTIVE SERVICE */}
+            <h2 className="text-xl font-semibold text-gray-900 mb-5">
+              {activeService.title}
+            </h2>
+
+            {/* PDF ITEMS */}
+            <div className="space-y-1">
+
+              {activeService.children.map((item, index) => (
+                <button
+                  key={index}
+                  onClick={() => handlePdfOpen(item)}
+                  className="group w-full flex items-center justify-between text-left px-3 py-3 rounded-lg border-b border-gray-100 hover:bg-gray-50 transition"
+                >
+                  <span className="text-sm text-gray-600 group-hover:text-gray-900">
+                    {item}
+                  </span>
+
+                  <FaChevronRight className="text-[10px] text-gray-300 group-hover:text-[#3F9975] transition" />
+                </button>
+              ))}
+
+            </div>
+
+            {/* FEATURE CARD ALWAYS PRESENT */}
+            <div className="mt-7">
+              <FeatureCard />
+            </div>
+          </>
+        )}
+
+      </div>
+
+    </div>
   );
 }
 

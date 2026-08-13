@@ -1,156 +1,167 @@
-import { FaArrowLeft, FaTimes } from "react-icons/fa";
+import { FaArrowLeft, FaTimes, FaChevronRight } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 import whyUsData from "../../../data/whyUsData";
 import insightsData from "../../../data/insightsData";
 
 function MobileContentMenu({ type, onBack, onClose }) {
+  const data = type === "whyus" ? whyUsData : insightsData;
+  const navigate = useNavigate();
 
-  const data =
-    type === "whyus"
-      ? whyUsData
-      : insightsData;
+  if (!data) return null;
 
-  const heading =
-    type === "whyus"
-      ? "Why 3rd EdHum"
-      : "Insights";
+  const handleItemClick = () => {
+    onClose();
+  };
+
+  const handleAboutUsClick = () => {
+    onClose();
+    navigate("/why-us/about-us");
+  };
 
   return (
-    <>
-      {/* ================= HEADER ================= */}
+    <div className="h-full flex flex-col bg-white">
 
-      <div className="flex items-center justify-between p-5 border-b bg-white sticky top-0 z-10">
+      {/* HEADER */}
+      <div className="flex items-center justify-between px-5 py-4 border-b flex-shrink-0">
 
         <button
           onClick={onBack}
-          className="text-lg text-gray-700 hover:text-black"
+          className="flex items-center gap-2 text-gray-600 hover:text-[#3F9975] transition"
         >
-          <FaArrowLeft />
+          <FaArrowLeft className="text-sm" />
+          <span className="text-sm font-medium">Back</span>
         </button>
-
-        <h2 className="text-lg font-semibold">
-          {heading}
-        </h2>
 
         <button
           onClick={onClose}
-          className="text-lg text-gray-700 hover:text-black"
+          aria-label="Close menu"
+          className="w-9 h-9 flex items-center justify-center rounded-full text-gray-600 hover:bg-gray-100 hover:text-black transition"
         >
           <FaTimes />
         </button>
 
       </div>
 
-      {/* ================= CONTENT ================= */}
+      {/* CONTENT */}
+      <div className="overflow-y-auto flex-1 p-5">
 
-      <div className="overflow-y-auto h-[calc(100%-80px)]">
+        {/* INTRO */}
+        <div className="mb-6">
 
-        {/* Intro */}
+          {data.intro?.image && (
+            <img
+              src={data.intro.image}
+              alt={data.intro.title}
+              className="w-full h-36 object-cover rounded-xl mb-4"
+            />
+          )}
 
-        <div className="p-5 bg-[#F8FAF9] border-b">
-
-          <h3 className="text-[#3F9975] font-semibold text-base">
+          <p className="text-xs tracking-[2px] font-semibold text-[#3F9975] mb-2">
             {data.intro.title}
-          </h3>
+          </p>
 
-          <p className="mt-2 text-sm leading-6 text-gray-600">
+          <p className="text-sm leading-6 text-gray-500">
             {data.intro.description}
           </p>
 
         </div>
 
+        {/* MENU COLUMNS */}
+        <div className="space-y-6">
 
-        {/* ================= COLUMNS ================= */}
+          {data.columns.map((column) => (
+            <div key={column.title}>
 
-        {data.columns.map((column, columnIndex) => (
-
-          <div
-            key={column.title}
-            className="border-b"
-          >
-
-            {/* Column Heading */}
-
-            <div className="px-5 py-4 bg-white">
-
-              <h3 className="text-[#3F9975] font-semibold text-[15px]">
-                {column.title}
-              </h3>
-
-            </div>
-
-
-            {/* Column Items */}
-
-            <div className="bg-gray-50">
-
-              {column.items.map((item, itemIndex) => (
-
+              {/* ABOUT US HEADING */}
+              {type === "whyus" && column.title === "ABOUT US" ? (
                 <button
-                  key={itemIndex}
-                  className="w-full flex items-center gap-3 px-6 py-3 border-t border-gray-100 text-left hover:bg-white transition"
+                  type="button"
+                  onClick={handleAboutUsClick}
+                  className="text-xs font-semibold tracking-[1.5px] text-[#3F9975] mb-3 hover:text-[#2F7F5E] transition text-left"
                 >
-
-                  {/* Icon */}
-
-                  <div className="w-9 h-9 flex-shrink-0 rounded-lg bg-[#EAF7F0] flex items-center justify-center">
-
-                    <span className="text-[#4BA77A] text-sm">
-                      {item.icon}
-                    </span>
-
-                  </div>
-
-
-                  {/* Text */}
-
-                  <span className="text-sm font-medium text-gray-700">
-                    {item.label}
-                  </span>
-
+                  {column.title}
                 </button>
+              ) : (
+                <h3 className="text-xs font-semibold tracking-[1.5px] text-[#3F9975] mb-3">
+                  {column.title}
+                </h3>
+              )}
 
-              ))}
+              <div className="space-y-1">
+
+                {column.items.map((item) => (
+                  <button
+                    key={item.label}
+                    onClick={handleItemClick}
+                    className="group w-full flex items-center justify-between text-left px-3 py-3 rounded-lg border-b border-gray-100 hover:bg-[#F6FCF9] transition"
+                  >
+
+                    <div className="flex items-center gap-3">
+
+                      <span className="w-8 h-8 rounded-md bg-[#EAF7F0] flex items-center justify-center text-[#3F9975] text-sm shrink-0">
+                        {item.icon}
+                      </span>
+
+                      <span className="text-sm text-gray-700 group-hover:text-[#3F9975] transition">
+                        {item.label}
+                      </span>
+
+                    </div>
+
+                    <FaChevronRight className="text-[10px] text-gray-300 group-hover:text-[#3F9975] transition" />
+
+                  </button>
+                ))}
+
+              </div>
 
             </div>
-
-          </div>
-
-        ))}
-
-
-        {/* ================= PROMO ================= */}
-
-        <div className="bg-[#005C3B] text-white p-6">
-
-          <div className="text-2xl mb-3">
-            {data.promo.icon}
-          </div>
-
-          <h3 className="text-lg font-semibold">
-            {data.promo.title}
-          </h3>
-
-          <div className="w-10 h-[3px] bg-white mt-3 mb-4 rounded-full" />
-
-          <p className="text-sm leading-6 text-white/80">
-            {data.promo.description}
-          </p>
-
-          <button
-            type="button"
-            className="mt-5 bg-white text-[#438B6D] px-5 py-2.5 rounded-md text-sm font-semibold hover:bg-gray-100 transition"
-          >
-            {data.promo.button}
-            <span className="ml-2">
-              →
-            </span>
-          </button>
+          ))}
 
         </div>
 
+        {/* OWN PROMO CARD */}
+        {data.promo && (
+          <div className="mt-7 rounded-2xl overflow-hidden bg-[#1E293B] text-white">
+
+            {data.promo.image && (
+              <img
+                src={data.promo.image}
+                alt={data.promo.title}
+                className="w-full h-36 object-cover"
+              />
+            )}
+
+            <div className="p-5">
+
+              <div className="text-2xl mb-3">
+                {data.promo.icon}
+              </div>
+
+              <h3 className="text-lg font-bold leading-tight">
+                {data.promo.title}
+              </h3>
+
+              <p className="text-gray-300 text-xs leading-5 mt-3">
+                {data.promo.description}
+              </p>
+
+              <button
+                onClick={handleItemClick}
+                className="mt-4 text-sm text-yellow-400 font-semibold hover:text-yellow-300 transition"
+              >
+                {data.promo.button} →
+              </button>
+
+            </div>
+
+          </div>
+        )}
+
       </div>
-    </>
+
+    </div>
   );
 }
 

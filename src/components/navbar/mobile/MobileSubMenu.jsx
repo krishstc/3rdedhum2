@@ -1,50 +1,158 @@
-import { FaArrowLeft, FaTimes } from "react-icons/fa";
+import { useState } from "react";
+import { FaTimes, FaChevronRight } from "react-icons/fa";
 
-function MobileSubMenu({ menu, onBack, onClose }) {
-  const handlePdfOpen = (title) => {
-  const pdfPath = `/pdf/${menu.folder}/${title}.pdf`;
-  window.open(pdfPath, "_blank");
-};
+import MobileServiceMenu from "./MobileServiceMenu";
+import MobileContentMenu from "./MobileContentMenu";
+
+function MobileMenu({ isOpen, onClose }) {
+  const [currentPage, setCurrentPage] = useState("main");
+
+  const goBack = () => {
+    setCurrentPage("main");
+  };
+
+  const closeMenu = () => {
+    setCurrentPage("main");
+    onClose();
+  };
+
+  const handleHomeClick = () => {
+    closeMenu();
+
+    setTimeout(() => {
+      window.location.href = "/";
+    }, 100);
+  };
+
+  const handleContactClick = () => {
+    closeMenu();
+
+    setTimeout(() => {
+      if (window.location.pathname === "/") {
+        document.getElementById("contact")?.scrollIntoView({
+          behavior: "smooth",
+        });
+      } else {
+        window.location.href = "/#contact";
+      }
+    }, 300);
+  };
+
   return (
     <>
-      {/* Header */}
-      <div className="flex items-center justify-between p-5 border-b bg-white sticky top-0 z-10">
-        <button
-          onClick={onBack}
-          className="text-lg text-gray-700 hover:text-black"
-        >
-          <FaArrowLeft />
-        </button>
+      {/* OVERLAY */}
+      <div
+        onClick={closeMenu}
+        className={`fixed top-[88px] left-0 right-0 bottom-0 bg-black/40 z-[9997] transition-opacity duration-300 ${
+          isOpen
+            ? "opacity-100 visible"
+            : "opacity-0 invisible pointer-events-none"
+        }`}
+      />
 
-        <h2 className="text-base font-semibold text-center flex-1 px-3 truncate">
-          {menu.title}
-        </h2>
+      {/* MOBILE DRAWER */}
+      <div
+        className={`fixed top-[88px] right-0 bottom-0 w-[340px] max-w-[90%] bg-white shadow-2xl z-[9998] transition-transform duration-300 ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
 
-        <button
-          onClick={onClose}
-          className="text-lg text-gray-700 hover:text-black"
-        >
-          <FaTimes />
-        </button>
-      </div>
+        {/* MAIN MENU */}
+        {currentPage === "main" && (
+          <div className="h-full flex flex-col">
 
-      {/* Submenu List */}
-      <div className="overflow-y-auto h-[calc(100%-80px)]">
+            {/* HEADER */}
+            <div className="flex items-center justify-between px-5 py-4 border-b flex-shrink-0">
+              <h2 className="text-lg font-semibold text-gray-800">
+                Menu
+              </h2>
 
-        {menu.children && menu.children.length > 0 ? (
-          menu.children.map((child, index) => (
-            <button
-              key={index}
-              onClick={() => handlePdfOpen(child)}
-              className="w-full text-left px-6 py-3 border-b hover:bg-gray-50 transition text-[15px] text-gray-700"
-            >
-              {child}
-            </button>
-          ))
-        ) : (
-          <div className="p-6 text-center text-gray-500">
-            No sub-services available.
+              <button
+                onClick={closeMenu}
+                aria-label="Close menu"
+                className="w-9 h-9 flex items-center justify-center rounded-full text-gray-600 hover:bg-gray-100 hover:text-black transition"
+              >
+                <FaTimes />
+              </button>
+            </div>
+
+            {/* MENU ITEMS */}
+            <div className="overflow-y-auto flex-1">
+
+              {/* HOME */}
+              <button
+                onClick={handleHomeClick}
+                className="w-full flex items-center justify-between px-5 py-4 border-b hover:bg-gray-50 transition text-left"
+              >
+                <span>Home</span>
+                <FaChevronRight className="text-gray-400 text-sm" />
+              </button>
+
+              {/* SERVICES */}
+              <button
+                onClick={() => setCurrentPage("services")}
+                className="w-full flex items-center justify-between px-5 py-4 border-b hover:bg-gray-50 transition text-left"
+              >
+                <span>Services</span>
+                <FaChevronRight className="text-gray-400 text-sm" />
+              </button>
+
+              {/* WHY 3RD EDHUM */}
+              <button
+                onClick={() => setCurrentPage("whyus")}
+                className="w-full flex items-center justify-between px-5 py-4 border-b hover:bg-gray-50 transition text-left"
+              >
+                <span>Why 3rd EdHum</span>
+                <FaChevronRight className="text-gray-400 text-sm" />
+              </button>
+
+              {/* INSIGHTS */}
+              <button
+                onClick={() => setCurrentPage("insights")}
+                className="w-full flex items-center justify-between px-5 py-4 border-b hover:bg-gray-50 transition text-left"
+              >
+                <span>Insights</span>
+                <FaChevronRight className="text-gray-400 text-sm" />
+              </button>
+
+              {/* LET'S CONNECT */}
+              <div className="p-5">
+                <button
+                  onClick={handleContactClick}
+                  className="w-full bg-[#3F9975] hover:bg-[#348364] text-white py-3 rounded-lg font-medium transition"
+                >
+                  Let's Connect
+                </button>
+              </div>
+
+            </div>
           </div>
+        )}
+
+        {/* SERVICES */}
+        {currentPage === "services" && (
+          <MobileServiceMenu
+            onBack={goBack}
+            onClose={closeMenu}
+          />
+        )}
+
+        {/* WHY 3RD EDHUM */}
+        {currentPage === "whyus" && (
+          <MobileContentMenu
+            type="whyus"
+            onBack={goBack}
+            onClose={closeMenu}
+          />
+        )}
+
+        {/* INSIGHTS */}
+        {currentPage === "insights" && (
+          <MobileContentMenu
+            type="insights"
+            onBack={goBack}
+            onClose={closeMenu}
+          />
         )}
 
       </div>
@@ -52,4 +160,4 @@ function MobileSubMenu({ menu, onBack, onClose }) {
   );
 }
 
-export default MobileSubMenu;
+export default MobileMenu;

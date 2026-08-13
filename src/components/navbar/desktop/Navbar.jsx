@@ -1,9 +1,6 @@
-import { useState } from "react";
-import {
-  FaBars,
-  FaChevronDown,
-  FaTimes,
-} from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { FaBars, FaChevronDown, FaTimes } from "react-icons/fa";
+import { Link, useLocation } from "react-router-dom";
 
 import logo from "../../../assets/images/logo.webp";
 import MegaMenu from "./MegaMenu";
@@ -13,68 +10,121 @@ function Navbar() {
   const [activeMenu, setActiveMenu] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const location = useLocation();
+
+  useEffect(() => {
+    setActiveMenu(null);
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
+  const closeMenus = () => {
+    setActiveMenu(null);
+    setIsMobileMenuOpen(false);
+  };
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);
     setActiveMenu(null);
   };
 
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
+  const handleMenuClick = (menu) => {
+    setActiveMenu((prev) => (prev === menu ? null : menu));
   };
+
+  /* ================= CONTACT SCROLL ================= */
+
+  const handleContactClick = (e) => {
+    e.preventDefault();
+
+    setActiveMenu(null);
+
+    setTimeout(() => {
+      const contactSection = document.getElementById("contact");
+
+      if (contactSection) {
+        const navbarHeight = 100;
+
+        const sectionPosition =
+          contactSection.getBoundingClientRect().top +
+          window.scrollY -
+          navbarHeight;
+
+        window.scrollTo({
+          top: sectionPosition,
+          behavior: "smooth",
+        });
+      }
+
+      setIsMobileMenuOpen(false);
+    }, 100);
+  };
+
+  const menuClass = "relative cursor-pointer group";
+
+  const linkClass =
+    "flex items-center gap-1 hover:text-[#3F9975] transition-colors";
+
+  const hoverLine =
+    "absolute left-0 right-0 -bottom-4 h-[3px] bg-[#F59E0B] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200";
 
   return (
     <>
-      {/* =====================================================
-          FIXED NAVBAR
-      ====================================================== */}
+      {/* ================= FIXED NAVBAR ================= */}
 
       <nav
         className="fixed top-0 left-0 w-full z-[9999] bg-white shadow-sm"
         onMouseLeave={() => setActiveMenu(null)}
       >
-
-        {/* =====================================================
-            MAIN NAVBAR
-        ====================================================== */}
+        {/* ================= MAIN NAVBAR ================= */}
 
         <div className="relative max-w-[1400px] mx-auto px-8 py-4 flex items-center justify-between">
 
           {/* ================= LOGO ================= */}
 
-          <div className="flex items-center">
+          <Link
+            to="/"
+            onClick={closeMenus}
+            className="flex items-center"
+          >
             <img
               src={logo}
               alt="3rd EduHim"
               className="h-14 w-auto object-contain scale-150 origin-left"
             />
-          </div>
+          </Link>
 
-
-          {/* =================================================
-              DESKTOP MENU
-          ================================================= */}
+          {/* ================= DESKTOP MENU ================= */}
 
           <ul className="hidden lg:flex items-center gap-12 text-[18px] font-medium text-gray-700">
 
-            {/* ================= HOME ================= */}
+            {/* HOME */}
 
             <li
+              className={menuClass}
               onMouseEnter={() => setActiveMenu(null)}
-              className="cursor-pointer hover:text-[#3F9975] transition-colors"
             >
-              Home
+              <Link
+                to="/"
+                onClick={closeMenus}
+                className={linkClass}
+              >
+                Home
+              </Link>
+
+              <div className={hoverLine} />
             </li>
 
-
-            {/* ================= SERVICES ================= */}
+            {/* SERVICES */}
 
             <li
-              className="relative"
+              className={menuClass}
               onMouseEnter={() => setActiveMenu("services")}
             >
-
-              <button className="flex items-center gap-1 hover:text-[#3F9975] transition-colors">
-
+              <button
+                type="button"
+                onClick={() => handleMenuClick("services")}
+                className={linkClass}
+              >
                 Services
 
                 <FaChevronDown
@@ -85,25 +135,22 @@ function Navbar() {
                       : ""
                   }`}
                 />
-
               </button>
 
-              {activeMenu === "services" && (
-                <div className="absolute left-0 right-0 -bottom-4 h-[3px] bg-[#F59E0B] rounded-full" />
-              )}
-
+              <div className={hoverLine} />
             </li>
 
-
-            {/* ================= WHY 3RD EDHUM ================= */}
+            {/* WHY 3RD EDHUM */}
 
             <li
-              className="relative"
+              className={menuClass}
               onMouseEnter={() => setActiveMenu("whyus")}
             >
-
-              <button className="flex items-center gap-1 hover:text-[#3F9975] transition-colors whitespace-nowrap">
-
+              <button
+                type="button"
+                onClick={() => handleMenuClick("whyus")}
+                className={`${linkClass} whitespace-nowrap`}
+              >
                 Why 3rd EdHum
 
                 <FaChevronDown
@@ -114,25 +161,22 @@ function Navbar() {
                       : ""
                   }`}
                 />
-
               </button>
 
-              {activeMenu === "whyus" && (
-                <div className="absolute left-0 right-0 -bottom-4 h-[3px] bg-[#F59E0B] rounded-full" />
-              )}
-
+              <div className={hoverLine} />
             </li>
 
-
-            {/* ================= INSIGHTS ================= */}
+            {/* INSIGHTS */}
 
             <li
-              className="relative"
+              className={menuClass}
               onMouseEnter={() => setActiveMenu("insights")}
             >
-
-              <button className="flex items-center gap-1 hover:text-[#3F9975] transition-colors">
-
+              <button
+                type="button"
+                onClick={() => handleMenuClick("insights")}
+                className={linkClass}
+              >
                 Insights
 
                 <FaChevronDown
@@ -143,48 +187,40 @@ function Navbar() {
                       : ""
                   }`}
                 />
-
               </button>
 
-              {activeMenu === "insights" && (
-                <div className="absolute left-0 right-0 -bottom-4 h-[3px] bg-[#F59E0B] rounded-full" />
-              )}
-
+              <div className={hoverLine} />
             </li>
 
           </ul>
 
-
-          {/* =================================================
-              RIGHT SIDE
-          ================================================= */}
+          {/* ================= RIGHT SIDE ================= */}
 
           <div className="flex items-center gap-4">
 
-            {/* ================= CUSTOM PROGRAM ================= */}
+            {/* CUSTOM PROGRAM */}
 
             <button
+              type="button"
               className="hidden lg:block border border-[#3F9975] text-[#3F9975] hover:bg-[#3F9975] hover:text-white px-6 py-2.5 rounded-lg text-[14px] font-medium transition-all duration-300"
             >
               Custom Program
             </button>
 
-
-            {/* ================= LET'S CONNECT ================= */}
+            {/* LET'S CONNECT */}
 
             <a
               href="#contact"
+              onClick={handleContactClick}
               className="hidden lg:block border border-[#3F9975] bg-[#3F9975] hover:bg-[#348364] text-white px-6 py-2.5 rounded-lg text-[14px] font-medium transition"
             >
               Let's Connect
             </a>
 
-
-            {/* =================================================
-                MOBILE MENU BUTTON
-            ================================================= */}
+            {/* MOBILE MENU BUTTON */}
 
             <button
+              type="button"
               className="lg:hidden w-10 h-10 flex items-center justify-center text-2xl text-gray-700 hover:text-[#3F9975] transition"
               onClick={toggleMobileMenu}
               aria-label={
@@ -193,43 +229,29 @@ function Navbar() {
                   : "Open menu"
               }
             >
-
               {isMobileMenuOpen ? (
                 <FaTimes />
               ) : (
                 <FaBars />
               )}
-
             </button>
 
           </div>
-
         </div>
 
-
-        {/* =====================================================
-            DESKTOP MEGA MENUS
-        ====================================================== */}
+        {/* ================= MEGA MENUS ================= */}
 
         <div className="relative z-[100]">
-
-          {/* ================= SERVICES ================= */}
 
           <MegaMenu
             isOpen={activeMenu === "services"}
             menuType="services"
           />
 
-
-          {/* ================= WHY 3RD EDHUM ================= */}
-
           <MegaMenu
             isOpen={activeMenu === "whyus"}
             menuType="whyus"
           />
-
-
-          {/* ================= INSIGHTS ================= */}
 
           <MegaMenu
             isOpen={activeMenu === "insights"}
@@ -240,16 +262,12 @@ function Navbar() {
 
       </nav>
 
-
-      {/* =====================================================
-          MOBILE MENU
-      ====================================================== */}
+      {/* ================= MOBILE MENU ================= */}
 
       <MobileMenu
         isOpen={isMobileMenuOpen}
-        onClose={closeMobileMenu}
+        onClose={closeMenus}
       />
-
     </>
   );
 }
