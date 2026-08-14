@@ -143,11 +143,7 @@ function MegaMenu({ isOpen, menuType }) {
                       type="button"
                       onClick={() => {
 
-                        if (label === "who we are") {
-                          navigate("/why3rdedhum/who-we-are");
-                        }
-
-                        else if (label === "what makes us different") {
+                        if (label === "what makes us different") {
                           navigate(
                             "/why3rdedhum/our-differences/what-makes-us-different"
                           );
@@ -168,6 +164,28 @@ function MegaMenu({ isOpen, menuType }) {
                         else if (label === "customer success stories") {
                           navigate(
                             "/why3rdedhum/our-differences/customer-success-stories"
+                          );
+                        }
+
+                        else if (label === "who we are") {
+                          navigate("/why3rdedhum/who-we-are");
+                        }
+
+                        else if (label === "our mission & values") {
+                          navigate(
+                            "/why3rdedhum/about-us/our-missions-values"
+                          );
+                        }
+
+                        else if (label === "our leadership team") {
+                          navigate(
+                            "/why3rdedhum/about-us/our-leadership-team"
+                          );
+                        }
+
+                        else if (label === "our journey") {
+                          navigate(
+                            "/why3rdedhum/about-us/our-journey"
                           );
                         }
 

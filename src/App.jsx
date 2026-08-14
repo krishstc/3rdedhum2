@@ -1,13 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
-import WhoWeAre from "./pages/WhoWeAre";
 import WhatMakesUsDifferent from "./pages/WhatMakesUsDifferent";
 import ImpactLearning from "./pages/ImpactLearning";
 import OurClientResult from "./pages/OurClientResult";
 import CustomerSuccessStories from "./pages/CustomerSuccessStories";
 import AwardRecognition from "./pages/AwardRecognition";
-
+import WhoWeAre from "./pages/WhoWeAre";
+import OurMissionValues from "./pages/OurMissionValues";
+import OurLeadershipTeam from "./pages/OurLeadershipTeam";
+import OurJourney from "./pages/OurJourney";
 import Navbar from "./components/navbar/desktop/Navbar";
 import PdfAssistant from "./components/PdfAssistant/PdfAssistant";
 import ScrollToTop from "./components/ScrollToTop";
@@ -37,11 +39,6 @@ function App() {
             {/* WHY 3RD EDHUM */}
 
             <Route
-              path="/why3rdedhum/who-we-are"
-              element={<WhoWeAre />}
-            />
-
-            <Route
               path="/why3rdedhum/our-differences/what-makes-us-different"
               element={<WhatMakesUsDifferent />}
             />
@@ -64,6 +61,26 @@ function App() {
             <Route
               path="/why3rdedhum/our-differences/awards-recognition"
               element={<AwardRecognition />}
+            />
+
+            <Route
+              path="/why3rdedhum/who-we-are"
+              element={<WhoWeAre />}
+            />
+
+            <Route
+              path="/why3rdedhum/about-us/our-missions-values"
+              element={<OurMissionValues />}
+            />
+
+            <Route
+              path="/why3rdedhum/about-us/our-leadership-team"
+              element={<OurLeadershipTeam />}
+            />
+
+            <Route
+              path="/why3rdedhum/about-us/our-journey"
+              element={<OurJourney />}
             />
 
           </Routes>
