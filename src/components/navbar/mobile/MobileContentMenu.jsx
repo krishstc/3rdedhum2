@@ -16,6 +16,7 @@ function MobileContentMenu({ type, onBack, onClose }) {
     /* ================= WHY 3RD EDHUM ================= */
 
     if (type === "whyus") {
+
       /* WHO WE ARE */
       if (label === "who we are") {
         onClose();
@@ -37,6 +38,33 @@ function MobileContentMenu({ type, onBack, onClose }) {
         onClose();
         navigate(
           "/why3rdedhum/our-differences/the-impact-of-learning"
+        );
+        return;
+      }
+
+      /* OUR CLIENT RESULTS */
+      if (label === "our client results") {
+        onClose();
+        navigate(
+          "/why3rdedhum/our-differences/our-client-results"
+        );
+        return;
+      }
+
+      /* CUSTOMER SUCCESS STORIES */
+      if (label === "customer success stories") {
+        onClose();
+        navigate(
+          "/why3rdedhum/our-differences/customer-success-stories"
+        );
+        return;
+      }
+
+      /* AWARDS & RECOGNITION */
+      if (label === "awards & recognition") {
+        onClose();
+        navigate(
+          "/why3rdedhum/our-differences/awards-recognition"
         );
         return;
       }

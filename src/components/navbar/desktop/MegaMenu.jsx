@@ -18,7 +18,6 @@ function MegaMenu({ isOpen, menuType }) {
   const [activeService, setActiveService] = useState(null);
   const navigate = useNavigate();
 
-  /* Reset service submenu whenever mega menu closes */
   useEffect(() => {
     if (!isOpen) {
       setActiveService(null);
@@ -35,7 +34,6 @@ function MegaMenu({ isOpen, menuType }) {
 
   const textClass =
     "text-[14px] leading-[1.3] font-medium text-[#414B5A] group-hover:text-[#3F9975] transition-colors";
-
 
   /* ================= SERVICES ================= */
 
@@ -91,7 +89,7 @@ function MegaMenu({ isOpen, menuType }) {
 
         <div className="grid grid-cols-[1fr_1fr_1fr_1fr_260px] min-h-[497px]">
 
-          {/* ================= INTRODUCTION ================= */}
+          {/* INTRODUCTION */}
 
           <div className="relative border-r border-gray-200 px-8 pt-8 pb-5 flex flex-col">
 
@@ -118,7 +116,7 @@ function MegaMenu({ isOpen, menuType }) {
           </div>
 
 
-          {/* ================= WHY US COLUMNS ================= */}
+          {/* WHY US COLUMNS */}
 
           {whyUsData.columns.map((column) => (
 
@@ -145,29 +143,39 @@ function MegaMenu({ isOpen, menuType }) {
                       type="button"
                       onClick={() => {
 
-                        /* WHO WE ARE */
-
                         if (label === "who we are") {
                           navigate("/why3rdedhum/who-we-are");
                         }
 
-                        /* WHAT MAKES US DIFFERENT */
-
-                        else if (
-                          label === "what makes us different"
-                        ) {
+                        else if (label === "what makes us different") {
                           navigate(
                             "/why3rdedhum/our-differences/what-makes-us-different"
                           );
                         }
 
-                        /* THE IMPACT OF LEARNING */
-
-                        else if (
-                          label === "the impact of learning"
-                        ) {
+                        else if (label === "the impact of learning") {
                           navigate(
                             "/why3rdedhum/our-differences/the-impact-of-learning"
+                          );
+                        }
+
+                        else if (label === "our client results") {
+                          navigate(
+                            "/why3rdedhum/our-differences/our-client-results"
+                          );
+                        }
+
+                        else if (label === "customer success stories") {
+                          navigate(
+                            "/why3rdedhum/our-differences/customer-success-stories"
+                          );
+                        }
+
+                        /* AWARDS & RECOGNITION */
+
+                        else if (label === "awards & recognition") {
+                          navigate(
+                            "/why3rdedhum/our-differences/awards-recognition"
                           );
                         }
 
@@ -185,17 +193,15 @@ function MegaMenu({ isOpen, menuType }) {
 
                     </button>
                   );
-
                 })}
 
               </div>
 
             </div>
-
           ))}
 
 
-          {/* ================= PROMO CARD ================= */}
+          {/* PROMO CARD */}
 
           <div className="bg-[#006247] text-white px-8 pt-8 pb-7 flex flex-col">
 
@@ -227,9 +233,11 @@ function MegaMenu({ isOpen, menuType }) {
                 type="button"
                 className="mt-3 w-full bg-white text-[#3F9975] rounded-lg px-4 py-3 text-[13px] font-semibold flex items-center justify-center gap-2 hover:bg-gray-100 transition-all duration-200"
               >
+
                 {whyUsData.promo.button}
 
                 <FaArrowRight className="text-[10px]" />
+
               </button>
 
             </div>
@@ -251,7 +259,7 @@ function MegaMenu({ isOpen, menuType }) {
 
         <div className="grid grid-cols-[1fr_1fr_1fr_1fr_260px] min-h-[487px]">
 
-          {/* ================= INTRODUCTION ================= */}
+          {/* INTRODUCTION */}
 
           <div className="relative border-r border-gray-200 px-8 pt-8 pb-5 flex flex-col">
 
@@ -278,7 +286,7 @@ function MegaMenu({ isOpen, menuType }) {
           </div>
 
 
-          {/* ================= INSIGHTS COLUMNS ================= */}
+          {/* INSIGHTS COLUMNS */}
 
           {insightsData.columns.map((column) => (
 
@@ -318,11 +326,10 @@ function MegaMenu({ isOpen, menuType }) {
               </div>
 
             </div>
-
           ))}
 
 
-          {/* ================= INSIGHTS PROMO ================= */}
+          {/* INSIGHTS PROMO */}
 
           <div className="bg-[#006247] text-white px-8 pt-8 pb-7 flex flex-col">
 
@@ -354,9 +361,11 @@ function MegaMenu({ isOpen, menuType }) {
                 type="button"
                 className="mt-3 w-full bg-white text-[#3F9975] rounded-lg px-4 py-3 text-[13px] font-semibold flex items-center justify-center gap-2 hover:bg-gray-100 transition-all duration-200"
               >
+
                 {insightsData.promo.button}
 
                 <FaArrowRight className="text-[10px]" />
+
               </button>
 
             </div>
@@ -368,7 +377,6 @@ function MegaMenu({ isOpen, menuType }) {
       </div>
     );
   }
-
 
   return null;
 }

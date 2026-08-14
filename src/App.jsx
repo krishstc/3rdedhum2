@@ -4,6 +4,9 @@ import Home from "./pages/Home";
 import WhoWeAre from "./pages/WhoWeAre";
 import WhatMakesUsDifferent from "./pages/WhatMakesUsDifferent";
 import ImpactLearning from "./pages/ImpactLearning";
+import OurClientResult from "./pages/OurClientResult";
+import CustomerSuccessStories from "./pages/CustomerSuccessStories";
+import AwardRecognition from "./pages/AwardRecognition";
 
 import Navbar from "./components/navbar/desktop/Navbar";
 import PdfAssistant from "./components/PdfAssistant/PdfAssistant";
@@ -23,7 +26,7 @@ function App() {
 
           <Routes>
 
-            {/* ================= HOME ================= */}
+            {/* HOME */}
 
             <Route
               path="/"
@@ -31,29 +34,36 @@ function App() {
             />
 
 
-            {/* ================= WHY 3RD EDHUM ================= */}
-
-            {/* WHO WE ARE */}
+            {/* WHY 3RD EDHUM */}
 
             <Route
               path="/why3rdedhum/who-we-are"
               element={<WhoWeAre />}
             />
 
-
-            {/* WHAT MAKES US DIFFERENT */}
-
             <Route
               path="/why3rdedhum/our-differences/what-makes-us-different"
               element={<WhatMakesUsDifferent />}
             />
 
-
-            {/* THE IMPACT OF LEARNING */}
-
             <Route
               path="/why3rdedhum/our-differences/the-impact-of-learning"
               element={<ImpactLearning />}
+            />
+
+            <Route
+              path="/why3rdedhum/our-differences/our-client-results"
+              element={<OurClientResult />}
+            />
+
+            <Route
+              path="/why3rdedhum/our-differences/customer-success-stories"
+              element={<CustomerSuccessStories />}
+            />
+
+            <Route
+              path="/why3rdedhum/our-differences/awards-recognition"
+              element={<AwardRecognition />}
             />
 
           </Routes>
