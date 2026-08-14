@@ -7,7 +7,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -61,6 +61,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#032B22] text-white pt-14 pb-6">
+
       <div className="max-w-7xl mx-auto px-8">
 
         {/* ================= FOOTER GRID ================= */}
@@ -76,11 +77,13 @@ const Footer = () => {
             <div className="flex items-center gap-4 lg:hidden">
 
               <div className="bg-white rounded-2xl w-24 h-20 flex items-center justify-center flex-shrink-0">
+
                 <img
                   src={logo}
                   alt="3rd Edge"
                   className="w-20 object-contain"
                 />
+
               </div>
 
               <div className="flex-1 flex flex-col items-center text-center">
@@ -126,6 +129,7 @@ const Footer = () => {
               </div>
 
             </div>
+
 
             {/* DESKTOP */}
 
@@ -183,6 +187,7 @@ const Footer = () => {
 
           </div>
 
+
           {/* ================= SOLUTIONS ================= */}
 
           <div>
@@ -216,6 +221,7 @@ const Footer = () => {
             </ul>
 
           </div>
+
 
           {/* ================= PROGRAMS ================= */}
 
@@ -251,6 +257,7 @@ const Footer = () => {
 
           </div>
 
+
           {/* ================= RESOURCES ================= */}
 
           <div>
@@ -285,6 +292,7 @@ const Footer = () => {
 
           </div>
 
+
           {/* ================= COMPANY ================= */}
 
           <div>
@@ -297,15 +305,8 @@ const Footer = () => {
 
               {/* ABOUT US */}
 
-              <li>
-
-                <Link
-                  to="/why-us/about-us"
-                  className="hover:text-white transition-colors"
-                >
-                  About Us
-                </Link>
-
+              <li className="hover:text-white cursor-pointer">
+                About Us
               </li>
 
               {/* OUR APPROACH */}
@@ -340,6 +341,7 @@ const Footer = () => {
 
         </div>
 
+
         {/* ================= BOTTOM ================= */}
 
         <div className="border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
@@ -369,6 +371,7 @@ const Footer = () => {
         </div>
 
       </div>
+
     </footer>
   );
 };

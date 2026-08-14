@@ -10,30 +10,64 @@ function MobileContentMenu({ type, onBack, onClose }) {
 
   if (!data) return null;
 
-  const handleItemClick = () => {
-    onClose();
-  };
+  const handleItemClick = (item) => {
+    const label = item.label.trim().toLowerCase();
 
-  const handleAboutUsClick = () => {
+    /* ================= WHY 3RD EDHUM ================= */
+
+    if (type === "whyus") {
+      /* WHO WE ARE */
+      if (label === "who we are") {
+        onClose();
+        navigate("/why3rdedhum/who-we-are");
+        return;
+      }
+
+      /* WHAT MAKES US DIFFERENT */
+      if (label === "what makes us different") {
+        onClose();
+        navigate(
+          "/why3rdedhum/our-differences/what-makes-us-different"
+        );
+        return;
+      }
+
+      /* THE IMPACT OF LEARNING */
+      if (label === "the impact of learning") {
+        onClose();
+        navigate(
+          "/why3rdedhum/our-differences/the-impact-of-learning"
+        );
+        return;
+      }
+    }
+
+    /* ================= INSIGHTS / OTHER ITEMS ================= */
+
     onClose();
-    navigate("/why-us/about-us");
   };
 
   return (
     <div className="h-full flex flex-col bg-white">
 
-      {/* HEADER */}
+      {/* ================= HEADER ================= */}
+
       <div className="flex items-center justify-between px-5 py-4 border-b flex-shrink-0">
 
         <button
+          type="button"
           onClick={onBack}
           className="flex items-center gap-2 text-gray-600 hover:text-[#3F9975] transition"
         >
           <FaArrowLeft className="text-sm" />
-          <span className="text-sm font-medium">Back</span>
+
+          <span className="text-sm font-medium">
+            Back
+          </span>
         </button>
 
         <button
+          type="button"
           onClick={onClose}
           aria-label="Close menu"
           className="w-9 h-9 flex items-center justify-center rounded-full text-gray-600 hover:bg-[#EAF7F0] hover:text-[#28725c] transition"
@@ -43,10 +77,13 @@ function MobileContentMenu({ type, onBack, onClose }) {
 
       </div>
 
-      {/* CONTENT */}
+
+      {/* ================= CONTENT ================= */}
+
       <div className="overflow-y-auto flex-1 p-5">
 
-        {/* INTRO */}
+        {/* ================= INTRO ================= */}
+
         <div className="mb-6">
 
           <p className="text-xs tracking-[2px] font-semibold text-[#3F9975] mb-2">
@@ -59,33 +96,27 @@ function MobileContentMenu({ type, onBack, onClose }) {
 
         </div>
 
-        {/* MENU COLUMNS */}
+
+        {/* ================= MENU COLUMNS ================= */}
+
         <div className="space-y-6">
 
           {data.columns.map((column) => (
+
             <div key={column.title}>
 
-              {/* ABOUT US HEADING */}
-              {type === "whyus" && column.title === "ABOUT US" ? (
-                <button
-                  type="button"
-                  onClick={handleAboutUsClick}
-                  className="text-xs font-semibold tracking-[1.5px] text-[#3F9975] mb-3 hover:text-[#2F7F5E] transition text-left"
-                >
-                  {column.title}
-                </button>
-              ) : (
-                <h3 className="text-xs font-semibold tracking-[1.5px] text-[#3F9975] mb-3">
-                  {column.title}
-                </h3>
-              )}
+              <h3 className="text-xs font-semibold tracking-[1.5px] text-[#3F9975] mb-3">
+                {column.title}
+              </h3>
 
               <div className="space-y-1">
 
                 {column.items.map((item) => (
+
                   <button
                     key={item.label}
-                    onClick={handleItemClick}
+                    type="button"
+                    onClick={() => handleItemClick(item)}
                     className="group w-full flex items-center justify-between text-left px-3 py-3 rounded-lg border-b border-gray-100 hover:bg-[#F6FCF9] transition"
                   >
 
@@ -104,17 +135,22 @@ function MobileContentMenu({ type, onBack, onClose }) {
                     <FaChevronRight className="text-[10px] text-gray-300 group-hover:text-[#3F9975] transition" />
 
                   </button>
+
                 ))}
 
               </div>
 
             </div>
+
           ))}
 
         </div>
 
-        {/* PROMO CARD */}
+
+        {/* ================= PROMO CARD ================= */}
+
         {data.promo && (
+
           <div className="mt-7 rounded-2xl overflow-hidden bg-gradient-to-br from-[#043329] to-[#28725c] text-white shadow-lg">
 
             <div className="p-5">
@@ -132,7 +168,8 @@ function MobileContentMenu({ type, onBack, onClose }) {
               </p>
 
               <button
-                onClick={handleItemClick}
+                type="button"
+                onClick={onClose}
                 className="mt-4 text-sm text-[#7BE3C4] font-semibold hover:text-white transition"
               >
                 {data.promo.button} →
@@ -141,6 +178,7 @@ function MobileContentMenu({ type, onBack, onClose }) {
             </div>
 
           </div>
+
         )}
 
       </div>
