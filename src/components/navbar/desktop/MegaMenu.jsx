@@ -167,6 +167,15 @@ function MegaMenu({ isOpen, menuType }) {
                           );
                         }
 
+                        /* AWARDS & RECOGNITION */
+
+                        else if (label === "awards & recognition") {
+                          navigate(
+                            "/why3rdedhum/our-differences/awards-recognition"
+                          );
+                        }
+
+
                         else if (label === "who we are") {
                           navigate("/why3rdedhum/who-we-are");
                         }
@@ -189,12 +198,8 @@ function MegaMenu({ isOpen, menuType }) {
                           );
                         }
 
-                        /* AWARDS & RECOGNITION */
-
-                        else if (label === "awards & recognition") {
-                          navigate(
-                            "/why3rdedhum/our-differences/awards-recognition"
-                          );
+                        else if (label === "culture & beliefs") {
+                          navigate("/why3rdedhum/about-us/culture-beliefs");
                         }
 
                       }}

@@ -10,6 +10,7 @@ import WhoWeAre from "./pages/WhoWeAre";
 import OurMissionValues from "./pages/OurMissionValues";
 import OurLeadershipTeam from "./pages/OurLeadershipTeam";
 import OurJourney from "./pages/OurJourney";
+import CultureBelief from "./pages/CultureBelief";
 import Navbar from "./components/navbar/desktop/Navbar";
 import PdfAssistant from "./components/PdfAssistant/PdfAssistant";
 import ScrollToTop from "./components/ScrollToTop";
@@ -81,6 +82,11 @@ function App() {
             <Route
               path="/why3rdedhum/about-us/our-journey"
               element={<OurJourney />}
+            />
+
+            <Route
+              path="/why3rdedhum/about-us/culture-beliefs"
+              element={<CultureBelief />}
             />
 
           </Routes>

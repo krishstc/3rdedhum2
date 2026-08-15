@@ -17,13 +17,6 @@ function MobileContentMenu({ type, onBack, onClose }) {
 
     if (type === "whyus") {
 
-      /* WHO WE ARE */
-      if (label === "who we are") {
-        onClose();
-        navigate("/why3rdedhum/who-we-are");
-        return;
-      }
-
       /* WHAT MAKES US DIFFERENT */
       if (label === "what makes us different") {
         onClose();
@@ -68,6 +61,42 @@ function MobileContentMenu({ type, onBack, onClose }) {
         );
         return;
       }
+
+      /* WHO WE ARE */
+      if (label === "who we are") {
+        onClose();
+        navigate("/why3rdedhum/who-we-are");
+        return;
+      }
+
+      /* WHO WE ARE */
+      if (label === "our mission & values") {
+        onClose();
+        navigate("/why3rdedhum/about-us/our-missions-values");
+        return;
+      }
+
+      /* WHO WE ARE */
+      if (label === "our leadership team") {
+        onClose();
+        navigate("/why3rdedhum/about-us/our-leadership-team");
+        return;
+      }
+
+      /* WHO WE ARE */
+      if (label === "our journey") {
+        onClose();
+        navigate("/why3rdedhum/about-us/our-journey");
+        return;
+      }
+
+       /* WHO WE ARE */
+      if (label === "culture & belief") {
+        onClose();
+        navigate("/why3rdedhum/about-us/culture-beliefs");
+        return;
+      }
+
     }
 
     /* ================= INSIGHTS / OTHER ITEMS ================= */
