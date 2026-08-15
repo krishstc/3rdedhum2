@@ -1,5 +1,5 @@
 import { FaChevronRight, FaArrowRight } from "react-icons/fa";
-import whoWeAreData from "../data/whoWeAreData";
+import whoWeAreData from "../data/WhoWeAreData";
 import Footer from "../components/footer/Footer";
 
 function WhoWeAre() {

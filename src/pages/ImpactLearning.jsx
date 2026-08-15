@@ -1,6 +1,6 @@
 import React from "react";
 import { impactPageData } from "../data/ImpactLearning";
-import Footer from "../components/Footer/Footer";
+import Footer from "../components/footer/Footer";
 
 const ImpactLearning = () => {
   return (
