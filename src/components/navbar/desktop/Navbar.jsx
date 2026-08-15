@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaBars, FaChevronDown, FaTimes } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import logo from "../../../assets/images/logo.webp";
 import MegaMenu from "./MegaMenu";
@@ -11,6 +11,7 @@ function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setActiveMenu(null);
@@ -37,7 +38,35 @@ function Navbar() {
     e.preventDefault();
 
     setActiveMenu(null);
+    setIsMobileMenuOpen(false);
 
+    // If already on Home page, scroll directly
+    if (location.pathname === "/") {
+      setTimeout(() => {
+        const contactSection = document.getElementById("contact");
+
+        if (contactSection) {
+          const navbarHeight = 100;
+
+          const sectionPosition =
+            contactSection.getBoundingClientRect().top +
+            window.scrollY -
+            navbarHeight;
+
+          window.scrollTo({
+            top: sectionPosition,
+            behavior: "smooth",
+          });
+        }
+      }, 100);
+
+      return;
+    }
+
+    // If on another page, go to Home first
+    navigate("/");
+
+    // Wait for Home page to render, then scroll to Contact
     setTimeout(() => {
       const contactSection = document.getElementById("contact");
 
@@ -54,9 +83,23 @@ function Navbar() {
           behavior: "smooth",
         });
       }
+    }, 500);
+  };
 
-      setIsMobileMenuOpen(false);
-    }, 100);
+  /* ================= CUSTOM PROGRAM WHATSAPP ================= */
+
+  const handleCustomProgramClick = () => {
+    const whatsappNumber = "919702082248";
+
+    const message = encodeURIComponent(
+      "Hello, I am interested in a Custom Program. I would like to know more details."
+    );
+
+    window.open(
+      `https://wa.me/${whatsappNumber}?text=${message}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
 
   const menuClass = "relative cursor-pointer group";
@@ -202,6 +245,7 @@ function Navbar() {
 
             <button
               type="button"
+              onClick={handleCustomProgramClick}
               className="hidden lg:block border border-[#3F9975] text-[#3F9975] hover:bg-[#3F9975] hover:text-white px-6 py-2.5 rounded-lg text-[14px] font-medium transition-all duration-300"
             >
               Custom Program
@@ -209,13 +253,13 @@ function Navbar() {
 
             {/* LET'S CONNECT */}
 
-            <a
-              href="#contact"
+            <button
+              type="button"
               onClick={handleContactClick}
               className="hidden lg:block border border-[#3F9975] bg-[#3F9975] hover:bg-[#348364] text-white px-6 py-2.5 rounded-lg text-[14px] font-medium transition"
             >
               Let's Connect
-            </a>
+            </button>
 
             {/* MOBILE MENU BUTTON */}
 

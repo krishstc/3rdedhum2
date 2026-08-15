@@ -33,23 +33,44 @@ function MobileMenu({ isOpen, onClose }) {
     navigate("/insights");
   };
 
+  /* ================= CONTACT SCROLL ================= */
+
   const handleContactClick = () => {
     closeMenu();
 
-    setTimeout(() => {
-      if (window.location.pathname !== "/") {
-        navigate("/");
-        setTimeout(() => {
-          document.getElementById("contact")?.scrollIntoView({
-            behavior: "smooth",
-          });
-        }, 300);
-      } else {
+    if (window.location.pathname === "/") {
+      setTimeout(() => {
         document.getElementById("contact")?.scrollIntoView({
           behavior: "smooth",
         });
-      }
-    }, 100);
+      }, 100);
+    } else {
+      navigate("/");
+
+      setTimeout(() => {
+        document.getElementById("contact")?.scrollIntoView({
+          behavior: "smooth",
+        });
+      }, 500);
+    }
+  };
+
+  /* ================= CUSTOM PROGRAM WHATSAPP ================= */
+
+  const handleCustomProgramClick = () => {
+    const whatsappNumber = "919702082248";
+
+    const message = encodeURIComponent(
+      "Hello, I am interested in a Custom Program. I would like to know more details."
+    );
+
+    window.open(
+      `https://wa.me/${whatsappNumber}?text=${message}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+
+    closeMenu();
   };
 
   return (
@@ -57,14 +78,19 @@ function MobileMenu({ isOpen, onClose }) {
       {/* OVERLAY */}
       <div
         onClick={closeMenu}
-        className={`fixed top-[88px] left-0 right-0 bottom-0 bg-black/40 z-[9997] transition-opacity duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}
+        className={`fixed top-[88px] left-0 right-0 bottom-0 bg-black/40 z-[9997] transition-opacity duration-300 ${
+          isOpen
+            ? "opacity-100 visible"
+            : "opacity-0 invisible pointer-events-none"
+        }`}
       />
 
       {/* MOBILE DRAWER */}
       <div
-        className={`fixed top-[88px] right-0 bottom-0 w-[340px] max-w-[90%] bg-white shadow-2xl z-[9998] transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-[88px] right-0 bottom-0 w-[340px] max-w-[90%] bg-white shadow-2xl z-[9998] transition-transform duration-300 ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
       >
-
         {/* MAIN MENU */}
         {currentPage === "main" && (
           <div className="h-full flex flex-col">
@@ -123,8 +149,18 @@ function MobileMenu({ isOpen, onClose }) {
                 <FaChevronRight className="text-gray-400 text-sm" />
               </button>
 
+              {/* CUSTOM PROGRAM */}
+              <div className="px-5 pt-5 pb-2">
+                <button
+                  onClick={handleCustomProgramClick}
+                  className="w-full border border-[#3F9975] text-[#3F9975] hover:bg-[#3F9975] hover:text-white py-3 rounded-lg font-medium transition-all duration-300"
+                >
+                  Custom Program
+                </button>
+              </div>
+
               {/* LET'S CONNECT */}
-              <div className="p-5">
+              <div className="px-5 pt-3 pb-5">
                 <button
                   onClick={handleContactClick}
                   className="w-full bg-[#3F9975] hover:bg-[#348364] text-white py-3 rounded-lg font-medium transition"
@@ -162,7 +198,6 @@ function MobileMenu({ isOpen, onClose }) {
             onClose={closeMenu}
           />
         )}
-
       </div>
     </>
   );
