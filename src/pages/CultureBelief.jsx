@@ -30,6 +30,7 @@ function CultureBelief() {
           </p>
         </section>
 
+
         {/* ================= HERO ================= */}
 
         <section className="relative max-w-[1350px] mx-auto px-6 sm:px-10 lg:px-14 pt-10 sm:pt-12 lg:pt-14">
@@ -38,37 +39,75 @@ function CultureBelief() {
 
           <div className="absolute right-[-150px] top-[-40px] hidden lg:block h-[500px] w-[500px] rounded-full bg-[#E5FAF1] opacity-80 pointer-events-none" />
 
-          <div className="relative z-10">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-14 items-center">
 
-            {/* LABEL */}
+            {/* ================= LEFT CONTENT ================= */}
 
-            <div className="inline-flex flex-col items-start">
+            <div>
 
-              <span className="text-[13px] sm:text-[14px] lg:text-[15px] font-semibold tracking-[1.2px] text-[#548C78]">
-                {cultureBelief.label}
-              </span>
+              {/* LABEL */}
 
-              <span className="mt-3 h-[3px] w-[58px] rounded-full bg-[#4D997A]" />
+              <div className="inline-flex flex-col items-start">
+
+                <span className="text-[13px] sm:text-[14px] lg:text-[15px] font-semibold tracking-[1.2px] text-[#548C78]">
+                  {cultureBelief.label}
+                </span>
+
+                <span className="mt-3 h-[3px] w-[58px] rounded-full bg-[#4D997A]" />
+
+              </div>
+
+
+              {/* HEADING */}
+
+              <h1 className="mt-7 max-w-[900px] text-[40px] sm:text-[46px] md:text-[52px] lg:text-[58px] xl:text-[62px] leading-[1.08] font-bold tracking-[-2px] text-[#07372F]">
+                CULTURE &{" "}
+                <span className="text-[#3C9A72]">
+                  BELIEFS.
+                </span>
+              </h1>
+
+
+              {/* INTRODUCTION */}
+
+              <p className="mt-6 max-w-[920px] text-[14px] sm:text-[15px] lg:text-[16px] leading-[1.55] text-[#4F5958]">
+                {cultureBelief.introduction}
+              </p>
 
             </div>
 
-            {/* HEADING */}
 
-            <h1 className="mt-7 max-w-[900px] text-[40px] sm:text-[46px] md:text-[52px] lg:text-[58px] xl:text-[62px] leading-[1.08] font-bold tracking-[-2px] text-[#07372F]">
-              CULTURE &{" "}
-              <span className="text-[#3C9A72]">
-                BELIEFS.
-              </span>
-            </h1>
+            {/* ================= HERO VISUAL ================= */}
 
-            {/* INTRODUCTION */}
+            <div className="relative hidden lg:flex items-center justify-center min-h-[320px]">
 
-            <p className="mt-6 max-w-[920px] text-[14px] sm:text-[15px] lg:text-[16px] leading-[1.55] text-[#4F5958]">
-              {cultureBelief.introduction}
-            </p>
+              <div className="relative flex h-[300px] w-[300px] items-center justify-center rounded-full bg-[#D9F8EB]">
+
+                <div className="absolute h-[220px] w-[220px] rounded-full bg-white shadow-[0_8px_25px_rgba(0,86,65,0.10)]" />
+
+                <div className="relative z-10 flex h-[125px] w-[125px] items-center justify-center rounded-full bg-[#005641] shadow-[0_8px_20px_rgba(0,86,65,0.15)]">
+
+                  <UsersRound
+                    size={58}
+                    strokeWidth={1.4}
+                    className="text-[#E2F8EF]"
+                  />
+
+                </div>
+
+                <div className="absolute top-[35px] right-[35px] h-5 w-5 rounded-full bg-[#4D997A]" />
+
+                <div className="absolute bottom-[45px] left-[30px] h-4 w-4 rounded-full bg-[#A7DCC7]" />
+
+                <div className="absolute bottom-[30px] right-[65px] h-3 w-3 rounded-full bg-[#3C9A72]" />
+
+              </div>
+
+            </div>
 
           </div>
         </section>
+
 
         {/* ================= CORE BELIEFS ================= */}
 
@@ -98,6 +137,7 @@ function CultureBelief() {
 
                   </div>
 
+
                   {/* CONTENT */}
 
                   <div>
@@ -120,6 +160,7 @@ function CultureBelief() {
 
           </div>
         </section>
+
 
         {/* ================= CULTURE PRINCIPLES ================= */}
 
@@ -149,15 +190,18 @@ function CultureBelief() {
 
                   </div>
 
+
                   {/* TITLE */}
 
                   <h2 className="mt-7 max-w-[250px] text-[16px] sm:text-[17px] lg:text-[18px] font-bold leading-[1.25] text-[#101F1D]">
                     {principle.title}
                   </h2>
 
+
                   {/* UNDERLINE */}
 
                   <div className="mt-3 h-[3px] w-[38px] rounded-full bg-[#4D997A]" />
+
 
                   {/* DESCRIPTION */}
 
@@ -171,6 +215,7 @@ function CultureBelief() {
 
           </div>
         </section>
+
 
         {/* ================= CTA ================= */}
 
@@ -192,6 +237,7 @@ function CultureBelief() {
 
               </div>
 
+
               {/* TEXT */}
 
               <div className="flex-1">
@@ -206,6 +252,7 @@ function CultureBelief() {
 
               </div>
 
+
               {/* BUTTON */}
 
               <button
@@ -218,6 +265,7 @@ function CultureBelief() {
                   size={15}
                   strokeWidth={1.7}
                 />
+
               </button>
 
             </div>
@@ -226,6 +274,7 @@ function CultureBelief() {
         </section>
 
       </main>
+
 
       {/* ================= FOOTER ================= */}
 

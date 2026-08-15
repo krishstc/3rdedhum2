@@ -1,4 +1,5 @@
 import React from "react";
+import { UsersRound, Crown } from "lucide-react";
 import Footer from "../components/footer/Footer";
 
 import ourLeadershipTeam from "../data/OurLeadershipTeam";
@@ -45,6 +46,22 @@ function OurLeadershipTeam() {
           {/* Background Circle */}
 
           <div className="absolute -right-[140px] -top-[70px] hidden sm:block w-[360px] h-[360px] rounded-full bg-[#E2F8EF] opacity-80 pointer-events-none" />
+
+          {/* ================= LEADERSHIP ICON ================= */}
+
+          <div className="absolute right-[-10px] sm:right-[40px] lg:right-[20px] top-[150px] sm:top-[160px] lg:top-[100px] hidden md:flex h-[150px] w-[150px] lg:h-[260px] lg:w-[260px] items-center justify-center rounded-full bg-white/70 border border-[#CBEFE0] shadow-[0_12px_35px_rgba(63,153,117,0.12)] pointer-events-none">
+
+            <div className="flex h-[110px] w-[110px] lg:h-[140px] lg:w-[140px] items-center justify-center rounded-full bg-[#D9F8EB]">
+
+              <Crown
+                size={58}
+                strokeWidth={1.4}
+                className="text-[#3F9975]"
+              />
+
+            </div>
+
+          </div>
 
 
           <div className="relative z-10">

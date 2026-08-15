@@ -347,7 +347,7 @@ const Footer = () => {
         <div className="border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
 
           <p>
-            © 2025 3rd Edge Human Capital. All Rights Reserved.
+            © 2026 3rd Edge Human Capital. All Rights Reserved.
           </p>
 
           <div className="flex gap-6 mt-4 md:mt-0">

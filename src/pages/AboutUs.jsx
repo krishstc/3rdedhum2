@@ -1,234 +1,217 @@
-import { useNavigate } from "react-router-dom";
-import { FaChevronRight, FaArrowRight } from "react-icons/fa";
-import aboutUsData from "../data/aboutUsData";
+import React from "react";
+import { UsersRound } from "lucide-react";
 import Footer from "../components/footer/Footer";
+import aboutUs from "../data/AboutUs";
 
 function AboutUs() {
-  const navigate = useNavigate();
-
   return (
-    <div className="w-full bg-white text-[#0B2C25]">
+    <div className="min-h-screen bg-[#FFF7F7] text-[#0B2F2A]">
 
-      {/* BREADCRUMB */}
-      <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-[84px] pt-6 pb-2">
-        <div className="flex items-center gap-2 flex-wrap text-[12px] sm:text-[13px] text-gray-500">
-          {aboutUsData.breadcrumb.map((item, index) => (
-            <div key={item} className="flex items-center gap-2">
-              <span
-                className={
-                  index === aboutUsData.breadcrumb.length - 1
-                    ? "font-semibold text-[#0B2C25]"
-                    : ""
-                }
-              >
-                {item}
-              </span>
+      <main>
 
-              {index < aboutUsData.breadcrumb.length - 1 && (
-                <FaChevronRight className="text-[8px] text-gray-400" />
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
+        {/* ================= BREADCRUMB ================= */}
 
-      {/* HERO */}
-      <section className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-[84px] pt-6 pb-10 lg:pb-12">
-        <div className="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-10 lg:gap-14 items-center">
+        <section className="max-w-[1350px] mx-auto px-6 sm:px-10 lg:px-14 pt-10 sm:pt-12 lg:pt-14">
 
-          {/* LEFT */}
-          <div className="max-w-[570px]">
+          <p className="text-[12px] sm:text-[13px] lg:text-[14px] text-[#7B8A86] tracking-wide">
 
-            <div className="inline-block mb-4">
-              <p className="text-[13px] sm:text-[14px] font-semibold text-[#3F9975] uppercase tracking-[1px]">
-                {aboutUsData.hero.label}
+            <span>Home</span>
+
+            <span className="mx-3">›</span>
+
+            <span>{aboutUs.breadcrumb.section}</span>
+
+            <span className="mx-3">›</span>
+
+            <span className="text-[#4A8E76]">
+              {aboutUs.breadcrumb.category}
+            </span>
+
+          </p>
+
+        </section>
+
+
+        {/* ================= HERO ================= */}
+
+        <section className="max-w-[1350px] mx-auto px-6 sm:px-10 lg:px-14 pt-10 sm:pt-12 lg:pt-14">
+
+          <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-14 items-center">
+
+            {/* ================= LEFT CONTENT ================= */}
+
+            <div>
+
+              <div className="inline-flex flex-col items-start">
+
+                <span className="text-[13px] sm:text-[14px] lg:text-[15px] font-semibold tracking-[1.2px] text-[#548C78]">
+                  {aboutUs.label}
+                </span>
+
+                <span className="mt-3 h-[3px] w-[68px] rounded-full bg-[#4D997A]" />
+
+              </div>
+
+
+              <h1 className="mt-7 max-w-[850px] text-[40px] sm:text-[46px] md:text-[52px] lg:text-[58px] xl:text-[62px] leading-[1.08] font-bold tracking-[-2px] text-[#07372F]">
+                {aboutUs.title}
+              </h1>
+
+
+              <p className="mt-7 max-w-[760px] text-[14px] sm:text-[15px] lg:text-[16px] leading-[1.48] text-[#4F5958]">
+                {aboutUs.introduction}
+                <span className="text-[#3C9A72] font-medium">
+                  {aboutUs.highlightedIntroduction}
+                </span>
               </p>
 
-              <div className="mt-2 w-[42px] h-[2px] bg-[#3F9975]"></div>
             </div>
 
-            <h1 className="text-[42px] sm:text-[48px] lg:text-[58px] font-bold leading-[1.05] tracking-[-1.5px] text-[#10252D]">
-              WHO WE <span className="text-[#3F9975]">ARE.</span>
-            </h1>
 
-            <p className="mt-5 max-w-[560px] text-[15px] sm:text-[16px] lg:text-[17px] leading-[1.55] text-gray-700">
-              {aboutUsData.hero.description}
-            </p>
+            {/* ================= HERO IMAGE ================= */}
 
-            {/* FOCUS AREAS */}
-            <div className="mt-7 space-y-3">
-              {aboutUsData.focusAreas.map((item) => {
+            <div className="relative hidden lg:flex items-center justify-center min-h-[350px]">
+
+              {/* SOFT BACKGROUND */}
+
+              <div className="absolute h-[350px] w-[350px] rounded-[28px] bg-[#E5FAF1]" />
+
+              {/* IMAGE */}
+
+              <div className="relative z-10 h-[450px] w-[450px] overflow-hidden rounded-[28px] shadow-[0_8px_25px_rgba(0,86,65,0.12)]">
+
+                <img
+                  src="https://www.cgi.com/sites/default/files/group-of-consultants-at-table.jpg"
+                  alt="Business consultants collaborating in a modern office"
+                  className="h-full w-full object-cover"
+                />
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        {/* ================= PHILOSOPHY + SOLUTIONS ================= */}
+
+        <section className="max-w-[1350px] mx-auto px-6 sm:px-10 lg:px-14 mt-20 sm:mt-24 lg:mt-28 pb-14 sm:pb-16 lg:pb-20">
+
+          <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-5 lg:gap-6 items-stretch">
+
+
+            {/* ================= OUR PHILOSOPHY ================= */}
+
+            <div className="rounded-xl bg-[#005641] px-6 sm:px-7 lg:px-8 py-7 sm:py-8 lg:py-9">
+
+              <div className="flex items-center gap-4">
+
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#E2F8EF]">
+
+                  <UsersRound
+                    size={30}
+                    strokeWidth={1.7}
+                    className="text-[#4A9877]"
+                  />
+
+                </div>
+
+                <h2 className="text-[24px] sm:text-[26px] lg:text-[28px] font-bold text-white">
+                  {aboutUs.philosophyTitle}
+                </h2>
+
+              </div>
+
+
+              <div className="mt-10 space-y-5">
+
+                {aboutUs.philosophy.map((item) => (
+
+                  <div
+                    key={item.id}
+                    className="flex items-start gap-4"
+                  >
+
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#E2F8EF]">
+
+                      <UsersRound
+                        size={20}
+                        strokeWidth={1.6}
+                        className="text-[#4A9877]"
+                      />
+
+                    </div>
+
+                    <p className="pt-1 text-[13px] sm:text-[14px] leading-[1.4] text-white">
+                      {item.text}
+                    </p>
+
+                  </div>
+
+                ))}
+
+              </div>
+
+            </div>
+
+
+            {/* ================= SOLUTIONS ================= */}
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+
+              {aboutUs.solutions.map((item) => {
+
                 const Icon = item.icon;
 
                 return (
+
                   <div
-                    key={item.title}
-                    className="group flex items-center gap-3 sm:gap-4"
+                    key={item.id}
+                    className="min-h-[185px] rounded-xl bg-white border border-[#E7E7E7] shadow-[0_4px_10px_rgba(0,0,0,0.12)] px-5 py-6 flex flex-col items-center text-center"
                   >
-                    <div className="w-[48px] h-[48px] sm:w-[52px] sm:h-[52px] rounded-[10px] bg-[#EAF7F0] flex items-center justify-center shrink-0">
-                      <Icon className="text-[19px] sm:text-[21px] text-[#3F9975]" />
+
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#E2F8EF]">
+
+                      <Icon
+                        size={25}
+                        strokeWidth={1.6}
+                        className="text-[#4A9877]"
+                      />
+
                     </div>
 
-                    <div>
-                      <h3 className="text-[15px] sm:text-[16px] font-bold text-[#17252B]">
-                        {item.title}
-                      </h3>
 
-                      <p className="mt-1 text-[12px] sm:text-[13px] leading-5 text-gray-600">
-                        {item.description}
-                      </p>
-                    </div>
+                    <h3 className="mt-5 max-w-[180px] text-[14px] sm:text-[15px] font-bold leading-[1.25] text-[#101F1D]">
+                      {item.title}
+                    </h3>
+
+
+                    <div className="mt-2.5 h-[3px] w-[34px] rounded-full bg-[#4D997A]" />
+
+
+                    <p className="mt-4 max-w-[190px] text-[11px] sm:text-[12px] leading-[1.4] text-[#4F5958]">
+                      {item.description}
+                    </p>
+
                   </div>
+
                 );
+
               })}
-            </div>
-
-          </div>
-
-          {/* RIGHT IMAGE */}
-          <div className="relative lg:pl-2">
-
-            <div className="absolute -top-10 -left-10 w-[300px] h-[300px] rounded-full bg-[#F1F7F4] -z-0"></div>
-
-            <div className="relative z-10 rounded-[24px] overflow-hidden">
-
-              <img
-                src={aboutUsData.hero.image}
-                alt="3rd EdHum team"
-                fetchPriority="high"
-                loading="eager"
-                decoding="async"
-                className="w-full h-[300px] sm:h-[380px] lg:h-[430px] object-cover rounded-[24px]"
-              />
 
             </div>
 
-            <div className="absolute -right-4 bottom-[-20px] w-[90px] h-[90px] opacity-40 hidden xl:block">
-              <div className="grid grid-cols-5 gap-2">
-                {Array.from({ length: 25 }).map((_, index) => (
-                  <span
-                    key={index}
-                    className="w-[5px] h-[5px] rounded-full bg-[#3F9975]"
-                  ></span>
-                ))}
-              </div>
-            </div>
-
           </div>
 
-        </div>
-      </section>
+        </section>
 
-      {/* WHAT DEFINES US */}
-      <section className="max-w-[1320px] mx-auto px-6 sm:px-8 lg:px-0 pb-10">
+      </main>
 
-        <div className="rounded-[24px] bg-[#F3F7F5] px-5 sm:px-8 lg:px-10 py-8 sm:py-10 lg:py-9">
 
-          {/* TITLE */}
-          <div className="text-center mb-7">
+      {/* ================= FOOTER ================= */}
 
-            <p className="text-[13px] sm:text-[14px] font-semibold text-[#3F9975] uppercase tracking-[0.8px]">
-              WHAT DEFINES US
-            </p>
-
-            <div className="w-[42px] h-[2px] bg-[#3F9975] mx-auto mt-2"></div>
-
-          </div>
-
-          {/* FIVE ITEMS */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
-
-            {aboutUsData.definingUs.map((item, index) => {
-              const Icon = item.icon;
-
-              return (
-                <div
-                  key={item.title}
-                  className={`px-5 py-4 text-center ${
-                    index < aboutUsData.definingUs.length - 1
-                      ? "lg:border-r lg:border-gray-300"
-                      : ""
-                  }`}
-                >
-
-                  <div className="w-[48px] h-[48px] mx-auto flex items-center justify-center">
-                    <Icon className="text-[29px] text-[#174C43]" />
-                  </div>
-
-                  <h3 className="mt-3 text-[15px] sm:text-[16px] font-bold text-[#17252B]">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-3 text-[12px] sm:text-[13px] leading-[1.55] text-gray-600 max-w-[190px] mx-auto">
-                    {item.description}
-                  </p>
-
-                </div>
-              );
-            })}
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* CTA */}
-      <section className="max-w-[1320px] mx-auto px-6 sm:px-8 lg:px-0 pb-12 lg:pb-14">
-
-        <div className="relative overflow-hidden rounded-[22px] bg-[#00453F] px-6 sm:px-8 lg:px-12 py-7 sm:py-8 lg:py-7">
-
-          {/* DOT PATTERN */}
-          <div className="absolute left-0 bottom-0 opacity-30 hidden sm:block">
-            <div className="grid grid-cols-7 gap-2">
-              {Array.from({ length: 42 }).map((_, index) => (
-                <span
-                  key={index}
-                  className="w-[4px] h-[4px] rounded-full bg-[#3F9975]"
-                ></span>
-              ))}
-            </div>
-          </div>
-
-          <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-
-            <div className="flex items-center gap-5">
-
-              <div className="w-[68px] h-[68px] rounded-full bg-white flex items-center justify-center shrink-0">
-                <span className="text-[#174C43] text-[25px] font-bold">
-                  ♧
-                </span>
-              </div>
-
-              <div>
-
-                <h2 className="text-[18px] sm:text-[20px] lg:text-[21px] font-bold text-white">
-                  {aboutUsData.cta.title}
-                </h2>
-
-                <p className="mt-2 max-w-[620px] text-[12px] sm:text-[13px] leading-5 text-gray-200">
-                  {aboutUsData.cta.description}
-                </p>
-
-              </div>
-
-            </div>
-
-            <button
-              onClick={() => navigate("/why-us")}
-              className="flex items-center justify-center gap-3 shrink-0 border border-white/70 rounded-[9px] px-5 py-3 text-[13px] sm:text-[14px] font-semibold text-white hover:bg-white hover:text-[#00453F] transition-all duration-300"
-            >
-              {aboutUsData.cta.button}
-              <FaArrowRight className="text-[11px]" />
-            </button>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* FOOTER */}
       <Footer />
 
     </div>

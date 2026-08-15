@@ -37,7 +37,6 @@ const whyUsData = {
         { label: "Global Presence", icon: "◎" },
         { label: "Industry Expertise", icon: "▣" },
         { label: "Trusted By Leaders", icon: "◈" },
-        { label: "Partners & Alliances", icon: "♧" },
       ],
     },
   ],

@@ -1,5 +1,5 @@
 import React from "react";
-import { UsersRound } from "lucide-react";
+import { UsersRound, Route } from "lucide-react";
 import Footer from "../components/footer/Footer";
 import ourJourney from "../data/OurJourney";
 
@@ -29,6 +29,20 @@ function OurJourney() {
         <section className="relative max-w-[1350px] mx-auto px-6 sm:px-10 lg:px-14 pt-12 sm:pt-14 lg:pt-16">
 
           <div className="absolute right-[-140px] top-[-10px] hidden lg:block h-[440px] w-[440px] rounded-full bg-[#E5FAF1] opacity-80 pointer-events-none" />
+
+          {/* ================= JOURNEY ICON ================= */}
+
+          <div className="absolute right-[0px] top-[70px] hidden lg:flex h-[320px] w-[320px] items-center justify-center rounded-full bg-white/70 border border-[#CDEDE0] shadow-[0_12px_35px_rgba(63,153,117,0.10)] pointer-events-none">
+
+  <div className="flex h-[225px] w-[225px] items-center justify-center rounded-full bg-[#D9F8EB]">
+    <Route
+      size={115}
+      strokeWidth={1.3}
+      className="text-[#3F9975]"
+    />
+  </div>
+
+</div>
 
           <div className="relative z-10">
 

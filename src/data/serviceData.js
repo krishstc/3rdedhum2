@@ -219,6 +219,9 @@ export const servicesData = {
         "Annual Learning Calendar Design",
       ],
     },
+  ],
+
+  column3: [
     {
       title: "HR Consulting",
       folder: "HRConsulting",
@@ -235,9 +238,6 @@ export const servicesData = {
         "Workflow Improvement",
       ],
     },
-  ],
-
-  column3: [
     {
       title: "CLIP",
       folder: "CLIP",

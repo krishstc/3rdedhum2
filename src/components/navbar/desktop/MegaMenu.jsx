@@ -125,11 +125,29 @@ function MegaMenu({ isOpen, menuType }) {
               className="border-r border-gray-200 px-8 pt-8 pb-5"
             >
 
-              <h3 className="text-[14px] font-semibold tracking-[0.5px] text-[#5B927B]">
-                {column.title}
-              </h3>
+              {/* ABOUT US HEADING */}
 
-              <div className="mt-4 w-[40px] h-[3px] bg-[#3F9975] rounded-full" />
+              {column.title === "ABOUT US" ? (
+                <button
+                  type="button"
+                  onClick={() => navigate("/why3rdedhum/about-us")}
+                  className="text-left"
+                >
+                  <h3 className="text-[14px] font-semibold tracking-[0.5px] text-[#5B927B] hover:text-[#3F9975] transition-colors">
+                    {column.title}
+                  </h3>
+
+                  <div className="mt-4 w-[40px] h-[3px] bg-[#3F9975] rounded-full" />
+                </button>
+              ) : (
+                <>
+                  <h3 className="text-[14px] font-semibold tracking-[0.5px] text-[#5B927B]">
+                    {column.title}
+                  </h3>
+
+                  <div className="mt-4 w-[40px] h-[3px] bg-[#3F9975] rounded-full" />
+                </>
+              )}
 
               <div className="mt-7 space-y-2">
 
@@ -180,6 +198,10 @@ function MegaMenu({ isOpen, menuType }) {
                           navigate("/why3rdedhum/who-we-are");
                         }
 
+                        else if (label === "about us") {
+                          navigate("/why3rdedhum/about-us");
+                        }
+
                         else if (label === "our mission & values") {
                           navigate(
                             "/why3rdedhum/about-us/our-missions-values"
@@ -199,7 +221,27 @@ function MegaMenu({ isOpen, menuType }) {
                         }
 
                         else if (label === "culture & beliefs") {
-                          navigate("/why3rdedhum/about-us/culture-beliefs");
+                          navigate(
+                            "/why3rdedhum/about-us/culture-beliefs"
+                          );
+                        }
+
+                        else if (label === "global presence") {
+                          navigate(
+                            "/why3rdedhum/our-reach/global-presence"
+                          );
+                        }
+
+                        else if (label === "industry expertise") {
+                          navigate(
+                            "/why3rdedhum/our-reach/industry-expertise"
+                          );
+                        }
+
+                        else if (label === "trusted by leaders") {
+                          navigate(
+                            "/why3rdedhum/our-reach/trusted-by-leaders"
+                          );
                         }
 
                       }}

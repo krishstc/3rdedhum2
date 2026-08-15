@@ -11,6 +11,10 @@ import OurMissionValues from "./pages/OurMissionValues";
 import OurLeadershipTeam from "./pages/OurLeadershipTeam";
 import OurJourney from "./pages/OurJourney";
 import CultureBelief from "./pages/CultureBelief";
+import GlobalPresence from "./pages/GlobalPresence";
+import IndustryExpertise from "./pages/IndustryExpertise";
+import TrustedByLeaders from "./pages/TrustedByLeaders";
+import AboutUs from "./pages/AboutUs";
 import Navbar from "./components/navbar/desktop/Navbar";
 import PdfAssistant from "./components/PdfAssistant/PdfAssistant";
 import ScrollToTop from "./components/ScrollToTop";
@@ -88,6 +92,23 @@ function App() {
               path="/why3rdedhum/about-us/culture-beliefs"
               element={<CultureBelief />}
             />
+
+            <Route
+              path="/why3rdedhum/our-reach/global-presence"
+              element={<GlobalPresence />}
+            />
+
+            <Route
+              path="/why3rdedhum/our-reach/industry-expertise"
+              element={<IndustryExpertise />}
+            />
+
+            <Route
+              path="/why3rdedhum/our-reach/trusted-by-leaders"
+              element={<TrustedByLeaders />}
+            />
+
+            <Route path="/why3rdedhum/about-us" element={<AboutUs />} />
 
           </Routes>
 

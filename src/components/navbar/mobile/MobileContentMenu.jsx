@@ -69,39 +69,71 @@ function MobileContentMenu({ type, onBack, onClose }) {
         return;
       }
 
-      /* WHO WE ARE */
+      /* OUR MISSION & VALUES */
       if (label === "our mission & values") {
         onClose();
         navigate("/why3rdedhum/about-us/our-missions-values");
         return;
       }
 
-      /* WHO WE ARE */
+      /* OUR LEADERSHIP TEAM */
       if (label === "our leadership team") {
         onClose();
         navigate("/why3rdedhum/about-us/our-leadership-team");
         return;
       }
 
-      /* WHO WE ARE */
+      /* OUR JOURNEY */
       if (label === "our journey") {
         onClose();
         navigate("/why3rdedhum/about-us/our-journey");
         return;
       }
 
-       /* WHO WE ARE */
-      if (label === "culture & belief") {
+      /* CULTURE & BELIEFS */
+      if (label === "culture & beliefs") {
         onClose();
         navigate("/why3rdedhum/about-us/culture-beliefs");
         return;
       }
 
+      /* GLOBAL PRESENCE */
+      if (label === "global presence") {
+        onClose();
+        navigate("/why3rdedhum/our-reach/global-presence");
+        return;
+      }
+
+      /* INDUSTRY EXPERTISE */
+      if (label === "industry expertise") {
+        onClose();
+        navigate("/why3rdedhum/our-reach/industry-expertise");
+        return;
+      }
+
+      /* TRUSTED BY LEADERS */
+      if (label === "trusted by leaders") {
+        onClose();
+        navigate("/why3rdedhum/our-reach/trusted-by-leaders");
+        return;
+      }
     }
 
     /* ================= INSIGHTS / OTHER ITEMS ================= */
 
     onClose();
+  };
+
+  /* ================= ABOUT US HEADING ================= */
+
+  const handleColumnHeadingClick = (column) => {
+    if (
+      type === "whyus" &&
+      column.title.trim().toLowerCase() === "about us"
+    ) {
+      onClose();
+      navigate("/why3rdedhum/about-us");
+    }
   };
 
   return (
@@ -162,9 +194,30 @@ function MobileContentMenu({ type, onBack, onClose }) {
 
             <div key={column.title}>
 
-              <h3 className="text-xs font-semibold tracking-[1.5px] text-[#3F9975] mb-3">
-                {column.title}
-              </h3>
+              {/* ================= COLUMN HEADING ================= */}
+
+              {type === "whyus" &&
+              column.title.trim().toLowerCase() === "about us" ? (
+
+                <button
+                  type="button"
+                  onClick={() => handleColumnHeadingClick(column)}
+                  className="text-left"
+                >
+
+                  <h3 className="text-xs font-semibold tracking-[1.5px] text-[#3F9975] mb-3 hover:text-[#28725c] transition">
+                    {column.title}
+                  </h3>
+
+                </button>
+
+              ) : (
+
+                <h3 className="text-xs font-semibold tracking-[1.5px] text-[#3F9975] mb-3">
+                  {column.title}
+                </h3>
+
+              )}
 
               <div className="space-y-1">
 
