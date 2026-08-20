@@ -4,7 +4,9 @@ import {
   Users,
   Briefcase,
   GraduationCap,
+  Building2,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import ceoImg from "../../assets/images/ceo.jpg";
 
 const programs = [
@@ -28,20 +30,32 @@ const programs = [
     desc: "Accelerate personal growth with practical learning journeys.",
     icon: <GraduationCap size={24} />,
   },
+  {
+    title: "Industries",
+    desc: "Customized learning solutions designed for different industries and business needs.",
+    icon: <Building2 size={24} />,
+  },
 ];
 
 const Programs = () => {
-  return (
-    <section className="py-24 bg-[#F4F5F4]">
-      <div className="max-w-[1350px] mx-auto px-8">
+  const navigate = useNavigate();
 
+  const handleProgramClick = () => {
+    navigate("/managerial-leadership");
+  };
+
+  return (
+    <section id="programs" className="py-24 bg-[#F4F5F4]">
+      <div className="max-w-[1350px] mx-auto px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
 
           {/* LEFT */}
           <div className="max-w-[560px]">
+
             <p className="uppercase tracking-[2px] text-[#1A8D61] text-sm font-semibold mb-3">
               PROGRAMS FOR EVERY LEVEL
             </p>
+
             <h2 className="text-[42px] leading-[50px] font-semibold text-[#062B23]">
               Targeted Solutions
               <br />
@@ -53,6 +67,14 @@ const Programs = () => {
               {programs.map((item, index) => (
                 <div
                   key={index}
+                  onClick={handleProgramClick}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      handleProgramClick();
+                    }
+                  }}
                   className="group bg-white rounded-[24px] border border-gray-200 px-6 py-6 flex items-center justify-between hover:shadow-xl transition-all duration-300 cursor-pointer"
                 >
 
@@ -93,11 +115,14 @@ const Programs = () => {
 
             {/* Image */}
             <div className="absolute inset-0 rounded-[30px] overflow-hidden">
+
               <img
                 src={ceoImg}
                 alt="CEO"
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
+
             </div>
 
             {/* Quote Card */}
@@ -112,6 +137,7 @@ const Programs = () => {
               </p>
 
               <div className="mt-10">
+
                 <h4 className="text-white text-[18px] font-bold">
                   – Manmeet Singh
                 </h4>
@@ -119,13 +145,14 @@ const Programs = () => {
                 <p className="text-[#C7D3CF] text-sm mt-1">
                   Founder & CEO
                 </p>
+
               </div>
 
             </div>
 
           </div>
-        </div>
 
+        </div>
       </div>
     </section>
   );

@@ -20,10 +20,6 @@ const industryExpertise = {
   introduction:
     "Our cross-industry experience enables us to understand the unique business challenges of each sector while bringing proven best practices from multiple domains. This breadth allows us to design solutions that are simultaneously industry-specific in their language and context, yet globally relevant in their methodology and approach. We don't arrive with assumptions, we arrive with questions and a deep commitment to understanding what makes your organisation unique.",
 
-  // Global map image
-  image:
-    "https://luminousitynuts.com/wp-content/uploads/2024/08/work-area.png",
-
   industries: [
     {
       id: 1,

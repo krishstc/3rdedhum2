@@ -1,11 +1,29 @@
+import { useNavigate } from "react-router-dom";
 import heroImg from "../../assets/images/hero.png";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const handleExploreSolutions = () => {
+    const solutionsSection = document.getElementById("solutions");
+
+    if (solutionsSection) {
+      solutionsSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
+  const handleTalkToExpert = () => {
+    navigate("/why3rdedhum/about-us/our-leadership-team");
+  };
+
   return (
     <section className="w-full bg-white pt-2 pb-8 lg:pt-2 lg:pb-12">
-      <div className="w-full max-w-[1350px] mx-auto px-4 sm:px-6">
+      <div className="mx-auto w-full max-w-[1350px] px-4 sm:px-6">
         <div
-          className="relative rounded-[32px] overflow-hidden shadow-2xl min-h-[620px]"
+          className="relative min-h-[620px] overflow-hidden rounded-[32px] shadow-2xl"
           style={{
             background: `linear-gradient(
               90deg,
@@ -18,16 +36,17 @@ const Hero = () => {
             )`,
           }}
         >
-          <div className="relative z-20 flex flex-col lg:flex-row items-center min-h-[620px]">
+          <div className="relative z-20 flex min-h-[620px] flex-col items-center lg:flex-row">
 
             {/* ================= LEFT ================= */}
-            <div className="w-full lg:w-2/3 px-8 md:px-14 lg:px-20 py-14 lg:py-20">
 
-              <p className="uppercase tracking-wider text-xs sm:text-sm font-semibold text-white/80 mb-5">
+            <div className="w-full px-8 py-14 md:px-14 lg:w-2/3 lg:px-20 lg:py-20">
+
+              <p className="mb-5 text-xs font-semibold uppercase tracking-wider text-white/80 sm:text-sm">
                 Transforming People. Elevating Performance
               </p>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-semibold text-white leading-[1.1] mb-8 max-w-[660px]">
+              <h1 className="mb-8 max-w-[660px] text-4xl font-semibold leading-[1.1] text-white sm:text-5xl lg:text-[56px]">
                 Build the Capability,
                 <br />
                 Inspire the{" "}
@@ -36,7 +55,7 @@ const Hero = () => {
                 </span>
               </h1>
 
-              <p className="text-white/80 text-lg leading-7 tracking-tight max-w-[500px]">
+              <p className="max-w-[500px] text-lg leading-7 tracking-tight text-white/80">
                 End-to-end learning solutions that help
                 <br className="hidden sm:block" />
                 organizations build leadership bench strength, drive
@@ -44,25 +63,39 @@ const Hero = () => {
                 performance, and achieve lasting impact.
               </p>
 
-              {/* BUTTONS */}
-              <div className="flex flex-wrap gap-5 mt-10">
+              {/* ================= BUTTONS ================= */}
 
-                <button className="bg-[#1a8d61] hover:bg-[#47b977] transition-all duration-300 text-white text-sm font-medium px-6 py-3 rounded-lg">
+              <div className="mt-10 flex flex-wrap gap-5">
+
+                {/* EXPLORE SOLUTIONS */}
+
+                <button
+                  type="button"
+                  onClick={handleExploreSolutions}
+                  className="rounded-lg bg-[#1a8d61] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:bg-[#47b977]"
+                >
                   Explore Solutions
                 </button>
 
-                <button className="border border-white text-white hover:bg-white hover:text-[#0D4D42] transition-all duration-300 text-sm font-medium px-6 py-3 rounded-lg">
+                {/* TALK TO EXPERT */}
+
+                <button
+                  type="button"
+                  onClick={handleTalkToExpert}
+                  className="rounded-lg border border-white px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:bg-white hover:text-[#0D4D42]"
+                >
                   Talk To Expert
                 </button>
 
               </div>
 
               {/* ================= SCROLLING UPDATE ================= */}
-              <div className="mt-10 border-l-4 border-white pl-4 overflow-hidden">
+
+              <div className="mt-10 overflow-hidden border-l-4 border-white pl-4">
 
                 <div className="ticker">
 
-                  <span className="text-[#D4A017] text-sm font-medium">
+                  <span className="text-lg font-semibold font-medium text-[#ebf837]">
                     Update : 13th August Live Workshop, Grab Tickets
                   </span>
 
@@ -73,25 +106,13 @@ const Hero = () => {
             </div>
 
             {/* ================= RIGHT ================= */}
-            <div className="relative z-10 w-full lg:w-1/3 flex justify-center items-end self-stretch">
+
+            <div className="relative z-10 flex w-full items-end justify-center self-stretch lg:w-1/3">
 
               <img
                 src={heroImg}
                 alt="Hero"
-                className="
-                  relative
-                  lg:absolute
-                  bottom-0
-                  right-0
-                  lg:right-[-10px]
-                  w-full
-                  lg:w-auto
-                  h-auto
-                  lg:h-full
-                  max-w-full
-                  lg:max-w-none
-                  object-contain
-                "
+                className="relative h-auto w-full max-w-full object-contain lg:absolute lg:bottom-0 lg:right-[-10px] lg:h-full lg:w-auto lg:max-w-none"
               />
 
             </div>

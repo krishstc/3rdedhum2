@@ -1,8 +1,3 @@
-import {
-  Trophy,
-  UserRound,
-} from "lucide-react";
-
 const awardRecognition = {
   reputationPoints: [
     "Long-term Client Partnership",
@@ -16,28 +11,21 @@ const awardRecognition = {
   aspirationCards: [
     {
       id: 1,
-      icon: UserRound,
       title: "Trusted Learning Partner",
       description: "The first call when capability matters",
     },
-
     {
       id: 2,
-      icon: UserRound,
       title: "Leadership Development Experts",
       description: "Shaping how leaders lead",
     },
-
     {
       id: 3,
-      icon: UserRound,
       title: "Future of Work Specialists",
       description: "Ready for what's next",
     },
-
     {
       id: 4,
-      icon: UserRound,
       title: "Business Capability Consultants",
       description: "Strategy made human",
     },

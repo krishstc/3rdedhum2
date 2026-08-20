@@ -1,171 +1,91 @@
 import React from "react";
 import { Quote } from "lucide-react";
-
 import Footer from "../components/footer/Footer";
 import trustedByLeaders from "../data/TrustedByLeaders";
+
+// LOCAL IMAGE
+import heroImage from "../assets/images/OurReach/trusted-by-leaders.png";
 
 function TrustedByLeaders() {
   return (
     <div className="min-h-screen bg-[#FFF7F7] text-[#0B2F2A]">
       <main>
 
-        {/* ================= BREADCRUMB ================= */}
-
-        <section className="max-w-[1350px] mx-auto px-6 sm:px-10 lg:px-14 pt-10 sm:pt-12 lg:pt-14">
-          <p className="text-[11px] sm:text-[12px] lg:text-[13px] text-[#7B8A86] tracking-wide">
-            <span>Home</span>
-
-            <span className="mx-2 sm:mx-3">›</span>
-
-            <span>{trustedByLeaders.breadcrumb.section}</span>
-
-            <span className="mx-2 sm:mx-3">›</span>
-
-            <span className="text-[#4A8E76]">
-              {trustedByLeaders.breadcrumb.category}
-            </span>
-
-            <span className="mx-2 sm:mx-3">›</span>
-
-            <span className="text-[#4A8E76]">
-              {trustedByLeaders.breadcrumb.current}
-            </span>
-          </p>
-        </section>
-
-
         {/* ================= HERO ================= */}
+        <section className="relative overflow-hidden bg-[#E2F8EF]">
 
-        <section className="relative max-w-[1350px] mx-auto px-6 sm:px-10 lg:px-14 pt-10 sm:pt-12 lg:pt-14">
+          <div className="max-w-[1350px] mx-auto px-6 sm:px-10 lg:px-14 py-12 sm:py-14 lg:py-16">
 
-          <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-10 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-12 items-center">
 
-            {/* ================= LEFT CONTENT ================= */}
+              {/* LEFT CONTENT */}
+              <div>
 
-            <div className="relative z-10">
+                <p className="text-[12px] sm:text-[13px] lg:text-[14px] text-[#7B8A86]">
+                  Home <span className="mx-2">›</span>
+                  {trustedByLeaders.breadcrumb.section}
+                  <span className="mx-2">›</span>
+                  {trustedByLeaders.breadcrumb.category}
+                  <span className="mx-2">›</span>
+                  <span className="text-[#4A8E76]">
+                    {trustedByLeaders.breadcrumb.current}
+                  </span>
+                </p>
 
-              {/* LABEL */}
+                <div className="mt-8">
 
-              <div className="inline-flex flex-col items-start">
+                  <span className="text-[14px] sm:text-[15px] font-semibold tracking-[1.2px] text-[#548C78]">
+                    {trustedByLeaders.label}
+                  </span>
 
-                <span className="text-[12px] sm:text-[13px] lg:text-[14px] font-semibold tracking-[1px] text-[#548C78]">
-                  {trustedByLeaders.label}
-                </span>
-
-                <span className="mt-2.5 h-[3px] w-[70px] rounded-full bg-[#4D997A]" />
-
-              </div>
-
-
-              {/* HEADING */}
-
-              <h1 className="mt-6 sm:mt-7 max-w-[850px] text-[34px] sm:text-[42px] md:text-[50px] lg:text-[56px] xl:text-[60px] leading-[1.08] font-bold tracking-[-1.8px] text-[#07372F]">
-                Trusted By Leaders at Every Level
-              </h1>
-
-
-              {/* INTRODUCTION */}
-
-              <p className="mt-6 sm:mt-7 max-w-[900px] text-[13px] sm:text-[14px] lg:text-[15px] leading-[1.45] text-[#4F5958]">
-                {trustedByLeaders.introduction}
-
-                <span className="text-[#3C9A72] font-medium">
-                  {trustedByLeaders.highlightedIntroduction}
-                </span>
-              </p>
-
-            </div>
-
-
-            {/* ================= HERO PEOPLE ILLUSTRATION ================= */}
-
-            <div className="relative hidden lg:flex justify-center items-center">
-
-              {/* Decorative background */}
-
-              <div className="relative w-[500px] h-[390px] flex items-end justify-center">
-
-                {/* Background circle */}
-
-                <div className="absolute right-[20px] top-[15px] h-[350px] w-[350px] rounded-full bg-[#D9F8EB] opacity-90" />
-
-
-                {/* Small dotted decoration */}
-
-                <div className="absolute right-[5px] top-[30px] grid grid-cols-5 gap-[8px] opacity-70">
-
-                  {Array.from({ length: 25 }).map((_, index) => (
-
-                    <span
-                      key={index}
-                      className="h-[5px] w-[5px] rounded-full bg-[#70BDA7]"
-                    />
-
-                  ))}
+                  <div className="mt-3 h-[3px] w-[58px] rounded-full bg-[#4D997A]" />
 
                 </div>
 
+                <h1 className="mt-7 max-w-[700px] text-[42px] sm:text-[48px] md:text-[54px] lg:text-[58px] xl:text-[62px] leading-[1.08] font-bold tracking-[-2px] text-[#07372F]">
 
-                {/* ================= PROFESSIONAL PEOPLE GROUP ================= */}
+                  Trusted By Leaders at{" "}
 
-                <div className="relative z-10 flex items-end justify-center gap-7 pb-5">
+                  <span className="text-[#3C9A72]">
+                    Every Level.
+                  </span>
 
+                </h1>
 
-                  {/* ================= LEFT PERSON ================= */}
+                <p className="mt-7 max-w-[700px] text-[15px] sm:text-[16px] lg:text-[17px] leading-[1.55] text-[#374D48]">
 
-                  <div className="relative flex w-[105px] flex-col items-center">
+                  {trustedByLeaders.introduction}
 
-                    {/* HEAD HALO */}
+                  <span className="font-semibold text-[#3C9A72]">
+                    {trustedByLeaders.highlightedIntroduction}
+                  </span>
 
-                    <div className="absolute top-[-8px] h-[72px] w-[72px] rounded-full border-[7px] border-[#A8E3D0]" />
+                </p>
 
-                    {/* HEAD */}
+              </div>
 
-                    <div className="relative z-10 h-[58px] w-[58px] rounded-full bg-[#3C9A72]" />
+              {/* HERO IMAGE */}
+              <div className="flex justify-center lg:justify-end">
 
-                    {/* BODY */}
+                <div className="relative w-full max-w-[600px]">
 
-                    <div className="relative z-10 mt-2 h-[115px] w-[88px] rounded-t-[42px] bg-[#3C9A72]" />
-
-                  </div>
-
-
-                  {/* ================= CENTER PERSON ================= */}
-
-                  <div className="relative flex w-[125px] flex-col items-center">
-
-                    {/* HEAD HALO */}
-
-                    <div className="absolute top-[-10px] h-[90px] w-[90px] rounded-full border-[8px] border-[#7CCDB5]" />
-
-                    {/* HEAD */}
-
-                    <div className="relative z-10 h-[72px] w-[72px] rounded-full bg-[#287D61]" />
-
-                    {/* BODY */}
-
-                    <div className="relative z-10 mt-2 h-[145px] w-[108px] rounded-t-[52px] bg-[#287D61]" />
-
-                  </div>
-
-
-                  {/* ================= RIGHT PERSON ================= */}
-
-                  <div className="relative flex w-[105px] flex-col items-center">
-
-                    {/* HEAD HALO */}
-
-                    <div className="absolute top-[-8px] h-[72px] w-[72px] rounded-full border-[7px] border-[#A8E3D0]" />
-
-                    {/* HEAD */}
-
-                    <div className="relative z-10 h-[58px] w-[58px] rounded-full bg-[#3C9A72]" />
-
-                    {/* BODY */}
-
-                    <div className="relative z-10 mt-2 h-[115px] w-[88px] rounded-t-[42px] bg-[#3C9A72]" />
-
-                  </div>
+                  <img
+                    src={heroImage}
+                    alt="Trusted by leaders"
+                    className="
+                      w-full
+                      h-auto
+                      object-contain
+                      drop-shadow-[0_18px_30px_rgba(0,86,65,0.15)]
+                      transition-all
+                      duration-500
+                      ease-out
+                      hover:scale-[1.04]
+                      hover:-translate-y-2
+                      hover:drop-shadow-[0_25px_40px_rgba(0,86,65,0.25)]
+                      animate-[float_5s_ease-in-out_infinite]
+                    "
+                  />
 
                 </div>
 
@@ -174,60 +94,82 @@ function TrustedByLeaders() {
             </div>
 
           </div>
-
         </section>
 
 
-        {/* ================= MAIN CONTENT ================= */}
+        {/* ================= BUSINESS + PARTNERS ================= */}
+        <section className="max-w-[1350px] mx-auto px-6 sm:px-10 lg:px-14 mt-16 sm:mt-20 lg:mt-24">
 
-        <section className="max-w-[1350px] mx-auto px-6 sm:px-10 lg:px-14 mt-12 sm:mt-16 lg:mt-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-8 lg:gap-10">
 
-          <div className="grid grid-cols-1 lg:grid-cols-[0.95fr_1fr] gap-8 lg:gap-10 items-start">
+            {/* BUSINESS BEFORE LEARNING */}
+            <div className="
+              rounded-2xl
+              bg-[#005641]
+              px-7 sm:px-8 lg:px-9
+              py-8 sm:py-9
+              transition-all
+              duration-300
+              hover:bg-[#D9F8EB]
+              hover:shadow-[0_15px_35px_rgba(0,86,65,0.18)]
+              group
+            ">
 
-
-            {/* ================= BUSINESS BEFORE LEARNING ================= */}
-
-            <div className="rounded-xl bg-[#005641] px-6 sm:px-7 lg:px-8 py-7 sm:py-8 lg:py-9 shadow-sm">
-
-              <h2 className="text-[23px] sm:text-[25px] lg:text-[27px] font-bold text-[#9CEBC9]">
+              <h2 className="
+                text-[25px] sm:text-[27px] lg:text-[29px]
+                font-bold
+                text-white
+                group-hover:text-[#005641]
+              ">
                 {trustedByLeaders.businessTitle}
               </h2>
 
+              <div className="mt-3 h-[3px] w-[50px] bg-[#9BE8C9] group-hover:bg-[#005641]" />
 
-              <div className="mt-6 sm:mt-7 space-y-4">
+              <div className="mt-7 space-y-5">
 
-                {trustedByLeaders.businessAudience.map((item) => {
+                {trustedByLeaders.businessAudience.map((person) => {
 
-                  const Icon = item.icon;
+                  const Icon = person.icon;
 
                   return (
                     <div
-                      key={item.id}
+                      key={person.id}
                       className="flex items-center gap-4"
                     >
 
-                      {/* ICON */}
-
-                      <div className="flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-[#E2F8EF]">
+                      <div className="
+                        flex
+                        h-12 w-12
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-full
+                        bg-[#E2F8EF]
+                        transition-transform
+                        duration-300
+                        group-hover:scale-105
+                      ">
 
                         <Icon
-                          size={22}
-                          strokeWidth={1.7}
+                          size={23}
+                          strokeWidth={1.6}
                           className="text-[#4A9877]"
                         />
 
                       </div>
 
-
-                      {/* TEXT */}
-
-                      <p className="text-[14px] sm:text-[15px] lg:text-[16px] font-medium text-white leading-[1.3]">
-                        {item.title}
-                      </p>
+                      <span className="
+                        text-[15px] sm:text-[16px] lg:text-[17px]
+                        font-semibold
+                        text-white
+                        group-hover:text-[#07372F]
+                      ">
+                        {person.title}
+                      </span>
 
                     </div>
                   );
-
                 })}
 
               </div>
@@ -235,73 +177,84 @@ function TrustedByLeaders() {
             </div>
 
 
-            {/* ================= PARTNERS ================= */}
-
+            {/* PARTNERS */}
             <div>
 
-              {/* TITLE */}
-
-              <h2 className="text-[25px] sm:text-[28px] lg:text-[30px] font-bold text-[#07372F]">
+              <h2 className="text-[27px] sm:text-[29px] lg:text-[31px] font-bold text-[#07372F]">
                 {trustedByLeaders.partnersTitle}
               </h2>
 
+              <div className="mt-3 h-[3px] w-[50px] bg-[#4D997A]" />
 
-              {/* UNDERLINE */}
-
-              <div className="mt-3 h-[3px] w-[40px] rounded-full bg-[#4D997A]" />
-
-
-              {/* DESCRIPTION */}
-
-              <p className="mt-5 text-[13px] sm:text-[14px] lg:text-[15px] leading-[1.42] text-[#4F5958]">
+              <p className="mt-6 text-[15px] sm:text-[16px] lg:text-[17px] leading-[1.55] text-[#4F5958]">
                 {trustedByLeaders.partnersDescription}
               </p>
 
 
-              {/* ================= ALLIANCE CARDS ================= */}
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-5">
 
-              <div className="mt-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
+                {trustedByLeaders.alliances.map((alliance) => {
 
-                {trustedByLeaders.alliances.map((item) => {
-
-                  const Icon = item.icon;
+                  const Icon = alliance.icon;
 
                   return (
                     <div
-                      key={item.id}
-                      className="min-h-[105px] rounded-lg bg-white border border-[#E7E7E7] border-l-[5px] border-l-[#167A5C] shadow-[0_4px_10px_rgba(0,0,0,0.12)] px-4 sm:px-5 py-5 flex items-center gap-4"
+                      key={alliance.id}
+                      className="
+                        min-h-[125px]
+                        rounded-xl
+                        bg-white
+                        border
+                        border-[#E8E8E8]
+                        border-l-[5px]
+                        border-l-[#4D997A]
+                        shadow-[0_4px_10px_rgba(0,0,0,0.10)]
+                        px-5
+                        py-5
+                        flex
+                        items-center
+                        gap-4
+                        transition-all
+                        duration-300
+                        hover:bg-[#D9F8EB]
+                        hover:border-l-[#005641]
+                        hover:-translate-y-1
+                        hover:shadow-[0_12px_25px_rgba(0,86,65,0.16)]
+                      "
                     >
 
-                      {/* ICON */}
-
-                      <div className="shrink-0 flex items-center justify-center">
+                      <div className="
+                        flex
+                        h-14 w-14
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-full
+                        bg-[#D9F8EB]
+                      ">
 
                         <Icon
-                          size={37}
+                          size={29}
                           strokeWidth={1.5}
                           className="text-[#4A9877]"
                         />
 
                       </div>
 
-
-                      {/* TEXT */}
-
                       <div>
 
-                        <p className="text-[12px] sm:text-[13px] lg:text-[14px] font-semibold leading-[1.35] text-[#303D3A]">
-                          {item.title}
-                        </p>
+                        <h3 className="text-[15px] sm:text-[16px] font-bold text-[#173D35]">
+                          {alliance.title}
+                        </h3>
 
-                        <p className="mt-1 text-[11px] sm:text-[12px] lg:text-[13px] leading-[1.4] text-[#4F5958]">
-                          {item.description}
+                        <p className="mt-1 text-[14px] sm:text-[15px] leading-[1.4] text-[#4F5958]">
+                          {alliance.description}
                         </p>
 
                       </div>
 
                     </div>
                   );
-
                 })}
 
               </div>
@@ -313,39 +266,53 @@ function TrustedByLeaders() {
         </section>
 
 
-        {/* ================= CLOSING QUOTE ================= */}
+        {/* ================= CLOSING ================= */}
+        <section className="max-w-[1350px] mx-auto px-6 sm:px-10 lg:px-14 mt-16 sm:mt-20 lg:mt-24 pb-14 sm:pb-16 lg:pb-20">
 
-        <section className="max-w-[1350px] mx-auto px-6 sm:px-10 lg:px-14 mt-14 sm:mt-18 lg:mt-20 pb-14 sm:pb-16 lg:pb-20">
+          <div className="
+            rounded-2xl
+            bg-[#D9F8EB]
+            px-7 sm:px-9 lg:px-10
+            py-8 sm:py-9
+            flex
+            items-center
+            gap-5 sm:gap-6
+            transition-all
+            duration-300
+            hover:bg-[#005641]
+            group
+          ">
 
-          <div className="rounded-2xl bg-[#D9F8EB] px-6 sm:px-8 lg:px-10 py-7 sm:py-8">
+            <div className="
+              flex
+              h-14 w-14 sm:h-16 sm:w-16
+              shrink-0
+              items-center
+              justify-center
+              rounded-full
+              bg-[#005641]
+              group-hover:bg-[#D9F8EB]
+              transition-colors
+              duration-300
+            ">
 
-            <div className="flex items-center gap-5 sm:gap-6">
-
-              {/* QUOTE ICON */}
-
-              <div className="flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-full bg-[#005641]">
-
-                <Quote
-                  size={27}
-                  strokeWidth={2}
-                  className="text-white"
-                />
-
-              </div>
-
-
-              {/* VERTICAL LINE */}
-
-              <div className="hidden sm:block h-14 w-[3px] rounded-full bg-[#4D997A]" />
-
-
-              {/* TEXT */}
-
-              <p className="max-w-[950px] text-[14px] sm:text-[15px] lg:text-[17px] leading-[1.4] font-medium text-[#173D35]">
-                {trustedByLeaders.closing}
-              </p>
+              <Quote
+                size={28}
+                strokeWidth={1.8}
+                className="text-white group-hover:text-[#005641]"
+              />
 
             </div>
+
+            <p className="
+              text-[16px] sm:text-[17px] lg:text-[19px]
+              font-semibold
+              leading-[1.45]
+              text-[#173D35]
+              group-hover:text-white
+            ">
+              {trustedByLeaders.closing}
+            </p>
 
           </div>
 
@@ -353,10 +320,19 @@ function TrustedByLeaders() {
 
       </main>
 
-
-      {/* ================= FOOTER ================= */}
-
       <Footer />
+
+      {/* IMAGE FLOAT ANIMATION */}
+      <style>{`
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+      `}</style>
 
     </div>
   );

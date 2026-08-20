@@ -26,76 +26,47 @@ function MegaMenu({ isOpen, menuType }) {
 
   if (!isOpen) return null;
 
-  const itemClass =
-    "group w-full flex items-center gap-4 text-left px-3 py-2.5 rounded-lg hover:bg-[#F5FBF8] transition-all duration-200";
-
-  const iconClass =
-    "w-10 h-10 rounded-lg bg-[#EAF7F0] flex items-center justify-center text-[#3F9975] text-[14px] shrink-0";
-
-  const textClass =
-    "text-[14px] leading-[1.3] font-medium text-[#414B5A] group-hover:text-[#3F9975] transition-colors";
+  const itemClass = "group w-full flex items-center gap-4 text-left px-3 py-2.5 rounded-lg hover:bg-[#F5FBF8] transition-all duration-200";
+  const iconClass = "w-10 h-10 rounded-lg bg-[#EAF7F0] flex items-center justify-center text-[#3F9975] text-[14px] shrink-0";
+  const textClass = "text-[14px] leading-[1.3] font-medium text-[#414B5A] group-hover:text-[#3F9975] transition-colors";
 
   /* ================= SERVICES ================= */
 
   if (menuType === "services") {
     return (
       <div className="absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 z-[999]">
-
         <div className="max-w-[1400px] mx-auto px-8 py-8">
-
           {!activeService ? (
             <>
               <div className="mb-6">
-
-                <h2 className="text-2xl font-semibold text-[#0B2C25]">
-                  Our Services
-                </h2>
-
-                <p className="mt-2 text-sm text-gray-500">
-                  Explore our learning and development solutions.
-                </p>
-
+                <h2 className="text-2xl font-semibold text-[#0B2C25]">Our Services</h2>
+                <p className="mt-2 text-sm text-gray-500">Explore our learning and development solutions.</p>
               </div>
 
               <div className="grid grid-cols-[1fr_270px] gap-8 items-start">
-
-                <MenuColumns
-                  setActiveMenu={setActiveService}
-                />
-
+                <MenuColumns setActiveMenu={setActiveService} />
                 <FeatureCard />
-
               </div>
             </>
           ) : (
-            <ServiceContent
-              menu={activeService}
-              goBack={() => setActiveService(null)}
-            />
+            <ServiceContent menu={activeService} goBack={() => setActiveService(null)} />
           )}
-
         </div>
-
       </div>
     );
   }
-
 
   /* ================= WHY 3RD EDHUM ================= */
 
   if (menuType === "whyus") {
     return (
       <div className="absolute top-full left-1/2 -translate-x-1/2 w-[calc(100%-50px)] max-w-[1300px] bg-white rounded-b-[18px] shadow-xl border border-gray-100 overflow-hidden z-[999]">
-
         <div className="grid grid-cols-[1fr_1fr_1fr_1fr_260px] min-h-[497px]">
 
           {/* INTRODUCTION */}
 
           <div className="relative border-r border-gray-200 px-8 pt-8 pb-5 flex flex-col">
-
-            <h3 className="text-[14px] font-semibold tracking-[0.5px] text-[#5B927B]">
-              WHY 3RD EDHUM
-            </h3>
+            <h3 className="text-[14px] font-semibold tracking-[0.5px] text-[#5B927B]">WHY 3RD EDHUM</h3>
 
             <div className="mt-4 w-[40px] h-[3px] bg-[#3F9975] rounded-full" />
 
@@ -104,55 +75,25 @@ function MegaMenu({ isOpen, menuType }) {
             </p>
 
             <div className="mt-auto flex justify-center items-end pt-5">
-
-              <img
-                src={whyUsImage}
-                alt="Why 3rd EdHum"
-                className="w-[180px] h-[150px] object-contain object-bottom"
-              />
-
+              <img src={whyUsImage} alt="Why 3rd EdHum" loading="lazy" decoding="async" className="w-[180px] h-[150px] object-contain object-bottom" />
             </div>
-
           </div>
-
 
           {/* WHY US COLUMNS */}
 
           {whyUsData.columns.map((column) => (
+            <div key={column.title} className="border-r border-gray-200 px-8 pt-8 pb-5">
 
-            <div
-              key={column.title}
-              className="border-r border-gray-200 px-8 pt-8 pb-5"
-            >
+              {/* ABOUT US IS NOW ONLY A HEADING */}
 
-              {/* ABOUT US HEADING */}
+              <h3 className="text-[14px] font-semibold tracking-[0.5px] text-[#5B927B]">
+                {column.title}
+              </h3>
 
-              {column.title === "ABOUT US" ? (
-                <button
-                  type="button"
-                  onClick={() => navigate("/why3rdedhum/about-us")}
-                  className="text-left"
-                >
-                  <h3 className="text-[14px] font-semibold tracking-[0.5px] text-[#5B927B] hover:text-[#3F9975] transition-colors">
-                    {column.title}
-                  </h3>
-
-                  <div className="mt-4 w-[40px] h-[3px] bg-[#3F9975] rounded-full" />
-                </button>
-              ) : (
-                <>
-                  <h3 className="text-[14px] font-semibold tracking-[0.5px] text-[#5B927B]">
-                    {column.title}
-                  </h3>
-
-                  <div className="mt-4 w-[40px] h-[3px] bg-[#3F9975] rounded-full" />
-                </>
-              )}
+              <div className="mt-4 w-[40px] h-[3px] bg-[#3F9975] rounded-full" />
 
               <div className="mt-7 space-y-2">
-
                 {column.items.map((item) => {
-
                   const label = item.label.trim().toLowerCase();
 
                   return (
@@ -160,119 +101,49 @@ function MegaMenu({ isOpen, menuType }) {
                       key={item.label}
                       type="button"
                       onClick={() => {
-
                         if (label === "what makes us different") {
-                          navigate(
-                            "/why3rdedhum/our-differences/what-makes-us-different"
-                          );
-                        }
-
-                        else if (label === "the impact of learning") {
-                          navigate(
-                            "/why3rdedhum/our-differences/the-impact-of-learning"
-                          );
-                        }
-
-                        else if (label === "our client results") {
-                          navigate(
-                            "/why3rdedhum/our-differences/our-client-results"
-                          );
-                        }
-
-                        else if (label === "customer success stories") {
-                          navigate(
-                            "/why3rdedhum/our-differences/customer-success-stories"
-                          );
-                        }
-
-                        /* AWARDS & RECOGNITION */
-
-                        else if (label === "awards & recognition") {
-                          navigate(
-                            "/why3rdedhum/our-differences/awards-recognition"
-                          );
-                        }
-
-
-                        else if (label === "who we are") {
+                          navigate("/why3rdedhum/our-differences/what-makes-us-different");
+                        } else if (label === "the impact of learning") {
+                          navigate("/why3rdedhum/our-differences/the-impact-of-learning");
+                        } else if (label === "our client results") {
+                          navigate("/why3rdedhum/our-differences/our-client-results");
+                        } else if (label === "customer success stories") {
+                          navigate("/why3rdedhum/our-differences/customer-success-stories");
+                        } else if (label === "awards & recognition") {
+                          navigate("/why3rdedhum/our-differences/awards-recognition");
+                        } else if (label === "who we are") {
                           navigate("/why3rdedhum/who-we-are");
+                        } else if (label === "our mission & values") {
+                          navigate("/why3rdedhum/about-us/our-missions-values");
+                        } else if (label === "our leadership team") {
+                          navigate("/why3rdedhum/about-us/our-leadership-team");
+                        } else if (label === "our journey") {
+                          navigate("/why3rdedhum/about-us/our-journey");
+                        } else if (label === "culture & beliefs") {
+                          navigate("/why3rdedhum/about-us/culture-beliefs");
+                        } else if (label === "global presence") {
+                          navigate("/why3rdedhum/our-reach/global-presence");
+                        } else if (label === "industry expertise") {
+                          navigate("/why3rdedhum/our-reach/industry-expertise");
+                        } else if (label === "trusted by leaders") {
+                          navigate("/why3rdedhum/our-reach/trusted-by-leaders");
                         }
-
-                        else if (label === "about us") {
-                          navigate("/why3rdedhum/about-us");
-                        }
-
-                        else if (label === "our mission & values") {
-                          navigate(
-                            "/why3rdedhum/about-us/our-missions-values"
-                          );
-                        }
-
-                        else if (label === "our leadership team") {
-                          navigate(
-                            "/why3rdedhum/about-us/our-leadership-team"
-                          );
-                        }
-
-                        else if (label === "our journey") {
-                          navigate(
-                            "/why3rdedhum/about-us/our-journey"
-                          );
-                        }
-
-                        else if (label === "culture & beliefs") {
-                          navigate(
-                            "/why3rdedhum/about-us/culture-beliefs"
-                          );
-                        }
-
-                        else if (label === "global presence") {
-                          navigate(
-                            "/why3rdedhum/our-reach/global-presence"
-                          );
-                        }
-
-                        else if (label === "industry expertise") {
-                          navigate(
-                            "/why3rdedhum/our-reach/industry-expertise"
-                          );
-                        }
-
-                        else if (label === "trusted by leaders") {
-                          navigate(
-                            "/why3rdedhum/our-reach/trusted-by-leaders"
-                          );
-                        }
-
                       }}
                       className={itemClass}
                     >
-
-                      <span className={iconClass}>
-                        {item.icon}
-                      </span>
-
-                      <span className={textClass}>
-                        {item.label}
-                      </span>
-
+                      <span className={iconClass}>{item.icon}</span>
+                      <span className={textClass}>{item.label}</span>
                     </button>
                   );
                 })}
-
               </div>
-
             </div>
           ))}
-
 
           {/* PROMO CARD */}
 
           <div className="bg-[#006247] text-white px-8 pt-8 pb-7 flex flex-col">
-
-            <div className="text-[28px] leading-none">
-              {whyUsData.promo.icon}
-            </div>
+            <div className="text-[28px] leading-none">{whyUsData.promo.icon}</div>
 
             <h3 className="mt-6 text-[19px] leading-[1.3] font-bold">
               Empower People
@@ -287,50 +158,30 @@ function MegaMenu({ isOpen, menuType }) {
             </p>
 
             <div className="mt-auto pt-5">
+              <img src={whyUsPromoImage} alt="Empower People" loading="lazy" decoding="async" className="w-full h-[105px] object-contain object-bottom" />
 
-              <img
-                src={whyUsPromoImage}
-                alt="Empower People"
-                className="w-full h-[105px] object-contain object-bottom"
-              />
-
-              <button
-                type="button"
-                className="mt-3 w-full bg-white text-[#3F9975] rounded-lg px-4 py-3 text-[13px] font-semibold flex items-center justify-center gap-2 hover:bg-gray-100 transition-all duration-200"
-              >
-
+              <button type="button" className="mt-3 w-full bg-white text-[#3F9975] rounded-lg px-4 py-3 text-[13px] font-semibold flex items-center justify-center gap-2 hover:bg-gray-100 transition-all duration-200">
                 {whyUsData.promo.button}
-
                 <FaArrowRight className="text-[10px]" />
-
               </button>
-
             </div>
-
           </div>
-
         </div>
-
       </div>
     );
   }
-
 
   /* ================= INSIGHTS ================= */
 
   if (menuType === "insights") {
     return (
       <div className="absolute top-full left-1/2 -translate-x-1/2 w-[calc(100%-50px)] max-w-[1300px] bg-white rounded-b-[18px] shadow-xl border border-gray-100 overflow-hidden z-[999]">
-
         <div className="grid grid-cols-[1fr_1fr_1fr_1fr_260px] min-h-[487px]">
 
           {/* INTRODUCTION */}
 
           <div className="relative border-r border-gray-200 px-8 pt-8 pb-5 flex flex-col">
-
-            <h3 className="text-[14px] font-semibold tracking-[0.5px] text-[#5B927B]">
-              INSIGHTS
-            </h3>
+            <h3 className="text-[14px] font-semibold tracking-[0.5px] text-[#5B927B]">INSIGHTS</h3>
 
             <div className="mt-4 w-[40px] h-[3px] bg-[#3F9975] rounded-full" />
 
@@ -339,27 +190,14 @@ function MegaMenu({ isOpen, menuType }) {
             </p>
 
             <div className="mt-auto flex justify-center items-end pt-5">
-
-              <img
-                src={insightsImage}
-                alt="Insights"
-                className="w-[190px] h-[150px] object-contain object-bottom"
-              />
-
+              <img src={insightsImage} alt="Insights" loading="lazy" decoding="async" className="w-[190px] h-[150px] object-contain object-bottom" />
             </div>
-
           </div>
-
 
           {/* INSIGHTS COLUMNS */}
 
           {insightsData.columns.map((column) => (
-
-            <div
-              key={column.title}
-              className="border-r border-gray-200 px-8 pt-8 pb-5"
-            >
-
+            <div key={column.title} className="border-r border-gray-200 px-8 pt-8 pb-5">
               <h3 className="text-[14px] font-semibold tracking-[0.5px] text-[#5B927B]">
                 {column.title}
               </h3>
@@ -367,40 +205,20 @@ function MegaMenu({ isOpen, menuType }) {
               <div className="mt-4 w-[40px] h-[3px] bg-[#3F9975] rounded-full" />
 
               <div className="mt-7 space-y-2">
-
                 {column.items.map((item) => (
-
-                  <button
-                    key={item.label}
-                    type="button"
-                    className={itemClass}
-                  >
-
-                    <span className={iconClass}>
-                      {item.icon}
-                    </span>
-
-                    <span className={textClass}>
-                      {item.label}
-                    </span>
-
+                  <button key={item.label} type="button" className={itemClass}>
+                    <span className={iconClass}>{item.icon}</span>
+                    <span className={textClass}>{item.label}</span>
                   </button>
-
                 ))}
-
               </div>
-
             </div>
           ))}
-
 
           {/* INSIGHTS PROMO */}
 
           <div className="bg-[#006247] text-white px-8 pt-8 pb-7 flex flex-col">
-
-            <div className="text-[28px] leading-none">
-              {insightsData.promo.icon}
-            </div>
+            <div className="text-[28px] leading-none">{insightsData.promo.icon}</div>
 
             <h3 className="mt-6 text-[19px] leading-[1.3] font-bold">
               Knowledge Drives,
@@ -415,30 +233,15 @@ function MegaMenu({ isOpen, menuType }) {
             </p>
 
             <div className="mt-auto pt-5">
+              <img src={insightsPromoImage} alt="Knowledge Drives Better Leaders" loading="lazy" decoding="async" className="w-full h-[105px] object-contain object-bottom" />
 
-              <img
-                src={insightsPromoImage}
-                alt="Knowledge Drives Better Leaders"
-                className="w-full h-[105px] object-contain object-bottom"
-              />
-
-              <button
-                type="button"
-                className="mt-3 w-full bg-white text-[#3F9975] rounded-lg px-4 py-3 text-[13px] font-semibold flex items-center justify-center gap-2 hover:bg-gray-100 transition-all duration-200"
-              >
-
+              <button type="button" className="mt-3 w-full bg-white text-[#3F9975] rounded-lg px-4 py-3 text-[13px] font-semibold flex items-center justify-center gap-2 hover:bg-gray-100 transition-all duration-200">
                 {insightsData.promo.button}
-
                 <FaArrowRight className="text-[10px]" />
-
               </button>
-
             </div>
-
           </div>
-
         </div>
-
       </div>
     );
   }

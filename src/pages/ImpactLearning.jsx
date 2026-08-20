@@ -4,307 +4,298 @@ import Footer from "../components/footer/Footer";
 
 const ImpactLearning = () => {
   return (
-    <div className="w-full min-h-screen bg-[#FFF9F9] text-[#062F2D] overflow-hidden">
+    <div className="min-h-screen overflow-hidden bg-white text-[#062F2D]">
 
-      {/* ================= HERO / INTRO ================= */}
+      {/* ================= HERO ================= */}
+      <section className="px-4 pt-5 sm:px-6 lg:px-10">
+        <div className="relative overflow-hidden rounded-2xl border border-[#DDECE5] bg-gradient-to-r from-[#E7FFF4] to-[#F5FFFB]">
 
-      <section className="relative w-full px-6 sm:px-10 lg:px-16 xl:px-24 pt-8 pb-12">
+          <div className="absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-[#C9F5E2]/70" />
+          <div className="absolute -bottom-48 -left-40 h-[450px] w-[450px] rounded-full bg-[#DDF9EC]/60" />
 
-        {/* Background decorative shape */}
-        <div className="absolute right-[-180px] top-[-80px] w-[500px] h-[500px] rounded-full bg-[#E5F8EF] opacity-80 pointer-events-none" />
+          <div className="relative z-10 mx-auto max-w-[1350px] px-6 py-10 sm:px-10 lg:px-14 lg:py-12">
 
-        <div className="relative z-10 max-w-[1280px] mx-auto">
-
-          {/* Breadcrumb */}
-
-          <div className="flex flex-wrap items-center gap-2 mb-12 text-[12px] lg:text-[13px] text-[#8B9A96]">
-
-            {impactPageData.breadcrumb.map((item, index) => (
-
-              <React.Fragment key={`${item}-${index}`}>
-
-                <span
-                  className={
-                    index === impactPageData.breadcrumb.length - 1
-                      ? "text-[#4C9276] font-medium"
-                      : ""
-                  }
-                >
-                  {item}
-                </span>
-
-                {index < impactPageData.breadcrumb.length - 1 && (
-                  <span className="text-[#AAB5B1]">
-                    /
+            {/* Breadcrumb */}
+            <div className="mb-10 flex flex-wrap items-center gap-2 text-[12px] text-[#7D8E89] sm:text-[13px]">
+              {impactPageData.breadcrumb.map((item, index) => (
+                <React.Fragment key={`${item}-${index}`}>
+                  <span
+                    className={
+                      index === impactPageData.breadcrumb.length - 1
+                        ? "font-medium text-[#4C9276]"
+                        : ""
+                    }
+                  >
+                    {item}
                   </span>
-                )}
 
-              </React.Fragment>
+                  {index < impactPageData.breadcrumb.length - 1 && (
+                    <span className="text-[#AAB5B1]">›</span>
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
 
-            ))}
+            {/* Label */}
+            <div className="mb-5">
+              <p className="text-[14px] font-bold tracking-[2px] text-[#4E9777] sm:text-[15px]">
+                {impactPageData.label}
+              </p>
+              <div className="mt-3 h-[3px] w-[55px] rounded-full bg-[#4E9777]" />
+            </div>
 
-          </div>
+            {/* Heading */}
+            <h1 className="max-w-[1000px] text-[40px] font-extrabold leading-[1.08] tracking-[-2px] text-[#032F2E] sm:text-[48px] md:text-[56px] lg:text-[62px] xl:text-[68px]">
+              Learning That Changes{" "}
+              <span className="text-[#489873]">People.</span>
+              <br />
+              Performance. Business.
+            </h1>
 
-
-          {/* Section Label */}
-
-          <div className="mb-5">
-
-            <p className="text-[13px] lg:text-[14px] font-bold tracking-[3px] text-[#4E9777]">
-              {impactPageData.label}
+            {/* Description */}
+            <p className="mt-7 max-w-[1100px] text-[15px] leading-[1.7] text-[#56625F] sm:text-[16px] lg:text-[18px]">
+              {impactPageData.description}
             </p>
-
-            <div className="mt-3 w-[45px] h-[3px] rounded-full bg-[#4E9777]" />
-
           </div>
-
-
-          {/* Main Heading */}
-
-          <h1 className="max-w-[1000px] text-[42px] sm:text-[50px] lg:text-[60px] xl:text-[66px] leading-[1.08] tracking-[-2px] font-extrabold text-[#032F2E]">
-
-            Learning That Changes{" "}
-
-            <span className="text-[#489873]">
-              People.
-            </span>
-
-            <br />
-
-            Performance. Business.
-
-          </h1>
-
-
-          {/* Description */}
-
-          <p className="mt-7 max-w-[1120px] text-[16px] lg:text-[17px] xl:text-[18px] leading-[1.7] text-[#56625F]">
-            {impactPageData.description}
-          </p>
-
         </div>
-
       </section>
 
-
       {/* ================= IMPACT ARCHITECTURE ================= */}
+      <section className="px-6 py-14 sm:px-10 lg:px-16 xl:px-24">
+        <div className="mx-auto max-w-[1200px]">
 
-      <section className="relative w-full px-6 sm:px-10 lg:px-16 xl:px-24 pt-4 pb-20">
+          <div className="relative mx-auto h-[520px] w-full max-w-[1050px] lg:h-[570px]">
 
-        <div className="max-w-[1200px] mx-auto">
+            {/* Outer circle */}
+            <div
+              className="
+                absolute left-1/2 top-5
+                h-[380px] w-[380px]
+                -translate-x-1/2 rounded-full
+                bg-[#85F1D8]
+                lg:h-[430px] lg:w-[430px]
+                animate-[pulse_5s_ease-in-out_infinite]
+              "
+            />
 
-          {/* Diagram */}
+            {/* Middle circle */}
+            <div
+              className="
+                absolute left-1/2 top-[95px]
+                h-[280px] w-[280px]
+                -translate-x-1/2 rounded-full
+                bg-[#20A886]
+                transition-transform duration-700
+                hover:scale-105
+                lg:top-[105px] lg:h-[315px] lg:w-[315px]
+              "
+            />
 
-          <div className="relative mx-auto w-full max-w-[1050px] h-[520px] lg:h-[570px]">
+            {/* Inner circle */}
+            <div
+              className="
+                absolute left-1/2 top-[170px]
+                h-[180px] w-[180px]
+                -translate-x-1/2 rounded-full
+                bg-[#00543F]
+                shadow-[0_15px_40px_rgba(0,84,63,0.25)]
+                transition-transform duration-700
+                hover:scale-110
+                lg:top-[185px] lg:h-[205px] lg:w-[205px]
+              "
+            />
 
-            {/* Outer Circle */}
-
-            <div className="absolute left-1/2 top-[20px] -translate-x-1/2 w-[380px] h-[380px] lg:w-[430px] lg:h-[430px] rounded-full bg-[#85F1D8]" />
-
-
-            {/* Middle Circle */}
-
-            <div className="absolute left-1/2 top-[95px] lg:top-[105px] -translate-x-1/2 w-[280px] h-[280px] lg:w-[315px] lg:h-[315px] rounded-full bg-[#20A886]" />
-
-
-            {/* Inner Circle */}
-
-            <div className="absolute left-1/2 top-[170px] lg:top-[185px] -translate-x-1/2 w-[180px] h-[180px] lg:w-[205px] lg:h-[205px] rounded-full bg-[#00543F]" />
-
-
-            {/* ================= ORGANISATIONAL IMPACT ================= */}
-
+            {/* Organisational Impact */}
             <div className="absolute left-1/2 top-[65px] w-[190px] lg:w-[260px]">
-
               <div className="relative h-[2px] w-full bg-[#17201E]">
-
-                <span className="absolute right-[-7px] top-1/2 -translate-y-1/2 w-[14px] h-[14px] rounded-full bg-[#17201E]" />
-
+                <span className="absolute right-[-7px] top-1/2 h-[14px] w-[14px] -translate-y-1/2 rounded-full bg-[#17201E]" />
               </div>
 
               <div className="absolute left-[calc(100%+25px)] top-[-10px] w-[300px]">
-
-                <h3 className="text-[18px] lg:text-[20px] font-bold leading-[1.15] text-[#111817]">
+                <h3 className="text-[19px] font-bold leading-[1.15] text-[#111817] lg:text-[21px]">
                   Organisational
                   <br />
                   Transformation
                 </h3>
 
-                <p className="mt-3 text-[13px] lg:text-[14px] leading-[1.5] text-[#66716E]">
+                <p className="mt-3 text-[14px] leading-[1.5] text-[#66716E] lg:text-[15px]">
                   Pipeline, engagement, and
                   <br />
                   sustained growth
                 </p>
-
               </div>
-
             </div>
 
-
-            {/* ================= INDIVIDUAL IMPACT ================= */}
-
-            <div className="absolute left-[calc(50%+135px)] lg:left-[calc(50%+170px)] top-[275px] w-[170px] lg:w-[210px]">
-
+            {/* Individual Impact */}
+            <div className="absolute left-[calc(50%+135px)] top-[275px] w-[170px] lg:left-[calc(50%+170px)] lg:w-[210px]">
               <div className="relative h-[2px] w-full bg-[#17201E]">
-
-                <span className="absolute right-[-7px] top-1/2 -translate-y-1/2 w-[14px] h-[14px] rounded-full bg-[#17201E]" />
-
+                <span className="absolute right-[-7px] top-1/2 h-[14px] w-[14px] -translate-y-1/2 rounded-full bg-[#17201E]" />
               </div>
 
               <div className="absolute left-[calc(100%+25px)] top-[-12px] w-[240px]">
-
-                <h3 className="text-[18px] lg:text-[20px] font-bold leading-[1.15] text-[#111817]">
+                <h3 className="text-[19px] font-bold leading-[1.15] text-[#111817] lg:text-[21px]">
                   Individual Growth
                 </h3>
 
-                <p className="mt-3 text-[13px] lg:text-[14px] leading-[1.5] text-[#66716E]">
+                <p className="mt-3 text-[14px] leading-[1.5] text-[#66716E] lg:text-[15px]">
                   Pipeline, engagement, and
                   <br />
                   sustained growth
                 </p>
-
               </div>
-
             </div>
 
-
-            {/* ================= TEAM IMPROVEMENT ================= */}
-
-            <div className="absolute right-[calc(50%+135px)] lg:right-[calc(50%+170px)] top-[275px] w-[170px] lg:w-[210px]">
-
+            {/* Team Impact */}
+            <div className="absolute right-[calc(50%+135px)] top-[275px] w-[170px] lg:right-[calc(50%+170px)] lg:w-[210px]">
               <div className="relative h-[2px] w-full bg-[#17201E]">
-
-                <span className="absolute left-[-7px] top-1/2 -translate-y-1/2 w-[14px] h-[14px] rounded-full bg-[#17201E]" />
-
+                <span className="absolute left-[-7px] top-1/2 h-[14px] w-[14px] -translate-y-1/2 rounded-full bg-[#17201E]" />
               </div>
 
               <div className="absolute right-[calc(100%+25px)] top-[-12px] w-[240px] text-right">
-
-                <h3 className="text-[18px] lg:text-[20px] font-bold leading-[1.15] text-[#111817]">
+                <h3 className="text-[19px] font-bold leading-[1.15] text-[#111817] lg:text-[21px]">
                   Team
                   <br />
                   Improvement
                 </h3>
 
-                <p className="mt-3 text-[13px] lg:text-[14px] leading-[1.5] text-[#66716E]">
+                <p className="mt-3 text-[14px] leading-[1.5] text-[#66716E] lg:text-[15px]">
                   Stronger collaboration and
                   <br />
                   execution
                 </p>
-
               </div>
-
             </div>
-
           </div>
 
-
-          {/* Architecture Description */}
-
-          <p className="max-w-[900px] mx-auto mt-2 text-center text-[14px] lg:text-[15px] xl:text-[16px] leading-[1.7] text-[#66716E]">
+          <p className="mx-auto mt-2 max-w-[950px] text-center text-[15px] leading-[1.7] text-[#66716E] lg:text-[16px]">
             {impactPageData.architectureText}
           </p>
-
         </div>
-
       </section>
 
-
       {/* ================= IMPACT CARDS ================= */}
+      <section className="px-6 pb-20 sm:px-10 lg:px-16 xl:px-24">
+        <div className="mx-auto max-w-[1280px]">
 
-      <section className="w-full px-6 sm:px-10 lg:px-16 xl:px-24 pb-24">
-
-        <div className="max-w-[1280px] mx-auto">
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
 
             {impactPageData.impactCards.map((card, index) => (
-
               <div
                 key={card.title}
-                className="min-h-[330px] lg:min-h-[360px] rounded-[14px] bg-[#E3F8ED] p-7 lg:p-8 shadow-sm"
+                className="
+                  group min-h-[330px] rounded-[16px]
+                  border border-[#D8EEE3]
+                  bg-[#E3F8ED]
+                  p-7
+                  shadow-[0_5px_18px_rgba(0,0,0,0.08)]
+                  transition-all duration-300 ease-out
+                  hover:-translate-y-2
+                  hover:bg-[#00543F]
+                  hover:shadow-[0_15px_30px_rgba(0,84,63,0.22)]
+                  lg:min-h-[360px] lg:p-8
+                "
               >
 
-                {/* Card Header */}
-
-                <div className="flex items-center gap-4 mb-7">
-
-                  <div className="w-[52px] h-[52px] rounded-full bg-white flex items-center justify-center shrink-0 text-[22px] text-[#65A388]">
-
-                    {index === 0 && "♙"}
-                    {index === 1 && "♧"}
-                    {index === 2 && "◎"}
-
-                  </div>
-
-                  <h2 className="text-[20px] lg:text-[22px] font-bold text-[#173E37] leading-[1.2]">
-                    {card.title}
-                  </h2>
-
+                {/* Icon */}
+                <div
+                  className="
+                    mb-7 flex h-[58px] w-[58px]
+                    items-center justify-center
+                    rounded-full bg-white
+                    text-[24px] text-[#65A388]
+                    transition-all duration-300
+                    group-hover:scale-110
+                  "
+                >
+                  {index === 0 && "♙"}
+                  {index === 1 && "♧"}
+                  {index === 2 && "◎"}
                 </div>
 
+                {/* Title */}
+                <h2
+                  className="
+                    text-[21px] font-bold leading-[1.2]
+                    text-[#173E37]
+                    transition-colors duration-300
+                    group-hover:text-white
+                    lg:text-[23px]
+                  "
+                >
+                  {card.title}
+                </h2>
 
-                {/* Card Points */}
+                {/* Underline */}
+                <div
+                  className="
+                    mt-3 h-[3px] w-[42px]
+                    rounded-full bg-[#4E9777]
+                    transition-colors duration-300
+                    group-hover:bg-[#A9F0D0]
+                  "
+                />
 
-                <ul className="space-y-3 pl-5 list-disc">
-
+                {/* Points */}
+                <ul className="mt-6 space-y-3 pl-5">
                   {card.points.map((point) => (
-
                     <li
                       key={point}
-                      className="text-[13px] lg:text-[14px] leading-[1.45] text-[#3F514C]"
+                      className="
+                        list-disc text-[14px]
+                        leading-[1.5]
+                        text-[#3F514C]
+                        transition-colors duration-300
+                        group-hover:text-white
+                        lg:text-[15px]
+                      "
                     >
                       {point}
                     </li>
-
                   ))}
-
                 </ul>
-
               </div>
-
             ))}
-
           </div>
-
         </div>
-
       </section>
 
-
       {/* ================= LEARNING THAT STAYS ================= */}
+      <section className="px-6 pb-24 pt-4 sm:px-10 lg:px-16 xl:px-24">
+        <div className="mx-auto max-w-[1280px]">
 
-      <section className="w-full px-6 sm:px-10 lg:px-16 xl:px-24 pt-4 pb-24">
+          <h2
+            className="
+              inline-block border-b-[3px]
+              border-[#6FA889]
+              pb-3
+              text-[30px] font-extrabold
+              text-[#032F2E]
+              lg:text-[36px] xl:text-[40px]
+            "
+          >
+            {impactPageData.learningTitle}
+          </h2>
 
-        <div className="max-w-[1280px] mx-auto">
-
-          {/* Heading */}
-
-          <div className="mb-5">
-
-            <h2 className="inline-block pb-3 border-b-[3px] border-[#6FA889] text-[28px] lg:text-[34px] xl:text-[38px] font-extrabold text-[#032F2E]">
-              {impactPageData.learningTitle}
-            </h2>
-
-          </div>
-
-
-          {/* Description */}
-
-          <p className="max-w-[1120px] text-[15px] lg:text-[16px] xl:text-[17px] leading-[1.7] text-[#5D6865]">
+          <p className="mt-6 max-w-[1120px] text-[16px] leading-[1.7] text-[#5D6865] lg:text-[17px]">
             {impactPageData.learningDescription}
           </p>
 
-
           {/* Learning Process */}
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mt-10">
+          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
 
             {impactPageData.learningProcess.map((item, index) => (
-
               <div
                 key={item.title}
-                className="relative min-h-[125px] lg:min-h-[140px] flex items-center bg-[#A9D5BD] pl-[110px] pr-12 py-7"
+                className="
+                  group relative flex min-h-[130px]
+                  items-center
+                  bg-[#A9D5BD]
+                  pl-[110px] pr-12 py-7
+                  transition-all duration-300
+                  hover:-translate-y-1
+                  hover:bg-[#00543F]
+                  hover:shadow-[0_12px_25px_rgba(0,84,63,0.20)]
+                "
                 style={{
                   clipPath:
                     "polygon(0 0, calc(100% - 45px) 0, 100% 50%, calc(100% - 45px) 100%, 0 100%, 32px 50%)",
@@ -312,41 +303,53 @@ const ImpactLearning = () => {
               >
 
                 {/* Number */}
-
-                <div className="absolute left-[45px] w-[50px] h-[50px] rounded-full bg-white flex items-center justify-center text-[#6CA487] text-[18px] font-bold">
+                <div
+                  className="
+                    absolute left-[45px]
+                    flex h-[52px] w-[52px]
+                    items-center justify-center
+                    rounded-full bg-white
+                    text-[19px] font-bold text-[#6CA487]
+                    transition-transform duration-300
+                    group-hover:scale-110
+                  "
+                >
                   {index + 1}
                 </div>
 
-
-                {/* Content */}
-
                 <div>
-
-                  <h3 className="text-[20px] lg:text-[22px] font-bold text-[#173E37] mb-2">
+                  <h3
+                    className="
+                      text-[21px] font-bold
+                      text-[#173E37]
+                      transition-colors duration-300
+                      group-hover:text-white
+                      lg:text-[23px]
+                    "
+                  >
                     {item.title}
                   </h3>
 
-                  <p className="text-[13px] lg:text-[14px] leading-[1.5] text-[#456057]">
+                  <p
+                    className="
+                      mt-2 text-[14px]
+                      leading-[1.5]
+                      text-[#456057]
+                      transition-colors duration-300
+                      group-hover:text-white/90
+                      lg:text-[15px]
+                    "
+                  >
                     {item.description}
                   </p>
-
                 </div>
-
               </div>
-
             ))}
-
           </div>
-
         </div>
-
       </section>
 
-
-      {/* ================= EXISTING FOOTER ================= */}
-
       <Footer />
-
     </div>
   );
 };

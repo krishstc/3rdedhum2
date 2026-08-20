@@ -20,7 +20,7 @@ const cultureBelief = {
   title: "CULTURE & BELIEFS.",
 
   introduction:
-    "Culture is not what organisations write. Culture is what people experience every day. At 3rd Edhum, we believe organisations flourish when people feel trusted, challenged, supported, and inspired to grow. These beliefs are not aspirational statements they are the principles that actively shape every client engagement, every solution we create, and every conversation we have.",
+    "Culture is not what organisations write. Culture is what people experience every day. At 3rd Edhum, we believe organisations flourish when people feel trusted, challenged, supported, and inspired to grow. These beliefs are not aspirational statements; they are the principles that actively shape every client engagement, every solution we create, and every conversation we have.",
 
   beliefs: [
     {

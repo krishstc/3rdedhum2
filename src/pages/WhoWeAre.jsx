@@ -9,16 +9,12 @@ function WhoWeAre() {
       {/* ================= BREADCRUMB ================= */}
 
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-[84px] pt-6 pb-3">
-
         <div className="flex items-center gap-2 flex-wrap text-[12px] sm:text-[13px] text-gray-500">
-
           {whoWeAreData.breadcrumb.map((item, index) => (
-
             <div
               key={`${item}-${index}`}
               className="flex items-center gap-2"
             >
-
               <span
                 className={
                   index === whoWeAreData.breadcrumb.length - 1
@@ -32,133 +28,115 @@ function WhoWeAre() {
               {index < whoWeAreData.breadcrumb.length - 1 && (
                 <FaChevronRight className="text-[8px] text-gray-400" />
               )}
-
             </div>
-
           ))}
-
         </div>
-
       </div>
-
 
       {/* ================= HERO ================= */}
 
-      <section className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-[84px] pt-8 pb-12 lg:pb-16">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#F4FCF8] via-[#EAF8F1] to-white border-y border-[#E1F0EA]">
+        
+        {/* GREEN GLOW */}
 
-        <div className="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-10 lg:gap-14 items-center">
+        <div className="absolute -top-32 -right-24 w-[380px] h-[380px] rounded-full bg-[#CDEFE0]/60 blur-3xl pointer-events-none" />
 
-          {/* LEFT CONTENT */}
+        <div className="absolute -bottom-40 -left-32 w-[330px] h-[330px] rounded-full bg-[#DDF5E9]/50 blur-3xl pointer-events-none" />
 
-          <div className="max-w-[600px]">
+        <div className="relative max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-[84px] pt-8 pb-12 lg:pb-16">
 
-            <div className="inline-block mb-5">
+          <div className="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-10 lg:gap-14 items-center">
 
-              <p className="text-[13px] sm:text-[14px] font-semibold text-[#3F9975] uppercase tracking-[1px]">
-                {whoWeAreData.hero.label}
+            {/* ================= LEFT CONTENT ================= */}
+
+            <div className="max-w-[600px]">
+
+              <div className="inline-block mb-5">
+                <p className="text-[13px] sm:text-[14px] font-semibold text-[#3F9975] uppercase tracking-[1px]">
+                  {whoWeAreData.hero.label}
+                </p>
+
+                <div className="mt-2 w-[45px] h-[2px] bg-[#3F9975]" />
+              </div>
+
+              <h1 className="text-[44px] sm:text-[52px] lg:text-[62px] font-bold leading-[1.05] tracking-[-1.5px] text-[#10252D]">
+                WHO WE{" "}
+                <span className="text-[#3F9975]">ARE.</span>
+              </h1>
+
+              <p className="mt-6 max-w-[590px] text-[15px] sm:text-[16px] lg:text-[17px] leading-[1.65] text-gray-700">
+                {whoWeAreData.hero.description}
               </p>
 
-              <div className="mt-2 w-[45px] h-[2px] bg-[#3F9975]"></div>
+              {/* ================= FOCUS AREAS ================= */}
 
-            </div>
+              <div className="mt-8 space-y-4">
 
+                {whoWeAreData.focusAreas.map((item) => {
+                  const Icon = item.icon;
 
-            <h1 className="text-[44px] sm:text-[52px] lg:text-[62px] font-bold leading-[1.05] tracking-[-1.5px] text-[#10252D]">
+                  return (
+                    <div
+                      key={item.title}
+                      className="group flex items-center gap-4 rounded-xl px-3 py-2 -ml-3 transition-all duration-300 hover:bg-[#DDF5E9]/70 hover:translate-x-1"
+                    >
 
-              {whoWeAreData.hero.title}
+                      <div className="w-[54px] h-[54px] rounded-[12px] bg-[#EAF7F0] flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-[#CDEFE0] group-hover:scale-105">
+                        <Icon className="text-[22px] text-[#3F9975] transition-transform duration-300 group-hover:scale-110" />
+                      </div>
 
-            </h1>
+                      <div>
+                        <h3 className="text-[16px] sm:text-[17px] font-bold text-[#17252B]">
+                          {item.title}
+                        </h3>
 
-
-            <p className="mt-6 max-w-[590px] text-[15px] sm:text-[16px] lg:text-[17px] leading-[1.65] text-gray-700">
-
-              {whoWeAreData.hero.description}
-
-            </p>
-
-
-            {/* FOCUS AREAS */}
-
-            <div className="mt-8 space-y-4">
-
-              {whoWeAreData.focusAreas.map((item) => {
-
-                const Icon = item.icon;
-
-                return (
-
-                  <div
-                    key={item.title}
-                    className="flex items-center gap-4"
-                  >
-
-                    <div className="w-[54px] h-[54px] rounded-[12px] bg-[#EAF7F0] flex items-center justify-center shrink-0">
-
-                      <Icon className="text-[22px] text-[#3F9975]" />
+                        <p className="mt-1 text-[12px] sm:text-[13px] leading-5 text-gray-600">
+                          {item.description}
+                        </p>
+                      </div>
 
                     </div>
+                  );
+                })}
 
-
-                    <div>
-
-                      <h3 className="text-[16px] sm:text-[17px] font-bold text-[#17252B]">
-
-                        {item.title}
-
-                      </h3>
-
-                      <p className="mt-1 text-[12px] sm:text-[13px] leading-5 text-gray-600">
-
-                        {item.description}
-
-                      </p>
-
-                    </div>
-
-                  </div>
-
-                );
-
-              })}
-
+              </div>
             </div>
 
-          </div>
+            {/* ================= RIGHT IMAGE ================= */}
 
+            <div className="relative lg:pl-2">
 
-          {/* RIGHT IMAGE */}
+              <div className="absolute -top-10 -left-10 w-[300px] h-[300px] rounded-full bg-[#DDF5E9] opacity-70" />
 
-          <div className="relative lg:pl-2">
+              <div className="absolute -bottom-8 -right-8 w-[180px] h-[180px] rounded-full bg-[#CDEFE0]/60 blur-2xl" />
 
-            <div className="absolute -top-10 -left-10 w-[300px] h-[300px] rounded-full bg-[#F1F7F4]"></div>
+              <div className="relative z-10 rounded-[24px] overflow-hidden shadow-[0_15px_40px_rgba(0,86,65,0.12)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,86,65,0.18)]">
 
-            <div className="relative z-10 rounded-[24px] overflow-hidden">
+                <img
+                  src={whoWeAreData.hero.image}
+                  alt="Who We Are"
+                  fetchPriority="high"
+                  loading="eager"
+                  decoding="async"
+                  className="w-full h-[310px] sm:h-[390px] lg:h-[460px] object-cover rounded-[24px] transition-transform duration-700 hover:scale-[1.02]"
+                />
 
-              <img
-                src={whoWeAreData.hero.image}
-                alt="Who We Are"
-                fetchPriority="high"
-                loading="eager"
-                decoding="async"
-                className="w-full h-[310px] sm:h-[390px] lg:h-[460px] object-cover rounded-[24px]"
-              />
+              </div>
 
-            </div>
+              {/* DOT PATTERN */}
 
-            {/* DOT PATTERN */}
+              <div className="absolute -right-4 bottom-[-20px] w-[90px] h-[90px] opacity-40 hidden xl:block">
 
-            <div className="absolute -right-4 bottom-[-20px] w-[90px] h-[90px] opacity-40 hidden xl:block">
+                <div className="grid grid-cols-5 gap-2">
 
-              <div className="grid grid-cols-5 gap-2">
+                  {Array.from({ length: 25 }).map((_, index) => (
+                    <span
+                      key={index}
+                      className="w-[5px] h-[5px] rounded-full bg-[#3F9975]"
+                    />
+                  ))}
 
-                {Array.from({ length: 25 }).map((_, index) => (
-
-                  <span
-                    key={index}
-                    className="w-[5px] h-[5px] rounded-full bg-[#3F9975]"
-                  ></span>
-
-                ))}
+                </div>
 
               </div>
 
@@ -167,9 +145,7 @@ function WhoWeAre() {
           </div>
 
         </div>
-
       </section>
-
 
       {/* ================= WHAT DEFINES US ================= */}
 
@@ -183,22 +159,19 @@ function WhoWeAre() {
               WHAT DEFINES US
             </p>
 
-            <div className="w-[45px] h-[2px] bg-[#3F9975] mx-auto mt-2"></div>
+            <div className="w-[45px] h-[2px] bg-[#3F9975] mx-auto mt-2" />
 
           </div>
-
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
 
             {whoWeAreData.definingUs.map((item, index) => {
-
               const Icon = item.icon;
 
               return (
-
                 <div
                   key={item.title}
-                  className={`px-5 py-5 text-center ${
+                  className={`group px-5 py-5 text-center rounded-xl transition-all duration-300 hover:bg-[#E2F8EF] hover:-translate-y-1 ${
                     index < whoWeAreData.definingUs.length - 1
                       ? "lg:border-r lg:border-gray-300"
                       : ""
@@ -207,28 +180,20 @@ function WhoWeAre() {
 
                   <div className="w-[58px] h-[58px] mx-auto flex items-center justify-center">
 
-                    <Icon className="text-[32px] text-[#174C43]" />
+                    <Icon className="text-[32px] text-[#174C43] transition-transform duration-300 group-hover:scale-110 group-hover:text-[#3F9975]" />
 
                   </div>
 
-
                   <h3 className="mt-4 text-[16px] sm:text-[17px] font-bold text-[#17252B]">
-
                     {item.title}
-
                   </h3>
 
-
                   <p className="mt-3 text-[12px] sm:text-[13px] leading-[1.6] text-gray-600 max-w-[200px] mx-auto">
-
                     {item.description}
-
                   </p>
 
                 </div>
-
               );
-
             })}
 
           </div>
@@ -236,7 +201,6 @@ function WhoWeAre() {
         </div>
 
       </section>
-
 
       {/* ================= CTA ================= */}
 
@@ -251,18 +215,15 @@ function WhoWeAre() {
             <div className="grid grid-cols-7 gap-2">
 
               {Array.from({ length: 42 }).map((_, index) => (
-
                 <span
                   key={index}
                   className="w-[4px] h-[4px] rounded-full bg-[#3F9975]"
-                ></span>
-
+                />
               ))}
 
             </div>
 
           </div>
-
 
           <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
 
@@ -276,26 +237,19 @@ function WhoWeAre() {
 
               </div>
 
-
               <div>
 
                 <h2 className="text-[18px] sm:text-[20px] lg:text-[21px] font-bold text-white">
-
                   {whoWeAreData.cta.title}
-
                 </h2>
 
-
                 <p className="mt-2 max-w-[620px] text-[12px] sm:text-[13px] leading-5 text-gray-200">
-
                   {whoWeAreData.cta.description}
-
                 </p>
 
               </div>
 
             </div>
-
 
             <button
               type="button"
@@ -313,7 +267,6 @@ function WhoWeAre() {
         </div>
 
       </section>
-
 
       {/* ================= FOOTER ================= */}
 

@@ -1,5 +1,4 @@
 import {
-  UserRoundCog,
   Factory,
   Landmark,
   Stethoscope,
@@ -11,6 +10,7 @@ import {
 } from "lucide-react";
 
 const customerSuccessStories = [
+
   {
     id: 1,
     icon: Factory,
@@ -79,10 +79,11 @@ const customerSuccessStories = [
     icon: Handshake,
     title: "Long-Term Partnerships",
     description:
-      "Many of our clients continue working with us over multiple years because we become an extension of their capability development strategy not just another training vendor. We are invested in your long-term success.",
+      "Many of our clients continue working with us over multiple years because we become an extension of their capability development strategy—not just another training vendor. We are invested in your long-term success.",
     side: "right",
     featured: true,
   },
+
 ];
 
 export default customerSuccessStories;

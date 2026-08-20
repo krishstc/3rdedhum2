@@ -14,7 +14,9 @@ import CultureBelief from "./pages/CultureBelief";
 import GlobalPresence from "./pages/GlobalPresence";
 import IndustryExpertise from "./pages/IndustryExpertise";
 import TrustedByLeaders from "./pages/TrustedByLeaders";
-import AboutUs from "./pages/AboutUs";
+import YPD from "./pages/YPD";
+import Upcoming from "./pages/Upcoming";
+import ManagerialLeadership from "./pages/ManagerialLeadership";
 import Navbar from "./components/navbar/desktop/Navbar";
 import PdfAssistant from "./components/PdfAssistant/PdfAssistant";
 import ScrollToTop from "./components/ScrollToTop";
@@ -39,7 +41,6 @@ function App() {
               path="/"
               element={<Home />}
             />
-
 
             {/* WHY 3RD EDHUM */}
 
@@ -108,7 +109,20 @@ function App() {
               element={<TrustedByLeaders />}
             />
 
-            <Route path="/why3rdedhum/about-us" element={<AboutUs />} />
+            <Route
+              path="/upcoming"
+              element={<Upcoming />}
+            />
+
+            <Route
+              path="/ypd"
+              element={<YPD />}
+            />
+
+            <Route
+              path="/managerial-leadership"
+              element={<ManagerialLeadership />}
+            />
 
           </Routes>
 

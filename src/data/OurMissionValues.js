@@ -48,6 +48,7 @@ const ourMissionValues = {
       description:
         "Every engagement should create meaningful business impact.",
     },
+
     {
       id: 2,
       icon: Award,
@@ -55,6 +56,7 @@ const ourMissionValues = {
       description:
         "We pursue quality without compromise.",
     },
+
     {
       id: 3,
       icon: ShieldCheck,
@@ -72,6 +74,7 @@ const ourMissionValues = {
       description:
         "Learning never stops. We model the growth mindset we seek to build in others.",
     },
+
     {
       id: 2,
       icon: Lightbulb,
@@ -79,6 +82,7 @@ const ourMissionValues = {
       description:
         "We embrace technology while always keeping people at the centre of every solution.",
     },
+
     {
       id: 3,
       icon: Handshake,
@@ -86,6 +90,7 @@ const ourMissionValues = {
       description:
         "Great outcomes are created together with our clients, our partners, and our people.",
     },
+
     {
       id: 4,
       icon: BriefcaseBusiness,

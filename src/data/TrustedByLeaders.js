@@ -21,7 +21,7 @@ const trustedByLeaders = {
 
   label: "OUR DIFFERENCE",
 
-  title: "Trusted By Leaders at Every Level",
+  title: "Trusted By Leaders at Every Level.",
 
   introduction:
     "Executives choose 3rd Edhum because we understand business. HR leaders choose us because we understand people. Employees choose us because learning becomes practical, engaging, and immediately useful. Across every level of every organisation we serve, our objective remains constant: ",
@@ -32,46 +32,14 @@ const trustedByLeaders = {
   businessTitle: "Business Before Learning",
 
   businessAudience: [
-    {
-      id: 1,
-      title: "Boards & CEOs",
-      icon: UsersRound,
-    },
-    {
-      id: 2,
-      title: "Founders & Business Owners",
-      icon: BriefcaseBusiness,
-    },
-    {
-      id: 3,
-      title: "CHROs & CXOs",
-      icon: CircleUserRound,
-    },
-    {
-      id: 4,
-      title: "Functional Heads",
-      icon: UserRound,
-    },
-    {
-      id: 5,
-      title: "Senior & Middle Leaders",
-      icon: UsersRound,
-    },
-    {
-      id: 6,
-      title: "Emerging Leaders",
-      icon: Star,
-    },
-    {
-      id: 7,
-      title: "Sales & Customer Teams",
-      icon: Handshake,
-    },
-    {
-      id: 8,
-      title: "Technical Professionals",
-      icon: Code2,
-    },
+    { id: 1, title: "Boards & CEOs", icon: UsersRound },
+    { id: 2, title: "Founders & Business Owners", icon: BriefcaseBusiness },
+    { id: 3, title: "CHROs & CXOs", icon: CircleUserRound },
+    { id: 4, title: "Functional Heads", icon: UserRound },
+    { id: 5, title: "Senior & Middle Leaders", icon: UsersRound },
+    { id: 6, title: "Emerging Leaders", icon: Star },
+    { id: 7, title: "Sales & Customer Teams", icon: Handshake },
+    { id: 8, title: "Technical Professionals", icon: Code2 },
   ],
 
   partnersTitle: "Partners & Alliances",

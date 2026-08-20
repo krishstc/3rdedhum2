@@ -1,350 +1,463 @@
-import Footer from "../components/footer/Footer";
-import whyUsPromoImage from "../assets/images/whyus2.png";
-import WhatMakesUsDifferentData from "../data/WhatMakesUsDifferent";
+import {
+  FaUserTie,
+  FaChartLine,
+  FaUsers,
+  FaLightbulb,
+  FaClipboardCheck,
+  FaBullseye,
+  FaPeopleArrows,
+  FaRobot,
+  FaCompass,
+  FaCogs,
+  FaBriefcase,
+  FaArrowRight,
+} from "react-icons/fa";
 
-function WhatMakesUsDifferent() {
+import Navbar from "../components/navbar/desktop/Navbar";
+import Contact from "../components/home/Contact";
+import Footer from "../components/footer/Footer";
+
+import heroImage from "../assets/images/OurDifference/our-difference-hero.png";
+
+import WhatMakesUsDifferentData from "../data/WhatMakesUsDifferentData";
+
+const WhatMakesUsDifferent = () => {
   const data = WhatMakesUsDifferentData;
 
   return (
-    <div className="bg-[#FFF7F7] text-[#0B2F2A] overflow-hidden">
+    <div className="min-h-screen bg-white text-[#07372F] overflow-hidden">
 
-      {/* ================= BREADCRUMB ================= */}
+      {/* =========================================================
+          NAVBAR
+      ========================================================= */}
 
-      <section className="max-w-[1400px] mx-auto px-8 lg:px-12 pt-10 lg:pt-12">
+      <Navbar />
 
-        <p className="text-[11px] lg:text-[12px] text-[#7B8A86] tracking-wide">
+      <main className="pt-[2px]">
 
-          {data.breadcrumb.map((item, index) => (
-            <span key={item}>
+        {/* =========================================================
+            HERO SECTION
+        ========================================================= */}
 
-              {index > 0 && (
-                <span className="mx-2">
-                  ›
-                </span>
-              )}
+        <section className="relative bg-gradient-to-br from-[#E8FFF5] via-[#F4FFFA] to-[#E5F8EF] border-b border-[#D8EEE5]">
 
-              <span
-                className={
-                  index === data.breadcrumb.length - 1
-                    ? "text-[#4A8E76]"
-                    : ""
-                }
-              >
-                {item}
-              </span>
+          <div className="max-w-[1400px] mx-auto px-8 lg:px-12 py-8 lg:py-11">
 
-            </span>
-          ))}
+            {/* Breadcrumb */}
 
-        </p>
+            <div className="flex flex-wrap items-center gap-2 text-[11px] lg:text-[12px] text-[#78908A] mb-5">
 
-      </section>
+              {data.breadcrumb.map((item, index) => (
 
-      {/* ================= HERO ================= */}
+                <div
+                  key={item}
+                  className="flex items-center gap-2"
+                >
 
-      <section className="relative max-w-[1400px] mx-auto px-8 lg:px-12 pt-10 lg:pt-12">
+                  <span
+                    className={
+                      index === data.breadcrumb.length - 1
+                        ? "text-[#3F9975] font-semibold"
+                        : ""
+                    }
+                  >
+                    {item}
+                  </span>
 
-        <div className="absolute -right-[130px] top-0 w-[360px] h-[360px] rounded-full bg-[#E8FAF3] opacity-80 pointer-events-none" />
+                  {index !== data.breadcrumb.length - 1 && (
+                    <span className="text-[#AABAB5]">
+                      ›
+                    </span>
+                  )}
 
-        <div className="relative z-10 text-center max-w-[950px] mx-auto">
+                </div>
 
-          <div className="inline-flex flex-col items-center">
-
-            <span className="text-[12px] lg:text-[13px] font-semibold tracking-[1.2px] text-[#548C78] uppercase">
-              {data.hero.label}
-            </span>
-
-            <span className="mt-3 h-[3px] w-[48px] rounded-full bg-[#4D997A]" />
-
-          </div>
-
-          <h1 className="mt-6 text-[40px] sm:text-[46px] md:text-[52px] lg:text-[58px] leading-[1.08] font-bold tracking-[-1.8px] text-[#07372F]">
-
-            {data.hero.title}{" "}
-
-            <span className="text-[#3C9A72]">
-              {data.hero.highlightedTitle}
-            </span>
-
-          </h1>
-
-          <p className="mt-6 max-w-[900px] mx-auto text-[14px] lg:text-[15px] leading-[1.6] text-[#4F5958]">
-
-            {data.hero.description}
-
-          </p>
-
-        </div>
-
-        {/* ================= BUSINESS + EXPLORE ================= */}
-
-        <div className="mt-14 lg:mt-16 grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-16 items-start">
-
-          {/* BUSINESS BEFORE LEARNING */}
-
-          <div className="bg-[#005A46] rounded-[12px] px-8 lg:px-10 py-9 lg:py-10 text-white min-h-[300px]">
-
-            <div className="flex items-center gap-5">
-
-              <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-[#F0FFF9] text-[#5B9D82] flex items-center justify-center shrink-0">
-
-                <data.businessBeforeLearning.icon className="text-[23px] lg:text-[26px]" />
-
-              </div>
-
-              <h2 className="text-[25px] lg:text-[29px] font-semibold">
-
-                {data.businessBeforeLearning.title}
-
-              </h2>
+              ))}
 
             </div>
 
-            <p className="mt-7 text-[14px] lg:text-[15px] leading-[1.6] text-white/90 max-w-[620px]">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-12 items-center">
 
-              {data.businessBeforeLearning.description}
+              {/* ================= LEFT ================= */}
 
-            </p>
+              <div className="max-w-[700px]">
 
-            <div className="mt-7 pt-5 border-t border-white/30 flex items-center gap-4">
+                <p className="uppercase tracking-[2px] text-[12px] lg:text-[13px] font-bold text-[#3F9975] mb-3">
+                  {data.hero.label}
+                </p>
 
-              <div className="w-11 h-11 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+                <h1 className="text-[40px] sm:text-[48px] lg:text-[58px] xl:text-[64px] leading-[1.04] font-bold tracking-[-1.8px] text-[#07372F]">
 
-                <data.businessBeforeLearning.bottomIcon className="text-[16px]" />
+                  {data.hero.title}{" "}
+
+                  <span className="text-[#3F9975]">
+                    {data.hero.highlightedTitle}
+                  </span>
+
+                </h1>
+
+                <div className="mt-4 h-[4px] w-[62px] rounded-full bg-gradient-to-r from-[#3F9975] to-[#7AD0A8]" />
+
+                <p className="mt-5 text-[15px] lg:text-[17px] leading-7 text-[#536762] max-w-[680px]">
+                  {data.hero.description}
+                </p>
 
               </div>
 
-              <p className="text-[14px] lg:text-[15px] leading-[1.4] font-medium">
 
-                {data.businessBeforeLearning.bottomText}
+              {/* ================= RIGHT IMAGE ================= */}
 
-                <br />
+              <div className="relative group">
 
-                {data.businessBeforeLearning.bottomHighlightedText}
+                <div className="relative overflow-hidden rounded-[24px] border border-[#D2EBE1] shadow-[0_15px_40px_rgba(4,70,55,0.10)] transition-all duration-500 group-hover:shadow-[0_22px_50px_rgba(4,70,55,0.18)]">
 
-              </p>
+                  <img
+                    src={heroImage}
+                    alt="What Makes Us Different"
+                    className="w-full h-[260px] sm:h-[320px] lg:h-[350px] object-cover transition-transform duration-700 group-hover:scale-[1.025]"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#005B49]/10 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                </div>
+
+                {/* Decorative circles */}
+
+                <div className="absolute -bottom-4 -left-4 w-16 h-16 rounded-full bg-[#CFF5E4] -z-10 transition-transform duration-500 group-hover:scale-125" />
+
+                <div className="absolute -top-4 -right-4 w-14 h-14 rounded-full bg-[#E0F8ED] -z-10 transition-transform duration-500 group-hover:scale-125" />
+
+              </div>
 
             </div>
 
           </div>
 
-          {/* WHAT WE EXPLORE FIRST */}
+        </section>
 
-          <div className="lg:pt-1">
 
-            <h2 className="text-[27px] lg:text-[31px] font-bold text-[#101817]">
+        {/* =========================================================
+            BUSINESS BEFORE LEARNING
+        ========================================================= */}
 
-              What We Explore First
+        <section className="py-14 lg:py-18 bg-white">
 
-            </h2>
+          <div className="max-w-[1350px] mx-auto px-8 lg:px-12">
 
-            <div className="mt-3 h-[4px] w-[38px] bg-[#419977] rounded-full" />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-            <div className="mt-7 space-y-6">
+              {/* ================= GREEN CARD ================= */}
 
-              {data.exploreItems.map((item, index) => {
+              <div className="group relative overflow-hidden bg-gradient-to-br from-[#005B49] to-[#004D3F] rounded-[24px] p-8 lg:p-10 min-h-[350px] shadow-[0_15px_40px_rgba(0,91,73,0.14)] hover:-translate-y-2 hover:shadow-[0_25px_50px_rgba(0,91,73,0.22)] transition-all duration-500">
+
+                {/* Decorative circle */}
+
+                <div className="absolute -right-16 -top-16 w-40 h-40 rounded-full bg-[#3F9975]/20 transition-transform duration-700 group-hover:scale-150" />
+
+                <div className="relative z-10">
+
+                  <div className="flex items-center gap-4 mb-6">
+
+                    <div className="w-14 h-14 rounded-full bg-[#E4FFF4] flex items-center justify-center text-[#08745D] shrink-0 group-hover:rotate-6 group-hover:scale-105 transition-all duration-300">
+
+                      <FaBullseye className="text-[23px]" />
+
+                    </div>
+
+                    <h2 className="text-[25px] lg:text-[30px] font-bold text-white">
+                      {data.businessBeforeLearning.title}
+                    </h2>
+
+                  </div>
+
+                  <p className="text-[15px] lg:text-[16px] leading-7 text-[#D8EEE8]">
+                    {data.businessBeforeLearning.description}
+                  </p>
+
+                  <div className="mt-8 pt-6 border-t border-[#5A8F84]">
+
+                    <div className="flex items-center gap-4">
+
+                      <div className="w-11 h-11 rounded-full bg-[#D5E9E3] flex items-center justify-center text-[#005B49] shrink-0">
+                        <FaChartLine className="text-[17px]" />
+                      </div>
+
+                      <p className="text-[15px] lg:text-[17px] font-semibold text-white leading-6">
+
+                        {data.businessBeforeLearning.bottomText}{" "}
+
+                        <span className="text-[#8DE0C1]">
+                          {data.businessBeforeLearning.bottomHighlightedText}
+                        </span>
+
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              {/* ================= EXPLORE FIRST ================= */}
+
+              <div>
+
+                <p className="uppercase tracking-[2px] text-[12px] font-bold text-[#3F9975] mb-2">
+                  OUR APPROACH
+                </p>
+
+                <h2 className="text-[31px] lg:text-[39px] font-bold text-[#07372F] leading-tight">
+                  What We Explore First
+                </h2>
+
+                <div className="mt-3 h-[4px] w-[52px] rounded-full bg-[#4BA77A]" />
+
+                <div className="mt-6 space-y-2">
+
+                  {data.exploreItems.map((item, index) => {
+
+                    const Icon = item.icon;
+
+                    return (
+
+                      <div
+                        key={index}
+                        className="group flex items-center gap-4 p-3 rounded-xl hover:bg-[#F1FBF6] transition-all duration-300 cursor-default"
+                      >
+
+                        <div className="w-12 h-12 rounded-full bg-[#E7F8F0] flex items-center justify-center text-[#3F9975] shrink-0 group-hover:bg-[#D2F2E2] group-hover:scale-110 transition-all duration-300">
+
+                          <Icon className="text-[18px] group-hover:scale-110 transition-transform" />
+
+                        </div>
+
+                        <p className="text-[15px] lg:text-[16px] font-medium text-[#40524D] group-hover:text-[#005B49] transition-colors duration-300">
+                          {item.text}
+                        </p>
+
+                      </div>
+
+                    );
+
+                  })}
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        {/* =========================================================
+            FOUR APPROACH CARDS
+        ========================================================= */}
+
+        <section className="pb-14 lg:pb-18 bg-white">
+
+          <div className="max-w-[1350px] mx-auto px-8 lg:px-12">
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+              {data.approachCards.map((item, index) => {
 
                 const Icon = item.icon;
 
                 return (
+
                   <div
                     key={index}
-                    className="flex items-center gap-5"
+                    className="group relative min-h-[265px] rounded-[20px] border border-[#E3ECE8] bg-white p-6 lg:p-7 shadow-[0_7px_22px_rgba(0,0,0,0.035)] hover:-translate-y-2 hover:border-[#BFE6D4] hover:bg-gradient-to-br hover:from-white hover:to-[#F2FBF7] hover:shadow-[0_18px_40px_rgba(0,91,73,0.12)] transition-all duration-400"
                   >
 
-                    <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-[#E5F8F0] text-[#5DAD8C] flex items-center justify-center shrink-0">
+                    <div className="absolute top-0 left-0 w-0 h-[3px] bg-[#3F9975] rounded-full group-hover:w-full transition-all duration-500" />
 
-                      <Icon className="text-[19px] lg:text-[21px]" />
+                    <div className="w-13 h-13 w-[52px] rounded-full bg-[#E8F8F0] flex items-center justify-center text-[#3F9975] group-hover:bg-[#D5F2E4] group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+
+                      <Icon className="text-[20px]" />
 
                     </div>
 
-                    <p className="text-[14px] lg:text-[15px] text-[#303A38] leading-[1.4]">
+                    <h3 className="mt-6 text-[19px] lg:text-[21px] font-bold text-[#07372F] group-hover:text-[#005B49] transition-colors">
+                      {item.title}
+                    </h3>
 
-                      {item.text}
+                    <div className="mt-2 h-[3px] w-[36px] rounded-full bg-[#4BA77A] group-hover:w-[52px] transition-all duration-300" />
 
+                    <p className="mt-4 text-[13px] lg:text-[14px] leading-6 text-[#687773]">
+                      {item.description}
                     </p>
 
+                    <FaArrowRight className="mt-5 text-[12px] text-[#3F9975] group-hover:translate-x-2 transition-transform duration-300" />
+
                   </div>
+
                 );
+
               })}
 
             </div>
 
           </div>
 
-        </div>
+        </section>
 
-        {/* ================= FOUR APPROACH CARDS ================= */}
 
-        <div className="mt-16 lg:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+        {/* =========================================================
+            TAILOR MADE SOLUTIONS
+        ========================================================= */}
 
-          {data.approachCards.map((card, index) => {
+        <section className="pt-12 pb-7 lg:pt-14 lg:pb-8 bg-[#F5FBF8] border-y border-[#E4F0EB]">
 
-            const Icon = card.icon;
+          <div className="max-w-[900px] mx-auto px-8 text-center">
 
-            return (
-              <div
-                key={index}
-                className="bg-white border border-[#E7E7E7] rounded-[10px] px-6 lg:px-7 py-7 lg:py-8 min-h-[245px] lg:min-h-[260px] text-center shadow-[0_3px_12px_rgba(0,0,0,0.03)]"
-              >
+            <p className="uppercase tracking-[2px] text-[12px] font-bold text-[#3F9975] mb-2">
+              OUR SOLUTIONS
+            </p>
 
-                <div className="mx-auto w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-[#E8F8F1] text-[#5A9D81] flex items-center justify-center">
-
-                  <Icon className="text-[22px] lg:text-[25px]" />
-
-                </div>
-
-                <h3 className="mt-5 text-[17px] lg:text-[19px] font-bold text-[#111817]">
-
-                  {card.title}
-
-                </h3>
-
-                <div className="mx-auto mt-3 h-[3px] w-[30px] rounded-full bg-[#4B9978]" />
-
-                <p className="mt-5 text-[12px] lg:text-[13px] leading-[1.55] text-[#626B69]">
-
-                  {card.description}
-
-                </p>
-
-              </div>
-            );
-          })}
-
-        </div>
-
-        {/* ================= TAILOR MADE ================= */}
-
-        <section className="mt-18 lg:mt-20">
-
-          <div className="text-center max-w-[950px] mx-auto">
-
-            <h2 className="text-[27px] lg:text-[31px] font-bold text-[#111817]">
-
+            <h2 className="text-[31px] sm:text-[36px] lg:text-[42px] font-bold leading-tight text-[#07372F]">
               {data.tailorMade.title}
-
             </h2>
 
-            <div className="mx-auto mt-3 h-[3px] w-[36px] bg-[#439978] rounded-full" />
+            <div className="mx-auto mt-4 h-[4px] w-[58px] rounded-full bg-gradient-to-r from-[#3F9975] to-[#7AD0A8]" />
 
-            <p className="mt-5 text-[13px] lg:text-[14px] leading-[1.6] text-[#5D6664]">
-
+            <p className="mt-5 text-[15px] lg:text-[17px] leading-7 text-[#63716D]">
               {data.tailorMade.description}
-
             </p>
 
           </div>
 
-          {/* ================= SOLUTION CARDS ================= */}
+        </section>
 
-          <div className="mt-10 lg:mt-12 grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-6">
 
-            {data.solutionCards.map((card, index) => {
+        {/* =========================================================
+            SOLUTION CARDS
+        ========================================================= */}
 
-              const Icon = card.icon;
+        <section className="pt-7 pb-12 lg:pt-8 lg:pb-16 bg-[#F5FBF8]">
 
-              return (
-                <div
-                  key={index}
-                  className="bg-[#DFF8EE] border border-[#CDEDE0] rounded-[11px] px-7 lg:px-8 py-7 lg:py-8 min-h-[190px] lg:min-h-[205px]"
-                >
+          <div className="max-w-[1350px] mx-auto px-8 lg:px-12">
 
-                  <div className="flex items-start gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
 
-                    <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-white text-[#5C9F83] flex items-center justify-center shrink-0">
+              {data.solutionCards.map((item, index) => {
 
-                      <Icon className="text-[21px] lg:text-[24px]" />
+                const Icon = item.icon;
 
-                    </div>
+                return (
 
-                    <div className="flex-1">
+                  <div
+                    key={index}
+                    className="group relative overflow-hidden bg-[#E3F8EE] rounded-[20px] p-7 lg:p-8 min-h-[205px] border border-[#D3EFE2] hover:bg-[#D8F5E7] hover:-translate-y-1 hover:shadow-[0_16px_35px_rgba(0,91,73,0.10)] transition-all duration-400"
+                  >
 
-                      <h3 className="text-[22px] lg:text-[25px] font-semibold text-[#15201D]">
+                    <div className="absolute -right-10 -bottom-10 w-28 h-28 rounded-full bg-[#B8EBD2]/40 group-hover:scale-150 transition-transform duration-700" />
 
-                        {card.title}
+                    <div className="relative z-10 flex items-start gap-5">
 
-                      </h3>
+                      <div className="w-13 h-13 w-[52px] rounded-full bg-white flex items-center justify-center text-[#3F9975] shrink-0 shadow-sm group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
 
-                      <div className="mt-3 h-[3px] w-[30px] bg-[#419978] rounded-full" />
+                        <Icon className="text-[20px]" />
 
-                      <ul className="mt-5 space-y-2 text-[12px] lg:text-[13px] text-[#3F4946]">
+                      </div>
 
-                        {card.items.map((item, itemIndex) => (
+                      <div className="flex-1">
 
-                          <li
-                            key={itemIndex}
-                            className="flex items-start gap-3"
-                          >
+                        <h3 className="text-[23px] lg:text-[26px] font-bold text-[#07372F] group-hover:text-[#005B49] transition-colors">
+                          {item.title}
+                        </h3>
 
-                            <span className="mt-[7px] w-[5px] h-[5px] rounded-full bg-[#34433E] shrink-0" />
+                        <div className="mt-2 h-[3px] w-[40px] rounded-full bg-[#4BA77A] group-hover:w-[60px] transition-all duration-300" />
 
-                            <span>
-                              {item}
-                            </span>
+                        <ul className="mt-5 space-y-2">
 
-                          </li>
+                          {item.items.map((point, pointIndex) => (
 
-                        ))}
+                            <li
+                              key={pointIndex}
+                              className="flex items-start gap-3 text-[14px] lg:text-[15px] text-[#415851]"
+                            >
 
-                      </ul>
+                              <span className="mt-[8px] w-[5px] h-[5px] rounded-full bg-[#3F9975] shrink-0 group-hover:scale-125 transition-transform" />
+
+                              <span>
+                                {point}
+                              </span>
+
+                            </li>
+
+                          ))}
+
+                        </ul>
+
+                      </div>
 
                     </div>
 
                   </div>
 
-                </div>
-              );
-            })}
+                );
 
-          </div>
-
-        </section>
-
-        {/* ================= BOTTOM MESSAGE ================= */}
-
-        <section className="mt-14 lg:mt-16 mb-14">
-
-          <div className="relative overflow-hidden bg-[#003D35] rounded-[12px] min-h-[115px] lg:min-h-[125px] px-7 lg:px-9 py-6 flex items-center">
-
-            <div className="flex items-center gap-5 lg:gap-6 relative z-10 max-w-[850px]">
-
-              <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-[#F1FFF9] text-[#5B9D82] flex items-center justify-center shrink-0">
-
-                <data.bottomMessage.icon className="text-[21px] lg:text-[24px]" />
-
-              </div>
-
-              <p className="text-[12px] lg:text-[13px] leading-[1.55] text-white/90">
-
-                {data.bottomMessage.text}
-
-              </p>
+              })}
 
             </div>
 
-            {whyUsPromoImage && (
+          </div>
 
-              <img
-                src={whyUsPromoImage}
-                alt="Future of work"
-                className="absolute right-3 lg:right-8 bottom-0 w-[150px] lg:w-[190px] h-[110px] lg:h-[120px] object-contain object-bottom"
-              />
+        </section>
 
-            )}
+
+        {/* =========================================================
+            BOTTOM MESSAGE
+        ========================================================= */}
+
+        <section className="py-10 lg:py-12 bg-white">
+
+          <div className="max-w-[1350px] mx-auto px-8 lg:px-12">
+
+            <div className="group relative overflow-hidden bg-gradient-to-r from-[#005B49] to-[#006B55] rounded-[20px] px-7 lg:px-10 py-7 lg:py-8 shadow-[0_15px_35px_rgba(0,91,73,0.14)] hover:shadow-[0_20px_45px_rgba(0,91,73,0.20)] transition-all duration-500">
+
+              <div className="relative z-10 flex flex-col md:flex-row items-center gap-5 lg:gap-7">
+
+                <div className="w-14 h-14 rounded-full bg-[#E0F8ED] flex items-center justify-center text-[#08745D] shrink-0 group-hover:rotate-6 group-hover:scale-105 transition-all duration-300">
+
+                  <FaCompass className="text-[21px]" />
+
+                </div>
+
+                <p className="text-[15px] lg:text-[17px] leading-7 text-white font-medium max-w-[1050px]">
+                  {data.bottomMessage.text}
+                </p>
+
+              </div>
+
+              <div className="absolute -right-10 -bottom-16 w-40 h-40 rounded-full bg-[#08745D] opacity-40 group-hover:scale-125 transition-transform duration-700" />
+
+              <div className="absolute right-20 -top-16 w-28 h-28 rounded-full bg-[#3F9975] opacity-20 group-hover:scale-125 transition-transform duration-700" />
+
+            </div>
 
           </div>
 
         </section>
 
-      </section>
+      </main>
 
-      {/* ================= FOOTER ================= */}
+
+      {/* =========================================================
+          FOOTER
+      ========================================================= */}
 
       <Footer />
 
     </div>
   );
-}
+};
 
 export default WhatMakesUsDifferent;

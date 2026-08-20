@@ -1,174 +1,165 @@
 import React from "react";
-
-import {
-  ArrowRight,
-  UsersRound,
-  Crown,
-  TrendingUp,
-  Users,
-  Sprout,
-  Brain,
-} from "lucide-react";
+import { FaArrowRight } from "react-icons/fa";
 
 import Footer from "../components/footer/Footer";
 
-import ourClientResults from "../data/OurClientResult";
+import heroImage from "../assets/images/OurDifference/our-client-result-hero.png";
 
-function OurClientResult() {
-  const resultVisuals = [
-    Crown,
-    TrendingUp,
-    Users,
-    Sprout,
-    Brain,
-  ];
+import ourClientResultData from "../data/OurClientResult";
+
+const OurClientResult = () => {
+  const data = ourClientResultData;
 
   return (
-    <div className="min-h-screen bg-[#FFF7F7] text-[#0B2F2A]">
+    <div className="min-h-screen bg-white text-[#07372F] overflow-hidden">
 
-      {/* ================= MAIN ================= */}
+      {/* =========================================================
+          GLOBAL NAVBAR IS ALREADY PRESENT IN APP.JSX
+      ========================================================= */}
 
-      <main>
+      <main className="pt-[2px]">
 
-        {/* ================= BREADCRUMB ================= */}
+        {/* =========================================================
+            HERO
+        ========================================================= */}
 
-        <section className="max-w-[1250px] mx-auto px-8 lg:px-10 pt-10 lg:pt-12">
+        <section className="relative overflow-hidden bg-gradient-to-r from-[#E8FFF5] via-[#F2FFF9] to-[#EFFFF7] border-b border-[#DCEFE7]">
 
-          <p className="text-[13px] lg:text-[14px] text-[#7B8A86] tracking-wide">
+          <div className="absolute -right-32 -top-32 w-[430px] h-[430px] rounded-full bg-[#D9F8EB] opacity-60 pointer-events-none" />
 
-            <span>Home</span>
+          <div className="relative z-10 max-w-[1400px] mx-auto px-8 lg:px-12 pt-7 pb-8 lg:pt-8 lg:pb-10">
 
-            <span className="mx-2">›</span>
+            {/* Breadcrumb */}
 
-            <span>Why 3rd EdHum</span>
+            <div className="flex flex-wrap items-center gap-2 mb-7 text-[11px] lg:text-[12px] text-[#82938E]">
 
-            <span className="mx-2">›</span>
+              {data.breadcrumb.map((item, index) => (
+                <React.Fragment key={`${item}-${index}`}>
 
-            <span>Why 3rd EdHum</span>
+                  <span
+                    className={
+                      index === data.breadcrumb.length - 1
+                        ? "text-[#3F9975] font-semibold"
+                        : ""
+                    }
+                  >
+                    {item}
+                  </span>
 
-            <span className="mx-2">›</span>
+                  {index < data.breadcrumb.length - 1 && (
+                    <span className="text-[#AABAB5]">/</span>
+                  )}
 
-            <span className="text-[#4A8E76]">
-              Our Client Results
-            </span>
-
-          </p>
-
-        </section>
-
-
-        {/* ================= HERO ================= */}
-
-        <section className="relative max-w-[1250px] mx-auto px-8 lg:px-10 pt-10 lg:pt-12">
-
-          <div className="absolute -right-[130px] top-0 w-[360px] h-[360px] rounded-full bg-[#E8FAF3] opacity-80 pointer-events-none" />
-
-          <div className="relative z-10 max-w-[1000px]">
-
-            {/* LABEL */}
-
-            <div className="inline-flex flex-col items-start">
-
-              <span className="text-[14px] lg:text-[15px] font-semibold tracking-[1.2px] text-[#548C78]">
-                Client Results
-              </span>
-
-              <span className="mt-2 h-[3px] w-[48px] rounded-full bg-[#4D997A]" />
+                </React.Fragment>
+              ))}
 
             </div>
 
 
-            {/* HEADING */}
+            {/* Hero Content */}
 
-            <h1 className="mt-6 text-[42px] sm:text-[48px] md:text-[54px] lg:text-[60px] leading-[1.08] font-bold tracking-[-1.8px] text-[#07372F]">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_0.9fr] gap-8 lg:gap-12 items-center">
 
-              Success Measured by{" "}
+              {/* LEFT */}
 
-              <span className="text-[#3C9A72]">
-                Outcomes.
-              </span>
+              <div className="max-w-[650px]">
 
-            </h1>
+                <p className="uppercase tracking-[1.8px] text-[12px] lg:text-[13px] font-bold text-[#3F9975] mb-4">
+                  {data.hero.label}
+                </p>
+
+                <h1 className="text-[39px] sm:text-[46px] lg:text-[56px] xl:text-[62px] leading-[1.02] tracking-[-1.8px] font-extrabold text-[#07372F]">
+
+                  {data.hero.title}{" "}
+
+                  <span className="text-[#3F9975]">
+                    {data.hero.highlightedTitle}
+                  </span>
+
+                </h1>
+
+                <div className="mt-5 w-[55px] h-[4px] rounded-full bg-[#4BA77A]" />
+
+                <p className="mt-5 max-w-[650px] text-[14px] lg:text-[15px] leading-[1.55] text-[#566760]">
+                  {data.hero.description}
+                </p>
+
+              </div>
 
 
-            {/* DESCRIPTION */}
+              {/* RIGHT IMAGE */}
 
-            <p className="mt-5 max-w-[950px] text-[15px] lg:text-[16px] leading-[1.55] text-[#4F5958]">
+              <div className="relative">
 
-              Our clients don't partner with us to conduct workshops.
-              They partner with us to improve business performance.
-              Across industries, organisations have experienced measurable
-              improvements that translate directly into competitive advantage,
-              stronger cultures, and sustainable growth. Every engagement
-              includes robust mechanisms to evaluate learning effectiveness
-              and genuine business impact because accountability matters as
-              much to us as it does to you.
+                <div className="group relative overflow-hidden rounded-[22px]">
 
-            </p>
+                  <img
+                    src={heroImage}
+                    alt="Success Measured by Outcomes"
+                    className="w-full h-[245px] sm:h-[280px] lg:h-[300px] object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#005B49]/10 to-transparent pointer-events-none" />
+
+                </div>
+
+              </div>
+
+            </div>
 
           </div>
 
         </section>
 
 
-        {/* ================= RESULT CARDS ================= */}
+        {/* =========================================================
+            RESULT CARDS
+        ========================================================= */}
 
-        <section className="max-w-[1250px] mx-auto px-8 lg:px-10 mt-14 lg:mt-16 pb-10">
+        <section className="bg-white px-8 lg:px-12 py-8 lg:py-10">
 
-          <div className="space-y-5">
+          <div className="max-w-[1320px] mx-auto space-y-5">
 
-            {ourClientResults.map((result, index) => {
+            {data.results.map((item, index) => {
 
-              const Icon = result.icon;
-
-              const ResultVisual =
-                resultVisuals[index % resultVisuals.length];
+              const LeftIcon = item.leftIcon;
+              const RightIcon = item.rightIcon;
 
               return (
-
                 <div
-                  key={result.id}
-                  className="group flex min-h-[155px] overflow-hidden rounded-lg border border-gray-200 bg-white shadow-[0_3px_8px_rgba(0,0,0,0.14)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  key={item.title}
+                  className="group relative flex min-h-[140px] lg:min-h-[145px] overflow-hidden rounded-[10px] border border-[#E1E6E4] bg-white shadow-[0_4px_12px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#E8FFF5] hover:border-[#B9E7D3] hover:shadow-[0_14px_30px_rgba(63,151,117,0.14)]"
                 >
 
-                  {/* ================= LEFT ICON ================= */}
+                  {/* LEFT GREEN ICON PANEL */}
 
-                  <div className="flex w-[105px] shrink-0 items-center justify-center bg-[#E2F8EF] sm:w-[120px] md:w-[135px]">
+                  <div className="w-[92px] sm:w-[105px] lg:w-[115px] shrink-0 bg-[#005B49] flex items-center justify-center transition-all duration-300 group-hover:bg-[#08745D]">
 
-                    <Icon
-                      size={40}
-                      strokeWidth={1.7}
-                      className="text-[#4A9877] transition-transform duration-300 group-hover:scale-110"
-                    />
+                    <LeftIcon className="text-[30px] sm:text-[34px] lg:text-[38px] text-white transition-transform duration-300 group-hover:scale-110" />
 
                   </div>
 
 
-                  {/* ================= CONTENT ================= */}
+                  {/* CENTER CONTENT */}
 
-                  <div className="flex flex-1 flex-col justify-center px-6 py-6 sm:px-7 md:px-8">
+                  <div className="flex-1 px-6 sm:px-7 lg:px-8 py-5 lg:py-6">
 
-                    <h2 className="mb-3 text-[20px] font-bold text-[#063B3D] md:text-[22px]">
-
-                      {result.title}
-
+                    <h2 className="text-[20px] sm:text-[22px] lg:text-[24px] font-bold text-[#07372F]">
+                      {item.title}
                     </h2>
 
+                    <ul className="mt-3 space-y-[3px]">
 
-                    <ul className="space-y-1.5 text-[13px] leading-5 text-[#333] md:text-[14px]">
-
-                      {result.points.map((point, pointIndex) => (
+                      {item.points.map((point) => (
 
                         <li
-                          key={pointIndex}
-                          className="flex items-start"
+                          key={point}
+                          className="relative pl-3 text-[12px] sm:text-[13px] lg:text-[14px] leading-[1.4] text-[#4A5955]"
                         >
 
-                          <span className="mr-2 mt-[7px] h-[5px] w-[5px] shrink-0 rounded-full bg-[#063B3D]" />
+                          <span className="absolute left-0 top-[7px] w-[4px] h-[4px] rounded-full bg-[#3F9975]" />
 
-                          <span>
-                            {point}
-                          </span>
+                          {point}
 
                         </li>
 
@@ -179,31 +170,25 @@ function OurClientResult() {
                   </div>
 
 
-                  {/* ================= DIVIDER ================= */}
+                  {/* DIVIDER */}
 
-                  <div className="my-6 hidden w-[2px] shrink-0 bg-gray-200 md:block" />
+                  <div className="hidden sm:block self-center h-[90px] w-[2px] bg-[#E4E9E7]" />
 
 
-                  {/* ================= RIGHT VISUAL ================= */}
+                  {/* RIGHT ICON */}
 
-                  <div className="flex w-[115px] shrink-0 items-center justify-center sm:w-[135px] md:w-[155px]">
+                  <div className="hidden sm:flex w-[145px] lg:w-[180px] shrink-0 items-center justify-center">
 
-                    <div className="flex h-[64px] w-[64px] items-center justify-center rounded-full bg-[#B9F0D8] transition-all duration-300 group-hover:scale-110">
+                    <div className="w-[54px] h-[54px] lg:w-[58px] lg:h-[58px] rounded-full bg-[#E6F9F0] flex items-center justify-center text-[#65A98B] transition-all duration-300 group-hover:bg-[#CFF3DF] group-hover:text-[#3F9975] group-hover:scale-110">
 
-                      <ResultVisual
-                        size={32}
-                        strokeWidth={1.6}
-                        className="text-[#4A9877]"
-                      />
+                      <RightIcon className="text-[20px] lg:text-[22px]" />
 
                     </div>
 
                   </div>
 
                 </div>
-
               );
-
             })}
 
           </div>
@@ -211,60 +196,59 @@ function OurClientResult() {
         </section>
 
 
-        {/* ================= CTA ================= */}
+        {/* =========================================================
+            BOTTOM MESSAGE
+        ========================================================= */}
 
-        <section className="max-w-[1250px] mx-auto px-8 lg:px-10 pb-10">
+        <section className="px-8 lg:px-12 pt-1 pb-8 lg:pb-10 bg-white">
 
-          <div className="flex flex-col gap-6 rounded-xl bg-[#005641] px-6 py-7 text-white sm:flex-row sm:items-center sm:justify-between sm:px-8 md:px-10">
+          <div className="max-w-[1320px] mx-auto">
 
-            {/* CTA LEFT */}
+            <div className="group relative overflow-hidden flex flex-col sm:flex-row items-center gap-5 lg:gap-6 bg-[#005B49] rounded-[12px] px-6 lg:px-7 py-6 lg:py-7 shadow-[0_10px_25px_rgba(0,91,73,0.15)] transition-all duration-300 hover:bg-[#006B56]">
 
-            <div className="flex items-center gap-4">
+              {/* Icon */}
 
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white">
+              <div className="w-[52px] h-[52px] shrink-0 rounded-full bg-[#E1F7EC] flex items-center justify-center text-[#08745D] transition-transform duration-300 group-hover:scale-110">
 
-                <UsersRound
-                  size={25}
-                  strokeWidth={1.7}
-                  className="text-[#4A9877]"
-                />
+                <data.bottomMessage.icon className="text-[20px]" />
 
               </div>
 
 
-              <div>
+              {/* Text */}
 
-                <h3 className="text-[15px] font-semibold md:text-[17px]">
+              <div className="flex-1">
 
-                  Real outcomes. Measurable impact. Lasting change.
-
+                <h3 className="text-[14px] lg:text-[15px] font-semibold text-white">
+                  {data.bottomMessage.title}
                 </h3>
 
-
-                <p className="mt-1 max-w-[580px] text-[12px] leading-5 text-white/80 md:text-[13px]">
-
-                  We are committed to driving meaningful results that
-                  create value for your people and your business.
-
+                <p className="mt-1 max-w-[650px] text-[11px] lg:text-[12px] leading-[1.45] text-[#CBE8DF]">
+                  {data.bottomMessage.description}
                 </p>
 
               </div>
 
+
+              {/* Button */}
+
+              <button
+                type="button"
+                className="shrink-0 flex items-center gap-2 border border-[#8CCBB3] rounded-[6px] px-4 py-2 text-[11px] lg:text-[12px] font-semibold text-white transition-all duration-300 hover:bg-white hover:text-[#005B49] hover:border-white"
+              >
+
+                {data.bottomMessage.button}
+
+                <FaArrowRight className="text-[10px] transition-transform duration-300 group-hover:translate-x-1" />
+
+              </button>
+
+
+              {/* Decorative Circle */}
+
+              <div className="absolute -right-16 -bottom-24 w-[170px] h-[170px] rounded-full bg-[#08745D] opacity-30 pointer-events-none" />
+
             </div>
-
-
-            {/* CTA BUTTON */}
-
-            <button
-              type="button"
-              className="inline-flex w-fit items-center gap-2 rounded-md border border-white/50 px-5 py-2.5 text-[13px] font-medium text-white transition-all duration-300 hover:bg-white hover:text-[#005641]"
-            >
-
-              See How We Drive Results
-
-              <ArrowRight size={16} />
-
-            </button>
 
           </div>
 
@@ -273,12 +257,14 @@ function OurClientResult() {
       </main>
 
 
-      {/* ================= FOOTER ================= */}
+      {/* =========================================================
+          EXISTING GLOBAL FOOTER
+      ========================================================= */}
 
       <Footer />
 
     </div>
   );
-}
+};
 
 export default OurClientResult;

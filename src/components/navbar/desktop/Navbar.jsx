@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { FaBars, FaChevronDown, FaTimes } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-import logo from "../../../assets/images/logo.webp";
+import logo from "../../../assets/images/logo.png";
 import MegaMenu from "./MegaMenu";
 import MobileMenu from "../mobile/MobileMenu";
 
@@ -89,7 +89,7 @@ function Navbar() {
   /* ================= CUSTOM PROGRAM WHATSAPP ================= */
 
   const handleCustomProgramClick = () => {
-    const whatsappNumber = "919702082248";
+    const whatsappNumber = "919967399069";
 
     const message = encodeURIComponent(
       "Hello, I am interested in a Custom Program. I would like to know more details."
@@ -132,7 +132,7 @@ function Navbar() {
             <img
               src={logo}
               alt="3rd EduHim"
-              className="h-14 w-auto object-contain scale-150 origin-left"
+              className="h-14 w-auto object-contain scale-150 origin-left drop-shadow-sm"
             />
           </Link>
 

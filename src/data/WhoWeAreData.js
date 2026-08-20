@@ -9,6 +9,8 @@ import {
   FaHeart,
 } from "react-icons/fa";
 
+import meetingImage from "../assets/images/AboutUs/meeting.png";
+
 const whoWeAreData = {
   breadcrumb: [
     "Home",
@@ -22,8 +24,7 @@ const whoWeAreData = {
     description:
       "We are a learning and capability development partner focused on creating practical, engaging, and outcome-driven learning experiences.",
 
-    image:
-      "https://coonectse.com.br/files/config_metatag/share_1827266298.webp",
+    image: meetingImage,
   },
 
   focusAreas: [

@@ -23,37 +23,49 @@ const ourJourney = {
     "This simple idea is where 3rd Edhum began.",
 
   introduction:
-    "From our early days of delivering focused corporate training programmes, we have continuously evolved into a comprehensive capability development and consulting partner. This evolution was not accidental it was driven by a relentless pursuit of greater business impact for every client we serve. We asked harder questions, designed bolder solutions, and held ourselves accountable to outcomes that truly mattered.",
+    "From our early days of delivering focused corporate training programmes, we have continuously evolved into a comprehensive capability development and consulting partner. This evolution was not accidental; it was driven by a relentless pursuit of greater business impact for every client we serve. We asked harder questions, designed bolder solutions, and held ourselves accountable to outcomes that truly mattered.",
 
   journey: [
     {
       id: 1,
+
       icon: UsersRound,
+
       title: "FOUNDATION",
+
       description:
         "Focused corporate training programmes built on practical, business-relevant content.",
     },
 
     {
       id: 2,
+
       icon: Briefcase,
+
       title: "EXPANSION",
+
       description:
         "Leadership academies, behavioural assessments, and executive coaching introduced.",
     },
 
     {
       id: 3,
+
       icon: Lightbulb,
+
       title: "INNOVATION",
+
       description:
         "AI productivity solutions, digital learning experiences, and capability frameworks launched.",
     },
 
     {
       id: 4,
+
       icon: Rocket,
+
       title: "TODAY",
+
       description:
         "Focused corporate training programmes built on practical, business-relevant content.",
     },
