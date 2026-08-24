@@ -4,24 +4,15 @@ import Footer from "../components/footer/Footer";
 
 function WhoWeAre() {
   return (
-    <div className="w-full bg-white text-[#0B2C25]">
+    <div className="w-full bg-white text-[#0B2C25] overflow-hidden">
 
       {/* ================= BREADCRUMB ================= */}
 
-      <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-[84px] pt-6 pb-3">
+      <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-[84px] pt-6 pb-3 animate-fade-up">
         <div className="flex items-center gap-2 flex-wrap text-[12px] sm:text-[13px] text-gray-500">
           {whoWeAreData.breadcrumb.map((item, index) => (
-            <div
-              key={`${item}-${index}`}
-              className="flex items-center gap-2"
-            >
-              <span
-                className={
-                  index === whoWeAreData.breadcrumb.length - 1
-                    ? "font-semibold text-[#0B2C25]"
-                    : ""
-                }
-              >
+            <div key={`${item}-${index}`} className="flex items-center gap-2">
+              <span className={index === whoWeAreData.breadcrumb.length - 1 ? "font-semibold text-[#0B2C25]" : ""}>
                 {item}
               </span>
 
@@ -36,7 +27,7 @@ function WhoWeAre() {
       {/* ================= HERO ================= */}
 
       <section className="relative overflow-hidden bg-gradient-to-br from-[#F4FCF8] via-[#EAF8F1] to-white border-y border-[#E1F0EA]">
-        
+
         {/* GREEN GLOW */}
 
         <div className="absolute -top-32 -right-24 w-[380px] h-[380px] rounded-full bg-[#CDEFE0]/60 blur-3xl pointer-events-none" />
@@ -49,7 +40,7 @@ function WhoWeAre() {
 
             {/* ================= LEFT CONTENT ================= */}
 
-            <div className="max-w-[600px]">
+            <div className="max-w-[600px] animate-fade-up">
 
               <div className="inline-block mb-5">
                 <p className="text-[13px] sm:text-[14px] font-semibold text-[#3F9975] uppercase tracking-[1px]">
@@ -71,15 +62,11 @@ function WhoWeAre() {
               {/* ================= FOCUS AREAS ================= */}
 
               <div className="mt-8 space-y-4">
-
-                {whoWeAreData.focusAreas.map((item) => {
+                {whoWeAreData.focusAreas.map((item, index) => {
                   const Icon = item.icon;
 
                   return (
-                    <div
-                      key={item.title}
-                      className="group flex items-center gap-4 rounded-xl px-3 py-2 -ml-3 transition-all duration-300 hover:bg-[#DDF5E9]/70 hover:translate-x-1"
-                    >
+                    <div key={item.title} className="group flex items-center gap-4 rounded-xl px-3 py-2 -ml-3 transition-all duration-300 hover:bg-[#DDF5E9]/70 hover:translate-x-1 animate-fade-up" style={{ animationDelay: `${index * 100 + 200}ms` }}>
 
                       <div className="w-[54px] h-[54px] rounded-[12px] bg-[#EAF7F0] flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-[#CDEFE0] group-hover:scale-105">
                         <Icon className="text-[22px] text-[#3F9975] transition-transform duration-300 group-hover:scale-110" />
@@ -98,13 +85,12 @@ function WhoWeAre() {
                     </div>
                   );
                 })}
-
               </div>
             </div>
 
             {/* ================= RIGHT IMAGE ================= */}
 
-            <div className="relative lg:pl-2">
+            <div className="relative lg:pl-2 animate-fade-up" style={{ animationDelay: "250ms" }}>
 
               <div className="absolute -top-10 -left-10 w-[300px] h-[300px] rounded-full bg-[#DDF5E9] opacity-70" />
 
@@ -128,14 +114,9 @@ function WhoWeAre() {
               <div className="absolute -right-4 bottom-[-20px] w-[90px] h-[90px] opacity-40 hidden xl:block">
 
                 <div className="grid grid-cols-5 gap-2">
-
                   {Array.from({ length: 25 }).map((_, index) => (
-                    <span
-                      key={index}
-                      className="w-[5px] h-[5px] rounded-full bg-[#3F9975]"
-                    />
+                    <span key={index} className="w-[5px] h-[5px] rounded-full bg-[#3F9975]" />
                   ))}
-
                 </div>
 
               </div>
@@ -149,7 +130,7 @@ function WhoWeAre() {
 
       {/* ================= WHAT DEFINES US ================= */}
 
-      <section className="max-w-[1320px] mx-auto px-6 sm:px-8 lg:px-0 pb-12">
+      <section className="max-w-[1320px] mx-auto px-6 sm:px-8 lg:px-0 pb-12 animate-fade-up">
 
         <div className="rounded-[24px] bg-[#F3F7F5] px-5 sm:px-8 lg:px-10 py-9 sm:py-11">
 
@@ -169,19 +150,10 @@ function WhoWeAre() {
               const Icon = item.icon;
 
               return (
-                <div
-                  key={item.title}
-                  className={`group px-5 py-5 text-center rounded-xl transition-all duration-300 hover:bg-[#E2F8EF] hover:-translate-y-1 ${
-                    index < whoWeAreData.definingUs.length - 1
-                      ? "lg:border-r lg:border-gray-300"
-                      : ""
-                  }`}
-                >
+                <div key={item.title} className={`group px-5 py-5 text-center rounded-xl transition-all duration-300 hover:bg-[#E2F8EF] hover:-translate-y-1 animate-fade-up ${index < whoWeAreData.definingUs.length - 1 ? "lg:border-r lg:border-gray-300" : ""}`} style={{ animationDelay: `${index * 100 + 150}ms` }}>
 
                   <div className="w-[58px] h-[58px] mx-auto flex items-center justify-center">
-
                     <Icon className="text-[32px] text-[#174C43] transition-transform duration-300 group-hover:scale-110 group-hover:text-[#3F9975]" />
-
                   </div>
 
                   <h3 className="mt-4 text-[16px] sm:text-[17px] font-bold text-[#17252B]">
@@ -204,7 +176,7 @@ function WhoWeAre() {
 
       {/* ================= CTA ================= */}
 
-      <section className="max-w-[1320px] mx-auto px-6 sm:px-8 lg:px-0 pb-14">
+      <section className="max-w-[1320px] mx-auto px-6 sm:px-8 lg:px-0 pb-14 animate-fade-up">
 
         <div className="relative overflow-hidden rounded-[22px] bg-[#00453F] px-6 sm:px-8 lg:px-12 py-8">
 
@@ -213,14 +185,9 @@ function WhoWeAre() {
           <div className="absolute left-0 bottom-0 opacity-30 hidden sm:block">
 
             <div className="grid grid-cols-7 gap-2">
-
               {Array.from({ length: 42 }).map((_, index) => (
-                <span
-                  key={index}
-                  className="w-[4px] h-[4px] rounded-full bg-[#3F9975]"
-                />
+                <span key={index} className="w-[4px] h-[4px] rounded-full bg-[#3F9975]" />
               ))}
-
             </div>
 
           </div>
@@ -229,12 +196,10 @@ function WhoWeAre() {
 
             <div className="flex items-center gap-5">
 
-              <div className="w-[68px] h-[68px] rounded-full bg-white flex items-center justify-center shrink-0">
-
+              <div className="w-[68px] h-[68px] rounded-full bg-white flex items-center justify-center shrink-0 transition-transform duration-300 hover:scale-105">
                 <span className="text-[#174C43] text-[25px] font-bold">
                   ♧
                 </span>
-
               </div>
 
               <div>
@@ -251,10 +216,7 @@ function WhoWeAre() {
 
             </div>
 
-            <button
-              type="button"
-              className="flex items-center justify-center gap-3 shrink-0 border border-white/70 rounded-[9px] px-5 py-3 text-[13px] sm:text-[14px] font-semibold text-white hover:bg-white hover:text-[#00453F] transition-all duration-300"
-            >
+            <button type="button" className="flex items-center justify-center gap-3 shrink-0 border border-white/70 rounded-[9px] px-5 py-3 text-[13px] sm:text-[14px] font-semibold text-white hover:bg-white hover:text-[#00453F] transition-all duration-300">
 
               {whoWeAreData.cta.button}
 
@@ -271,6 +233,10 @@ function WhoWeAre() {
       {/* ================= FOOTER ================= */}
 
       <Footer />
+
+      {/* ================= FADE UP ANIMATION ================= */}
+
+      <style>{`@keyframes fadeUp{0%{opacity:0;transform:translateY(24px)}100%{opacity:1;transform:translateY(0)}}.animate-fade-up{animation:fadeUp .7s ease-out both}`}</style>
 
     </div>
   );

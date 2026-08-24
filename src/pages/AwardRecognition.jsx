@@ -11,7 +11,6 @@ import {
 
 import Footer from "../components/footer/Footer";
 import awardRecognition from "../data/AwardRecognition";
-
 import awardRecognitionHero from "../assets/images/OurDifference/awards-recognition-hero.png";
 
 function AwardRecognition() {
@@ -35,20 +34,15 @@ function AwardRecognition() {
 
           <div className="relative max-w-[1250px] mx-auto px-6 sm:px-8 lg:px-10 pt-7 pb-8 lg:pt-8 lg:pb-9">
 
-            {/* Breadcrumb */}
+            {/* BREADCRUMB */}
 
             <div className="flex flex-wrap items-center gap-2 text-[11px] sm:text-[12px] text-[#82928D] mb-7">
 
               <span>Home</span>
-
               <span>›</span>
-
               <span>Why 3rd EdHum</span>
-
               <span>›</span>
-
               <span>Why 3rd EdHum</span>
-
               <span>›</span>
 
               <span className="text-[#4A8F76] font-medium">
@@ -57,13 +51,14 @@ function AwardRecognition() {
 
             </div>
 
-            {/* Hero Grid */}
+
+            {/* HERO GRID */}
 
             <div className="grid grid-cols-1 lg:grid-cols-[1.08fr_0.92fr] gap-8 lg:gap-10 items-center">
 
               {/* LEFT CONTENT */}
 
-              <div>
+              <div className="animate-[fadeUp_.7s_ease-out]">
 
                 <div className="inline-flex flex-col items-start">
 
@@ -75,6 +70,7 @@ function AwardRecognition() {
 
                 </div>
 
+
                 <h1 className="mt-5 text-[38px] sm:text-[44px] md:text-[50px] lg:text-[55px] xl:text-[60px] leading-[1.05] font-extrabold tracking-[-1.8px] text-[#07372F]">
 
                   Awards &{" "}
@@ -85,7 +81,8 @@ function AwardRecognition() {
 
                 </h1>
 
-                {/* Quote */}
+
+                {/* QUOTE */}
 
                 <div className="mt-6 flex items-center gap-4 max-w-[700px]">
 
@@ -107,15 +104,19 @@ function AwardRecognition() {
 
                 </div>
 
+
+                {/* INTRODUCTION */}
+
                 <p className="mt-6 max-w-[700px] text-[13px] sm:text-[14px] lg:text-[15px] leading-[1.55] text-[#4F5958]">
                   {awardRecognition.introduction}
                 </p>
 
               </div>
 
+
               {/* HERO IMAGE */}
 
-              <div className="relative flex justify-center lg:justify-end">
+              <div className="relative flex justify-center lg:justify-end animate-[heroImage_.9s_ease-out]">
 
                 <div className="absolute w-[300px] h-[300px] lg:w-[380px] lg:h-[380px] rounded-full bg-[#DDF7EC] opacity-70" />
 
@@ -167,6 +168,7 @@ function AwardRecognition() {
                 </div>
 
               </div>
+
 
               <div className="overflow-hidden rounded-xl border border-[#DCE7E2] bg-white shadow-[0_5px_18px_rgba(0,60,45,0.05)]">
 
@@ -223,6 +225,7 @@ function AwardRecognition() {
                 </div>
 
               </div>
+
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
@@ -298,9 +301,41 @@ function AwardRecognition() {
 
       </main>
 
-      {/* Existing global footer */}
+
+      {/* EXISTING GLOBAL FOOTER */}
 
       <Footer />
+
+
+      {/* ================= ANIMATIONS ================= */}
+
+      <style>{`
+
+        @keyframes fadeUp {
+          from {
+            opacity: 0;
+            transform: translateY(24px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes heroImage {
+          from {
+            opacity: 0;
+            transform: translateX(35px) scale(0.96);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+          }
+        }
+
+      `}</style>
 
     </div>
   );

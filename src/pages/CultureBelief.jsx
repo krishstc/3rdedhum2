@@ -33,7 +33,7 @@ function CultureBelief() {
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-7 px-6 sm:px-8 lg:px-10 pt-6 pb-7">
 
               {/* LEFT */}
-              <div className="animate-[fadeUp_.7s_ease-out]">
+              <div className="animate-[fadeUp_.7s_ease-out_both]">
 
                 <div className="inline-flex flex-col items-start">
                   <span className="text-[14px] sm:text-[15px] font-semibold tracking-[1.1px] text-[#548C78]">
@@ -57,19 +57,12 @@ function CultureBelief() {
               </div>
 
               {/* HERO IMAGE */}
-              <div className="flex justify-center lg:justify-end animate-[fadeIn_.9s_ease-out]">
+              <div className="flex justify-center lg:justify-end">
 
                 <img
                   src={heroImage}
                   alt="Culture and Beliefs"
-                  className="
-                    w-full
-                    max-w-[500px]
-                    object-contain
-                    transition-transform
-                    duration-700
-                    hover:scale-[1.04]
-                  "
+                  className="w-full max-w-[500px] object-contain animate-[heroImage_.9s_ease-out_both] transition-transform duration-700 hover:scale-[1.04]"
                 />
 
               </div>
@@ -94,95 +87,30 @@ function CultureBelief() {
                 <div
                   key={belief.id}
                   style={{ animationDelay: `${index * 100}ms` }}
-                  className="
-                    animate-[fadeUp_.6s_ease-out_both]
-                    group
-                    min-h-[215px]
-                    sm:min-h-[230px]
-                    rounded-xl
-                    border
-                    border-[#E5E8E6]
-                    bg-white
-                    shadow-[0_4px_10px_rgba(0,0,0,0.10)]
-                    px-6
-                    sm:px-8
-                    py-7
-                    flex
-                    items-center
-                    gap-6
-                    transition-all
-                    duration-300
-
-                    /* LIGHT GREEN HOVER */
-                    hover:bg-[#E2F8EF]
-                    hover:-translate-y-1
-                    hover:border-[#BFE6D4]
-                    hover:shadow-[0_10px_22px_rgba(0,86,65,0.10)]
-                  "
+                  className="animate-[fadeUp_.6s_ease-out_both] group min-h-[215px] sm:min-h-[230px] rounded-xl border border-[#E5E8E6] bg-white shadow-[0_4px_10px_rgba(0,0,0,0.10)] px-6 sm:px-8 py-7 flex items-center gap-6 transition-all duration-300 hover:bg-[#E2F8EF] hover:-translate-y-1 hover:border-[#BFE6D4] hover:shadow-[0_10px_22px_rgba(0,86,65,0.10)]"
                 >
 
                   {/* ICON */}
-                  <div
-                    className="
-                      flex
-                      h-[105px]
-                      w-[105px]
-                      sm:h-[115px]
-                      sm:w-[115px]
-                      shrink-0
-                      items-center
-                      justify-center
-                      rounded-md
-                      bg-[#DFF9EE]
-                      transition-all
-                      duration-300
-                      group-hover:bg-white
-                      group-hover:scale-105
-                    "
-                  >
+                  <div className="flex h-[105px] w-[105px] sm:h-[115px] sm:w-[115px] shrink-0 items-center justify-center rounded-md bg-[#DFF9EE] transition-all duration-300 group-hover:bg-white group-hover:scale-105">
+
                     <Icon
                       size={40}
                       strokeWidth={1.5}
-                      className="
-                        text-[#4A9877]
-                        transition-colors
-                        duration-300
-                      "
+                      className="text-[#4A9877] transition-colors duration-300"
                     />
+
                   </div>
 
                   {/* CONTENT */}
                   <div>
 
-                    <h2
-                      className="
-                        text-[18px]
-                        sm:text-[19px]
-                        lg:text-[20px]
-                        font-bold
-                        leading-[1.3]
-                        text-[#101F1D]
-                        transition-colors
-                        duration-300
-                      "
-                    >
+                    <h2 className="text-[18px] sm:text-[19px] lg:text-[20px] font-bold leading-[1.3] text-[#101F1D] transition-colors duration-300">
                       {belief.title}
                     </h2>
 
                     <div className="mt-2.5 h-[3px] w-[42px] rounded-full bg-[#4D997A]" />
 
-                    <p
-                      className="
-                        mt-4
-                        max-w-[370px]
-                        text-[14px]
-                        sm:text-[15px]
-                        leading-[1.55]
-                        text-[#4F5958]
-                        transition-colors
-                        duration-300
-                      "
-                    >
+                    <p className="mt-4 max-w-[370px] text-[14px] sm:text-[15px] leading-[1.55] text-[#4F5958] transition-colors duration-300">
                       {belief.description}
                     </p>
 
@@ -210,105 +138,30 @@ function CultureBelief() {
                 <div
                   key={principle.id}
                   style={{ animationDelay: `${index * 120}ms` }}
-                  className="
-                    animate-[fadeUp_.6s_ease-out_both]
-                    group
-                    min-h-[220px]
-                    sm:min-h-[235px]
-                    rounded-xl
-                    bg-[#E2F8EF]
-                    px-6
-                    sm:px-7
-                    py-8
-                    flex
-                    flex-col
-                    items-center
-                    text-center
-
-                    transition-all
-                    duration-300
-
-                    /* DARK GREEN HOVER */
-                    hover:-translate-y-1
-                    hover:bg-[#005641]
-                    hover:shadow-[0_12px_25px_rgba(0,86,65,0.18)]
-                  "
+                  className="animate-[fadeUp_.6s_ease-out_both] group min-h-[220px] sm:min-h-[235px] rounded-xl bg-[#E2F8EF] px-6 sm:px-7 py-8 flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-1 hover:bg-[#005641] hover:shadow-[0_12px_25px_rgba(0,86,65,0.18)]"
                 >
 
                   {/* ICON */}
-                  <div
-                    className="
-                      flex
-                      h-14
-                      w-14
-                      items-center
-                      justify-center
-                      rounded-full
-                      bg-white
-                      transition-all
-                      duration-300
-                      group-hover:bg-[#E2F8EF]
-                      group-hover:scale-110
-                    "
-                  >
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white transition-all duration-300 group-hover:bg-[#E2F8EF] group-hover:scale-110">
+
                     <Icon
                       size={28}
                       strokeWidth={1.7}
-                      className="
-                        text-[#4A9877]
-                        transition-colors
-                        duration-300
-                        group-hover:text-[#005641]
-                      "
+                      className="text-[#4A9877] transition-colors duration-300 group-hover:text-[#005641]"
                     />
+
                   </div>
 
                   {/* TITLE */}
-                  <h2
-                    className="
-                      mt-6
-                      max-w-[280px]
-                      text-[18px]
-                      sm:text-[19px]
-                      font-bold
-                      leading-[1.25]
-                      text-[#101F1D]
-                      transition-colors
-                      duration-300
-                      group-hover:text-white
-                    "
-                  >
+                  <h2 className="mt-6 max-w-[280px] text-[18px] sm:text-[19px] font-bold leading-[1.25] text-[#101F1D] transition-colors duration-300 group-hover:text-white">
                     {principle.title}
                   </h2>
 
                   {/* UNDERLINE */}
-                  <div
-                    className="
-                      mt-2.5
-                      h-[3px]
-                      w-[42px]
-                      rounded-full
-                      bg-[#4D997A]
-                      transition-colors
-                      duration-300
-                      group-hover:bg-[#BDEFD9]
-                    "
-                  />
+                  <div className="mt-2.5 h-[3px] w-[42px] rounded-full bg-[#4D997A] transition-colors duration-300 group-hover:bg-[#BDEFD9]" />
 
                   {/* DESCRIPTION */}
-                  <p
-                    className="
-                      mt-4
-                      max-w-[270px]
-                      text-[14px]
-                      sm:text-[15px]
-                      leading-[1.5]
-                      text-[#4F5958]
-                      transition-colors
-                      duration-300
-                      group-hover:text-white/85
-                    "
-                  >
+                  <p className="mt-4 max-w-[270px] text-[14px] sm:text-[15px] leading-[1.5] text-[#4F5958] transition-colors duration-300 group-hover:text-white/85">
                     {principle.description}
                   </p>
 
@@ -352,27 +205,7 @@ function CultureBelief() {
 
               <button
                 type="button"
-                className="
-                  flex
-                  shrink-0
-                  items-center
-                  justify-center
-                  gap-2
-                  rounded-md
-                  border
-                  border-white/50
-                  px-5
-                  py-3
-                  text-[12px]
-                  sm:text-[13px]
-                  font-medium
-                  text-white
-                  transition-all
-                  duration-300
-                  hover:bg-white
-                  hover:text-[#005641]
-                  hover:scale-105
-                "
+                className="flex shrink-0 items-center justify-center gap-2 rounded-md border border-white/50 px-5 py-3 text-[12px] sm:text-[13px] font-medium text-white transition-all duration-300 hover:bg-white hover:text-[#005641] hover:scale-105"
               >
                 {cultureBelief.cta.button}
                 <ArrowRight size={16} />
@@ -388,12 +221,12 @@ function CultureBelief() {
 
       <Footer />
 
-      {/* Animations */}
+      {/* ================= ANIMATIONS ================= */}
       <style>{`
         @keyframes fadeUp {
           from {
             opacity: 0;
-            transform: translateY(22px);
+            transform: translateY(24px);
           }
 
           to {
@@ -402,13 +235,15 @@ function CultureBelief() {
           }
         }
 
-        @keyframes fadeIn {
+        @keyframes heroImage {
           from {
             opacity: 0;
+            transform: translateX(35px) scale(0.96);
           }
 
           to {
             opacity: 1;
+            transform: translateX(0) scale(1);
           }
         }
       `}</style>
