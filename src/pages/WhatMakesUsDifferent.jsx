@@ -65,9 +65,11 @@ const WhatMakesUsDifferent = () => {
                   </span>
 
                   {index !== data.breadcrumb.length - 1 && (
+
                     <span className="text-[#AABAB5]">
                       ›
                     </span>
+
                   )}
 
                 </div>
@@ -158,6 +160,8 @@ const WhatMakesUsDifferent = () => {
 
                   <div className="flex items-center gap-4 mb-6">
 
+                    {/* FIXED CIRCLE */}
+
                     <div className="w-14 h-14 rounded-full bg-[#E4FFF4] flex items-center justify-center text-[#08745D] shrink-0 group-hover:rotate-6 group-hover:scale-105 transition-all duration-300">
 
                       <FaBullseye className="text-[23px]" />
@@ -178,8 +182,12 @@ const WhatMakesUsDifferent = () => {
 
                     <div className="flex items-center gap-4">
 
+                      {/* FIXED CIRCLE */}
+
                       <div className="w-11 h-11 rounded-full bg-[#D5E9E3] flex items-center justify-center text-[#005B49] shrink-0">
+
                         <FaChartLine className="text-[17px]" />
+
                       </div>
 
                       <p className="text-[15px] lg:text-[17px] font-semibold text-white leading-6">
@@ -227,6 +235,8 @@ const WhatMakesUsDifferent = () => {
                         key={index}
                         className="group flex items-center gap-4 p-3 rounded-xl hover:bg-[#F1FBF6] transition-all duration-300 cursor-default"
                       >
+
+                        {/* FIXED CIRCLE */}
 
                         <div className="w-12 h-12 rounded-full bg-[#E7F8F0] flex items-center justify-center text-[#3F9975] shrink-0 group-hover:bg-[#D2F2E2] group-hover:scale-110 transition-all duration-300">
 
@@ -278,7 +288,9 @@ const WhatMakesUsDifferent = () => {
 
                     <div className="absolute top-0 left-0 w-0 h-[3px] bg-[#3F9975] rounded-full group-hover:w-full transition-all duration-500" />
 
-                    <div className="w-13 h-13 w-[52px] rounded-full bg-[#E8F8F0] flex items-center justify-center text-[#3F9975] group-hover:bg-[#D5F2E4] group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                    {/* FIXED CIRCLE */}
+
+                    <div className="w-[52px] h-[52px] rounded-full bg-[#E8F8F0] flex items-center justify-center text-[#3F9975] shrink-0 group-hover:bg-[#D5F2E4] group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
 
                       <Icon className="text-[20px]" />
 
@@ -361,7 +373,9 @@ const WhatMakesUsDifferent = () => {
 
                     <div className="relative z-10 flex items-start gap-5">
 
-                      <div className="w-13 h-13 w-[52px] rounded-full bg-white flex items-center justify-center text-[#3F9975] shrink-0 shadow-sm group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                      {/* FIXED CIRCLE */}
+
+                      <div className="w-[52px] h-[52px] rounded-full bg-white flex items-center justify-center text-[#3F9975] shrink-0 shadow-sm group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
 
                         <Icon className="text-[20px]" />
 
@@ -424,6 +438,8 @@ const WhatMakesUsDifferent = () => {
             <div className="group relative overflow-hidden bg-gradient-to-r from-[#005B49] to-[#006B55] rounded-[20px] px-7 lg:px-10 py-7 lg:py-8 shadow-[0_15px_35px_rgba(0,91,73,0.14)] hover:shadow-[0_20px_45px_rgba(0,91,73,0.20)] transition-all duration-500">
 
               <div className="relative z-10 flex flex-col md:flex-row items-center gap-5 lg:gap-7">
+
+                {/* FIXED CIRCLE */}
 
                 <div className="w-14 h-14 rounded-full bg-[#E0F8ED] flex items-center justify-center text-[#08745D] shrink-0 group-hover:rotate-6 group-hover:scale-105 transition-all duration-300">
 

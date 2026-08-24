@@ -324,7 +324,7 @@ const Footer = () => {
         <div className="mt-12 flex flex-col items-center justify-between border-t border-white/10 pt-6 text-sm text-gray-400 md:flex-row">
 
           <p>
-            © 2026 3rd Edge Human Capital. All Rights Reserved.
+            © 2026 Thrdedhum Consultants Pvt Ltd. All Rights Reserved.
           </p>
 
           <div className="mt-4 flex gap-6 md:mt-0">
