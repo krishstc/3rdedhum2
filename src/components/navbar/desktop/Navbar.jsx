@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { FaBars, FaChevronDown, FaTimes } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-import logo from "../../../assets/images/logo.png";
+import logo from "../../../assets/images/logo1.png";
 import MegaMenu from "./MegaMenu";
 import MobileMenu from "../mobile/MobileMenu";
 
