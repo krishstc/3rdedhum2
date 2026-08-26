@@ -9,7 +9,7 @@ import {
   FaHeart,
 } from "react-icons/fa";
 
-import meetingImage from "../assets/images/AboutUs/meeting.png";
+import meetingImage from "../assets/images/AboutUs/meeting.jpg";
 
 const whoWeAreData = {
   breadcrumb: [
