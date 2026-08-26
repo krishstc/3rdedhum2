@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Navbar from "./components/navbar/desktop/Navbar";
 import PdfAssistant from "./components/PdfAssistant/PdfAssistant";
@@ -42,8 +42,42 @@ function App() {
         <main className="pt-[88px]">
           <Suspense fallback={<PageLoader />}>
             <Routes>
+              {/* HOME */}
               <Route path="/" element={<Home />} />
 
+              {/* OLD ABOUT US URL → NEW WHO WE ARE PAGE */}
+              <Route
+                path="/about-us"
+                element={
+                  <Navigate
+                    to="/why3rdedhum/who-we-are"
+                    replace
+                  />
+                }
+              />
+
+              <Route
+                path="/about-us/"
+                element={
+                  <Navigate
+                    to="/why3rdedhum/who-we-are"
+                    replace
+                  />
+                }
+              />
+
+              {/* OLD OUR PROCESS URL → PROGRAMS SECTION */}
+              <Route
+                path="/our-process"
+                element={<Navigate to="/#programs" replace />}
+              />
+
+              <Route
+                path="/our-process/"
+                element={<Navigate to="/#programs" replace />}
+              />
+
+              {/* WHY 3RD EDHUM */}
               <Route
                 path="/why3rdedhum/our-differences/what-makes-us-different"
                 element={<WhatMakesUsDifferent />}
@@ -69,6 +103,7 @@ function App() {
                 element={<AwardRecognition />}
               />
 
+              {/* WHO WE ARE */}
               <Route
                 path="/why3rdedhum/who-we-are"
                 element={<WhoWeAre />}
@@ -94,6 +129,7 @@ function App() {
                 element={<CultureBelief />}
               />
 
+              {/* OUR REACH */}
               <Route
                 path="/why3rdedhum/our-reach/global-presence"
                 element={<GlobalPresence />}
@@ -109,6 +145,7 @@ function App() {
                 element={<TrustedByLeaders />}
               />
 
+              {/* OTHER PAGES */}
               <Route path="/upcoming" element={<Upcoming />} />
 
               <Route path="/ypd" element={<YPD />} />
