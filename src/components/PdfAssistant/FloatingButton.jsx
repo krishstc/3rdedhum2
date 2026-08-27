@@ -1,4 +1,4 @@
-import popupLogo from "../../assets/images/popup.png";
+import popupLogo from "../../assets/images/popup1.png";
 import "./FloatingButton.css";
 
 function FloatingButton({ onClick }) {

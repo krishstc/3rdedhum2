@@ -1,33 +1,33 @@
+import futureReadyLeader from "../../assets/images/insights/future-ready-leader.jpeg";
+import highPerformanceCulture from "../../assets/images/insights/high-performance-culture.jpeg";
+import effectiveTraining from "../../assets/images/insights/effective-training.jpeg";
+
 const resources = [
   {
     type: "ARTICLE",
     title: "6 Skills Every Future-Ready Leader Must Have",
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900",
+    image: futureReadyLeader,
   },
   {
     type: "WHITE PAPER",
     title: "Building High-Performance Culture: Key Strategies",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=900",
+    image: highPerformanceCulture,
   },
   {
     type: "CASE STUDY",
     title: "Driving Business Impact Through Effective Training",
-    image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900",
+    image: effectiveTraining,
   },
 ];
 
 const Insights = () => {
   return (
-    <section className="py-24 bg-[#F6F8F7]">
+    <section className="py-20 bg-[#F6F8F7]">
       <div className="max-w-[1280px] mx-auto px-8">
 
         <div className="grid lg:grid-cols-[0.9fr_2.6fr] gap-10 items-start">
 
           {/* LEFT */}
-
           <div className="pt-3">
 
             <p className="uppercase tracking-[2px] text-[#4DA879] text-xs font-semibold">
@@ -51,21 +51,23 @@ const Insights = () => {
           </div>
 
           {/* RIGHT */}
-
           <div className="grid md:grid-cols-3 gap-6">
 
             {resources.map((item, index) => (
-
               <div
                 key={index}
-                className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300"
+                className="group bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 ease-out cursor-pointer"
               >
 
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-[160px] object-cover"
-                />
+                <div className="overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-[160px] object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  />
+                </div>
 
                 <div className="p-4">
 
@@ -73,14 +75,13 @@ const Insights = () => {
                     {item.type}
                   </p>
 
-                  <h3 className="mt-3 text-[19px] leading-7 font-semibold text-[#072A23] min-h-[72px]">
+                  <h3 className="mt-3 text-[19px] leading-7 font-semibold text-[#072A23] min-h-[72px] group-hover:text-[#3F9975] transition-colors duration-300">
                     {item.title}
                   </h3>
 
                 </div>
 
               </div>
-
             ))}
 
           </div>

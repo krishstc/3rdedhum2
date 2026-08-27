@@ -38,7 +38,7 @@ const Contact = () => {
   return (
     <section id="contact">
 
-      <div className="max-w-[1240px] mx-auto px-8 mt-6">
+      <div className="max-w-[1240px] mx-auto px-8 mt-16">
 
         <div className="grid lg:grid-cols-[360px_260px_1fr] gap-16 items-start">
 
