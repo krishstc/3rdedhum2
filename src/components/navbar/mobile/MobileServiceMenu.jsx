@@ -8,11 +8,12 @@ function MobileServiceMenu({ onBack, onClose }) {
 
   const services = Object.values(servicesData).flat();
 
-  const handlePdfOpen = (title) => {
-    if (!activeService) return;
+  const handlePdfOpen = (item) => {
+    if (!item?.pdfId) return;
 
-    const pdfPath = `/pdf/${activeService.folder}/${title}.pdf`;
-    window.open(pdfPath, "_blank");
+    const pdfUrl = `https://drive.google.com/file/d/${item.pdfId}/view`;
+
+    window.open(pdfUrl, "_blank", "noopener,noreferrer");
   };
 
   const goBack = () => {
@@ -30,6 +31,7 @@ function MobileServiceMenu({ onBack, onClose }) {
           className="flex items-center gap-2 text-gray-600 hover:text-[#3F9975] transition"
         >
           <FaArrowLeft className="text-sm" />
+
           <span className="text-sm font-medium">
             {activeService ? "Back to Services" : "Back"}
           </span>
@@ -85,7 +87,7 @@ function MobileServiceMenu({ onBack, onClose }) {
 
                     </div>
 
-                    {service.children?.length && (
+                    {service.children?.length > 0 && (
                       <FaChevronRight className="text-[10px] text-gray-300 group-hover:text-[#3F9975] transition" />
                     )}
 
@@ -110,23 +112,26 @@ function MobileServiceMenu({ onBack, onClose }) {
             {/* PDF ITEMS */}
             <div className="space-y-1">
 
-              {activeService.children.map((item, index) => (
+              {activeService.children?.map((item, index) => (
                 <button
-                  key={index}
+                  key={item.pdfId || index}
                   onClick={() => handlePdfOpen(item)}
-                  className="group w-full flex items-center justify-between text-left px-3 py-3 rounded-lg border-b border-gray-100 hover:bg-gray-50 transition"
+                  disabled={!item.pdfId || item.pdfId.startsWith("YOUR_")}
+                  className="group w-full flex items-center justify-between text-left px-3 py-3 rounded-lg border-b border-gray-100 hover:bg-gray-50 transition disabled:opacity-50 disabled:cursor-not-allowed"
                 >
+
                   <span className="text-sm text-gray-600 group-hover:text-gray-900">
-                    {item}
+                    {item.title}
                   </span>
 
                   <FaChevronRight className="text-[10px] text-gray-300 group-hover:text-[#3F9975] transition" />
+
                 </button>
               ))}
 
             </div>
 
-            {/* FEATURE CARD ALWAYS PRESENT */}
+            {/* FEATURE CARD */}
             <div className="mt-7">
               <FeatureCard />
             </div>
