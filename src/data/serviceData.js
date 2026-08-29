@@ -89,27 +89,27 @@ export const servicesData = {
         },
         {
           title: "Professionalism at Work",
-          pdfId: "YOUR_PROFESSIONALISM_AT_WORK_PDF_ID"
+          pdfId: "1x1mGYyU4UI1WmAKw3uC1ENP5W49za2i1"
         },
         {
           title: "Problem-solving and Decision-making",
-          pdfId: "YOUR_PROBLEM_SOLVING_DECISION_MAKING_PDF_ID"
+          pdfId: "1TUAENwGCgsonDRjc3jr9gnxn-QxCrly4"
         },
         {
           title: "Critical Thinking",
-          pdfId: "YOUR_CRITICAL_THINKING_PDF_ID"
+          pdfId: "1eLa7-wT91lMyU84Ha9u7xb2sMuJ3UBNr"
         },
         {
           title: "Strategic Thinking",
-          pdfId: "YOUR_STRATEGIC_THINKING_PDF_ID"
+          pdfId: "1pL_hEsHkpENoyQa5IAGXSf9KwQgAkldh"
         },
         {
           title: "Creative Thinking",
-          pdfId: "YOUR_CREATIVE_THINKING_PDF_ID"
+          pdfId: "1IDpw_-y3XSsTNQ7jn122fGRIXPIKB3ND"
         },
         {
           title: "Continuous Improvement Mindset (Kaisen)",
-          pdfId: "YOUR_CONTINUOUS_IMPROVEMENT_MINDSET_PDF_ID"
+          pdfId: "1u1hEKAo7xMHx_Cp9gor7uVCZgsl__ABV"
         },
       ],
     },
@@ -535,13 +535,13 @@ export const servicesData = {
       children: [
         {
           title: "MDP",
-          pdfId: "1sFo7SqmS69YdtfL3HcrTP__I0kWDqU2J" },
+          pdfId: "1PLBD71MjD_1NM4aOIvMqv7QlZEyju8-G" },
         {
           title: "LDP",
-          pdfId: "1yWMmzJ28fYIbuAv-stWXyVB2ZM1H1WnL" },
+          pdfId: "16i78RPJleqtcV-wiIBaFrbhzBdW28iCW" },
         {
           title: "TTT",
-          pdfId: "1mvWfkTOlKeCzPRNQ1LyNKIX51P6_ydb9" },
+          pdfId: "1euEigaTV1SpaAEZzdH6MHJ04fP9op1Et" },
       ],
     },
 
@@ -584,13 +584,13 @@ export const servicesData = {
       children: [
         {
           title: "TNA",
-          pdfId: "1V4cwV6O31nf4cG-xIj6cZoiYB8r_THT7" },
+          pdfId: "1vEst1bKhKAwwqZoB80T1yICEDqWVZRxm" },
         {
           title: "Learning Strategy",
-          pdfId: "1pvw32TiiRTx0kp5PLfHyihTC3GstpbdB" },
+          pdfId: "1uxIfEQ5YACGG1qyaj2SRRn65I45-De7w" },
         {
           title: "Annual Learning Calendar Design",
-          pdfId: "1nVWdanmXF4U3BxVtStveUPoZSaDK-Ftj" },
+          pdfId: "13Ui5DcGmIQIMN14zab98Og-YMOnNzVGU" },
       ],
     },
   ],
