@@ -455,35 +455,35 @@ export const servicesData = {
       children: [
         {
           title: "Stress and Burnout Prevention",
-          pdfId: "14v6pLrGEDWs0P8qaQRotPNf1SXwz6QzX"
+          pdfId: "1TZ_dMHHfqdzpN6pV371HJGo29cxHI3A0"
         },
         {
           title: "Emotional Wellness",
-          pdfId: "1qg8HAvElhn10t3cLS63l5V0aXc2JCT2_"
+          pdfId: "1mAoDh8FPmwFtryZltbFYdf0YOtxGFlbu"
         },
         {
           title: "Mindfulness at Work",
-          pdfId: "1xwK_0vp0qOkr78GkEU_tAMT2ewcstwWv"
+          pdfId: "1kCm2ZQxve0WOh2aE8SCuHqnk8fGDZDHT"
         },
         {
           title: "Managing Workplace Anxiety",
-          pdfId: "1e5NcpuEbP5tX3xYMYYzWjWcW6h9jWvk-"
+          pdfId: "1msyMP3bhAPLegQv9_SYTZc1AeeG3mmsj"
         },
         {
           title: "Work Life Balance",
-          pdfId: "1XWTZebSdA6VzNyAvH1IqifENuSgVNA1p"
+          pdfId: "1zivx08-fCbXfBufqyWMtUfqvcqLjkt-F"
         },
         {
           title: "Work, Fitness and Yoga",
-          pdfId: "1AbcJtxw8-VWG4rhkGjqo4D06LRddtPc4"
+          pdfId: "1hrFrAO2Jeo-VGvoxyrLTpggjnjjcdS3Y"
         },
         {
           title: "Sound Healing",
-          pdfId: "1w-fBW7Sg8w-M6sATS65V1cwGJZNAe7TY"
+          pdfId: "16Ur-o9TrnTe7ZCBVtZb0JGTJexbsNhnn"
         },
         {
           title: "Art Therapy Circle",
-          pdfId: "1FKal-g6XxjFGqcjIyacNiCVByQGkTKyG"
+          pdfId: "1GBqgBBHqpyCLDPX8ke2b2PNLwcCt0RRm"
         },
       ],
     },
@@ -552,27 +552,27 @@ export const servicesData = {
       children: [
         {
           title: "Organisational Design",
-          pdfId: "1jLRxyHYGE0DLO_VyiqI7OyUDELLzQXcl"
+          pdfId: "1EQIBwBHtTXZRD_tG6uC5KOBByxUOG2Wq"
         },
         {
           title: "Competency Framework Design",
-          pdfId: "1eq0HeziZrNduA5AeOTTPiCRyvy7vkDvL"
+          pdfId: "1jsJHHBI2M_c4NGq0RnNgWBUnmnEuRhmC"
         },
         {
           title: "Capability Building",
-          pdfId: "1jKT2614wPkDf6Hq763GGz1izb90GOGL-"
+          pdfId: "1QEE-FGoTcjX75OjTacN2JX4vNrIfav0f"
         },
         {
           title: "Roadmap",
-          pdfId: "1yDKd_grc8Ds81ktND3o53rq7c6PoPPWH"
+          pdfId: "17vvqGmgcU9yvqb41aw7M4dV8wv_yws3w"
         },
         {
           title: "Organisational Diagnostics",
-          pdfId: "1c7ivqiN0owcOjGZ9bYRirEiBYJ9lvL4S"
+          pdfId: "1x_9jXIvNvW8k41lNK3ishNOOBJhpSPDp"
         },
         {
           title: "Cultural Transformation",
-          pdfId: "1GxwlaGQcT_1c5j45pftPK-0m0XR2po-u"
+          pdfId: "1shaKpqdgZpomnMyf4QAIMjf5DTxTF0sP"
         },
       ],
     },
