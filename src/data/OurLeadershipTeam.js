@@ -12,8 +12,8 @@ import {
 
 import leadershipHero from "../assets/images/OurLeadershipTeam/leadership-hero.png";
 import founderManmeet from "../assets/images/OurLeadershipTeam/founder-manmeet.png";
-import teamManmeet from "../assets/images/OurLeadershipTeam/team-manmeet.png";
-import teamNeha from "../assets/images/OurLeadershipTeam/team-neha.webp";
+import teamSheekha from "../assets/images/OurLeadershipTeam/team-sheekha.jpeg";
+import teamJuhi from "../assets/images/OurLeadershipTeam/team-juhi.jpeg";
 import teamRohan from "../assets/images/OurLeadershipTeam/team-rohan.webp";
 import teamElena from "../assets/images/OurLeadershipTeam/team-elena.webp";
 import commitmentTeamwork from "../assets/images/OurLeadershipTeam/commitment-teamwork.png";
@@ -91,22 +91,22 @@ const ourLeadershipTeam = {
     members: [
       {
         id: 1,
-        name: "Manmeet Singh",
-        role: "Founder",
+        name: "Sheekha",
+        role: "City Lead Banglore",
         description: "\"At 3rdEdhum, we believe change happens when leaders focus on their people.\"",
-        image: teamManmeet,
+        image: teamSheekha,
       },
       {
         id: 2,
-        name: "Neha Sharma",
-        role: "CEO",
+        name: "Juhi",
+        role: "City Lead Mumbai",
         description: "\"Specialises in leadership development, behavioural science, and creating impactful learning experiences.\"",
-        image: teamNeha,
+        image: teamJuhi,
       },
       {
         id: 3,
-        name: "Rohan D'Souza",
-        role: "Business Strategy",
+        name: "Krishna",
+        role: "Technical Leader",
         description: "\"Expert in business strategy, change management, and driving operational excellence across industries.\"",
         image: teamRohan,
       },

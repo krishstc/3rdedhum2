@@ -121,53 +121,53 @@ export const servicesData = {
       children: [
         {
           title: "Interpersonal Skills",
-          pdfId: "1PPsqmLy332BRTpnI9fy99CY28qTnReS8"
+          pdfId: "1UaWnQVcu_Ue7iUosqCNnSlBwDBWQYAzH"
         },
         {
           title: "Emotional Intelligence",
-          pdfId: "1vioYHVv2DuuHqC2riJw4_uheZhF0I9mV"
+          pdfId: "1JkTbxL5NlgAhcIXlW0AFpty8ObvfYjTW"
         },
         {
           title: "Building Trust and Rapport",
-          pdfId: "1pcW02w9qgPoiLz2Kp64gGozR_pQm1vvb"
+          pdfId: "1Ju_fLDUgQl8GjN2cccquU1EP_E1gT9TC"
         },
         {
           title: "Growth Mindset and Attitude",
-          pdfId: "1xRb6ypL-LlzybTKBeyq2M3CyEvl1o1Z7" },
+          pdfId: "185UJTOTNydoMXPdNWTdEkbiH-qKKa_Z4" },
         {
           title: "Adaptability and Flexibility",
-          pdfId: "1jGedv4zotoUdm8J4PzfJA-bUd13c26Sv" },
+          pdfId: "1kmVvSa2lTmIbAMDi4grIFgk9YoaLQXuH" },
         {
           title: "Resilience at Work",
-          pdfId: "14WVn4N-HjK9uEhj_nyDeuVoRG6LV_ssO"
+          pdfId: "1HwzGIbmHPgAr9HBLyzKpHJ4qfdPIyvpW"
         },
         {
           title: "Collaboration Skills",
-          pdfId: "1dHpGkyNw6koQBusnfTi20im-z4bNwlgb"
+          pdfId: "1DwxdGRfPxXyomcChlvYF71rF5vcYFqp4"
         },
         {
           title: "Accountability and Ownership",
-          pdfId: "12yebzod1gGga0br2iIQAYy1NfAQual-g",
+          pdfId: "1KtkpaMgcxrzz0U0HLAxu3ju92XVzZMfS",
         },
         {
           title: "Conflict Management",
-          pdfId: "1mmtIvZH8ksrVa1IsA_4fTXXajaLTfbjY"
+          pdfId: "1oeeSrN_ZRZ3Sd7gwdOuWmiWWBteVQIQD"
         },
         {
           title: "Feedback on Conversations",
-          pdfId: "1s5tV7TAWpB5K6vX2mbmqKgoQ5mSObzVS"
+          pdfId: "1xyIf4XJSHA_yy5eu-dAcnZlTxX4O-kkH"
         },
         { title: "Breaking Silos",
-          pdfId: "1gXwY8BoWCof3Eql9TcGYcindhalFBYHv"
+          pdfId: "1q8vMjmK_QfJZUxJokTyHllOWhTcuXKHa"
         },
         { title: "Inclusive Workplace Behaviour",
-          pdfId: "1okC9HXSIEYyqBZNuwtrMCgVKXW0UAN-V" },
+          pdfId: "1jc4tBXCIoTOzogTRHPgfVZCv_4X8bA44" },
         {
           title: "Diversity and Inclusion",
-          pdfId: "1IIbbDBzPF9PYdiWv-Jd-i60DoBR-qj5w"
+          pdfId: "1CTHyALg3wf0s3XWpQZLx3Ku-mknyczKD"
         },
         { title: "Empathy at Work",
-          pdfId: "1ioH6n_aJFHhXuM0kWLsrgYUZJQZVHDuu"
+          pdfId: "1ioxZH4jUGAJ6ys3Lz1h0depTnJo7B6V6"
         },
       ],
     },
@@ -603,31 +603,31 @@ export const servicesData = {
       children: [
         {
           title: "Goal Setting Framework",
-          pdfId: "1j3Jcj-7SeoRyFF9XVpUOPMUQDw01NH2O" },
+          pdfId: "1dMz6InB_2nXAqILcQzEZtaVWQpuFfF9p" },
         {
           title: "OKR Implementation",
-          pdfId: "1caVtDGxwo0MmH1S2VETRPF1sUlm7-gnJ" },
+          pdfId: "1nIY0aOAjuZS06IBB01bKVxrTgfP1fUht" },
         {
           title: "KPI Design",
-          pdfId: "1alxaCnmFGPKoQaCODNCInwdCyWYavozF" },
+          pdfId: "1a8r4uUFV9x0YnxoKV9RtObySg3yh18Y8" },
         {
           title: "Talent Review Process",
-          pdfId: "1lAI8hLpDzh5pIZTHRUSCxtMfIkavtvl_" },
+          pdfId: "1NkAKdUrS9Y18zDwcXoWQjdkFkQ8SX4FP" },
         {
           title: "HR Process Design",
-          pdfId: "1HjNktrjPtxpRzFAxhiVqcs7KhsNo4HQs" },
+          pdfId: "13GvyI5ved5iuEmT4DNPSFqteWBeD8xBE" },
         {
           title: "HR Policy Review",
-          pdfId: "1MD3zuSYiPEXhRSoeYv-yDvIo8F9A6ogB" },
+          pdfId: "1uGJrR-t4YP5I1XXhmprJBFGKWXCl63fF" },
         {
           title: "SOP Development",
-          pdfId: "1c6v5ZwU158lP836SAmEoSuDINXvsfQBb" },
+          pdfId: "1gFXUz4eBylpjwfxSa0L-lXSfO-YCxqrK" },
         {
           title: "Process Mapping",
-          pdfId: "17Ubi2iLILKPGxRmT-5YGb9z-RxzRgxyL" },
+          pdfId: "1cRP2fLqVTGfBMH1iX41UG-L-NABBrB7k" },
         {
           title: "Workflow Improvement",
-          pdfId: "13vhZn04cCcQ1kquky1JVNpo8ccG0ciVb" },
+          pdfId: "1vyzzJ1LH6rGcsMxM7u7h5465wfT6mizY" },
       ],
     },
 
