@@ -14,7 +14,7 @@ import leadershipHero from "../assets/images/OurLeadershipTeam/leadership-hero.p
 import founderManmeet from "../assets/images/OurLeadershipTeam/founder-manmeet.png";
 import teamSheekha from "../assets/images/OurLeadershipTeam/team-sheekha.jpeg";
 import teamJuhi from "../assets/images/OurLeadershipTeam/team-juhi.jpeg";
-import teamRohan from "../assets/images/OurLeadershipTeam/team-rohan.webp";
+import teamKrishna from "../assets/images/OurLeadershipTeam/team-krishna.jpeg";
 import teamElena from "../assets/images/OurLeadershipTeam/team-elena.webp";
 import commitmentTeamwork from "../assets/images/OurLeadershipTeam/commitment-teamwork.png";
 
@@ -108,7 +108,7 @@ const ourLeadershipTeam = {
         name: "Krishna",
         role: "Technical Leader",
         description: "\"Expert in business strategy, change management, and driving operational excellence across industries.\"",
-        image: teamRohan,
+        image: teamKrishna,
       },
       {
         id: 4,
