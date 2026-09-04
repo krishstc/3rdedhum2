@@ -15,7 +15,6 @@ import jcb from "../../assets/images/logo/JCB.png";
 import jpinfra from "../../assets/images/logo/JPInfra.png";
 import kale from "../../assets/images/logo/Kale.png";
 import kotak from "../../assets/images/logo/Kotak.png";
-import ncdex from "../../assets/images/logo/NCDEX.png";
 import omniActive from "../../assets/images/logo/OmniActive.png";
 import omron from "../../assets/images/logo/Omron.png";
 import rossari from "../../assets/images/logo/Rossari.png";
@@ -93,11 +92,6 @@ const companies = [
   {
     name: "Kotak",
     logo: kotak,
-    size: "h-24 md:h-26",
-  },
-  {
-    name: "NCDEX",
-    logo: ncdex,
     size: "h-24 md:h-26",
   },
   {
