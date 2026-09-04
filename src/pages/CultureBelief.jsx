@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import Footer from "../components/footer/Footer";
 import heroImage from "../assets/images/AboutUs/culture-beliefs-hero.png";
-import learningImage from "../assets/images/aboutUs/learning-way-of-life.png";
+import learningImage from "../assets/images/AboutUs/learning-way-of-life.png";
 
 function CultureBelief() {
   const learningCommitments = [
