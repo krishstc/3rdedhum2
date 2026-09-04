@@ -1,88 +1,20 @@
 import React from "react";
-import {
-  ArrowRight,
-  Lightbulb,
-  MessageCircleQuestion,
-  UserRound,
-  TrendingUp,
-  Ear,
-  Handshake,
-  ShieldCheck,
-  Users,
-  GraduationCap,
-  Sprout,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Footer from "../components/footer/Footer";
+import cultureBelief from "../data/CultureBelief";
 import heroImage from "../assets/images/AboutUs/culture-beliefs-hero.png";
 import learningImage from "../assets/images/AboutUs/learning-way-of-life.png";
 
 function CultureBelief() {
-  const learningCommitments = [
-    {
-      icon: Lightbulb,
-      title: "Curiosity",
-      description: "before conclusions",
-    },
-    {
-      icon: MessageCircleQuestion,
-      title: "Questions",
-      description: "before answers",
-    },
-    {
-      icon: UserRound,
-      title: "Reflection",
-      description: "after every engagement",
-    },
-    {
-      icon: TrendingUp,
-      title: "Staying ahead",
-      description: "of emerging trends",
-    },
-    {
-      icon: GraduationCap,
-      title: "Remaining students",
-      description: "always",
-    },
-  ];
-
-  const approachPoints = [
-    {
-      icon: Ear,
-      title: "Listen First",
-      description: "Understand before prescribing solutions",
-    },
-    {
-      icon: UserRound,
-      title: "See Strengths",
-      description: "Discover what is already there",
-    },
-    {
-      icon: TrendingUp,
-      title: "Build Confidence",
-      description: "Unlock potential in every individual",
-    },
-  ];
-
-  const relationships = [
-    {
-      icon: Handshake,
-      title: "Deep Partnership",
-      description:
-        "Our most rewarding relationships are those that continue for years not because of contracts, but because of trust. When clients return with new challenges and involve us in strategic conversations, we know we have earned something more valuable than a successful project.",
-    },
-    {
-      icon: ShieldCheck,
-      title: "Earned Confidence",
-      description:
-        "When clients recommend us to others, it signals that we have delivered not just results but a relationship they value. That confidence is the highest compliment we can receive and the standard we hold ourselves to in every engagement.",
-    },
-    {
-      icon: Users,
-      title: "Team Collaboration",
-      description:
-        "That same spirit of partnership defines how we work with our own team. We support one another, celebrate achievements together, and believe that collaboration always produces better outcomes than working in isolation.",
-    },
-  ];
+  const {
+    breadcrumb,
+    hero,
+    philosophy,
+    learningCommitments,
+    approach,
+    relationships,
+    cta,
+  } = cultureBelief;
 
   return (
     <div className="min-h-screen bg-white text-[#0B2F2A]">
@@ -91,14 +23,15 @@ function CultureBelief() {
         {/* ================= BREADCRUMB ================= */}
         <section className="mx-auto max-w-[1400px] px-5 pt-6 sm:px-8 lg:px-12">
           <p className="text-[12px] text-[#8A9894] transition-colors duration-300 hover:text-[#28725C] sm:text-[13px]">
-            Home
-            <span className="mx-2">›</span>
-            Why 3rd EdHum
-            <span className="mx-2">›</span>
-            About Us
-            <span className="mx-2">›</span>
+            {breadcrumb.items.map((item, index) => (
+              <React.Fragment key={item}>
+                {item}
+                <span className="mx-2">›</span>
+              </React.Fragment>
+            ))}
+
             <span className="font-medium text-[#4A8E76]">
-              Culture &amp; Beliefs
+              {breadcrumb.current}
             </span>
           </p>
         </section>
@@ -111,21 +44,24 @@ function CultureBelief() {
 
               <div className="inline-flex cursor-default flex-col items-start transition-transform duration-300 hover:translate-x-1">
                 <span className="text-[15px] font-semibold tracking-[1.1px] text-[#548C78] transition-colors duration-300 hover:text-[#28725C] sm:text-[16px]">
-                  OUR CULTURE &amp; BELIEFS
+                  {hero.label}
                 </span>
 
                 <span className="mt-2 h-[3px] w-[130px] rounded-full bg-[#4D997A] transition-all duration-300 hover:w-[160px]" />
               </div>
 
               <h1 className="mt-5 cursor-default text-[42px] font-bold leading-[1.04] tracking-[-2px] text-[#07372F] transition-transform duration-300 hover:translate-x-1 sm:text-[50px] md:text-[56px] lg:text-[60px] xl:text-[64px]">
-                Where
+                {hero.title.line1}
                 <br />
+
                 <span className="text-[#0B654F] transition-colors duration-300 hover:text-[#3C9A72]">
-                  Learning Meets
+                  {hero.title.line2}
                 </span>
+
                 <br />
+
                 <span className="text-[#102E38] transition-colors duration-300 hover:text-[#28725C]">
-                  Purpose.
+                  {hero.title.line3}
                 </span>
               </h1>
 
@@ -134,18 +70,14 @@ function CultureBelief() {
               <div className="mt-6 max-w-[680px] space-y-5 text-[15px] leading-[1.65] text-[#4F5958] sm:text-[16px]">
 
                 <p className="transition-colors duration-300 hover:text-[#28725C]">
-                  Culture is often described as “the way we do things around
-                  here.” At 3rd EdHum, we believe it is something much deeper:
-                  the collective mindset that shapes every conversation, every
-                  decision, every partnership, and every learning experience we
-                  create.
+                  {hero.paragraphs[0]}
                 </p>
 
                 <p className="transition-colors duration-300 hover:text-[#28725C]">
-                  From the day 3rd EdHum was founded in 2019, our purpose has
-                  been simple yet profound:
+                  {hero.paragraphs[1]}
                   <span className="font-bold text-[#28725C]">
-                    {" "}Helping Others Through Learning.
+                    {" "}
+                    {hero.purpose}
                   </span>{" "}
                   That purpose influences not only the solutions we deliver to
                   our clients but also how we work together as a team. It
@@ -155,10 +87,7 @@ function CultureBelief() {
                 </p>
 
                 <p className="transition-colors duration-300 hover:text-[#28725C]">
-                  We are not simply a learning and development company. We are a
-                  community of consultants, coaches, facilitators, designers,
-                  researchers, and lifelong learners who believe that where
-                  people grow, organizations flourish.
+                  {hero.paragraphs[2]}
                 </p>
 
               </div>
@@ -178,7 +107,7 @@ function CultureBelief() {
         {/* ================= OUR PHILOSOPHY ================= */}
         <section className="rounded-[22px] border border-[#DCE8E3] bg-white px-5 py-11 shadow-[0_3px_14px_rgba(23,61,53,0.05)] transition-all duration-300 hover:border-[#B9DACE] hover:shadow-[0_8px_24px_rgba(23,61,53,0.09)] sm:px-8 lg:px-12 lg:py-14">
 
-          <SectionHeading title="OUR PHILOSOPHY" />
+          <SectionHeading title={philosophy.heading} />
 
           <div className="mx-auto grid max-w-[1280px] items-center gap-10 lg:grid-cols-[290px_1fr]">
 
@@ -197,40 +126,21 @@ function CultureBelief() {
             <div className="group animate-[fadeUp_.7s_.15s_ease-out_both]">
 
               <h2 className="cursor-default text-[23px] font-bold text-[#17614E] transition-colors duration-300 group-hover:text-[#28725C] sm:text-[26px]">
-                Learning Is Our Way of Life
+                {philosophy.title}
               </h2>
 
               <div className="mt-3 h-[3px] w-[48px] rounded-full bg-[#4D997A] transition-all duration-300 group-hover:w-[75px]" />
 
               <div className="mt-5 space-y-4 text-[15px] leading-[1.7] text-[#414B48] sm:text-[16px]">
 
-                <p className="transition-colors duration-300 hover:text-[#28725C]">
-                  At 3rd EdHum, learning is not confined to a workshop or a
-                  classroom. It is embedded in everything we do. We approach
-                  every project with curiosity, asking questions before
-                  offering answers. We constantly explore new ideas, challenge
-                  our own assumptions, and stay informed about emerging trends
-                  in leadership, behavioural science, Artificial Intelligence,
-                  organizational development, and the future of work.
-                </p>
-
-                <p className="transition-colors duration-300 hover:text-[#28725C]">
-                  We encourage our team to remain students throughout their
-                  careers because we believe the best teachers are those who
-                  continue to learn themselves. This is not a policy or a
-                  performance expectation; it is simply part of who we are. The
-                  joy of discovery, the discipline of reflection, and the
-                  openness to being changed by what we learn all weave into our
-                  daily culture.
-                </p>
-
-                <p className="transition-colors duration-300 hover:text-[#28725C]">
-                  For us, continuous learning is not an expectation; it is an
-                  identity. Every engagement, every client challenge, and every
-                  team conversation is an opportunity to grow. We bring that
-                  same energy to the work we design for others, because we know
-                  firsthand what it feels like to be genuinely curious.
-                </p>
+                {philosophy.paragraphs.map((paragraph, index) => (
+                  <p
+                    key={index}
+                    className="transition-colors duration-300 hover:text-[#28725C]"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
 
               </div>
 
@@ -295,7 +205,7 @@ function CultureBelief() {
         {/* ================= OUR APPROACH ================= */}
         <section className="mx-auto max-w-[1400px] px-5 py-14 sm:px-8 lg:px-12 lg:py-16">
 
-          <SectionHeading title="OUR APPROACH" />
+          <SectionHeading title={approach.heading} />
 
           <div className="grid gap-9 lg:grid-cols-[1fr_1fr_0.9fr]">
 
@@ -303,20 +213,15 @@ function CultureBelief() {
             <div className="group animate-[fadeUp_.6s_ease-out_both]">
 
               <h2 className="text-[22px] font-bold leading-[1.25] text-[#17614E] transition-colors duration-300 group-hover:text-[#28725C] sm:text-[25px]">
-                We See People
+                {approach.people.title.split(" Before ")[0]}
                 <br />
-                Before We See Roles
+                Before {approach.people.title.split(" Before ")[1]}
               </h2>
 
               <div className="mt-3 h-[3px] w-[48px] rounded-full bg-[#4D997A] transition-all duration-300 group-hover:w-[75px]" />
 
               <p className="mt-5 max-w-[410px] text-[15px] leading-[1.7] text-[#414B48] transition-colors duration-300 group-hover:text-[#28725C]">
-                Every organisation is built by people, not job titles. Whether
-                we are working with a CEO, a first-time manager, a frontline
-                employee, or a graduate trainee, our approach remains the same.
-                We listen first, seek to understand their challenges, and
-                recognise that every individual has unique strengths waiting
-                to be developed.
+                {approach.people.description}
               </p>
 
             </div>
@@ -332,26 +237,21 @@ function CultureBelief() {
 
               <div className="mt-3 h-[3px] w-[48px] rounded-full bg-[#4D997A] transition-all duration-300 group-hover:w-[75px]" />
 
-              <p className="mt-5 text-[14px] leading-[1.7] text-[#414B48] transition-colors duration-300 group-hover:text-[#17614E] sm:text-[15px]">
-                The “3rd” in 3rd EdHum represents the Third Force of Psychology,
-                or Humanistic Theory, introduced by Carl Rogers and Abraham
-                Maslow. Their work reminds us that people are naturally capable
-                of growth when they are supported, respected, and encouraged.
-              </p>
-
-              <p className="mt-4 text-[14px] leading-[1.7] text-[#414B48] transition-colors duration-300 group-hover:text-[#17614E] sm:text-[15px]">
-                That philosophy continues to guide our work every day. We do
-                not focus on fixing weaknesses alone; we focus on discovering
-                strengths, building confidence, and unlocking potential that
-                already exists within every person we work with.
-              </p>
+              {approach.philosophy.paragraphs.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className="mt-5 text-[14px] leading-[1.7] text-[#414B48] transition-colors duration-300 group-hover:text-[#17614E] sm:text-[15px]"
+                >
+                  {paragraph}
+                </p>
+              ))}
 
             </div>
 
             {/* APPROACH POINTS */}
             <div className="flex flex-col justify-center gap-6">
 
-              {approachPoints.map((item, index) => {
+              {approach.points.map((item, index) => {
                 const Icon = item.icon;
 
                 return (
@@ -399,7 +299,7 @@ function CultureBelief() {
         {/* ================= RELATIONSHIPS ================= */}
         <section className="rounded-[22px] border border-[#DCE8E3] bg-white px-5 py-11 shadow-[0_3px_14px_rgba(23,61,53,0.05)] transition-all duration-300 hover:border-[#B9DACE] hover:shadow-[0_8px_24px_rgba(23,61,53,0.09)] sm:px-8 lg:px-12 lg:py-14">
 
-          <SectionHeading title="RELATIONSHIPS" />
+          <SectionHeading title={relationships.heading} />
 
           <div className="mx-auto grid max-w-[1280px] gap-9 lg:grid-cols-[310px_1fr]">
 
@@ -415,13 +315,7 @@ function CultureBelief() {
               <div className="mt-3 h-[3px] w-[48px] rounded-full bg-[#4D997A] transition-all duration-300 group-hover:w-[75px]" />
 
               <p className="mt-5 text-[14px] leading-[1.7] text-[#414B48] transition-colors duration-300 group-hover:text-[#28725C] sm:text-[15px]">
-                We never aspire to be “just another training company.” Every
-                organization we work with becomes a partner in a shared
-                journey. We take the time to understand their culture,
-                business goals, leadership challenges, and aspirations before
-                recommending solutions. This means our relationships are built
-                on genuine understanding, not assumptions or off-the-shelf
-                programs.
+                {relationships.introduction.description}
               </p>
 
             </div>
@@ -429,7 +323,7 @@ function CultureBelief() {
             {/* RELATIONSHIP CARDS */}
             <div className="grid gap-5 md:grid-cols-3">
 
-              {relationships.map((item, index) => {
+              {relationships.cards.map((item, index) => {
                 const Icon = item.icon;
 
                 return (
@@ -477,22 +371,21 @@ function CultureBelief() {
 
               <div className="flex h-[66px] w-[66px] shrink-0 items-center justify-center rounded-full bg-[#E2F8EF] text-[#28725C] shadow-[0_5px_12px_rgba(0,0,0,0.08)] transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
 
-                <Sprout
-                  size={36}
-                  strokeWidth={1.5}
-                />
+                {React.createElement(cta.icon, {
+                  size: 36,
+                  strokeWidth: 1.5,
+                })}
 
               </div>
 
               <div>
 
                 <h3 className="text-[17px] font-bold text-white transition-transform duration-300 group-hover:translate-x-1 sm:text-[19px]">
-                  Stronger Culture, Better Outcomes
+                  {cta.title}
                 </h3>
 
                 <p className="mt-1.5 text-[13px] leading-[1.5] text-white/80 transition-colors duration-300 group-hover:text-white sm:text-[14px]">
-                  Our culture shapes how we work, the impact we create for
-                  every organization we partner with.
+                  {cta.description}
                 </p>
 
               </div>
@@ -503,7 +396,7 @@ function CultureBelief() {
               type="button"
               className="group/btn flex shrink-0 items-center gap-2 rounded-md border border-white/50 px-7 py-3.5 text-[13px] font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-white hover:text-[#005641]"
             >
-              Explore Our Culture
+              {cta.button}
 
               <ArrowRight
                 size={19}
