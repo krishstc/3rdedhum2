@@ -253,67 +253,67 @@ export const servicesData = {
       children: [
         {
           title: "Customer Service Excellence",
-          pdfId: "1tdTX1en0vJDdX9z1HaB-0VQtFk6C8H6U"
+          pdfId: "1gAGGn8RJVTmEgOrXcgEn3_4DSFy1Zgjx"
         },
         {
           title: "Customer Relationship Management",
-          pdfId: "1KBrMKNV-Jj3GPySEPGNzac2YkjkLlQsQ"
+          pdfId: "1uGSlGa3RvxHs8IcUJiwz49nB05Va9QDx"
         },
         {
           title: "Lead Generation",
-          pdfId: "1CXIh4FK0rH_FLn-AQ_CIwJl_v93lYcUN"
+          pdfId: "18fcjknBAAqm9qCTxKNhYN-p6fwFl5_DU"
         },
         {
           title: "Pre-sales Pro",
-          pdfId: "1XqNXIt0U06soQ2xpMXqWqa7nSk_MtQV9"
+          pdfId: "1zvzv_xQZ1gYA7p9KMygFbpmOHqATN2Op"
         },
         {
           title: "Consultative Selling Skills",
-          pdfId: "1i2QfyQ24GOCsXMi3YhJxW_vDMPW1hrpP"
+          pdfId: "1fO4R4B4BujAcTQiPJDEVwNo4hyZb1OxA"
         },
         {
           title: "Relationship Selling Skills",
-          pdfId: "1GlxemiVxQmzaZJsGdWFc9wV0RmIfM6sr"
+          pdfId: "1GJOpcR8Yz1Zv6zLj6QMkQQxkfML9aFoh"
         },
         {
           title: "Retail Sales",
-          pdfId: "1AVBn8kLxh_5-gtKId_BE3o4WiasHXwqM"
+          pdfId: "1a1C9fEbUEd4q4x8CYC1xo6D421yT4g_u"
         },
         {
           title: "Client Engagement",
-          pdfId: "1lVa5QPHKtyOF7QWDRGYEL71xPbsQv7ys"
+          pdfId: "1atzpOeUq9_DWNfif6DTZsCtIUvZApmG6"
         },
         {
           title: "Negotiation and Influence",
-          pdfId: "15CnOfOjQFOnETHYQgfmTYCLwzpy_fBMf"
+          pdfId: "13S7KyGPuZ6hdoDnPLsqS5eL-BlaMCxxn"
         },
         {
           title: "Objection Handling",
-          pdfId: "1Av7Icm0qHJPlgSX6r-DL4DiZIqplm1yu"
+          pdfId: "1-2C48-CJSDQNfRmTKhZoSmnXrCQyppTb"
         },
         {
           title: "Customer Etiquette",
-          pdfId: "1-vGDH1T7_kUVMadRP16YZkZGL7VHXCia"
+          pdfId: "1MNWSa4h02qNFzuedYldW4uq5R3ScweBz"
         },
         {
           title: "Stakeholder Management",
-          pdfId: "1ojGvpQbBOXJdt5LnXnsQaMv8yea3KJBH"
+          pdfId: "1D0aogohHvX164KNz4LiQDr5YIC8tvw-"
         },
         {
           title: "Sales Communication",
-          pdfId: "13hJr2gadluEsHQldZQspVbiA1c9GnI8A"
+          pdfId: "1mxSGQmbfuQYrYMtElyiCkshImRjzMot"
         },
         {
           title: "Customer Retention and Recovery",
-          pdfId: "1qgQXuKknxo6LJ8yZoQGdEKI5P-AhV-Du"
+          pdfId: "178h8dj2RIctefe1OKDUJkgp3H0acPXRs"
         },
         {
           title: "Channel Sales",
-          pdfId: "1arnJ0bgIfukPksfn_UjO8Sp7Cc44J2hi"
+          pdfId: "1pwBpbg7cE8Q-FSwhd2o3mx0aM3T9Wb3h"
         },
         {
           title: "Dealer Management",
-          pdfId: "1XbuqLHcdQqYxiH52Y2jhTWxMMUiYrIK7"
+          pdfId: "1rZx5UPI_lqrpGOq5qtow1Qahho6BkNys"
         },
       ],
     },
