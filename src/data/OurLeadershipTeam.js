@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 
 import leadershipHero from "../assets/images/OurLeadershipTeam/leadership-hero.png";
-import founderManmeet from "../assets/images/OurLeadershipTeam/founder-manmeet.png";
+import founderManmeet from "../assets/images/OurLeadershipTeam/founder-manmeet.jpeg";
 import teamSheekha from "../assets/images/OurLeadershipTeam/team-sheekha.jpeg";
 import teamJuhi from "../assets/images/OurLeadershipTeam/team-juhi.jpeg";
 import teamKrishna from "../assets/images/OurLeadershipTeam/team-krishna.jpeg";
