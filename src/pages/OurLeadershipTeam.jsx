@@ -198,9 +198,6 @@ function OurLeadershipTeam() {
                   {member.role}
                 </p>
 
-                <p className="mt-3 text-[12px] leading-[1.55] text-[#747E7A]">
-                  {member.description}
-                </p>
               </div>
             ))}
           </div>

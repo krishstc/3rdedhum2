@@ -53,8 +53,8 @@ const Contact = () => {
             <div className="overflow-hidden rounded-2xl border border-[#E5E7EB] shadow-sm">
 
               <iframe
-                title="Google Map"
-                src="https://www.google.com/maps?q=Powai,Maharashtra&output=embed"
+                title="3rd EdHum Office Location"
+                src="https://www.google.com/maps?q=16th%20Chandak%20Unicorn%2C%201618%2C%20Opp.%20Chitrakoot%20Ground%2C%20Andheri%20West%2C%20Mumbai%2C%20Maharashtra%20400053&output=embed"
                 loading="lazy"
                 className="w-full h-[295px]"
               />
@@ -68,7 +68,7 @@ const Contact = () => {
 
           <div className="pt-1">
 
-            <h2 className="text-[22px] font-bold text-[#052C23] mb-12">
+            <h2 className="text-[22px] font-bold text-[#052C23] mb-6">
               GET IN TOUCH
             </h2>
 
@@ -106,30 +106,41 @@ const Contact = () => {
               </div>
 
 
-              {/* Address */}
+              {/* Office Address */}
 
               <div className="flex items-start gap-4">
 
                 <MapPin
                   size={20}
-                  className="text-[#49A978] mt-1"
+                  className="text-[#49A978] "
                 />
 
-                <span className="text-[16px] font-medium text-[#052C23] leading-7">
-                  Powai, Maharashtra, India
+                <span className="text-[15px] font-medium text-[#052C23] leading-5">
+                  16th, Chandak Unicorn, 1618,
+                  <br />
+                  Opp. Chitrakoot Ground,
+                  <br />
+                  Andheri West, Mumbai,
+                  <br />
+                  Maharashtra 400053
                 </span>
 
               </div>
 
+
+              {/* Head Office Address */}
+
               <div className="flex items-start gap-4">
 
                 <MapPin
                   size={20}
-                  className="text-[#49A978] mt-1"
+                  className="text-[#49A978] "
                 />
 
-                <span className="text-[16px] font-medium text-[#052C23] leading-7">
-                  Sanpada, Maharashtra, India
+                <span className="text-[15px] font-medium text-[#052C23] leading-5">
+                  Union Park, Chembur,
+                  <br />
+                  Mumbai, Maharashtra, India (H.O.)
                 </span>
 
               </div>
@@ -225,6 +236,7 @@ const Contact = () => {
                 {isSending ? "Sending..." : "Send Message"}
 
                 {!isSending && <ArrowRight size={16} />}
+
               </button>
 
             </form>
