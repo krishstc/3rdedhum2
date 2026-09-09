@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { FaArrowLeft, FaChevronRight } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import { servicesData } from "../../../data/serviceData";
 import FeatureCard from "../desktop/FeatureCard";
 
 function MobileServiceMenu({ onBack, onClose }) {
   const [activeService, setActiveService] = useState(null);
+  const navigate = useNavigate();
 
   const services = Object.values(servicesData).flat();
 
@@ -14,6 +16,18 @@ function MobileServiceMenu({ onBack, onClose }) {
     const pdfUrl = `https://drive.google.com/file/d/${item.pdfId}/view`;
 
     window.open(pdfUrl, "_blank", "noopener,noreferrer");
+  };
+
+  const handleServiceClick = (service) => {
+    if (service.title === "YPD") {
+      onClose();
+      navigate("/ypd");
+      return;
+    }
+
+    if (service.children?.length) {
+      setActiveService(service);
+    }
   };
 
   const goBack = () => {
@@ -65,11 +79,7 @@ function MobileServiceMenu({ onBack, onClose }) {
                 return (
                   <button
                     key={service.title}
-                    onClick={() => {
-                      if (service.children?.length) {
-                        setActiveService(service);
-                      }
-                    }}
+                    onClick={() => handleServiceClick(service)}
                     className="group w-full flex items-center justify-between text-left px-3 py-3 rounded-lg border-b border-gray-100 hover:bg-[#F6FCF9] transition"
                   >
 
@@ -88,6 +98,10 @@ function MobileServiceMenu({ onBack, onClose }) {
                     </div>
 
                     {service.children?.length > 0 && (
+                      <FaChevronRight className="text-[10px] text-gray-300 group-hover:text-[#3F9975] transition" />
+                    )}
+
+                    {service.title === "YPD" && (
                       <FaChevronRight className="text-[10px] text-gray-300 group-hover:text-[#3F9975] transition" />
                     )}
 
@@ -116,7 +130,10 @@ function MobileServiceMenu({ onBack, onClose }) {
                 <button
                   key={item.pdfId || index}
                   onClick={() => handlePdfOpen(item)}
-                  disabled={!item.pdfId || item.pdfId.startsWith("YOUR_")}
+                  disabled={
+                    !item.pdfId ||
+                    item.pdfId.startsWith("YOUR_")
+                  }
                   className="group w-full flex items-center justify-between text-left px-3 py-3 rounded-lg border-b border-gray-100 hover:bg-gray-50 transition disabled:opacity-50 disabled:cursor-not-allowed"
                 >
 
