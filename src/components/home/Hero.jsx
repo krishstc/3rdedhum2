@@ -99,7 +99,7 @@ const Hero = () => {
               <div className="mt-10 overflow-hidden border-l-4 border-white pl-4">
                 <div className="ticker">
                   <span className="text-lg font-semibold font-medium text-[#ebf837]">
-                    Update : 13th August Live Workshop, Grab Tickets
+                    Update : 30th September Live Workshop, Grab Tickets
                   </span>
                 </div>
               </div>
