@@ -7,6 +7,8 @@ import {
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
 
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
 const Contact = () => {
   const [isSending, setIsSending] = useState(false);
   const [status, setStatus] = useState("");
@@ -17,19 +19,69 @@ const Contact = () => {
     setIsSending(true);
     setStatus("");
 
+    const form = e.target;
+
+    const formData = {
+      name: form.name.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      organization: form.organization.value,
+      message: form.message.value,
+    };
+
     try {
+      // ==========================================
+      // STEP 1: SAVE ENQUIRY TO MYSQL
+      // ==========================================
+
+      const backendResponse = await fetch(
+        `${API_BASE_URL}/api/enquiries`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const backendData = await backendResponse.json();
+
+      if (!backendResponse.ok) {
+        throw new Error(
+          backendData.message || "Failed to save enquiry"
+        );
+      }
+
+      // ==========================================
+      // STEP 2: SEND EMAIL THROUGH EMAILJS
+      // ==========================================
+
       await emailjs.sendForm(
         "service_jsb7o8g",
         "template_jbur8i6",
-        e.target,
+        form,
         "r2Xpg5uIKutQCQxw_"
       );
 
-      setStatus("Your enquiry has been sent successfully!");
-      e.target.reset();
+      // ==========================================
+      // SUCCESS
+      // ==========================================
+
+      setStatus(
+        "Your enquiry has been sent successfully!"
+      );
+
+      form.reset();
     } catch (error) {
-      console.error("EmailJS Error:", error);
-      setStatus("Something went wrong. Please try again.");
+      console.error(
+        "Enquiry submission error:",
+        error
+      );
+
+      setStatus(
+        "Something went wrong. Please try again."
+      );
     } finally {
       setIsSending(false);
     }
@@ -63,7 +115,6 @@ const Contact = () => {
 
           </div>
 
-
           {/* CENTER DETAILS */}
 
           <div className="pt-1">
@@ -89,7 +140,6 @@ const Contact = () => {
 
               </div>
 
-
               {/* Email */}
 
               <div className="flex items-center gap-4">
@@ -105,14 +155,13 @@ const Contact = () => {
 
               </div>
 
-
               {/* Office Address */}
 
               <div className="flex items-start gap-4">
 
                 <MapPin
                   size={20}
-                  className="text-[#49A978] "
+                  className="text-[#49A978]"
                 />
 
                 <span className="text-[15px] font-medium text-[#052C23] leading-5">
@@ -127,14 +176,13 @@ const Contact = () => {
 
               </div>
 
-
               {/* Head Office Address */}
 
               <div className="flex items-start gap-4">
 
                 <MapPin
                   size={20}
-                  className="text-[#49A978] "
+                  className="text-[#49A978]"
                 />
 
                 <span className="text-[15px] font-medium text-[#052C23] leading-5">
@@ -148,7 +196,6 @@ const Contact = () => {
             </div>
 
           </div>
-
 
           {/* RIGHT FORM */}
 
@@ -178,7 +225,6 @@ const Contact = () => {
 
               </div>
 
-
               {/* Phone + Organization */}
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
@@ -199,7 +245,6 @@ const Contact = () => {
 
               </div>
 
-
               {/* Message */}
 
               <textarea
@@ -209,7 +254,6 @@ const Contact = () => {
                 required
                 className="w-full h-[112px] rounded-xl border border-[#E5E7EB] p-5 text-[15px] outline-none resize-none placeholder:text-gray-400 focus:border-[#4BA77A]"
               />
-
 
               {/* Status Message */}
 
@@ -225,7 +269,6 @@ const Contact = () => {
                 </p>
               )}
 
-
               {/* Submit Button */}
 
               <button
@@ -233,9 +276,14 @@ const Contact = () => {
                 disabled={isSending}
                 className="mt-6 bg-[#062C24] hover:bg-[#0A4538] disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300 text-white px-7 py-3 rounded-lg font-medium flex items-center gap-2"
               >
-                {isSending ? "Sending..." : "Send Message"}
 
-                {!isSending && <ArrowRight size={16} />}
+                {isSending
+                  ? "Sending..."
+                  : "Send Message"}
+
+                {!isSending && (
+                  <ArrowRight size={16} />
+                )}
 
               </button>
 
