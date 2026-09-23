@@ -179,37 +179,37 @@ export const servicesData = {
       children: [
         {
           title: "First-time Managers",
-          pdfId: "1z56RSmtFDPOh-G5K5-fWWQ6x-HuCH02R"
+          pdfId: "1egjo18zt79Vr46qs5YkSjoOD1NRKpB7n"
         },
         {
           title: "Supervisory Skills",
-          pdfId: "10yMOxzOz5HTqhwPxp-0xZyUlITOCLkNn"
+          pdfId: "1d_4Mvb80GIycfaKhDCXoKXJ95WcGa55d"
         },
         {
           title: "Managerial Effectiveness",
-          pdfId: "1Te_6dXw4thxHdRkJ8gO78k9nTe7sGWYm"
+          pdfId: "13-FUGnKLApJXfYAPRRfuSs5CZ7BFABQm"
         },
         {
           title: "Situational Leadership",
-          pdfId: "1-K11vKZU99zaBbDnofWz97wQPYcuCqsB" },
+          pdfId: "15rDKT8SW4z7rbfpDjmfVYNcb-rUfk3tI" },
         {
           title: "Coach Like Manager",
-          pdfId: "1ubAxILPxiNgCwsN6g2fXcr0zkhljR0B_" },
+          pdfId: "1LSEYzdco_T0mVCV7YoPLJybBCtkNW40_" },
         {
           title: "Coach Like Leader",
-          pdfId: "1aT1i6TyeRswqVJxlkI7AovHyw45qObql"
+          pdfId: "1EWixywsw6UQOPVpKG9BSywyn9LzKPCR3"
         },
         {
           title: "Mentoring Skills",
-          pdfId: "1fkdv6Eydz5k57RGwI3xn2VFmPwXALTVj"
+          pdfId: "1jRKgFlw4K8OuS5IV04vM91xQi5ZRkQIr"
         },
         {
           title: "Change Management",
-          pdfId: "1fs3D2K2Z4i6lwJCRj4QGUf2nBrCVrF1h"
+          pdfId: "1y8alCFx0PH8bMHlibDK4smTDujQlWoMg"
         },
         {
           title: "Delegation",
-          pdfId: "1BSyP-43Jed4-sEYGHuxToyMCF4BiU3dA"
+          pdfId: "13hoX-YLjciaahSmffsAbDSaiGmqzoXJ3"
         },
         {
           title: "Performance Management",
@@ -217,31 +217,31 @@ export const servicesData = {
         },
         {
           title: "Appraisal Skills",
-          pdfId: "13wZNUSlc7ShEPm7VWNnBW_B6EXbg_uDA"
+          pdfId: "1WDjPEgOBy95wxMTPSS2P5qKNCEX8pezM"
         },
         {
           title: "Manager-Leadership Communication",
-          pdfId: "13Pa5THRNCkLjRV5oPnJ5mYmSXaaN1Byh"
+          pdfId: "1XsBlhNwGe9lRFUKv_Ygzuyzz6KD1Kwuv"
         },
         {
           title: "Executive Presence of Leader",
-          pdfId: "1EnvoEBiWAk7Ppp51oAeKG1ZBGyUlOl25"
+          pdfId: "1jWbCz0G7Pc-yk1wouxH3CfXNm70KAMjO"
         },
         {
           title: "Leading Hybrid Teams",
-          pdfId: "1X3ufdnB7KWakFGnVaa6dJhGabc5gdW0q"
+          pdfId: "1p6ksGYjROHcInNB2afwb0IyEMJ436KWk"
         },
         {
           title: "Leadership Development Track",
-          pdfId: "1aZZ8F2SORE2X61ZDI161lLbmmKw5kOpb"
+          pdfId: "1vIEt7kbCMfojU3qGDERLDrKsWikbld-4"
         },
         {
           title: "Servant Leadership",
-          pdfId: "1i6UlSGG5da5ceILTLw5VR_cO0FdLUw_k"
+          pdfId: "1UQeMAlfHfNzvEoWR4ATnbVl28yeNGad"
         },
         {
           title: "Host Leadership",
-          pdfId: "14o7yVAS7Ojp0bprBZo0nx5F3k4JoxT4g"
+          pdfId: "1T3OyZHPyIb-Owa9oagLV_4Urzkngan6H"
         },
       ],
     },
@@ -325,35 +325,35 @@ export const servicesData = {
       children: [
         {
           title: "AI for Professionals",
-          pdfId: "1LB0PJtfgo19OWke6-3r_xj4hDVjw7gNs"
+          pdfId: "1yafIIoYfHtai9y8HTbZbztyTWTrkL-qF"
         },
         {
           title: "AI Prompting for Productivity",
-          pdfId: "1B6e_rsInBsvhYrDzDXS5PnvDpUguABpi"
+          pdfId: "1QJVjy5FFTIoAe_FT9df8KPD-ZDYcSDye"
         },
         {
           title: "Digital Collaboration",
-          pdfId: "12LNONEZHMuYM1hhxzQ64RWueNULBJtL1"
+          pdfId: "1wO7NBKPScAq4y1Zesw6WIRXuzONbI0xv"
         },
         {
           title: "Remote Work Effectiveness",
-          pdfId: "1hfSN3m2WPhAxThMAm3j41zDOr1ZboDOi"
+          pdfId: "14xBoExCj4BjwsArgb7XhBZQ_OkYaFr53"
         },
         {
           title: "Design Thinking",
-          pdfId: "1E4k_8kFeSwwrCMJe77EQvz26TVLuqL7E"
+          pdfId: "1uD7u683MvhXqAHUEWGINDY0zc1sKGbk5"
         },
         {
           title: "Innovation and Future Thinking",
-          pdfId: "1XnaxI_X4t4KSQvG9qKaOtYwHJHxkRsMl"
+          pdfId: "1LjAeaWCBI8FKbPXX10Y4jN7oP5AGniT9"
         },
         {
           title: "Personal Productivity with AI",
-          pdfId: "175RFc7jvfmcxNvj47O0mBjhuJuxfwZup"
+          pdfId: "1Y4o7YZlDQ8Z9JJyTmsABSWwXsHKdjQNe"
         },
         {
           title: "Working with Generations",
-          pdfId: "YOUR_WORKING_WITH_GENERATIONS_PDF_ID"
+          pdfId: "1_WgWKwXRu6RS94e0ejO5URqviDKslk8x"
         },
       ],
     },
@@ -365,83 +365,83 @@ export const servicesData = {
       children: [
         {
           title: "Digital Literacy",
-          pdfId: "1Xa1tvg9JSC9s3BL5jqEHLGNToto1KOAs"
+          pdfId: "1h_5QLbiKnVvu-eQnpYxFID6Sf0J1uAA1"
         },
         {
           title: "MS Office Suite",
-          pdfId: "15msMoRqwT2frXwElYhOHpcFKkjMT2Pji"
+          pdfId: "1UTQLnYwDRoYa1dpYlbiCpxylshZmzKDt"
         },
         {
           title: "Word",
-          pdfId: "10Unk77PZdOODRGJY5iwrB8uctaJf9I3C"
+          pdfId: "1fYh8HCOWxEalRTWFd-z2y_KpvzXzwz18"
         },
         {
           title: "Excel (basic, intermediate, advance)",
-          pdfId: "1I2Tn7VV39V70abLmHCwvDrxaZBbBF5Od"
+          pdfId: "1s7T4rj_4Ts5UrBuxTy-7-3J-VgQSOLZz"
         },
         {
           title: "Excel Dashboard",
-          pdfId: "1l3O5war0nqH4ilbWAf-6Cuy53Kj3enMZ"
+          pdfId: "1eqtCWCggCamGJMTkw1PMglPGo2gedNRA"
         },
         {
           title: "Tables and Charts",
-          pdfId: "1G8HOdUWL-5vwBtXVIkC-EANXy2t_W8tM"
+          pdfId: "1v7SD5PiSfwm1-GdFXtJn9zI176XdQGYh"
         },
         {
           title: "Query Power",
-          pdfId: "1y6-bLBKL-qcTLW7q4jdeOp35yZOnG_mn"
+          pdfId: "1ierA0BgJ8UJRCNlOs_n7ROuN3og_UfT-"
         },
         {
           title: "Advance Formulas",
-          pdfId: "1a454sW2rtLNC5LuExDnW-E5FA8S1A1kG"
+          pdfId: "12Mbaca31OLoY0YntapwMjsYiJoERdL9E"
         },
         {
           title: "Marco & VBA",
-          pdfId: "1m_rk_DQezN4RMJ-pUB2pcL3scI-AO273"
+          pdfId: "1H8Vvp3sbT3EqTmhRCd7dzW5UjEFffb9F"
         },
         {
           title: "PowerPoint",
-          pdfId: "1izqFJxlLM_FSVtXwBoRq0CFV74khVD-v"
+          pdfId: "1uu5H34ODPerftY2litFTsfm74pFJL_kb"
         },
         {
           title: "Outlook",
-          pdfId: "1vXH-MPzcLwWArGwJzY3oqNRoTPRpSbcg"
+          pdfId: "1U8LoF2qdnZ9j9kdDS1kIRUeTmPf-XPOr"
         },
         {
           title: "Copilot",
-          pdfId: "1lxEOt8mEbcsxAxlBmvQNBvBs-T0mFFX7"
+          pdfId: "1tWjNEhGBKBfXi3vUhlW--oXoAkFF5kFk"
         },
         {
           title: "MS 365 Productivity",
-          pdfId: "1wchtVAOkBwq59t_Cz0_szaPoM6RRtDyy"
+          pdfId: "1orcs88CD8LUjLIy8VW-IA7Wbko9IXVNh"
         },
         {
           title: "Google Workspace",
-          pdfId: "12pxGQlnNm-2JyfKwYN89sto6A_nLp7oK"
+          pdfId: "17hZYi89jCTTC1asMx2aNRx6oI0qi8q3W"
         },
         {
           title: "Power BI",
-          pdfId: "1AEX9VdkKhzo_Wi8nPR-0COtVOI_uwHeR"
+          pdfId: "1-Nw9K1TPFUddO2WY78D3UyGzhkbRrED"
         },
         {
           title: "Data Visualisation and Interpretation",
-          pdfId: "1jzGXouOzvVpN3NkD6N-LzQknMTQGPHVg"
+          pdfId: "1uL-YITHx4PkWoKlQRsZFw5BGPKYU_10b"
         },
         {
           title: "ISO Standards",
-          pdfId: "1Fg6AB-AqugO84cGOeQu7XYwCKdq8Ck6Q"
+          pdfId: "1j70_V9GhvPF0wLJl9np6YgX00Xf9E8eM"
         },
         {
           title: "Six Sigma",
-          pdfId: "19zU0IQ5UKUzWshmkr_dXb_43Ha-Za46g"
+          pdfId: "1UFJdIL3Mlu5At_7qC2Of2Hl9q1ZWfjzj"
         },
         {
           title: "Lean",
-          pdfId: "1_fd6whI9R9OYKHhMcwderV7UhobWgx34"
+          pdfId: "1UOvdiWYVKSDeWVVUgcegCQCHscbVVcJN"
         },
         {
           title: "CRM",
-          pdfId: "1hy4CmmbzOGLmxKQwm0Hq-bzYKAiK2SJi"
+          pdfId: "17N-IbO7f3VMSZWNe2ZgCr2Z1kYL1xP35"
         },
       ],
     },
