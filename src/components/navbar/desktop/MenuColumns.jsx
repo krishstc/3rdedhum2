@@ -6,10 +6,6 @@ import { servicesData } from "../../../data/serviceData";
 const MenuColumns = ({ setActiveMenu }) => {
   const navigate = useNavigate();
 
-  /* =========================================================
-     HANDLE MENU ITEM CLICK
-  ========================================================= */
-
   const handleMenuClick = (item) => {
     /* ================= YPD ================= */
 
@@ -19,19 +15,22 @@ const MenuColumns = ({ setActiveMenu }) => {
       return;
     }
 
+    /* ================= EXECUTIVE COACHING ================= */
+
+    if (item.folder === "Executive Coaching") {
+      setActiveMenu(null);
+      navigate("/services/executive-coaching");
+      return;
+    }
+
     /* ================= UPCOMING ITEMS ================= */
 
     if (
-      item.folder === "CLIP" ||
-      item.folder === "ExecutiveCoaching" ||
-      item.folder === "AssessmentCenter"
+      item.folder === "C.L.I.P." ||
+      item.folder === "Assessment Center"
     ) {
-      /* Close Mega Menu first */
       setActiveMenu(null);
-
-      /* Force page reload every time */
       window.location.href = "/upcoming";
-
       return;
     }
 
@@ -52,37 +51,50 @@ const MenuColumns = ({ setActiveMenu }) => {
 
             const hasChildren = Boolean(item.children?.length);
             const isYPD = item.folder === "YPD";
+            const isExecutiveCoaching =
+              item.folder === "Executive Coaching";
 
             const isUpcoming =
-              item.folder === "CLIP" ||
-              item.folder === "ExecutiveCoaching" ||
-              item.folder === "AssessmentCenter";
+              item.folder === "C.L.I.P." ||
+              item.folder === "Assessment Center";
 
-            const isClickable = hasChildren || isYPD || isUpcoming;
+            const isClickable =
+              hasChildren ||
+              isYPD ||
+              isExecutiveCoaching ||
+              isUpcoming;
 
             return (
               <div
                 key={item.title}
                 onClick={() => handleMenuClick(item)}
-                className={`group px-2 py-3 rounded-lg border-b border-gray-100 transition-all duration-300 ${isClickable ? "cursor-pointer hover:bg-gray-50" : "cursor-default"}`}
+                className={`group rounded-lg border-b border-gray-100 px-2 py-3 transition-all duration-300 ${
+                  isClickable
+                    ? "cursor-pointer hover:bg-gray-50"
+                    : "cursor-default"
+                }`}
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     {Icon && (
-                      <div className="w-8 h-8 rounded-md bg-[#EAF7F0] flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-[#D7F0E2] group-hover:scale-105">
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-[#EAF7F0] transition-all duration-300 group-hover:scale-105 group-hover:bg-[#D7F0E2]">
                         <Icon className="text-[14px] text-[#4BA77A] transition-colors duration-300 group-hover:text-[#3F9975]" />
                       </div>
                     )}
 
                     <h3
-                      className={`text-[14px] font-medium text-gray-700 leading-snug transition-colors duration-300 ${isClickable ? "group-hover:text-[#3F9975]" : ""}`}
+                      className={`text-[14px] font-medium leading-snug text-gray-700 transition-colors duration-300 ${
+                        isClickable
+                          ? "group-hover:text-[#3F9975]"
+                          : ""
+                      }`}
                     >
                       {item.title}
                     </h3>
                   </div>
 
                   {isClickable && (
-                    <FaArrowRight className="text-[10px] text-gray-300 transition-all duration-300 group-hover:text-[#4BA77A] group-hover:translate-x-1" />
+                    <FaArrowRight className="text-[10px] text-gray-300 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#4BA77A]" />
                   )}
                 </div>
               </div>

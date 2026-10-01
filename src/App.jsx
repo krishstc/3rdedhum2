@@ -32,6 +32,7 @@ const TrustedByLeaders = lazy(() => import("./pages/TrustedByLeaders"));
 const YPD = lazy(() => import("./pages/YPD"));
 const Upcoming = lazy(() => import("./pages/Upcoming"));
 const ManagerialLeadership = lazy(() => import("./pages/ManagerialLeadership"));
+const ExecutiveCoaching = lazy(() => import("./pages/ExecutiveCoaching"));
 
 function PageLoader() {
   return (
@@ -44,8 +45,7 @@ function PageLoader() {
 function AppContent() {
   const location = useLocation();
 
-  const isAdminPage =
-    location.pathname.startsWith("/admin");
+  const isAdminPage = location.pathname.startsWith("/admin");
 
   return (
     <div className="min-h-screen bg-[#F3F4F6]">
@@ -216,6 +216,15 @@ function AppContent() {
             <Route
               path="/why3rdedhum/our-reach/trusted-by-leaders"
               element={<TrustedByLeaders />}
+            />
+
+            {/* ==========================================
+                SERVICES
+            ========================================== */}
+
+            <Route
+              path="/services/executive-coaching"
+              element={<ExecutiveCoaching />}
             />
 
             {/* ==========================================

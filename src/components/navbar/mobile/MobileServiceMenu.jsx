@@ -19,13 +19,22 @@ function MobileServiceMenu({ onBack, onClose }) {
   };
 
   const handleServiceClick = (service) => {
+    // YPD
     if (service.title === "YPD") {
       onClose();
       navigate("/ypd");
       return;
     }
 
-    if (service.children?.length) {
+    // Executive Coaching
+    if (service.title.trim() === "Executive Coaching") {
+      onClose();
+      navigate("/services/executive-coaching");
+      return;
+    }
+
+    // Services with PDF submenu
+    if (service.children?.length > 0) {
       setActiveService(service);
     }
   };
@@ -36,10 +45,8 @@ function MobileServiceMenu({ onBack, onClose }) {
 
   return (
     <div className="h-full flex flex-col bg-white">
-
       {/* HEADER */}
       <div className="flex items-center justify-between px-5 py-4 border-b flex-shrink-0">
-
         <button
           onClick={activeService ? goBack : onBack}
           className="flex items-center gap-2 text-gray-600 hover:text-[#3F9975] transition"
@@ -58,12 +65,10 @@ function MobileServiceMenu({ onBack, onClose }) {
         >
           ✕
         </button>
-
       </div>
 
       {/* CONTENT */}
       <div className="overflow-y-auto flex-1 p-5">
-
         {!activeService ? (
           <>
             {/* SERVICES LIST */}
@@ -72,9 +77,14 @@ function MobileServiceMenu({ onBack, onClose }) {
             </h2>
 
             <div className="space-y-1">
-
               {services.map((service) => {
                 const Icon = service.icon;
+
+                const isDirectPage =
+                  service.title === "YPD" ||
+                  service.title.trim() === "Executive Coaching";
+
+                const hasChildren = service.children?.length > 0;
 
                 return (
                   <button
@@ -82,9 +92,7 @@ function MobileServiceMenu({ onBack, onClose }) {
                     onClick={() => handleServiceClick(service)}
                     className="group w-full flex items-center justify-between text-left px-3 py-3 rounded-lg border-b border-gray-100 hover:bg-[#F6FCF9] transition"
                   >
-
                     <div className="flex items-center gap-3">
-
                       {Icon && (
                         <div className="w-8 h-8 rounded-md bg-[#EAF7F0] flex items-center justify-center shrink-0">
                           <Icon className="text-[#4BA77A] text-sm" />
@@ -94,21 +102,14 @@ function MobileServiceMenu({ onBack, onClose }) {
                       <span className="text-sm text-gray-700 group-hover:text-[#3F9975] transition">
                         {service.title}
                       </span>
-
                     </div>
 
-                    {service.children?.length > 0 && (
+                    {(hasChildren || isDirectPage) && (
                       <FaChevronRight className="text-[10px] text-gray-300 group-hover:text-[#3F9975] transition" />
                     )}
-
-                    {service.title === "YPD" && (
-                      <FaChevronRight className="text-[10px] text-gray-300 group-hover:text-[#3F9975] transition" />
-                    )}
-
                   </button>
                 );
               })}
-
             </div>
 
             {/* SERVICES FEATURE CARD */}
@@ -125,27 +126,22 @@ function MobileServiceMenu({ onBack, onClose }) {
 
             {/* PDF ITEMS */}
             <div className="space-y-1">
-
               {activeService.children?.map((item, index) => (
                 <button
                   key={item.pdfId || index}
                   onClick={() => handlePdfOpen(item)}
                   disabled={
-                    !item.pdfId ||
-                    item.pdfId.startsWith("YOUR_")
+                    !item.pdfId || item.pdfId.startsWith("YOUR_")
                   }
                   className="group w-full flex items-center justify-between text-left px-3 py-3 rounded-lg border-b border-gray-100 hover:bg-gray-50 transition disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-
                   <span className="text-sm text-gray-600 group-hover:text-gray-900">
                     {item.title}
                   </span>
 
                   <FaChevronRight className="text-[10px] text-gray-300 group-hover:text-[#3F9975] transition" />
-
                 </button>
               ))}
-
             </div>
 
             {/* FEATURE CARD */}
@@ -154,9 +150,7 @@ function MobileServiceMenu({ onBack, onClose }) {
             </div>
           </>
         )}
-
       </div>
-
     </div>
   );
 }

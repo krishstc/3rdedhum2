@@ -15,9 +15,9 @@ const FeatureCard = () => {
         future-ready leaders.
       </p>
 
-      <button className="px-4 py-2 mt-1 text-sm text-yellow-400 font-semibold">
-        Explore Custom Programs →
-      </button>
+      <p className="px-4 py-2 mt-1 text-sm text-yellow-400 font-semibold">
+        Explore Custom Programs
+      </p>
 
     </div>
   );

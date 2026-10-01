@@ -159,11 +159,6 @@ function MegaMenu({ isOpen, menuType }) {
 
             <div className="mt-auto pt-5">
               <img src={whyUsPromoImage} alt="Empower People" loading="lazy" decoding="async" className="w-full h-[105px] object-contain object-bottom" />
-
-              <button type="button" className="mt-3 w-full bg-white text-[#3F9975] rounded-lg px-4 py-3 text-[13px] font-semibold flex items-center justify-center gap-2 hover:bg-gray-100 transition-all duration-200">
-                {whyUsData.promo.button}
-                <FaArrowRight className="text-[10px]" />
-              </button>
             </div>
           </div>
         </div>
@@ -234,11 +229,6 @@ function MegaMenu({ isOpen, menuType }) {
 
             <div className="mt-auto pt-5">
               <img src={insightsPromoImage} alt="Knowledge Drives Better Leaders" loading="lazy" decoding="async" className="w-full h-[105px] object-contain object-bottom" />
-
-              <button type="button" className="mt-3 w-full bg-white text-[#3F9975] rounded-lg px-4 py-3 text-[13px] font-semibold flex items-center justify-center gap-2 hover:bg-gray-100 transition-all duration-200">
-                {insightsData.promo.button}
-                <FaArrowRight className="text-[10px]" />
-              </button>
             </div>
           </div>
         </div>
