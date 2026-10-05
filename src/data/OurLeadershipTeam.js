@@ -12,10 +12,10 @@ import {
 
 import leadershipHero from "../assets/images/OurLeadershipTeam/leadership-hero.png";
 import founderManmeet from "../assets/images/OurLeadershipTeam/founder-manmeet.jpeg";
+import teamMonali from "../assets/images/OurLeadershipTeam/team-monali.jpeg";
 import teamSheekha from "../assets/images/OurLeadershipTeam/team-sheekha.jpeg";
 import teamJuhi from "../assets/images/OurLeadershipTeam/team-juhi.jpeg";
 import teamKrishna from "../assets/images/OurLeadershipTeam/team-krishna.jpeg";
-import teamElena from "../assets/images/OurLeadershipTeam/team-elena.webp";
 import commitmentTeamwork from "../assets/images/OurLeadershipTeam/commitment-teamwork.png";
 
 const ourLeadershipTeam = {
@@ -91,31 +91,27 @@ const ourLeadershipTeam = {
     members: [
       {
         id: 1,
-        name: "Sheekha",
-        role: "City Lead Banglore",
-        description: "\"At 3rdEdhum, we believe change happens when leaders focus on their people.\"",
-        image: teamSheekha,
+        name: "Monali Dutta",
+        role: "Co-founder",
+        image: teamMonali,
       },
       {
         id: 2,
-        name: "Juhi",
-        role: "City Lead Mumbai",
-        description: "\"Specialises in leadership development, behavioural science, and creating impactful learning experiences.\"",
-        image: teamJuhi,
+        name: "Sheekha",
+        role: "City Lead Banglore",
+        image: teamSheekha,
       },
       {
         id: 3,
-        name: "Krishna",
-        role: "Technical Leader",
-        description: "\"Expert in business strategy, change management, and driving operational excellence across industries.\"",
-        image: teamKrishna,
+        name: "Juhi",
+        role: "City Lead Mumbai",
+        image: teamJuhi,
       },
       {
         id: 4,
-        name: "Elena Petrova",
-        role: "Innovation",
-        description: "\"Drives innovation, digital adoption, and scalable growth through data driven solutions.\"",
-        image: teamElena,
+        name: "Krishna",
+        role: "Technical Leader",
+        image: teamKrishna,
       },
     ],
 
