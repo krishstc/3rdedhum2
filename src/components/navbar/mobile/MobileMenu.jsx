@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaTimes, FaChevronRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
@@ -7,26 +7,68 @@ import MobileContentMenu from "./MobileContentMenu";
 
 function MobileMenu({ isOpen, onClose }) {
   const navigate = useNavigate();
+
   const [currentPage, setCurrentPage] = useState("main");
+  const [initialServiceTitle, setInitialServiceTitle] = useState(null);
+
+  /* ================= MOBILE SOLUTIONS → SERVICES ================= */
+
+  useEffect(() => {
+    const handleOpenMobileServiceMenu = (event) => {
+      const { serviceTitle } = event.detail || {};
+
+      if (!serviceTitle) return;
+
+      // Store the service selected from Home → Solutions
+      setInitialServiceTitle(serviceTitle);
+
+      // Open the mobile Services page
+      setCurrentPage("services");
+    };
+
+    window.addEventListener(
+      "open-mobile-service-menu",
+      handleOpenMobileServiceMenu
+    );
+
+    return () => {
+      window.removeEventListener(
+        "open-mobile-service-menu",
+        handleOpenMobileServiceMenu
+      );
+    };
+  }, []);
+
+  /* ================= BACK ================= */
 
   const goBack = () => {
+    setInitialServiceTitle(null);
     setCurrentPage("main");
   };
 
+  /* ================= CLOSE ================= */
+
   const closeMenu = () => {
+    setInitialServiceTitle(null);
     setCurrentPage("main");
     onClose();
   };
+
+  /* ================= HOME ================= */
 
   const handleHomeClick = () => {
     closeMenu();
     navigate("/");
   };
 
+  /* ================= WHY US ================= */
+
   const handleWhyUsClick = () => {
     closeMenu();
     navigate("/why-us");
   };
+
+  /* ================= INSIGHTS ================= */
 
   const handleInsightsClick = () => {
     closeMenu();
@@ -75,7 +117,8 @@ function MobileMenu({ isOpen, onClose }) {
 
   return (
     <>
-      {/* OVERLAY */}
+      {/* ================= OVERLAY ================= */}
+
       <div
         onClick={closeMenu}
         className={`fixed top-[88px] left-0 right-0 bottom-0 bg-black/40 z-[9997] transition-opacity duration-300 ${
@@ -85,18 +128,23 @@ function MobileMenu({ isOpen, onClose }) {
         }`}
       />
 
-      {/* MOBILE DRAWER */}
+      {/* ================= MOBILE DRAWER ================= */}
+
       <div
         className={`fixed top-[88px] right-0 bottom-0 w-[340px] max-w-[90%] bg-white shadow-2xl z-[9998] transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        {/* MAIN MENU */}
+
+        {/* ================= MAIN MENU ================= */}
+
         {currentPage === "main" && (
           <div className="h-full flex flex-col">
 
             {/* HEADER */}
+
             <div className="flex items-center justify-between px-5 py-4 border-b flex-shrink-0">
+
               <h2 className="text-lg font-semibold text-gray-800">
                 Menu
               </h2>
@@ -108,48 +156,68 @@ function MobileMenu({ isOpen, onClose }) {
               >
                 <FaTimes />
               </button>
+
             </div>
 
             {/* MENU ITEMS */}
+
             <div className="overflow-y-auto flex-1">
 
               {/* HOME */}
+
               <button
                 onClick={handleHomeClick}
                 className="w-full flex items-center justify-between px-5 py-4 border-b hover:bg-gray-50 transition text-left"
               >
                 <span>Home</span>
+
                 <FaChevronRight className="text-gray-400 text-sm" />
               </button>
 
               {/* SERVICES */}
+
               <button
-                onClick={() => setCurrentPage("services")}
+                onClick={() => {
+                  setInitialServiceTitle(null);
+                  setCurrentPage("services");
+                }}
                 className="w-full flex items-center justify-between px-5 py-4 border-b hover:bg-gray-50 transition text-left"
               >
                 <span>Services</span>
+
                 <FaChevronRight className="text-gray-400 text-sm" />
               </button>
 
               {/* WHY 3RD EDHUM */}
+
               <button
-                onClick={() => setCurrentPage("whyus")}
+                onClick={() => {
+                  setInitialServiceTitle(null);
+                  setCurrentPage("whyus");
+                }}
                 className="w-full flex items-center justify-between px-5 py-4 border-b hover:bg-gray-50 transition text-left"
               >
                 <span>Why 3rd EdHum</span>
+
                 <FaChevronRight className="text-gray-400 text-sm" />
               </button>
 
               {/* INSIGHTS */}
+
               <button
-                onClick={() => setCurrentPage("insights")}
+                onClick={() => {
+                  setInitialServiceTitle(null);
+                  setCurrentPage("insights");
+                }}
                 className="w-full flex items-center justify-between px-5 py-4 border-b hover:bg-gray-50 transition text-left"
               >
                 <span>Insights</span>
+
                 <FaChevronRight className="text-gray-400 text-sm" />
               </button>
 
               {/* CUSTOM PROGRAM */}
+
               <div className="px-5 pt-5 pb-2">
                 <button
                   onClick={handleCustomProgramClick}
@@ -160,6 +228,7 @@ function MobileMenu({ isOpen, onClose }) {
               </div>
 
               {/* LET'S CONNECT */}
+
               <div className="px-5 pt-3 pb-5">
                 <button
                   onClick={handleContactClick}
@@ -173,15 +242,18 @@ function MobileMenu({ isOpen, onClose }) {
           </div>
         )}
 
-        {/* SERVICES */}
+        {/* ================= SERVICES ================= */}
+
         {currentPage === "services" && (
           <MobileServiceMenu
+            initialServiceTitle={initialServiceTitle}
             onBack={goBack}
             onClose={closeMenu}
           />
         )}
 
-        {/* WHY US */}
+        {/* ================= WHY US ================= */}
+
         {currentPage === "whyus" && (
           <MobileContentMenu
             type="whyus"
@@ -190,7 +262,8 @@ function MobileMenu({ isOpen, onClose }) {
           />
         )}
 
-        {/* INSIGHTS */}
+        {/* ================= INSIGHTS ================= */}
+
         {currentPage === "insights" && (
           <MobileContentMenu
             type="insights"
@@ -198,6 +271,7 @@ function MobileMenu({ isOpen, onClose }) {
             onClose={closeMenu}
           />
         )}
+
       </div>
     </>
   );

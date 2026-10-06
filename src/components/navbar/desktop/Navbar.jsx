@@ -24,7 +24,7 @@ function Navbar() {
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
-  /* ================= OPEN SPECIFIC SERVICE FROM SOLUTIONS ================= */
+  /* ================= DESKTOP SERVICE MENU ================= */
 
   useEffect(() => {
     const handleOpenServiceMenu = (event) => {
@@ -50,6 +50,29 @@ function Navbar() {
     };
   }, []);
 
+  /* ================= MOBILE SERVICE MENU ================= */
+
+  useEffect(() => {
+    const handleOpenMobileServiceMenu = () => {
+      setIsMobileMenuOpen(true);
+      setActiveMenu(null);
+      setInitialServiceFolder(null);
+      setInitialServiceTitle(null);
+    };
+
+    window.addEventListener(
+      "open-mobile-service-menu",
+      handleOpenMobileServiceMenu
+    );
+
+    return () => {
+      window.removeEventListener(
+        "open-mobile-service-menu",
+        handleOpenMobileServiceMenu
+      );
+    };
+  }, []);
+
   /* ================= CLOSE MENUS ================= */
 
   const closeMenus = () => {
@@ -63,6 +86,8 @@ function Navbar() {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);
+
+    // Mobile menu is completely separate
     setActiveMenu(null);
     setInitialServiceFolder(null);
     setInitialServiceTitle(null);
@@ -96,7 +121,6 @@ function Navbar() {
     setInitialServiceTitle(null);
     setIsMobileMenuOpen(false);
 
-    // If already on Home page, scroll directly
     if (location.pathname === "/") {
       setTimeout(() => {
         const contactSection =
@@ -120,10 +144,8 @@ function Navbar() {
       return;
     }
 
-    // If on another page, go to Home first
     navigate("/");
 
-    // Wait for Home page to render, then scroll to Contact
     setTimeout(() => {
       const contactSection =
         document.getElementById("contact");
@@ -173,8 +195,6 @@ function Navbar() {
 
   return (
     <>
-      {/* ================= FIXED NAVBAR ================= */}
-
       <nav
         className="fixed top-0 left-0 w-full z-[9999] bg-white shadow-sm"
         onMouseLeave={() => {
@@ -183,9 +203,6 @@ function Navbar() {
           setInitialServiceTitle(null);
         }}
       >
-
-        {/* ================= MAIN NAVBAR ================= */}
-
         <div className="relative max-w-[1400px] mx-auto px-8 py-4 flex items-center justify-between">
 
           {/* ================= LOGO ================= */}
@@ -202,11 +219,11 @@ function Navbar() {
             />
           </Link>
 
-          {/* ================= DESKTOP MENU ================= */}
+          {/* ================= DESKTOP NAVIGATION ================= */}
 
           <ul className="hidden lg:flex items-center gap-12 text-[18px] font-medium text-gray-700">
 
-            {/* ================= HOME ================= */}
+            {/* HOME */}
 
             <li
               className={menuClass}
@@ -227,7 +244,7 @@ function Navbar() {
               <div className={hoverLine} />
             </li>
 
-            {/* ================= SERVICES ================= */}
+            {/* SERVICES */}
 
             <li
               className={menuClass}
@@ -257,7 +274,7 @@ function Navbar() {
               <div className={hoverLine} />
             </li>
 
-            {/* ================= WHY 3RD EDHUM ================= */}
+            {/* WHY 3RD EDHUM */}
 
             <li
               className={menuClass}
@@ -289,7 +306,7 @@ function Navbar() {
               <div className={hoverLine} />
             </li>
 
-            {/* ================= INSIGHTS ================= */}
+            {/* INSIGHTS */}
 
             <li
               className={menuClass}
@@ -320,14 +337,13 @@ function Navbar() {
 
               <div className={hoverLine} />
             </li>
-
           </ul>
 
           {/* ================= RIGHT SIDE ================= */}
 
           <div className="flex items-center gap-4">
 
-            {/* ================= CUSTOM PROGRAM ================= */}
+            {/* CUSTOM PROGRAM */}
 
             <button
               type="button"
@@ -337,7 +353,7 @@ function Navbar() {
               Custom Program
             </button>
 
-            {/* ================= LET'S CONNECT ================= */}
+            {/* LET'S CONNECT */}
 
             <button
               type="button"
@@ -347,7 +363,7 @@ function Navbar() {
               Let's Connect
             </button>
 
-            {/* ================= MOBILE MENU BUTTON ================= */}
+            {/* MOBILE BUTTON */}
 
             <button
               type="button"
@@ -369,11 +385,9 @@ function Navbar() {
           </div>
         </div>
 
-        {/* ================= MEGA MENUS ================= */}
+        {/* ================= DESKTOP MEGA MENUS ONLY ================= */}
 
         <div className="relative z-[100]">
-
-          {/* SERVICES */}
 
           <MegaMenu
             isOpen={activeMenu === "services"}
@@ -385,14 +399,10 @@ function Navbar() {
             }
           />
 
-          {/* WHY 3RD EDHUM */}
-
           <MegaMenu
             isOpen={activeMenu === "whyus"}
             menuType="whyus"
           />
-
-          {/* INSIGHTS */}
 
           <MegaMenu
             isOpen={activeMenu === "insights"}
@@ -400,10 +410,9 @@ function Navbar() {
           />
 
         </div>
-
       </nav>
 
-      {/* ================= MOBILE MENU ================= */}
+      {/* ================= MOBILE MENU ONLY ================= */}
 
       <MobileMenu
         isOpen={isMobileMenuOpen}

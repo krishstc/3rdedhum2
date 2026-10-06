@@ -53,17 +53,28 @@ const Solutions = () => {
   const navigate = useNavigate();
 
   const handleServiceClick = (service) => {
-    // Executive Coaching opens its dedicated page
+    // Executive Coaching goes directly to its page
     if (service.title === "Executive Coaching") {
       navigate("/services/executive-coaching");
       return;
     }
 
-    // Other services open the Services mega menu
     if (!service.serviceTitle) return;
 
+    // ================= DESKTOP =================
+    // Keep the existing desktop event unchanged.
     window.dispatchEvent(
       new CustomEvent("open-service-menu", {
+        detail: {
+          serviceTitle: service.serviceTitle,
+        },
+      })
+    );
+
+    // ================= MOBILE =================
+    // Separate event only for the mobile menu.
+    window.dispatchEvent(
+      new CustomEvent("open-mobile-service-menu", {
         detail: {
           serviceTitle: service.serviceTitle,
         },
