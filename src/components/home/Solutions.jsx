@@ -6,12 +6,15 @@ import {
   FaUserTie,
 } from "react-icons/fa";
 
+import { useNavigate } from "react-router-dom";
+
 const services = [
   {
     title: "Leadership Development",
     description: "Building exemplary leaders who inspire teams.",
     icon: <FaUsers />,
     color: "bg-green-100 text-green-700",
+    serviceTitle: "Managerial & Leadership Programs",
   },
   {
     title: "Talent Strategy",
@@ -19,6 +22,7 @@ const services = [
       "Align talent strategy with business goals and sustainable growth.",
     icon: <FaBullseye />,
     color: "bg-blue-100 text-blue-700",
+    serviceTitle: "Organisational Development",
   },
   {
     title: "Team Effectiveness",
@@ -26,6 +30,7 @@ const services = [
       "Strenghten collaboration and build high-performing teams.",
     icon: <FaHandshake />,
     color: "bg-orange-100 text-orange-600",
+    serviceTitle: "Behavioural Skills Workshop",
   },
   {
     title: "Sales Effectiveness",
@@ -33,6 +38,7 @@ const services = [
       "Propel consultative sales behaviors that win more business.",
     icon: <FaChartLine />,
     color: "bg-purple-100 text-purple-700",
+    serviceTitle: "Sales",
   },
   {
     title: "Executive Coaching",
@@ -44,6 +50,27 @@ const services = [
 ];
 
 const Solutions = () => {
+  const navigate = useNavigate();
+
+  const handleServiceClick = (service) => {
+    // Executive Coaching opens its dedicated page
+    if (service.title === "Executive Coaching") {
+      navigate("/services/executive-coaching");
+      return;
+    }
+
+    // Other services open the Services mega menu
+    if (!service.serviceTitle) return;
+
+    window.dispatchEvent(
+      new CustomEvent("open-service-menu", {
+        detail: {
+          serviceTitle: service.serviceTitle,
+        },
+      })
+    );
+  };
+
   return (
     <section
       id="solutions"
@@ -92,6 +119,7 @@ const Solutions = () => {
 
               <button
                 type="button"
+                onClick={() => handleServiceClick(service)}
                 className="mt-5 flex items-center gap-2 text-sm font-semibold text-[#2BA56F] transition-all hover:gap-3"
               >
                 Learn More →

@@ -8,28 +8,82 @@ import MobileMenu from "../mobile/MobileMenu";
 
 function Navbar() {
   const [activeMenu, setActiveMenu] = useState(null);
+  const [initialServiceFolder, setInitialServiceFolder] = useState(null);
+  const [initialServiceTitle, setInitialServiceTitle] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const location = useLocation();
   const navigate = useNavigate();
 
+  /* ================= RESET ON ROUTE CHANGE ================= */
+
   useEffect(() => {
     setActiveMenu(null);
+    setInitialServiceFolder(null);
+    setInitialServiceTitle(null);
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
+  /* ================= OPEN SPECIFIC SERVICE FROM SOLUTIONS ================= */
+
+  useEffect(() => {
+    const handleOpenServiceMenu = (event) => {
+      const { serviceFolder, serviceTitle } = event.detail || {};
+
+      if (!serviceFolder && !serviceTitle) return;
+
+      setInitialServiceFolder(serviceFolder || null);
+      setInitialServiceTitle(serviceTitle || null);
+      setActiveMenu("services");
+    };
+
+    window.addEventListener(
+      "open-service-menu",
+      handleOpenServiceMenu
+    );
+
+    return () => {
+      window.removeEventListener(
+        "open-service-menu",
+        handleOpenServiceMenu
+      );
+    };
+  }, []);
+
+  /* ================= CLOSE MENUS ================= */
+
   const closeMenus = () => {
     setActiveMenu(null);
+    setInitialServiceFolder(null);
+    setInitialServiceTitle(null);
     setIsMobileMenuOpen(false);
   };
+
+  /* ================= MOBILE MENU ================= */
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);
     setActiveMenu(null);
+    setInitialServiceFolder(null);
+    setInitialServiceTitle(null);
   };
 
+  /* ================= DESKTOP MENU ================= */
+
   const handleMenuClick = (menu) => {
-    setActiveMenu((prev) => (prev === menu ? null : menu));
+    setInitialServiceFolder(null);
+    setInitialServiceTitle(null);
+
+    setActiveMenu((prev) =>
+      prev === menu ? null : menu
+    );
+  };
+
+  /* ================= SERVICE SELECTION HANDLED ================= */
+
+  const handleInitialServiceHandled = () => {
+    setInitialServiceFolder(null);
+    setInitialServiceTitle(null);
   };
 
   /* ================= CONTACT SCROLL ================= */
@@ -38,12 +92,15 @@ function Navbar() {
     e.preventDefault();
 
     setActiveMenu(null);
+    setInitialServiceFolder(null);
+    setInitialServiceTitle(null);
     setIsMobileMenuOpen(false);
 
     // If already on Home page, scroll directly
     if (location.pathname === "/") {
       setTimeout(() => {
-        const contactSection = document.getElementById("contact");
+        const contactSection =
+          document.getElementById("contact");
 
         if (contactSection) {
           const navbarHeight = 100;
@@ -68,7 +125,8 @@ function Navbar() {
 
     // Wait for Home page to render, then scroll to Contact
     setTimeout(() => {
-      const contactSection = document.getElementById("contact");
+      const contactSection =
+        document.getElementById("contact");
 
       if (contactSection) {
         const navbarHeight = 100;
@@ -102,7 +160,10 @@ function Navbar() {
     );
   };
 
-  const menuClass = "relative cursor-pointer group";
+  /* ================= STYLING ================= */
+
+  const menuClass =
+    "relative cursor-pointer group";
 
   const linkClass =
     "flex items-center gap-1 hover:text-[#3F9975] transition-colors";
@@ -116,8 +177,13 @@ function Navbar() {
 
       <nav
         className="fixed top-0 left-0 w-full z-[9999] bg-white shadow-sm"
-        onMouseLeave={() => setActiveMenu(null)}
+        onMouseLeave={() => {
+          setActiveMenu(null);
+          setInitialServiceFolder(null);
+          setInitialServiceTitle(null);
+        }}
       >
+
         {/* ================= MAIN NAVBAR ================= */}
 
         <div className="relative max-w-[1400px] mx-auto px-8 py-4 flex items-center justify-between">
@@ -140,11 +206,15 @@ function Navbar() {
 
           <ul className="hidden lg:flex items-center gap-12 text-[18px] font-medium text-gray-700">
 
-            {/* HOME */}
+            {/* ================= HOME ================= */}
 
             <li
               className={menuClass}
-              onMouseEnter={() => setActiveMenu(null)}
+              onMouseEnter={() => {
+                setActiveMenu(null);
+                setInitialServiceFolder(null);
+                setInitialServiceTitle(null);
+              }}
             >
               <Link
                 to="/"
@@ -157,15 +227,19 @@ function Navbar() {
               <div className={hoverLine} />
             </li>
 
-            {/* SERVICES */}
+            {/* ================= SERVICES ================= */}
 
             <li
               className={menuClass}
-              onMouseEnter={() => setActiveMenu("services")}
+              onMouseEnter={() => {
+                setActiveMenu("services");
+              }}
             >
               <button
                 type="button"
-                onClick={() => handleMenuClick("services")}
+                onClick={() =>
+                  handleMenuClick("services")
+                }
                 className={linkClass}
               >
                 Services
@@ -183,15 +257,21 @@ function Navbar() {
               <div className={hoverLine} />
             </li>
 
-            {/* WHY 3RD EDHUM */}
+            {/* ================= WHY 3RD EDHUM ================= */}
 
             <li
               className={menuClass}
-              onMouseEnter={() => setActiveMenu("whyus")}
+              onMouseEnter={() => {
+                setActiveMenu("whyus");
+                setInitialServiceFolder(null);
+                setInitialServiceTitle(null);
+              }}
             >
               <button
                 type="button"
-                onClick={() => handleMenuClick("whyus")}
+                onClick={() =>
+                  handleMenuClick("whyus")
+                }
                 className={`${linkClass} whitespace-nowrap`}
               >
                 Why 3rd EdHum
@@ -209,15 +289,21 @@ function Navbar() {
               <div className={hoverLine} />
             </li>
 
-            {/* INSIGHTS */}
+            {/* ================= INSIGHTS ================= */}
 
             <li
               className={menuClass}
-              onMouseEnter={() => setActiveMenu("insights")}
+              onMouseEnter={() => {
+                setActiveMenu("insights");
+                setInitialServiceFolder(null);
+                setInitialServiceTitle(null);
+              }}
             >
               <button
                 type="button"
-                onClick={() => handleMenuClick("insights")}
+                onClick={() =>
+                  handleMenuClick("insights")
+                }
                 className={linkClass}
               >
                 Insights
@@ -241,7 +327,7 @@ function Navbar() {
 
           <div className="flex items-center gap-4">
 
-            {/* CUSTOM PROGRAM */}
+            {/* ================= CUSTOM PROGRAM ================= */}
 
             <button
               type="button"
@@ -251,7 +337,7 @@ function Navbar() {
               Custom Program
             </button>
 
-            {/* LET'S CONNECT */}
+            {/* ================= LET'S CONNECT ================= */}
 
             <button
               type="button"
@@ -261,7 +347,7 @@ function Navbar() {
               Let's Connect
             </button>
 
-            {/* MOBILE MENU BUTTON */}
+            {/* ================= MOBILE MENU BUTTON ================= */}
 
             <button
               type="button"
@@ -287,15 +373,26 @@ function Navbar() {
 
         <div className="relative z-[100]">
 
+          {/* SERVICES */}
+
           <MegaMenu
             isOpen={activeMenu === "services"}
             menuType="services"
+            initialServiceFolder={initialServiceFolder}
+            initialServiceTitle={initialServiceTitle}
+            onInitialServiceHandled={
+              handleInitialServiceHandled
+            }
           />
+
+          {/* WHY 3RD EDHUM */}
 
           <MegaMenu
             isOpen={activeMenu === "whyus"}
             menuType="whyus"
           />
+
+          {/* INSIGHTS */}
 
           <MegaMenu
             isOpen={activeMenu === "insights"}
