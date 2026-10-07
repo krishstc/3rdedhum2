@@ -268,6 +268,201 @@ function OurLeadershipTeam() {
           </div>
         </section>
 
+        {/* =========================================================
+            CO-FOUNDER
+            TEXT LEFT + IMAGE RIGHT
+        ========================================================= */}
+        <section className="mx-auto mt-14 w-full max-w-[1440px] px-4 sm:px-6 lg:px-8">
+          <div className="relative">
+
+            {/* TOP DECORATIVE DOT PATTERN */}
+            <div className="absolute -right-3 -top-10 hidden grid-cols-7 gap-[7px] opacity-60 lg:grid">
+              {Array.from({ length: 49 }).map((_, i) => (
+                <span
+                  key={i}
+                  className="h-[5px] w-[5px] rounded-full bg-[#65A88E]"
+                />
+              ))}
+            </div>
+
+            {/* BOTTOM DECORATIVE DOT PATTERN */}
+            <div className="absolute -bottom-8 -left-3 hidden grid-cols-6 gap-[7px] opacity-50 lg:grid">
+              {Array.from({ length: 36 }).map((_, i) => (
+                <span
+                  key={i}
+                  className="h-[5px] w-[5px] rounded-full bg-[#65A88E]"
+                />
+              ))}
+            </div>
+
+            {/* ================= CO-FOUNDER CARD ================= */}
+            <div className="group relative overflow-hidden rounded-[28px] border border-[#DCECE5] bg-gradient-to-br from-[#F6FBF8] via-[#EFF8F4] to-[#E5F4EE] shadow-[0_15px_50px_rgba(0,97,73,0.08)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,97,73,0.13)]">
+
+              {/* BACKGROUND DECORATION */}
+              <div className="absolute -right-24 -top-24 h-[300px] w-[300px] rounded-full border-[35px] border-white/60" />
+
+              <div className="absolute -bottom-28 left-[25%] h-[280px] w-[280px] rounded-full bg-[#D9F0E7]/60" />
+
+              <div className="relative grid lg:grid-cols-[1.25fr_.68fr_1.15fr]">
+
+                {/* =================================================
+                    CO-FOUNDER DETAILS - LEFT
+                ================================================= */}
+                <div className="relative flex flex-col justify-center px-7 py-12 sm:px-10 lg:order-1 lg:px-9 lg:py-14">
+
+                  {/* Eyebrow */}
+                  <p className="text-[11px] font-bold uppercase tracking-[1.7px] text-[#57957D]">
+                    {ourLeadershipTeam.coFounder.eyebrow}
+                  </p>
+
+                  {/* Name */}
+                  <h2 className="mt-3 text-[31px] font-bold leading-[1.12] tracking-[-0.7px] text-[#07372F] transition-colors duration-300 group-hover:text-[#006149] sm:text-[35px]">
+                    {ourLeadershipTeam.coFounder.name}
+                  </h2>
+
+                  {/* Accent */}
+                  <div className="mt-4 h-[4px] w-12 rounded-full bg-[#459579] transition-all duration-500 group-hover:w-20" />
+
+                  {/* Promise */}
+                  <div className="mt-7 rounded-xl border-l-[3px] border-[#459579] bg-white/60 px-5 py-4">
+                    <p className="text-[10px] font-bold uppercase tracking-[1.4px] text-[#57957D]">
+                      {ourLeadershipTeam.coFounder.promiseTitle}
+                    </p>
+                  </div>
+
+                  {/* Paragraphs */}
+                  <div className="mt-6 space-y-4">
+                    {ourLeadershipTeam.coFounder.paragraphs.map(
+                      (text, index) => (
+                        <p
+                          key={index}
+                          className="text-[14px] leading-[1.3] text-[#596662] sm:text-[15px]"
+                        >
+                          {text}
+                        </p>
+                      )
+                    )}
+                  </div>
+
+                  {/* Bottom Accent */}
+                  <div className="mt-7 flex items-center gap-3">
+                    <div className="h-[1px] w-10 bg-[#A9CFC1]" />
+                    <div className="h-2 w-2 rounded-full bg-[#459579]" />
+                    <div className="h-[1px] w-16 bg-[#A9CFC1]" />
+                  </div>
+
+                </div>
+
+                {/* =================================================
+                    CO-FOUNDER QUOTE CARD
+                ================================================= */}
+                <div className="relative flex items-center justify-center px-5 py-8 sm:px-8 lg:order-2 lg:px-5 lg:py-12">
+
+                  {/* Small Vertical Accent */}
+                  <div className="absolute left-0 top-[24%] hidden h-[52%] w-[3px] rounded-full bg-[#79B69F] lg:block" />
+
+                  {/* QUOTE CARD */}
+                  <div className="relative w-full max-w-[285px] overflow-hidden rounded-[20px] bg-[#006149] p-6 text-white shadow-[0_12px_30px_rgba(0,74,55,0.16)] transition-all duration-500 group-hover:bg-[#005A45] sm:p-7">
+
+                    {/* Decorative Circle */}
+                    <div className="absolute -right-12 -top-12 h-28 w-28 rounded-full border-[16px] border-white/10" />
+
+                    {/* Bottom Circle */}
+                    <div className="absolute -bottom-16 -left-10 h-32 w-32 rounded-full bg-[#0D765C] opacity-50" />
+
+                    <div className="relative">
+
+                      <Quote
+                        size={36}
+                        fill="currentColor"
+                        strokeWidth={0}
+                        className="text-[#B9E2D3]"
+                      />
+
+                      <p className="mt-5 text-[15px] font-medium leading-[1.65] text-white sm:text-[16px]">
+                        {ourLeadershipTeam.coFounder.quote}
+                      </p>
+
+                      <div className="mt-6 h-[2px] w-10 rounded-full bg-[#9DD5C2]" />
+
+                      <p className="mt-4 text-[9px] font-semibold uppercase tracking-[1.4px] text-[#B9E2D3]">
+                        Our Guiding Belief
+                      </p>
+
+                      <Quote
+                        size={30}
+                        fill="currentColor"
+                        strokeWidth={0}
+                        className="ml-auto mt-5 rotate-180 text-[#B9E2D3]"
+                      />
+
+                    </div>
+                  </div>
+                </div>
+
+                {/* =================================================
+                    CO-FOUNDER IMAGE - RIGHT
+                ================================================= */}
+                <div className="relative flex min-h-[500px] items-center justify-center px-8 py-10 sm:px-12 lg:order-3 lg:min-h-[520px] lg:px-12">
+
+                  {/* Decorative Circle */}
+                  <div className="absolute right-8 top-14 h-20 w-20 rounded-full border border-[#A8D8C8] opacity-70 transition-transform duration-700 group-hover:scale-125" />
+
+                  {/* Small Dots */}
+                  <div className="absolute bottom-12 right-12 hidden grid-cols-5 gap-[5px] opacity-50 sm:grid">
+                    {Array.from({ length: 25 }).map((_, i) => (
+                      <span
+                        key={i}
+                        className="h-[4px] w-[4px] rounded-full bg-[#4A997B]"
+                      />
+                    ))}
+                  </div>
+
+                  {/* IMAGE FRAME */}
+                  <div className="relative w-full max-w-[400px]">
+
+                    {/* Soft White Glow */}
+                    <div className="absolute -inset-3 rounded-[34px] bg-white/70 shadow-xl" />
+
+                    {/* Co-Founder Image */}
+                    <div className="relative overflow-hidden rounded-[30px] border-[7px] border-white bg-[#DDEFE8] shadow-[0_20px_45px_rgba(0,70,52,0.15)] transition-all duration-500 group-hover:shadow-[0_25px_55px_rgba(0,70,52,0.21)]">
+
+                      <img
+                        src={ourLeadershipTeam.coFounder.image}
+                        alt={ourLeadershipTeam.coFounder.name}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-[420px] w-full object-contain object-center transition-transform duration-700 group-hover:scale-[1.035] sm:h-[450px]"
+                      />
+
+                    </div>
+
+                    {/* CO-FOUNDER BADGE */}
+                    <div className="absolute -bottom-5 -left-3 flex items-center gap-2 rounded-full border border-[#CBE6DB] bg-white px-4 py-2.5 shadow-lg sm:-left-6">
+
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#006149] text-white">
+                        <Sparkles size={14} strokeWidth={1.8} />
+                      </div>
+
+                      <div>
+                        <p className="text-[8px] font-semibold uppercase tracking-[1.3px] text-[#57957D]">
+                          Leadership
+                        </p>
+
+                        <p className="text-[11px] font-bold text-[#103F35]">
+                          Co-founder
+                        </p>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ================= PHILOSOPHY ================= */}
         <section className="mx-auto mt-16 max-w-[1280px] px-6 sm:px-8 lg:px-10">
           <div className="text-center">
@@ -332,40 +527,85 @@ function OurLeadershipTeam() {
             </p>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {/* ================= TEAM MEMBERS ================= */}
+          <div className="mx-auto mt-10 grid max-w-[1050px] grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
             {ourLeadershipTeam.team.members.map((member) => (
               <div
                 key={member.id}
-                className="group flex min-h-[315px] flex-col items-center rounded-xl border border-[#E2E6E4] bg-[#F5F6F5] px-5 py-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#CBE6D9] hover:bg-[#E8F6F0] hover:shadow-lg"
+                className="group relative flex min-h-[350px] flex-col items-center overflow-hidden rounded-2xl border border-[#DDE9E4] bg-gradient-to-b from-[#F8FBF9] to-[#EDF7F2] px-6 py-8 text-center shadow-[0_8px_30px_rgba(0,97,73,0.06)] transition-all duration-500 hover:-translate-y-2 hover:border-[#B9DCCE] hover:shadow-[0_18px_40px_rgba(0,97,73,0.13)]"
               >
-                <div className="relative">
-                  <div className="absolute inset-[-7px] rounded-full border border-[#D4E4DE] transition duration-300 group-hover:scale-105 group-hover:border-[#429777]" />
+                {/* Decorative Top Circle */}
+                <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full border-[14px] border-[#DDF0E8] opacity-70 transition-all duration-500 group-hover:scale-125 group-hover:border-[#CBE8DC]" />
 
-                  <div className="relative h-[128px] w-[128px] overflow-hidden rounded-full border-[5px] border-white bg-white shadow-md">
+                {/* Decorative Bottom Circle */}
+                <div className="absolute -bottom-16 -left-16 h-36 w-36 rounded-full bg-[#E0F2EA] opacity-60 transition-all duration-500 group-hover:scale-110" />
+
+                {/* Small Decorative Dots */}
+                <div className="absolute left-5 top-6 hidden grid-cols-3 gap-[4px] opacity-40 sm:grid">
+                  {Array.from({ length: 9 }).map((_, i) => (
+                    <span
+                      key={i}
+                      className="h-[4px] w-[4px] rounded-full bg-[#4A997B]"
+                    />
+                  ))}
+                </div>
+
+                {/* ================= IMAGE ================= */}
+                <div className="relative z-10">
+                  {/* Outer Ring */}
+                  <div className="absolute inset-[-8px] rounded-full border border-[#CFE3DA] transition-all duration-500 group-hover:scale-110 group-hover:border-[#4A997B]" />
+
+                  {/* Inner Glow */}
+                  <div className="absolute inset-[-3px] rounded-full bg-[#DFF1E9] opacity-70 transition-all duration-500 group-hover:scale-105" />
+
+                  {/* Image */}
+                  <div className="relative h-[145px] w-[145px] overflow-hidden rounded-full border-[6px] border-white bg-white shadow-[0_10px_25px_rgba(0,70,52,0.14)]">
                     <img
                       src={member.image}
                       alt={member.name}
                       loading="lazy"
                       decoding="async"
-                      className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-110"
+                      className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
                     />
+                  </div>
+
+                  {/* Small Leadership Dot */}
+                  <div className="absolute bottom-1 right-1 flex h-7 w-7 items-center justify-center rounded-full border-[3px] border-white bg-[#006149] shadow-md">
+                    <div className="h-2 w-2 rounded-full bg-[#B9E2D3]" />
                   </div>
                 </div>
 
-                <h3 className="mt-7 text-[17px] font-bold text-[#173F37] transition group-hover:text-[#006149]">
-                  {member.name}
-                </h3>
+                {/* ================= CONTENT ================= */}
+                <div className="relative z-10 mt-7">
+                  <h3 className="text-[18px] font-bold text-[#173F37] transition-colors duration-300 group-hover:text-[#006149]">
+                    {member.name}
+                  </h3>
 
-                <div className="mt-2 h-[3px] w-9 rounded-full bg-[#4A9779] transition-all duration-300 group-hover:w-14" />
+                  {/* Accent */}
+                  <div className="mx-auto mt-3 h-[3px] w-9 rounded-full bg-[#4A9779] transition-all duration-500 group-hover:w-16" />
 
-                <p className="mt-2 text-[13px] font-semibold text-[#51927A]">
-                  {member.role}
-                </p>
+                  <p className="mt-3 text-[13px] font-semibold tracking-[0.2px] text-[#51927A]">
+                    {member.role}
+                  </p>
+
+                  {/* Team Member Label */}
+                  <div className="mt-5 inline-flex items-center rounded-full border border-[#CFE4DB] bg-white/80 px-3 py-1.5">
+                    <span className="mr-2 h-1.5 w-1.5 rounded-full bg-[#459579]" />
+
+                    <span className="text-[9px] font-semibold uppercase tracking-[1.2px] text-[#57957D]">
+                      Our Team
+                    </span>
+                  </div>
+                </div>
+
+                {/* Bottom Accent */}
+                <div className="absolute bottom-0 left-1/2 h-[3px] w-0 -translate-x-1/2 rounded-full bg-[#006149] transition-all duration-500 group-hover:w-[70%]" />
               </div>
             ))}
           </div>
 
-          <p className="mx-auto mt-8 max-w-[850px] text-center text-[13px] text-[#68736F]">
+          {/* ================= CLOSING TEXT ================= */}
+          <p className="mx-auto mt-9 max-w-[850px] text-center text-[13px] leading-[1.6] text-[#68736F]">
             {ourLeadershipTeam.team.closingText}
           </p>
         </section>

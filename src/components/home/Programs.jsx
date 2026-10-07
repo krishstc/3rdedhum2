@@ -14,34 +14,39 @@ const programs = [
     title: "For Leaders",
     desc: "Build the leadership mindset, skills, and behaviors to lead with impact.",
     icon: <UserRound size={24} />,
+    path: "/managerial-leadership",
   },
   {
     title: "For Teams",
     desc: "Strengthen team dynamics and drive collective performance.",
     icon: <Users size={24} />,
+    path: "/why3rdedhum/about-us/our-leadership-team",
   },
   {
     title: "For Managers",
     desc: "Equip managers to lead people, projects and performance.",
     icon: <Briefcase size={24} />,
+    path: "/managerial-leadership",
   },
   {
     title: "For Individual",
     desc: "Accelerate personal growth with practical learning journeys.",
     icon: <GraduationCap size={24} />,
+    path: "/managerial-leadership",
   },
   {
     title: "Industries",
     desc: "Customized learning solutions designed for different industries and business needs.",
     icon: <Building2 size={24} />,
+    path: "/managerial-leadership",
   },
 ];
 
 const Programs = () => {
   const navigate = useNavigate();
 
-  const handleProgramClick = () => {
-    navigate("/managerial-leadership");
+  const handleProgramClick = (path) => {
+    navigate(path);
   };
 
   return (
@@ -67,12 +72,12 @@ const Programs = () => {
               {programs.map((item, index) => (
                 <div
                   key={index}
-                  onClick={handleProgramClick}
+                  onClick={() => handleProgramClick(item.path)}
                   role="button"
                   tabIndex={0}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
-                      handleProgramClick();
+                      handleProgramClick(item.path);
                     }
                   }}
                   className="group bg-white rounded-[24px] border border-gray-200 px-6 py-6 flex items-center justify-between hover:shadow-xl transition-all duration-300 cursor-pointer"

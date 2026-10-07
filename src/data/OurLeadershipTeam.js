@@ -1,7 +1,6 @@
 import {
   Brain,
   GraduationCap,
-  HeartHandshake,
   TrendingUp,
   UserRound,
   UsersRound,
@@ -31,29 +30,68 @@ const ourLeadershipTeam = {
     titleHighlight: "Transformation.",
     paragraphs: [
       "At 3rd EdHum, we believe that exceptional organisations are built by exceptional people. Behind every learning journey, consulting engagement, coaching conversation, and transformation initiative is a team of passionate professionals dedicated to helping individuals, teams, and organizations realize their highest potential.",
+
       "Our leadership combines decades of experience across business consulting, leadership development, executive coaching, organisational development, behavioural science, sales transformation, and Artificial Intelligence. Together, we bring a unique blend of strategic thinking, practical business expertise, and a deep understanding of human behaviour.",
+
       "We are more than facilitators we are consultants, coaches, learning architects, strategists, and partners in transformation.",
     ],
     image: leadershipHero,
   },
 
+  /* =========================================================
+     FOUNDER / CEO
+  ========================================================= */
   founder: {
     eyebrow: "MEET OUR FOUNDER",
     name: "Manmeet Singh",
     promiseTitle: "OUR PROMISE",
-    quote: "Organisations don't transform because they conduct more training. They transform because their people begin to think differently, lead differently, and perform differently",
+
+    quote:
+      "Organisations don't transform because they conduct more training. They transform because their people begin to think differently, lead differently, and perform differently",
+
     image: founderManmeet,
+
     paragraphs: [
       "Manmeet Singh founded 3rd EdHum with a clear vision to redefine corporate learning by making it directly relevant to business performance.",
+
       "Having worked extensively with organisations across diverse industries, he recognised that traditional training often focused on knowledge transfer rather than capability building. This insight became the foundation of 3rd EdHum's philosophy: learning must create measurable business outcomes.",
+
       "Today, Manmeet leads the organisation's consulting, leadership development, executive coaching, and innovation initiatives, partnering with organisations to develop leaders who can navigate complexity, inspire people, and build future-ready businesses.",
     ],
   },
 
+  /* =========================================================
+     CO-FOUNDER
+  ========================================================= */
+  coFounder: {
+    eyebrow: "MEET OUR CO-FOUNDER",
+    name: "Monali Dutta",
+    promiseTitle: "OUR COMMITMENT",
+
+    quote:
+      "Meaningful transformation begins when people feel empowered to learn, contribute, and create an impact together.",
+
+    image: teamMonali,
+
+    paragraphs: [
+      "Monali Dutta is the Co-founder of 3rd EdHum and plays an important role in shaping the organisation's vision, culture, and approach to meaningful learning and transformation.",
+
+      "With a strong focus on people, collaboration, and organisational development, she contributes to creating learning experiences that connect human potential with real business needs.",
+
+      "As a Co-founder, Monali works closely with the leadership team and clients to strengthen relationships, nurture talent, and build an environment where individuals and organisations can grow with purpose.",
+    ],
+  },
+
+  /* =========================================================
+     LEADERSHIP PHILOSOPHY
+  ========================================================= */
   philosophy: {
     eyebrow: "OUR LEADERSHIP PHILOSOPHY",
+
     title: "How We Create Extraordinary Impact",
-    description: "Manmeet believes that every leader has the potential to create extraordinary impact when equipped with the right mindset, skills, and support. His approach blends behavioural science, coaching, business strategy, and experiential learning to help leaders grow with authenticity, empathy, and accountability.",
+
+    description:
+      "Manmeet believes that every leader has the potential to create extraordinary impact when equipped with the right mindset, skills, and support. His approach blends behavioural science, coaching, business strategy, and experiential learning to help leaders grow with authenticity, empathy, and accountability.",
 
     cards: [
       {
@@ -62,18 +100,21 @@ const ourLeadershipTeam = {
         title: "Behavioural Science",
         description: "Understand human behaviour",
       },
+
       {
         id: 2,
         icon: Rocket,
         title: "Coaching",
         description: "Personalized growth support",
       },
+
       {
         id: 3,
         icon: TrendingUp,
         title: "Business Strategy",
         description: "Connect to outcomes",
       },
+
       {
         id: 4,
         icon: GraduationCap,
@@ -83,47 +124,59 @@ const ourLeadershipTeam = {
     ],
   },
 
+  /* =========================================================
+     OUR TEAM
+     ========================================================= */
   team: {
     eyebrow: "OUR TEAM",
+
     title: "A Diverse Team. A Shared Purpose",
-    description: "Behind every successful client engagement is a dedicated team committed to delivering excellence.",
+
+    description:
+      "Behind every successful client engagement is a dedicated team committed to delivering excellence.",
 
     members: [
       {
         id: 1,
-        name: "Monali Dutta",
-        role: "Co-founder",
-        image: teamMonali,
-      },
-      {
-        id: 2,
         name: "Sheekha",
         role: "City Lead Banglore",
         image: teamSheekha,
       },
+
       {
-        id: 3,
+        id: 2,
         name: "Juhi",
         role: "City Lead Mumbai",
         image: teamJuhi,
       },
+
       {
-        id: 4,
+        id: 3,
         name: "Krishna",
         role: "Technical Leader",
         image: teamKrishna,
       },
     ],
 
-    closingText: "Together, we bring diverse expertise and a shared passion for creating meaningful transformation.",
+    closingText:
+      "Together, we bring diverse expertise and a shared passion for creating meaningful transformation.",
   },
 
+  /* =========================================================
+     COMMITMENT
+  ========================================================= */
   commitment: {
     eyebrow: "OUR COMMITMENT",
-    title: "At 3rd EdHum, leadership is more than expertise it is about service, integrity, and creating lasting value.",
+
+    title:
+      "At 3rd EdHum, leadership is more than expertise it is about service, integrity, and creating lasting value.",
+
     image: commitmentTeamwork,
+
     description: "Every member of our team shares a common purpose.",
-    secondDescription: "Together, we are committed to building workplaces where people thrive, leaders inspire, and businesses grow.",
+
+    secondDescription:
+      "Together, we are committed to building workplaces where people thrive, leaders inspire, and businesses grow.",
 
     points: [
       {
@@ -131,21 +184,25 @@ const ourLeadershipTeam = {
         icon: GraduationCap,
         text: "To inspire continuous learning.",
       },
+
       {
         id: 2,
         icon: UserRound,
         text: "To help leaders unlock their potential.",
       },
+
       {
         id: 3,
         icon: UsersRound,
         text: "To strengthen teams and organisational culture.",
       },
+
       {
         id: 4,
         icon: BarChart3,
         text: "To enable businesses to achieve sustainable success.",
       },
+
       {
         id: 5,
         icon: ShieldCheck,
@@ -154,11 +211,20 @@ const ourLeadershipTeam = {
     ],
   },
 
+  /* =========================================================
+     JOIN OUR TEAM
+  ========================================================= */
   joinTeam: {
     eyebrow: "JOIN OUR TEAM",
-    title: "We are always looking for passionate professionals who believe in the power of learning, leadership, and human potential.",
-    description: "Whether you are an experienced consultant, facilitator, coach, instructional designer, AI specialist, or corporate trainer, we invite you to be part of our mission to build better leaders and stronger organisations.",
-    closing: "If you are passionate about creating meaningful impact, we'd love to hear from you.",
+
+    title:
+      "We are always looking for passionate professionals who believe in the power of learning, leadership, and human potential.",
+
+    description:
+      "Whether you are an experienced consultant, facilitator, coach, instructional designer, AI specialist, or corporate trainer, we invite you to be part of our mission to build better leaders and stronger organisations.",
+
+    closing:
+      "If you are passionate about creating meaningful impact, we'd love to hear from you.",
   },
 };
 
