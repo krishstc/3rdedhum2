@@ -74,11 +74,13 @@ const ourLeadershipTeam = {
     image: teamMonali,
 
     paragraphs: [
-      "Monali Dutta is the Co-founder of 3rd EdHum and plays an important role in shaping the organisation's vision, culture, and approach to meaningful learning and transformation.",
+      "I have always believed that people are capable of much more than they sometimes realize.",
 
-      "With a strong focus on people, collaboration, and organisational development, she contributes to creating learning experiences that connect human potential with real business needs.",
+      "As the Co-Founder of 3rd Edhum, I feel fortunate to be part of a journey that is centered around helping people learn, grow, and discover their own potential.",
 
-      "As a Co-founder, Monali works closely with the leadership team and clients to strengthen relationships, nurture talent, and build an environment where individuals and organisations can grow with purpose.",
+      "What I enjoy most is connecting with people, listening to their stories, and creating learning experiences that feel relevant to their real lives and work.", 
+      
+      "For me, 3rd Edhum is not just a business, it is a reflection of something I deeply believe in. When we help others learn, we help them grow, and that growth can create a ripple effect far beyond the individual.",
     ],
   },
 
