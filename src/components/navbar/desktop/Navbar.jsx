@@ -24,7 +24,7 @@ function Navbar() {
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
-  /* ================= DESKTOP SERVICE MENU ================= */
+  /* ================= DESKTOP SERVICE EVENT ONLY ================= */
 
   useEffect(() => {
     const handleOpenServiceMenu = (event) => {
@@ -32,9 +32,13 @@ function Navbar() {
 
       if (!serviceFolder && !serviceTitle) return;
 
+      // Open DESKTOP menu only
       setInitialServiceFolder(serviceFolder || null);
       setInitialServiceTitle(serviceTitle || null);
       setActiveMenu("services");
+
+      // Make sure mobile menu stays closed
+      setIsMobileMenuOpen(false);
     };
 
     window.addEventListener(
@@ -50,25 +54,28 @@ function Navbar() {
     };
   }, []);
 
-  /* ================= MOBILE SERVICE MENU ================= */
+  /* ================= MOBILE MENU EVENT ONLY ================= */
 
   useEffect(() => {
-    const handleOpenMobileServiceMenu = () => {
+    const handleOpenMobileMenu = () => {
+      // Open MOBILE menu only
       setIsMobileMenuOpen(true);
+
+      // Make sure desktop menu stays closed
       setActiveMenu(null);
       setInitialServiceFolder(null);
       setInitialServiceTitle(null);
     };
 
     window.addEventListener(
-      "open-mobile-service-menu",
-      handleOpenMobileServiceMenu
+      "open-mobile-menu",
+      handleOpenMobileMenu
     );
 
     return () => {
       window.removeEventListener(
-        "open-mobile-service-menu",
-        handleOpenMobileServiceMenu
+        "open-mobile-menu",
+        handleOpenMobileMenu
       );
     };
   }, []);
@@ -82,12 +89,12 @@ function Navbar() {
     setIsMobileMenuOpen(false);
   };
 
-  /* ================= MOBILE MENU ================= */
+  /* ================= MOBILE MENU BUTTON ================= */
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);
 
-    // Mobile menu is completely separate
+    /* Close desktop menu only */
     setActiveMenu(null);
     setInitialServiceFolder(null);
     setInitialServiceTitle(null);
@@ -166,7 +173,7 @@ function Navbar() {
     }, 500);
   };
 
-  /* ================= CUSTOM PROGRAM WHATSAPP ================= */
+  /* ================= CUSTOM PROGRAM ================= */
 
   const handleCustomProgramClick = () => {
     const whatsappNumber = "919967399069";
@@ -195,6 +202,8 @@ function Navbar() {
 
   return (
     <>
+      {/* ================= NAVBAR ================= */}
+
       <nav
         className="fixed top-0 left-0 w-full z-[9999] bg-white shadow-sm"
         onMouseLeave={() => {
@@ -219,7 +228,7 @@ function Navbar() {
             />
           </Link>
 
-          {/* ================= DESKTOP NAVIGATION ================= */}
+          {/* ================= DESKTOP MENU ================= */}
 
           <ul className="hidden lg:flex items-center gap-12 text-[18px] font-medium text-gray-700">
 
@@ -337,6 +346,7 @@ function Navbar() {
 
               <div className={hoverLine} />
             </li>
+
           </ul>
 
           {/* ================= RIGHT SIDE ================= */}
@@ -385,7 +395,7 @@ function Navbar() {
           </div>
         </div>
 
-        {/* ================= DESKTOP MEGA MENUS ONLY ================= */}
+        {/* ================= DESKTOP MENUS ONLY ================= */}
 
         <div className="relative z-[100]">
 
@@ -412,7 +422,7 @@ function Navbar() {
         </div>
       </nav>
 
-      {/* ================= MOBILE MENU ONLY ================= */}
+      {/* ================= MOBILE MENU ================= */}
 
       <MobileMenu
         isOpen={isMobileMenuOpen}

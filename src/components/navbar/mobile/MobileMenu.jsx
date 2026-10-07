@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
-import { FaTimes, FaChevronRight } from "react-icons/fa";
+import {
+  FaTimes,
+  FaChevronRight,
+} from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 import MobileServiceMenu from "./MobileServiceMenu";
@@ -8,21 +11,29 @@ import MobileContentMenu from "./MobileContentMenu";
 function MobileMenu({ isOpen, onClose }) {
   const navigate = useNavigate();
 
-  const [currentPage, setCurrentPage] = useState("main");
-  const [initialServiceTitle, setInitialServiceTitle] = useState(null);
+  const [currentPage, setCurrentPage] =
+    useState("main");
 
-  /* ================= MOBILE SOLUTIONS → SERVICES ================= */
+  const [selectedServiceTitle, setSelectedServiceTitle] =
+    useState(null);
 
+  // ==========================================
+  // MOBILE SOLUTIONS CARD EVENT ONLY
+  // ==========================================
   useEffect(() => {
     const handleOpenMobileServiceMenu = (event) => {
-      const { serviceTitle } = event.detail || {};
+      const { serviceTitle } =
+        event.detail || {};
 
       if (!serviceTitle) return;
 
-      // Store the service selected from Home → Solutions
-      setInitialServiceTitle(serviceTitle);
+      // First tell Navbar to OPEN the mobile drawer
+      window.dispatchEvent(
+        new CustomEvent("open-mobile-menu")
+      );
 
-      // Open the mobile Services page
+      // Then open Services inside the mobile drawer
+      setSelectedServiceTitle(serviceTitle);
       setCurrentPage("services");
     };
 
@@ -39,65 +50,60 @@ function MobileMenu({ isOpen, onClose }) {
     };
   }, []);
 
-  /* ================= BACK ================= */
-
   const goBack = () => {
-    setInitialServiceTitle(null);
     setCurrentPage("main");
+    setSelectedServiceTitle(null);
   };
-
-  /* ================= CLOSE ================= */
 
   const closeMenu = () => {
-    setInitialServiceTitle(null);
     setCurrentPage("main");
+    setSelectedServiceTitle(null);
     onClose();
   };
-
-  /* ================= HOME ================= */
 
   const handleHomeClick = () => {
     closeMenu();
     navigate("/");
   };
 
-  /* ================= WHY US ================= */
+  const handleServicesClick = () => {
+    setSelectedServiceTitle(null);
+    setCurrentPage("services");
+  };
 
   const handleWhyUsClick = () => {
     closeMenu();
     navigate("/why-us");
   };
 
-  /* ================= INSIGHTS ================= */
-
   const handleInsightsClick = () => {
     closeMenu();
     navigate("/insights");
   };
-
-  /* ================= CONTACT SCROLL ================= */
 
   const handleContactClick = () => {
     closeMenu();
 
     if (window.location.pathname === "/") {
       setTimeout(() => {
-        document.getElementById("contact")?.scrollIntoView({
-          behavior: "smooth",
-        });
+        document
+          .getElementById("contact")
+          ?.scrollIntoView({
+            behavior: "smooth",
+          });
       }, 100);
     } else {
       navigate("/");
 
       setTimeout(() => {
-        document.getElementById("contact")?.scrollIntoView({
-          behavior: "smooth",
-        });
+        document
+          .getElementById("contact")
+          ?.scrollIntoView({
+            behavior: "smooth",
+          });
       }, 500);
     }
   };
-
-  /* ================= CUSTOM PROGRAM WHATSAPP ================= */
 
   const handleCustomProgramClick = () => {
     const whatsappNumber = "919702082248";
@@ -117,8 +123,7 @@ function MobileMenu({ isOpen, onClose }) {
 
   return (
     <>
-      {/* ================= OVERLAY ================= */}
-
+      {/* Mobile overlay */}
       <div
         onClick={closeMenu}
         className={`fixed top-[88px] left-0 right-0 bottom-0 bg-black/40 z-[9997] transition-opacity duration-300 ${
@@ -128,23 +133,17 @@ function MobileMenu({ isOpen, onClose }) {
         }`}
       />
 
-      {/* ================= MOBILE DRAWER ================= */}
-
+      {/* Mobile drawer */}
       <div
         className={`fixed top-[88px] right-0 bottom-0 w-[340px] max-w-[90%] bg-white shadow-2xl z-[9998] transition-transform duration-300 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+          isOpen
+            ? "translate-x-0"
+            : "translate-x-full"
         }`}
       >
-
-        {/* ================= MAIN MENU ================= */}
-
         {currentPage === "main" && (
           <div className="h-full flex flex-col">
-
-            {/* HEADER */}
-
             <div className="flex items-center justify-between px-5 py-4 border-b flex-shrink-0">
-
               <h2 className="text-lg font-semibold text-gray-800">
                 Menu
               </h2>
@@ -156,67 +155,44 @@ function MobileMenu({ isOpen, onClose }) {
               >
                 <FaTimes />
               </button>
-
             </div>
 
-            {/* MENU ITEMS */}
-
             <div className="overflow-y-auto flex-1">
-
-              {/* HOME */}
-
               <button
                 onClick={handleHomeClick}
                 className="w-full flex items-center justify-between px-5 py-4 border-b hover:bg-gray-50 transition text-left"
               >
                 <span>Home</span>
-
                 <FaChevronRight className="text-gray-400 text-sm" />
               </button>
 
-              {/* SERVICES */}
-
               <button
-                onClick={() => {
-                  setInitialServiceTitle(null);
-                  setCurrentPage("services");
-                }}
+                onClick={handleServicesClick}
                 className="w-full flex items-center justify-between px-5 py-4 border-b hover:bg-gray-50 transition text-left"
               >
                 <span>Services</span>
-
                 <FaChevronRight className="text-gray-400 text-sm" />
               </button>
 
-              {/* WHY 3RD EDHUM */}
-
               <button
-                onClick={() => {
-                  setInitialServiceTitle(null);
-                  setCurrentPage("whyus");
-                }}
+                onClick={() =>
+                  setCurrentPage("whyus")
+                }
                 className="w-full flex items-center justify-between px-5 py-4 border-b hover:bg-gray-50 transition text-left"
               >
                 <span>Why 3rd EdHum</span>
-
                 <FaChevronRight className="text-gray-400 text-sm" />
               </button>
 
-              {/* INSIGHTS */}
-
               <button
-                onClick={() => {
-                  setInitialServiceTitle(null);
-                  setCurrentPage("insights");
-                }}
+                onClick={() =>
+                  setCurrentPage("insights")
+                }
                 className="w-full flex items-center justify-between px-5 py-4 border-b hover:bg-gray-50 transition text-left"
               >
                 <span>Insights</span>
-
                 <FaChevronRight className="text-gray-400 text-sm" />
               </button>
-
-              {/* CUSTOM PROGRAM */}
 
               <div className="px-5 pt-5 pb-2">
                 <button
@@ -227,8 +203,6 @@ function MobileMenu({ isOpen, onClose }) {
                 </button>
               </div>
 
-              {/* LET'S CONNECT */}
-
               <div className="px-5 pt-3 pb-5">
                 <button
                   onClick={handleContactClick}
@@ -237,22 +211,19 @@ function MobileMenu({ isOpen, onClose }) {
                   Let's Connect
                 </button>
               </div>
-
             </div>
           </div>
         )}
 
-        {/* ================= SERVICES ================= */}
-
         {currentPage === "services" && (
           <MobileServiceMenu
-            initialServiceTitle={initialServiceTitle}
+            initialServiceTitle={
+              selectedServiceTitle
+            }
             onBack={goBack}
             onClose={closeMenu}
           />
         )}
-
-        {/* ================= WHY US ================= */}
 
         {currentPage === "whyus" && (
           <MobileContentMenu
@@ -262,8 +233,6 @@ function MobileMenu({ isOpen, onClose }) {
           />
         )}
 
-        {/* ================= INSIGHTS ================= */}
-
         {currentPage === "insights" && (
           <MobileContentMenu
             type="insights"
@@ -271,7 +240,6 @@ function MobileMenu({ isOpen, onClose }) {
             onClose={closeMenu}
           />
         )}
-
       </div>
     </>
   );

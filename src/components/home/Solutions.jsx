@@ -53,7 +53,7 @@ const Solutions = () => {
   const navigate = useNavigate();
 
   const handleServiceClick = (service) => {
-    // Executive Coaching goes directly to its page
+    // Executive Coaching opens its page directly
     if (service.title === "Executive Coaching") {
       navigate("/services/executive-coaching");
       return;
@@ -61,18 +61,28 @@ const Solutions = () => {
 
     if (!service.serviceTitle) return;
 
-    // ================= DESKTOP =================
-    // Keep the existing desktop event unchanged.
+    // ==========================================
+    // DESKTOP ONLY
+    // ==========================================
+    if (window.innerWidth >= 1024) {
+      window.dispatchEvent(
+        new CustomEvent("open-service-menu", {
+          detail: {
+            serviceTitle: service.serviceTitle,
+          },
+        })
+      );
+
+      return;
+    }
+
+    // ==========================================
+    // MOBILE ONLY
+    // ==========================================
     window.dispatchEvent(
-      new CustomEvent("open-service-menu", {
-        detail: {
-          serviceTitle: service.serviceTitle,
-        },
-      })
+      new CustomEvent("open-mobile-menu")
     );
 
-    // ================= MOBILE =================
-    // Separate event only for the mobile menu.
     window.dispatchEvent(
       new CustomEvent("open-mobile-service-menu", {
         detail: {
@@ -82,66 +92,73 @@ const Solutions = () => {
     );
   };
 
+  const handleLearnMoreClick = (event, service) => {
+    // Prevent the card button from handling the click again
+    event.stopPropagation();
+
+    // Use the exact same service action
+    handleServiceClick(service);
+  };
+
   return (
-    <section
-      id="solutions"
-      className="scroll-mt-[88px] bg-[#F6F7F9] py-24"
-    >
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
 
-        {/* ================= HEADING ================= */}
-
-        <div className="mb-16 text-center">
-
-          <p className="text-sm font-semibold uppercase tracking-[2px] text-[#2BA56F]">
+        {/* Heading */}
+        <div className="text-center mb-12">
+          <p className="text-[#3F9975] font-semibold text-sm uppercase tracking-wider mb-3">
             SOLUTIONS THAT DRIVE IMPACT
           </p>
 
-          <h2 className="mt-4 text-2xl font-semibold text-gray-900 md:text-3xl">
+          <h2 className="text-2xl md:text-3xl font-semibold text-black">
             Comprehensive Solutions For Every Need
           </h2>
 
         </div>
 
-        {/* ================= CARDS ================= */}
-
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
-
-          {services.map((service, index) => (
-
-            <div
-              key={index}
-              className="group rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+        {/* Solution Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          {services.map((service) => (
+            <button
+              key={service.title}
+              type="button"
+              onClick={() => handleServiceClick(service)}
+              className="group text-left bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
             >
-
+              {/* Icon */}
               <div
-                className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl text-lg ${service.color}`}
+                className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl ${service.color}`}
               >
                 {service.icon}
               </div>
 
-              <h3 className="mb-2 text-[17px] font-semibold text-gray-900 transition group-hover:text-[#2BA56F]">
+              {/* Title */}
+              <h3 className="mt-4 text-base font-semibold text-black">
                 {service.title}
               </h3>
 
-              <p className="text-xs leading-5 text-gray-500">
+              {/* Description */}
+              <p className="mt-2
+               text-xs text-gray-600 leading-relaxed">
                 {service.description}
               </p>
 
-              <button
-                type="button"
-                onClick={() => handleServiceClick(service)}
-                className="mt-5 flex items-center gap-2 text-sm font-semibold text-[#2BA56F] transition-all hover:gap-3"
+              {/* Learn More */}
+              <span
+                onClick={(event) =>
+                  handleLearnMoreClick(event, service)
+                }
+                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#3F9975] cursor-pointer"
               >
-                Learn More →
-              </button>
+                <span>Learn More</span>
 
-            </div>
-
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </span>
+            </button>
           ))}
-
         </div>
-
       </div>
     </section>
   );
